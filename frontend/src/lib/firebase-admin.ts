@@ -5,11 +5,18 @@ import { getAuth } from "firebase-admin/auth";
 import path from "path";
 
 const serviceAccountPath = process.env.FIREBASE_SERVICE_ACCOUNT_PATH;
+const serviceAccountJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
 
 let app;
 
 if (!getApps().length) {
-  if (serviceAccountPath) {
+  if (serviceAccountJson) {
+    const serviceAccount = JSON.parse(serviceAccountJson);
+    app = initializeApp({
+      credential: cert(serviceAccount),
+      storageBucket: "dissc-60e94.firebasestorage.app",
+    });
+  } else if (serviceAccountPath) {
     const serviceAccount = require(path.resolve(serviceAccountPath));
     app = initializeApp({
       credential: cert(serviceAccount),
