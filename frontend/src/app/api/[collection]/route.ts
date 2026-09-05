@@ -3,7 +3,7 @@ import { db } from "@/lib/firebase-admin";
 
 export async function GET(
   request: Request,
-  { params }: { params: { collection: string } }
+  { params }: { params: Promise<{ collection: string }> }
 ) {
   try {
     const { collection } = await params;
@@ -27,7 +27,7 @@ export async function GET(
 
 export async function POST(
   request: Request,
-  { params }: { params: { collection: string } }
+  { params }: { params: Promise<{ collection: string }> }
 ) {
   try {
     const { collection } = await params;
