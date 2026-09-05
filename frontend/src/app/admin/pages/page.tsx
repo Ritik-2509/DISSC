@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const API_URL = "http://localhost:3001/api"; 
+const API_URL = "/api"; 
 
 export default function AdminPages() {
   const [pages, setPages] = useState([]);

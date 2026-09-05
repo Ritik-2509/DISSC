@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
-const API_URL = "http://localhost:3001/api";
+const API_URL = "/api";
 
 export default function AdminContacts() {
   const [contacts, setContacts] = useState([]);

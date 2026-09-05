@@ -2,21 +2,21 @@ import { Button } from "@/components/ui/button";
 import { RevealStagger } from "@/components/ui/reveal";
 import Link from "next/link";
 import { Fish, Soup, Activity, Equal, Users } from "lucide-react";
+import { db } from "@/lib/firebase-admin";
 
 async function getStories() {
   try {
-    const res = await fetch("http://localhost:3001/api/blogs", { next: { revalidate: 60 } });
-    if (!res.ok) return [];
-    return res.json();
+    const snapshot = await db.collection("blogs").orderBy("publishedAt", "desc").limit(3).get();
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   } catch (e) {
-    console.error(e);
+    console.error("Failed to fetch stories:", e);
     return [];
   }
 }
 
 export default async function Home() {
   const stories = await getStories();
-  const recentStories = stories.slice(0, 3);
+  const recentStories = stories;
 
   return (
     <div className="flex flex-col min-h-screen">

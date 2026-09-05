@@ -1,14 +1,14 @@
 import { RevealStagger } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { BookOpen, TrendingUp, HeartPulse, Building2, ChevronRight } from "lucide-react";
+import { db } from "@/lib/firebase-admin";
 
 async function getPrograms() {
   try {
-    const res = await fetch("http://localhost:3001/api/pages", { next: { revalidate: 60 } });
-    if (!res.ok) return [];
-    return res.json();
+    const snapshot = await db.collection("pages").get();
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   } catch (e) {
-    console.error(e);
+    console.error("Failed to fetch programs:", e);
     return [];
   }
 }

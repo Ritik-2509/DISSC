@@ -1,13 +1,13 @@
 import { RevealStagger } from "@/components/ui/reveal";
 import { BookOpen, Globe2, Scale } from "lucide-react";
+import { db } from "@/lib/firebase-admin";
 
 async function getTeams() {
   try {
-    const res = await fetch("http://localhost:3001/api/teams", { next: { revalidate: 60 } });
-    if (!res.ok) return [];
-    return res.json();
+    const snapshot = await db.collection("teams").get();
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   } catch (e) {
-    console.error(e);
+    console.error("Failed to fetch leaders:", e);
     return [];
   }
 }
