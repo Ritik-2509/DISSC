@@ -15,8 +15,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "DISCC - DEVA International Society for Child Care",
-  description: "Working across communities to ensure every child thrives.",
+  title: "DISCC India - DEVA International Society for Child Care, Varanasi",
+  description: "Humanitarian NGO founded in 1991 by Dr. C. Tulsi Das in Varanasi, India. Dedicated to clinical psychology, intellectual disability rehabilitation, and inclusive child welfare.",
+  icons: {
+    icon: "/images/discc/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${outfit.variable} font-sans antialiased min-h-screen flex flex-col bg-[#F8F9FA] text-[#0A0A0A] selection:bg-[var(--sdg-1)] selection:text-white`}
+        className={`${spaceGrotesk.variable} ${outfit.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground selection:bg-primary selection:text-white`}
       >
         <Navbar />
         <main className="flex-1">{children}</main>

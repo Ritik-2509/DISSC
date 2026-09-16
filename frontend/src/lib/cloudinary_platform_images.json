@@ -1,0 +1,263 @@
+{
+  "/images/discc/award-ceremony.png": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248053/discc/discc/award-ceremony.png",
+    "public_id": "discc/discc/award-ceremony",
+    "width": 1440,
+    "height": 600,
+    "format": "png",
+    "bytes": 963991,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248053/discc/discc/award-ceremony.png"
+  },
+  "/images/discc/children-activity.png": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248056/discc/discc/children-activity.png",
+    "public_id": "discc/discc/children-activity",
+    "width": 1440,
+    "height": 600,
+    "format": "png",
+    "bytes": 1392887,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248056/discc/discc/children-activity.png"
+  },
+  "/images/discc/children-therapy.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248057/discc/discc/children-therapy.jpg",
+    "public_id": "discc/discc/children-therapy",
+    "width": 2576,
+    "height": 1932,
+    "format": "jpg",
+    "bytes": 649949,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248057/discc/discc/children-therapy.jpg"
+  },
+  "/images/discc/community-program.png": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248060/discc/discc/community-program.png",
+    "public_id": "discc/discc/community-program",
+    "width": 1440,
+    "height": 600,
+    "format": "png",
+    "bytes": 1119529,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248060/discc/discc/community-program.png"
+  },
+  "/images/discc/deva-building.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248061/discc/discc/deva-building.jpg",
+    "public_id": "discc/discc/deva-building",
+    "width": 1050,
+    "height": 750,
+    "format": "jpg",
+    "bytes": 145968,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248061/discc/discc/deva-building.jpg"
+  },
+  "/images/discc/dr-tulsi-clinic.png": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248062/discc/discc/dr-tulsi-clinic.png",
+    "public_id": "discc/discc/dr-tulsi-clinic",
+    "width": 664,
+    "height": 600,
+    "format": "png",
+    "bytes": 325649,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248062/discc/discc/dr-tulsi-clinic.png"
+  },
+  "/images/discc/dr-tulsi-portrait.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248063/discc/discc/dr-tulsi-portrait.jpg",
+    "public_id": "discc/discc/dr-tulsi-portrait",
+    "width": 900,
+    "height": 900,
+    "format": "jpg",
+    "bytes": 72582,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248063/discc/discc/dr-tulsi-portrait.jpg"
+  },
+  "/images/discc/founders-meet.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248064/discc/discc/founders-meet.jpg",
+    "public_id": "discc/discc/founders-meet",
+    "width": 1600,
+    "height": 1066,
+    "format": "jpg",
+    "bytes": 339150,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248064/discc/discc/founders-meet.jpg"
+  },
+  "/images/discc/gallery/basant-panchami.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248065/discc/discc/gallery/basant-panchami.jpg",
+    "public_id": "discc/discc/gallery/basant-panchami",
+    "width": 2100,
+    "height": 1500,
+    "format": "jpg",
+    "bytes": 493727,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248065/discc/discc/gallery/basant-panchami.jpg"
+  },
+  "/images/discc/gallery/disability-day.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248066/discc/discc/gallery/disability-day.jpg",
+    "public_id": "discc/discc/gallery/disability-day",
+    "width": 1050,
+    "height": 750,
+    "format": "jpg",
+    "bytes": 175495,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248066/discc/discc/gallery/disability-day.jpg"
+  },
+  "/images/discc/gallery/magic-show.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248068/discc/discc/gallery/magic-show.jpg",
+    "public_id": "discc/discc/gallery/magic-show",
+    "width": 2100,
+    "height": 1500,
+    "format": "jpg",
+    "bytes": 509473,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248068/discc/discc/gallery/magic-show.jpg"
+  },
+  "/images/discc/gallery/purple-fair-2026.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248069/discc/discc/gallery/purple-fair-2026.jpg",
+    "public_id": "discc/discc/gallery/purple-fair-2026",
+    "width": 2100,
+    "height": 1500,
+    "format": "jpg",
+    "bytes": 441641,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248069/discc/discc/gallery/purple-fair-2026.jpg"
+  },
+  "/images/discc/gallery/ramayan-play.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248071/discc/discc/gallery/ramayan-play.jpg",
+    "public_id": "discc/discc/gallery/ramayan-play",
+    "width": 2100,
+    "height": 1500,
+    "format": "jpg",
+    "bytes": 439166,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248071/discc/discc/gallery/ramayan-play.jpg"
+  },
+  "/images/discc/gallery/republic-day.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248072/discc/discc/gallery/republic-day.jpg",
+    "public_id": "discc/discc/gallery/republic-day",
+    "width": 2100,
+    "height": 1500,
+    "format": "jpg",
+    "bytes": 364343,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248072/discc/discc/gallery/republic-day.jpg"
+  },
+  "/images/discc/gallery/yoga-day.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248073/discc/discc/gallery/yoga-day.jpg",
+    "public_id": "discc/discc/gallery/yoga-day",
+    "width": 2100,
+    "height": 1500,
+    "format": "jpg",
+    "bytes": 278497,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248073/discc/discc/gallery/yoga-day.jpg"
+  },
+  "/images/discc/hero-children.png": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248075/discc/discc/hero-children.png",
+    "public_id": "discc/discc/hero-children",
+    "width": 1440,
+    "height": 600,
+    "format": "png",
+    "bytes": 1177043,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248075/discc/discc/hero-children.png"
+  },
+  "/images/discc/logo.png": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248081/discc/discc/logo.png",
+    "public_id": "discc/discc/logo",
+    "width": 167,
+    "height": 161,
+    "format": "png",
+    "bytes": 49896,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248081/discc/discc/logo.png"
+  },
+  "/images/discc/partners/accgp.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248082/discc/discc/partners/accgp.jpg",
+    "public_id": "discc/discc/partners/accgp",
+    "width": 288,
+    "height": 158,
+    "format": "jpg",
+    "bytes": 6005,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248082/discc/discc/partners/accgp.jpg"
+  },
+  "/images/discc/partners/annapurna-center.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248082/discc/discc/partners/annapurna-center.jpg",
+    "public_id": "discc/discc/partners/annapurna-center",
+    "width": 158,
+    "height": 158,
+    "format": "jpg",
+    "bytes": 5434,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248082/discc/discc/partners/annapurna-center.jpg"
+  },
+  "/images/discc/partners/changemakers.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248083/discc/discc/partners/changemakers.jpg",
+    "public_id": "discc/discc/partners/changemakers",
+    "width": 158,
+    "height": 158,
+    "format": "jpg",
+    "bytes": 4243,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248083/discc/discc/partners/changemakers.jpg"
+  },
+  "/images/discc/partners/deva-europe.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248084/discc/discc/partners/deva-europe.jpg",
+    "public_id": "discc/discc/partners/deva-europe",
+    "width": 288,
+    "height": 158,
+    "format": "jpg",
+    "bytes": 8117,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248084/discc/discc/partners/deva-europe.jpg"
+  },
+  "/images/discc/partners/kotak-bank.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248084/discc/discc/partners/kotak-bank.jpg",
+    "public_id": "discc/discc/partners/kotak-bank",
+    "width": 158,
+    "height": 158,
+    "format": "jpg",
+    "bytes": 6607,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248084/discc/discc/partners/kotak-bank.jpg"
+  },
+  "/images/discc/partners/national-trust.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248085/discc/discc/partners/national-trust.jpg",
+    "public_id": "discc/discc/partners/national-trust",
+    "width": 158,
+    "height": 158,
+    "format": "jpg",
+    "bytes": 6398,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248085/discc/discc/partners/national-trust.jpg"
+  },
+  "/images/discc/partners/nhps.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248085/discc/discc/partners/nhps.jpg",
+    "public_id": "discc/discc/partners/nhps",
+    "width": 158,
+    "height": 158,
+    "format": "jpg",
+    "bytes": 5286,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248085/discc/discc/partners/nhps.jpg"
+  },
+  "/images/discc/partners/oshkosh-university.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248086/discc/discc/partners/oshkosh-university.jpg",
+    "public_id": "discc/discc/partners/oshkosh-university",
+    "width": 158,
+    "height": 158,
+    "format": "jpg",
+    "bytes": 6975,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248086/discc/discc/partners/oshkosh-university.jpg"
+  },
+  "/images/discc/press-coverage.png": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248088/discc/discc/press-coverage.png",
+    "public_id": "discc/discc/press-coverage",
+    "width": 1440,
+    "height": 600,
+    "format": "png",
+    "bytes": 873010,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248088/discc/discc/press-coverage.png"
+  },
+  "/images/discc/role-model-award.png": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248090/discc/discc/role-model-award.png",
+    "public_id": "discc/discc/role-model-award",
+    "width": 1440,
+    "height": 600,
+    "format": "png",
+    "bytes": 862314,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248090/discc/discc/role-model-award.png"
+  },
+  "/images/education.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248092/discc/platform/education.jpg",
+    "public_id": "discc/platform/education",
+    "width": 1024,
+    "height": 1024,
+    "format": "jpg",
+    "bytes": 835632,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248092/discc/platform/education.jpg"
+  },
+  "/images/varanasi_ghats.jpg": {
+    "secure_url": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248093/discc/platform/varanasi_ghats.jpg",
+    "public_id": "discc/platform/varanasi_ghats",
+    "width": 1024,
+    "height": 1024,
+    "format": "jpg",
+    "bytes": 906652,
+    "highQualityUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248093/discc/platform/varanasi_ghats.jpg"
+  }
+}

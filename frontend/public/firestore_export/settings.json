@@ -1,0 +1,806 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "key": "media_random_hash",
+      "value": "b62cd1a791f2ccc5dd6bec1d1c4ab79d",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 2,
+      "key": "api_enabled",
+      "value": 0,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 3,
+      "key": "analytics_dashboard_widgets",
+      "value": 0,
+      "created_at": "2024-11-20 17:34:02",
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 4,
+      "key": "activated_plugins",
+      "value": "[\"language\",\"language-advanced\",\"analytics\",\"announcement\",\"audit-log\",\"backup\",\"blog\",\"captcha\",\"career\",\"contact\",\"cookie-consent\",\"faq\",\"gallery\",\"newsletter\",\"portfolio\",\"team\",\"testimonial\",\"translation\"]",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 5,
+      "key": "enable_recaptcha_botble_contact_forms_fronts_contact_form",
+      "value": 1,
+      "created_at": "2024-11-20 17:34:02",
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 6,
+      "key": "enable_recaptcha_botble_newsletter_forms_fronts_newsletter_form",
+      "value": 1,
+      "created_at": "2024-11-20 17:34:03",
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 7,
+      "key": "theme",
+      "value": "gerow",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 8,
+      "key": "show_admin_bar",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 9,
+      "key": "language_hide_default",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 10,
+      "key": "language_switcher_display",
+      "value": "dropdown",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 11,
+      "key": "language_display",
+      "value": "all",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 12,
+      "key": "language_hide_languages",
+      "value": "[]",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 13,
+      "key": "theme-gerow-site_title",
+      "value": "Welcome DEVA International Society for Child Care, Varanasi, India | Disccindia",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 14,
+      "key": "theme-gerow-seo_description",
+      "value": "DISCC was founded in Varanasi in 1991 by Dr Tulsi.\nDISCC has a statute of humanitarian Non Governmental Organization (NGO), accepted and registered with the Indian government in 1991, which gave it an FCRA (« Fair Credit Reporting Act ») Number, which allows it to receive funds from abroad in order to support its actions. Every year a financial audit gives it a number of accreditation.",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 15,
+      "key": "theme-gerow-favicon",
+      "value": "assets/apple-touch-icon.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 16,
+      "key": "theme-gerow-website",
+      "value": "https://botble.com",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 17,
+      "key": "theme-gerow-contact_email",
+      "value": "support@botble.com",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:33"
+    },
+    {
+      "id": 18,
+      "key": "theme-gerow-site_description",
+      "value": "At Gerow, we specialize in comprehensive business solutions designed to enhance your operational efficiency and supply chain excellence. Whether you’re a seasoned entrepreneur looking to fine-tune your strategies, a startup seeking guidance, or a business professional looking for insights and solutions, our platform is your one-stop destination. Our team of experts and a wealth of resources are here to empower your journey towards business excellence. Explore our offerings and discover how we can be your partner in success.",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 19,
+      "key": "theme-gerow-phone",
+      "value": "+91 9415303557",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 20,
+      "key": "theme-gerow-address",
+      "value": "B.21/100, Bind Bhavan, Kamachha Chungi 221010 Varanasi, India",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 21,
+      "key": "theme-gerow-cookie_consent_message",
+      "value": "Your experience on this site will be improved by allowing cookies",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 22,
+      "key": "theme-gerow-cookie_consent_learn_more_url",
+      "value": "/cookie-policy",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 23,
+      "key": "theme-gerow-cookie_consent_learn_more_text",
+      "value": "Cookie Policy",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 24,
+      "key": "theme-gerow-homepage_id",
+      "value": 3,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 25,
+      "key": "theme-gerow-logo",
+      "value": "assets/logo2.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 26,
+      "key": "theme-gerow-primary_color",
+      "value": "rgb(156, 33, 30)",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 27,
+      "key": "theme-gerow-primary_hover_color",
+      "value": "rgb(2, 39, 76)",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 28,
+      "key": "theme-gerow-secondary_color",
+      "value": "#00194C",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 29,
+      "key": "theme-gerow-heading_color",
+      "value": "#00194C",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 30,
+      "key": "theme-gerow-text_color",
+      "value": "#334770",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 31,
+      "key": "theme-gerow-heading_font",
+      "value": "Urbanist",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 32,
+      "key": "theme-gerow-primary_font",
+      "value": "Plus Jakarta Sans",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 33,
+      "key": "theme-gerow-blog_page_id",
+      "value": 19,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 34,
+      "key": "theme-gerow-breadcrumb_background",
+      "value": "assets/000009.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 35,
+      "key": "theme-gerow-breadcrumb_first_shape_image",
+      "value": "backgrounds/breadcrumb-shape01.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 36,
+      "key": "theme-gerow-breadcrumb_second_shape_image",
+      "value": "assets/landing-2.svg",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 37,
+      "key": "theme-gerow-footer_background_image",
+      "value": "backgrounds/bg-footer.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 38,
+      "key": "theme-gerow-footer_background_color",
+      "value": "#fff",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 39,
+      "key": "theme-gerow-footer_text_color",
+      "value": "#00194C",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 40,
+      "key": "theme-gerow-footer_text_muted_color",
+      "value": "#334770",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 41,
+      "key": "theme-gerow-footer_border_color",
+      "value": "rgb(0, 51, 102)",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 42,
+      "key": "theme-gerow-footer_bottom_background_color",
+      "value": "#fff",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 43,
+      "key": "theme-gerow-preloader_version",
+      "value": "v1",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 44,
+      "key": "theme-gerow-lazy_load_images",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 45,
+      "key": "theme-gerow-lazy_load_placeholder_image",
+      "value": "general/placeholder.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 46,
+      "key": "theme-gerow-social_links",
+      "value": "{\"0\":[{\"key\":\"name\",\"value\":\"Facebook\"},{\"key\":\"social-icon\",\"value\":\"fab fa-facebook-f\"},{\"key\":\"url\",\"value\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100072381330610\"},{\"key\":\"social-icon-image\",\"value\":null}],\"3\":[{\"key\":\"name\",\"value\":\"YouTube\"},{\"key\":\"social-icon\",\"value\":\"fab fa-youtube\"},{\"key\":\"url\",\"value\":\"https:\\/\\/www.youtube.com\\/@disccvaranasi3882\\/videos\"},{\"key\":\"social-icon-image\",\"value\":null}]}",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 47,
+      "key": "theme-gerow-newsletter_popup_enable",
+      "value": 0,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 48,
+      "key": "theme-gerow-newsletter_popup_image",
+      "value": "assets/00f00.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 49,
+      "key": "theme-gerow-newsletter_popup_title",
+      "value": "Subscribe Now",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 50,
+      "key": "theme-gerow-newsletter_popup_subtitle",
+      "value": "Newsletter",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 51,
+      "key": "theme-gerow-newsletter_popup_description",
+      "value": "Stay in the Loop: Sign Up for Our Newsletter!",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 52,
+      "key": "admin_logo",
+      "value": "assets/logo2.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 53,
+      "key": "admin_favicon",
+      "value": "assets/pngtree-beautiful-admin-roles-line-vector-icon-png-image-1992804.jpg",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 54,
+      "key": "permalink-botble-blog-models-post",
+      "value": "blog",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 55,
+      "key": "permalink-botble-blog-models-category",
+      "value": "blog",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 56,
+      "key": "announcement_lazy_loading",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 57,
+      "key": "announcement_max_width",
+      "value": 1280,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 58,
+      "key": "announcement_text_color",
+      "value": "#00194C",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 59,
+      "key": "announcement_background_color",
+      "value": "#FFE7BB",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 60,
+      "key": "announcement_text_alignment",
+      "value": "start",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 61,
+      "key": "announcement_dismissible",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 62,
+      "key": "membership_authorization_at",
+      "value": "2026-08-06 12:01:33",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 63,
+      "key": "theme-gerow-animation_enabled",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 64,
+      "key": "theme-gerow-show_site_name",
+      "value": 0,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 65,
+      "key": "theme-gerow-seo_title",
+      "value": "Welcome DEVA International Society for Child Care, Varanasi, India | Disccindia",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 66,
+      "key": "theme-gerow-seo_index",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 67,
+      "key": "theme-gerow-seo_og_image",
+      "value": "assets/logo2.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 68,
+      "key": "theme-gerow-term_and_privacy_policy_url",
+      "value": "",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 69,
+      "key": "theme-gerow-preloader_enabled",
+      "value": "no",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 70,
+      "key": "theme-gerow-header_style",
+      "value": "style-3",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 71,
+      "key": "theme-gerow-header_top_sidebar_style",
+      "value": "style-1",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 72,
+      "key": "admin_logo_max_height",
+      "value": 32,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 73,
+      "key": "login_screen_backgrounds",
+      "value": "[]",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 74,
+      "key": "admin_title",
+      "value": "Disccindia - Admin Panel",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 75,
+      "key": "admin_appearance_locale",
+      "value": "en",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 76,
+      "key": "rich_editor",
+      "value": "ckeditor",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 77,
+      "key": "admin_appearance_layout",
+      "value": "vertical",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 78,
+      "key": "admin_appearance_show_menu_item_icon",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 79,
+      "key": "admin_appearance_container_width",
+      "value": "container-xl",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 80,
+      "key": "admin_primary_font",
+      "value": "Inter",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 81,
+      "key": "admin_primary_color",
+      "value": "rgb(162, 35, 31)",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 82,
+      "key": "admin_secondary_color",
+      "value": "#6c7a91",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 83,
+      "key": "admin_heading_color",
+      "value": "inherit",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 84,
+      "key": "admin_text_color",
+      "value": "#182433",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 85,
+      "key": "admin_link_color",
+      "value": "#206bc4",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 86,
+      "key": "admin_link_hover_color",
+      "value": "#1a569d",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 87,
+      "key": "admin_appearance_custom_css",
+      "value": "",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 88,
+      "key": "admin_appearance_custom_header_js",
+      "value": "",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 89,
+      "key": "admin_appearance_custom_body_js",
+      "value": "",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 90,
+      "key": "admin_appearance_custom_footer_js",
+      "value": "",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 91,
+      "key": "show_theme_guideline_link",
+      "value": 0,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 92,
+      "key": "admin_appearance_locale_direction",
+      "value": "ltr",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 93,
+      "key": "theme-gerow-galleries_page_id",
+      "value": null,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 94,
+      "key": "theme-gerow-theme_breadcrumb_enabled",
+      "value": 0,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 95,
+      "key": "theme-gerow-breadcrumb_background_overlay_enabled",
+      "value": "yes",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 96,
+      "key": "theme-gerow-newsletter_popup_delay",
+      "value": 10,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 97,
+      "key": "theme-gerow-newsletter_popup_display_pages",
+      "value": "[\"public.index\"]",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 98,
+      "key": "theme-gerow-admin_logo",
+      "value": "assets/logo2.png",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 99,
+      "key": "theme-gerow-admin_favicon",
+      "value": "assets/pngtree-beautiful-admin-roles-line-vector-icon-png-image-1992804.jpg",
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    },
+    {
+      "id": 100,
+      "key": "is_completed_get_started",
+      "value": 1,
+      "created_at": null,
+      "updated_at": "2026-08-06 06:31:34"
+    }
+  ],
+  "dict": {
+    "media_random_hash": "b62cd1a791f2ccc5dd6bec1d1c4ab79d",
+    "api_enabled": 0,
+    "analytics_dashboard_widgets": 0,
+    "activated_plugins": "[\"language\",\"language-advanced\",\"analytics\",\"announcement\",\"audit-log\",\"backup\",\"blog\",\"captcha\",\"career\",\"contact\",\"cookie-consent\",\"faq\",\"gallery\",\"newsletter\",\"portfolio\",\"team\",\"testimonial\",\"translation\"]",
+    "enable_recaptcha_botble_contact_forms_fronts_contact_form": 1,
+    "enable_recaptcha_botble_newsletter_forms_fronts_newsletter_form": 1,
+    "theme": "gerow",
+    "show_admin_bar": 1,
+    "language_hide_default": 1,
+    "language_switcher_display": "dropdown",
+    "language_display": "all",
+    "language_hide_languages": "[]",
+    "theme-gerow-site_title": "Welcome DEVA International Society for Child Care, Varanasi, India | Disccindia",
+    "theme-gerow-seo_description": "DISCC was founded in Varanasi in 1991 by Dr Tulsi.\nDISCC has a statute of humanitarian Non Governmental Organization (NGO), accepted and registered with the Indian government in 1991, which gave it an FCRA (« Fair Credit Reporting Act ») Number, which allows it to receive funds from abroad in order to support its actions. Every year a financial audit gives it a number of accreditation.",
+    "theme-gerow-favicon": "assets/apple-touch-icon.png",
+    "theme-gerow-website": "https://botble.com",
+    "theme-gerow-contact_email": "support@botble.com",
+    "theme-gerow-site_description": "At Gerow, we specialize in comprehensive business solutions designed to enhance your operational efficiency and supply chain excellence. Whether you’re a seasoned entrepreneur looking to fine-tune your strategies, a startup seeking guidance, or a business professional looking for insights and solutions, our platform is your one-stop destination. Our team of experts and a wealth of resources are here to empower your journey towards business excellence. Explore our offerings and discover how we can be your partner in success.",
+    "theme-gerow-phone": "+91 9415303557",
+    "theme-gerow-address": "B.21/100, Bind Bhavan, Kamachha Chungi 221010 Varanasi, India",
+    "theme-gerow-cookie_consent_message": "Your experience on this site will be improved by allowing cookies",
+    "theme-gerow-cookie_consent_learn_more_url": "/cookie-policy",
+    "theme-gerow-cookie_consent_learn_more_text": "Cookie Policy",
+    "theme-gerow-homepage_id": 3,
+    "theme-gerow-logo": "assets/logo2.png",
+    "theme-gerow-primary_color": "rgb(156, 33, 30)",
+    "theme-gerow-primary_hover_color": "rgb(2, 39, 76)",
+    "theme-gerow-secondary_color": "#00194C",
+    "theme-gerow-heading_color": "#00194C",
+    "theme-gerow-text_color": "#334770",
+    "theme-gerow-heading_font": "Urbanist",
+    "theme-gerow-primary_font": "Plus Jakarta Sans",
+    "theme-gerow-blog_page_id": 19,
+    "theme-gerow-breadcrumb_background": "assets/000009.png",
+    "theme-gerow-breadcrumb_first_shape_image": "backgrounds/breadcrumb-shape01.png",
+    "theme-gerow-breadcrumb_second_shape_image": "assets/landing-2.svg",
+    "theme-gerow-footer_background_image": "backgrounds/bg-footer.png",
+    "theme-gerow-footer_background_color": "#fff",
+    "theme-gerow-footer_text_color": "#00194C",
+    "theme-gerow-footer_text_muted_color": "#334770",
+    "theme-gerow-footer_border_color": "rgb(0, 51, 102)",
+    "theme-gerow-footer_bottom_background_color": "#fff",
+    "theme-gerow-preloader_version": "v1",
+    "theme-gerow-lazy_load_images": 1,
+    "theme-gerow-lazy_load_placeholder_image": "general/placeholder.png",
+    "theme-gerow-social_links": "{\"0\":[{\"key\":\"name\",\"value\":\"Facebook\"},{\"key\":\"social-icon\",\"value\":\"fab fa-facebook-f\"},{\"key\":\"url\",\"value\":\"https:\\/\\/www.facebook.com\\/profile.php?id=100072381330610\"},{\"key\":\"social-icon-image\",\"value\":null}],\"3\":[{\"key\":\"name\",\"value\":\"YouTube\"},{\"key\":\"social-icon\",\"value\":\"fab fa-youtube\"},{\"key\":\"url\",\"value\":\"https:\\/\\/www.youtube.com\\/@disccvaranasi3882\\/videos\"},{\"key\":\"social-icon-image\",\"value\":null}]}",
+    "theme-gerow-newsletter_popup_enable": 0,
+    "theme-gerow-newsletter_popup_image": "assets/00f00.png",
+    "theme-gerow-newsletter_popup_title": "Subscribe Now",
+    "theme-gerow-newsletter_popup_subtitle": "Newsletter",
+    "theme-gerow-newsletter_popup_description": "Stay in the Loop: Sign Up for Our Newsletter!",
+    "admin_logo": "assets/logo2.png",
+    "admin_favicon": "assets/pngtree-beautiful-admin-roles-line-vector-icon-png-image-1992804.jpg",
+    "permalink-botble-blog-models-post": "blog",
+    "permalink-botble-blog-models-category": "blog",
+    "announcement_lazy_loading": 1,
+    "announcement_max_width": 1280,
+    "announcement_text_color": "#00194C",
+    "announcement_background_color": "#FFE7BB",
+    "announcement_text_alignment": "start",
+    "announcement_dismissible": 1,
+    "membership_authorization_at": "2026-08-06 12:01:33",
+    "theme-gerow-animation_enabled": 1,
+    "theme-gerow-show_site_name": 0,
+    "theme-gerow-seo_title": "Welcome DEVA International Society for Child Care, Varanasi, India | Disccindia",
+    "theme-gerow-seo_index": 1,
+    "theme-gerow-seo_og_image": "assets/logo2.png",
+    "theme-gerow-term_and_privacy_policy_url": "",
+    "theme-gerow-preloader_enabled": "no",
+    "theme-gerow-header_style": "style-3",
+    "theme-gerow-header_top_sidebar_style": "style-1",
+    "admin_logo_max_height": 32,
+    "login_screen_backgrounds": "[]",
+    "admin_title": "Disccindia - Admin Panel",
+    "admin_appearance_locale": "en",
+    "rich_editor": "ckeditor",
+    "admin_appearance_layout": "vertical",
+    "admin_appearance_show_menu_item_icon": 1,
+    "admin_appearance_container_width": "container-xl",
+    "admin_primary_font": "Inter",
+    "admin_primary_color": "rgb(162, 35, 31)",
+    "admin_secondary_color": "#6c7a91",
+    "admin_heading_color": "inherit",
+    "admin_text_color": "#182433",
+    "admin_link_color": "#206bc4",
+    "admin_link_hover_color": "#1a569d",
+    "admin_appearance_custom_css": "",
+    "admin_appearance_custom_header_js": "",
+    "admin_appearance_custom_body_js": "",
+    "admin_appearance_custom_footer_js": "",
+    "show_theme_guideline_link": 0,
+    "admin_appearance_locale_direction": "ltr",
+    "theme-gerow-galleries_page_id": null,
+    "theme-gerow-theme_breadcrumb_enabled": 0,
+    "theme-gerow-breadcrumb_background_overlay_enabled": "yes",
+    "theme-gerow-newsletter_popup_delay": 10,
+    "theme-gerow-newsletter_popup_display_pages": "[\"public.index\"]",
+    "theme-gerow-admin_logo": "assets/logo2.png",
+    "theme-gerow-admin_favicon": "assets/pngtree-beautiful-admin-roles-line-vector-icon-png-image-1992804.jpg",
+    "is_completed_get_started": 1
+  }
+}

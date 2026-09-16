@@ -5,18 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const API_URL = "/api"; 
+import { saveAdminItem, deleteAdminItem, fetchAdminCollection } from "@/lib/admin-client";
 
 export default function AdminTestimonials() {
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [isCreating, setIsCreating] = useState(false);
   const [formData, setFormData] = useState({ name: "", role: "", quote: "", image: "" });
 
   const fetchTestimonials = () => {
     setLoading(true);
-    fetch(`${API_URL}/testimonials`)
-      .then(res => res.json())
+    fetchAdminCollection("testimonials")
       .then(data => {
         setTestimonials(data);
         setLoading(false);
@@ -31,10 +30,10 @@ export default function AdminTestimonials() {
     fetchTestimonials();
   }, []);
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: string | number) => {
     if (!confirm("Are you sure you want to delete this testimonial?")) return;
     try {
-      await fetch(`${API_URL}/testimonials/${id}`, { method: "DELETE" });
+      await deleteAdminItem("testimonials", id);
       fetchTestimonials();
     } catch (err) {
       console.error(err);
@@ -44,11 +43,7 @@ export default function AdminTestimonials() {
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch(`${API_URL}/testimonials`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData })
-      });
+      await saveAdminItem("testimonials", { ...formData, id: Date.now() });
       setIsCreating(false);
       setFormData({ name: "", role: "", quote: "", image: "" });
       fetchTestimonials();

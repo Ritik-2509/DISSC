@@ -5,20 +5,38 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.985 0.01 70); /* off-white */
-  --foreground: oklch(0.13 0.01 70); /* off-black */
+  --background: oklch(0.985 0.005 85); /* warm off-white #FAF9F6 */
+  --foreground: oklch(0.18 0.03 260); /* deep navy charcoal #0F172A */
   
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.01 70);
+  --card-foreground: oklch(0.18 0.03 260);
   
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.01 70);
+  --popover-foreground: oklch(0.18 0.03 260);
   
-  /* Deep Forest Green Primary -> Base Primary */
-  --primary: oklch(0.35 0.05 150);
-  --primary-foreground: oklch(0.985 0.01 70);
+  /* DISCC Royal Crimson & Deep Navy */
+  --primary: oklch(0.44 0.16 28); /* #9C211E */
+  --primary-foreground: oklch(0.99 0 0);
   
-  /* SDG Colors */
+  --secondary: oklch(0.24 0.11 262); /* #00194C Deep Navy */
+  --secondary-foreground: oklch(0.99 0 0);
+  
+  --accent: oklch(0.72 0.16 75); /* #F59E0B Warm Amber Gold */
+  --accent-foreground: oklch(0.15 0.03 260);
+  
+  --muted: oklch(0.95 0.008 85);
+  --muted-foreground: oklch(0.46 0.03 260);
+  
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  
+  --border: oklch(0.91 0.008 85);
+  --input: oklch(0.91 0.008 85);
+  --ring: oklch(0.44 0.16 28);
+  
+  --radius: 0.75rem;
+
+  /* SDG Colors preserved for reference */
   --sdg-1: #E5243B;
   --sdg-2: #DDA63A;
   --sdg-3: #4C9F38;
@@ -36,24 +54,6 @@
   --sdg-15: #56C02B;
   --sdg-16: #00689D;
   --sdg-17: #19486A;
-  
-  --secondary: oklch(0.96 0.01 70);
-  --secondary-foreground: oklch(0.2 0.02 150);
-  
-  --muted: oklch(0.96 0.01 70);
-  --muted-foreground: oklch(0.5 0.01 70);
-  
-  --accent: oklch(0.96 0.01 70);
-  --accent-foreground: oklch(0.2 0.02 150);
-  
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  
-  --border: oklch(0.9 0.01 70);
-  --input: oklch(0.9 0.01 70);
-  --ring: oklch(0.35 0.05 150);
-  
-  --radius: 0.5rem;
 }
 
 @theme inline {
@@ -108,6 +108,42 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans min-h-screen w-full overflow-x-hidden;
   }
+}
+
+/* Full Width Fluid Layout Across All Resolutions */
+.container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: clamp(1rem, 3.5vw, 4rem) !important;
+  padding-right: clamp(1rem, 3.5vw, 4rem) !important;
+}
+
+.fluid-full-width {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: clamp(1rem, 3.5vw, 4rem);
+  padding-right: clamp(1rem, 3.5vw, 4rem);
+}
+
+/* Horizontal Floating Motion Loop (Partner Logos) */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

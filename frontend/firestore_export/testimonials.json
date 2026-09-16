@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Guy Hawkins",
+    "content": "Exceptional service! Gerow’s attention to detail and reliability have been instrumental in our supply chain success.",
+    "image": "testimonials/1.png",
+    "company": "Rodriguez Enterprises",
+    "status": "published",
+    "created_at": "2024-11-20 17:34:09",
+    "updated_at": "2024-11-20 17:34:09",
+    "imageUrl": "https://disccindia.org/storage/testimonials/1.png"
+  },
+  {
+    "id": 2,
+    "name": "Eleanor Pena",
+    "content": "Gerow has consistently met and exceeded our logistics needs. Their dedication to excellence is truly commendable.",
+    "image": "testimonials/2.png",
+    "company": "ChenTech Solutions",
+    "status": "published",
+    "created_at": "2024-11-20 17:34:09",
+    "updated_at": "2024-11-20 17:34:09",
+    "imageUrl": "https://disccindia.org/storage/testimonials/2.png"
+  },
+  {
+    "id": 3,
+    "name": "Cody Fisher",
+    "content": "Their team is a valuable asset to our business operations. Gerow’s efficient service has saved us time and money.",
+    "image": "testimonials/3.png",
+    "company": "Foster &amp; Co.",
+    "status": "published",
+    "created_at": "2024-11-20 17:34:09",
+    "updated_at": "2024-11-20 17:34:09",
+    "imageUrl": "https://disccindia.org/storage/testimonials/3.png"
+  },
+  {
+    "id": 4,
+    "name": "Albert Flores",
+    "content": "Gerow’s attention to detail and professionalism have made them our preferred logistics partner. Highly recommended!",
+    "image": "testimonials/4.png",
+    "company": "Bank of America",
+    "status": "published",
+    "created_at": "2024-11-20 17:34:09",
+    "updated_at": "2024-11-20 17:34:09",
+    "imageUrl": "https://disccindia.org/storage/testimonials/4.png"
+  }
+]

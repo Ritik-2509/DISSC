@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "Spreading Smiles: A Glimpse into the Lives of Special Children",
+    "description": "",
+    "content": "<p>This heartwarming image captures a group of children and young individuals, each unique in their own way, standing together in unity and joy. It reflects the incredible work done by organizations like the <strong>Deva International Society for Child Care (DISCC)</strong> in providing love, care, and empowerment to children with special needs.</p><p>Located in <strong>Varanasi, India</strong>, DISCC has been a beacon of hope for underprivileged and differently-abled children. Through its various programs, such as the <strong>Deva Center</strong>, the organization offers education, rehabilitation, and vocational training, ensuring that these children receive the support they need to lead independent lives.</p><p>The smiles and expressions of determination on these children's faces tell a powerful story—one of <strong>resilience, hope, and inclusivity</strong>. Each child in this picture represents a journey filled with challenges, but also immense potential. Thanks to the dedicated efforts of caregivers, volunteers, and supporters, they are given the chance to dream and achieve.</p><p>This image is not just a photograph—it is a <strong>testament to the power of compassion</strong>. It reminds us of our collective responsibility to create a world where every child, regardless of their abilities, is embraced and given the opportunity to thrive.</p><p>If you wish to support these children and be a part of this noble cause, consider contributing to <strong>DISCC India</strong> and making a difference in their lives. Every effort counts, and together, we can build a more inclusive and loving society.</p>",
+    "status": "published",
+    "author_id": 1,
+    "author_type": "Botble\\ACL\\Models\\User",
+    "is_featured": 0,
+    "image": "assets/whatsapp-image-2025-02-17-at-103723-pm.jpeg",
+    "views": 3942,
+    "format_type": null,
+    "created_at": "2024-11-20 17:34:09",
+    "updated_at": "2025-02-17 17:07:53",
+    "slug": "spreading-smiles-a-glimpse-into-the-lives-of-special-children",
+    "imageUrl": "https://disccindia.org/storage/assets/whatsapp-image-2025-02-17-at-103723-pm.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Prime Minister Shri Narendra Modi Ji Visited Varanasi",
+    "description": "",
+    "content": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(119,119,119);font-size:16px;\"><span style=\"font-family:'Open Sans', sans-serif;font-style:normal;font-weight:400;word-spacing:0px;\">It was a great pleasure and unbelievable experience when our Prime Minister Shri Narendra Modi Ji Visited Varanasi and distributed various instruments and certification of Heath Insurance to about 9000 Disabled Children. We are very happy to say that all the Deva Staff worked day and night and helped the Govt. bodies like National Trust and NIMH in registration and distribution of instruments, teaching and learning materials to not only Deva Children but also other NGOs. Infect P.M. was kind enough to invite two Deva Children Aditi and Rimjhim on stage and blessed them. Its a great experience for Deva and Great feeling for Parents of Aditi and Rimjhim who were with the Prime Minister on the Stage.&nbsp;</span>&nbsp;</span></p>",
+    "status": "published",
+    "author_id": 1,
+    "author_type": "Botble\\ACL\\Models\\User",
+    "is_featured": 0,
+    "image": "assets/n2.jpg",
+    "views": 1974,
+    "format_type": null,
+    "created_at": "2024-11-20 17:34:09",
+    "updated_at": "2025-02-17 17:09:37",
+    "slug": "prime-minister-shri-narendra-modi-ji-visited-varanasi",
+    "imageUrl": "https://disccindia.org/storage/assets/n2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Prime Minister Shri Narendra Modi Ji Visited Varanasi DLW",
+    "description": "",
+    "content": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(119,119,119);font-size:16px;\"><span style=\"-webkit-text-stroke-width:0px;display:inline !important;float:none;font-family:&quot;Open Sans&quot;, sans-serif;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;\">Its a great experience for Deva and Great feeling for Parents of Aditi and Rimjhim who were with the Prime Minister on the Stage. Video clips and Photographs are attached for you acknowledgement. Three cheers to Deva for their service to Divyang (Mentally Challenged).&nbsp;</span></span></p>",
+    "status": "published",
+    "author_id": 1,
+    "author_type": "Botble\\ACL\\Models\\User",
+    "is_featured": 0,
+    "image": "assets/n1.jpg",
+    "views": 3371,
+    "format_type": null,
+    "created_at": "2024-11-20 17:34:09",
+    "updated_at": "2025-02-17 17:13:17",
+    "slug": "prime-minister-shri-narendra-modi-ji-visited-varanasi-dlw",
+    "imageUrl": "https://disccindia.org/storage/assets/n1.jpg"
+  }
+]

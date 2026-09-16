@@ -1,0 +1,2909 @@
+[
+  {
+    "name": "Hello DISCC",
+    "year": "2026",
+    "description": "XYZ",
+    "imageUrl": "",
+    "status": "published",
+    "images": [],
+    "id": 1789404380009,
+    "created_at": "2026-09-14T16:46:21.090Z",
+    "updated_at": "2026-09-14T16:46:21.090Z"
+  },
+  {
+    "id": 7,
+    "name": "Lui Brel's Day (2nd January 2025)",
+    "description": "<h4>Lui Brel's Day Program at St. John's School B.L.W, Varanasi</h4>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/test/img-20250102-wa0092.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-08 08:30:06",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "test-event",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248126/discc/galleries/photos/t98qdxi71r3l8fntxsi0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248126/discc/galleries/photos/t98qdxi71r3l8fntxsi0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248128/discc/galleries/photos/p0mwp4swp48zyroqugq2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248128/discc/galleries/photos/p0mwp4swp48zyroqugq2.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248130/discc/galleries/photos/cez4wevhnetordnvfzoq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248130/discc/galleries/photos/cez4wevhnetordnvfzoq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248132/discc/galleries/photos/dfdeswk0psvgktf0cy04.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248132/discc/galleries/photos/dfdeswk0psvgktf0cy04.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248134/discc/galleries/photos/snttgorjbf51our7unwz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248134/discc/galleries/photos/snttgorjbf51our7unwz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248135/discc/galleries/photos/rgtcjkmgsbsvm7mpn4c2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248135/discc/galleries/photos/rgtcjkmgsbsvm7mpn4c2.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248124/discc/galleries/covers/cyvhtakgcetpq9fnsgx8.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248124/discc/galleries/covers/cyvhtakgcetpq9fnsgx8.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Kumbh Mela 2025",
+    "description": "<p>Deva International Society for Child Care, Varanasi participated in Kumbh Mela 2025</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/kumbh-mela-2025/kumbh-mela-2025-copy.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-08 10:56:05",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "kumbh-mela-2025",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248139/discc/galleries/photos/i1mo2lltrngopja1qdli.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248139/discc/galleries/photos/i1mo2lltrngopja1qdli.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248141/discc/galleries/photos/lhvr5b8uszgwjotowrz0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248141/discc/galleries/photos/lhvr5b8uszgwjotowrz0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248143/discc/galleries/photos/sjw0fzog9hjzxmghutqz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248143/discc/galleries/photos/sjw0fzog9hjzxmghutqz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248145/discc/galleries/photos/yg2boqyzaidprj2wbjrt.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248145/discc/galleries/photos/yg2boqyzaidprj2wbjrt.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248147/discc/galleries/photos/a5vkdtq6kcmphhspriys.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248147/discc/galleries/photos/a5vkdtq6kcmphhspriys.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248148/discc/galleries/photos/ezizzqpu5xf4o0mx0kkm.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248148/discc/galleries/photos/ezizzqpu5xf4o0mx0kkm.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248137/discc/galleries/covers/t4vgvoc1xeazcfut5by5.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248137/discc/galleries/covers/t4vgvoc1xeazcfut5by5.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Republic Day 2025",
+    "description": "<p>Deva International Society for Child Care, Varanasi celebrated Republic Day 2025 at our Village branch, Deva Institute for the Empowerment of Disabilities</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/republic-day-2025/img-20250126-105626.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-08 11:23:13",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "republic-day-2025",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248152/discc/galleries/photos/yirefpqud9e4miaoxjsf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248152/discc/galleries/photos/yirefpqud9e4miaoxjsf.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248155/discc/galleries/photos/l0fichimp94mnuafhl7h.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248155/discc/galleries/photos/l0fichimp94mnuafhl7h.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248157/discc/galleries/photos/klz4f4aqfwfpq7jkrfbu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248157/discc/galleries/photos/klz4f4aqfwfpq7jkrfbu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248159/discc/galleries/photos/wteccclxp4k7rxbq7jor.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248159/discc/galleries/photos/wteccclxp4k7rxbq7jor.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248161/discc/galleries/photos/vqtauq6cmthrp7dysmwa.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248161/discc/galleries/photos/vqtauq6cmthrp7dysmwa.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248151/discc/galleries/covers/inkk7uzduelbngntdzyi.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248151/discc/galleries/covers/inkk7uzduelbngntdzyi.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248151/discc/galleries/covers/inkk7uzduelbngntdzyi.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248151/discc/galleries/covers/inkk7uzduelbngntdzyi.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Basant Panchami Puja 2025",
+    "description": "<p>All Deva Staff Celebrated Basant Panchami Puja at Deva Gram Bachhaon, Varanasi</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/basant-panchami/img-20250203-131958-1.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-08 11:45:20",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "basant-panchami",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248164/discc/galleries/photos/ucg3n2x4lbrhaosxwbje.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248164/discc/galleries/photos/ucg3n2x4lbrhaosxwbje.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248165/discc/galleries/photos/pjoo8gsgqj4g2yx3wfdl.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248165/discc/galleries/photos/pjoo8gsgqj4g2yx3wfdl.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248167/discc/galleries/photos/qzdfen1smqpqjamoxoc2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248167/discc/galleries/photos/qzdfen1smqpqjamoxoc2.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248169/discc/galleries/photos/ite5sdkznpxwlawr7d1y.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248169/discc/galleries/photos/ite5sdkznpxwlawr7d1y.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248171/discc/galleries/photos/barurxpcyhmxk52qj5kz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248171/discc/galleries/photos/barurxpcyhmxk52qj5kz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248173/discc/galleries/photos/lgjvtsw6qmxjf65krgtr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248173/discc/galleries/photos/lgjvtsw6qmxjf65krgtr.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248162/discc/galleries/covers/ihrgqegsca5orzs7agqv.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248162/discc/galleries/covers/ihrgqegsca5orzs7agqv.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Deva Children Visit to Shool Tankeshwar",
+    "description": "<p>Deva Children Visit to Shool Tankeshwar</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/shool-tankeshwar-mahadev/img-20250214-121936-1.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 09:52:53",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "deva-children-visit-to-shool-tankeshwar",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248176/discc/galleries/photos/efc2ofu1ipu88kycovb3.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248176/discc/galleries/photos/efc2ofu1ipu88kycovb3.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248177/discc/galleries/photos/qvhtrf8jlblvuq1iwm3k.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248177/discc/galleries/photos/qvhtrf8jlblvuq1iwm3k.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248179/discc/galleries/photos/d9kcoxwpbnlvykl8nzuy.bmp",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248179/discc/galleries/photos/d9kcoxwpbnlvykl8nzuy.bmp"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248174/discc/galleries/covers/dm69fz0rdnrz5ktqh8vu.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248174/discc/galleries/covers/dm69fz0rdnrz5ktqh8vu.jpg"
+  },
+  {
+    "id": 12,
+    "name": "District Level Divya Kala Mela for Divyangjan",
+    "description": "<p>District Level Divya Kala Mela for Divyangjan for 2 Days</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/divya-kala-mela/img-20250221-101608.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 10:31:45",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "state-level",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248182/discc/galleries/photos/p5v3xpgbb9arolgbio6o.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248182/discc/galleries/photos/p5v3xpgbb9arolgbio6o.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248182/discc/galleries/photos/p5v3xpgbb9arolgbio6o.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248182/discc/galleries/photos/p5v3xpgbb9arolgbio6o.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248184/discc/galleries/photos/ybl37uheeywtyz31gjey.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248184/discc/galleries/photos/ybl37uheeywtyz31gjey.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248185/discc/galleries/photos/nl8auze6dhyuhbixkvpv.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248185/discc/galleries/photos/nl8auze6dhyuhbixkvpv.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248186/discc/galleries/photos/w3jhdn6lbgkd8bksudax.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248186/discc/galleries/photos/w3jhdn6lbgkd8bksudax.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248188/discc/galleries/photos/nypesfnjh2nma2eidt69.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248188/discc/galleries/photos/nypesfnjh2nma2eidt69.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248189/discc/galleries/photos/j2afpm3qorfbvtefbtai.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248189/discc/galleries/photos/j2afpm3qorfbvtefbtai.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248191/discc/galleries/photos/jurrgyau0zftuhgt6r8r.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248191/discc/galleries/photos/jurrgyau0zftuhgt6r8r.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248193/discc/galleries/photos/a2n2doagwo3ua2w4b0qn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248193/discc/galleries/photos/a2n2doagwo3ua2w4b0qn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248181/discc/galleries/covers/trsk7nzrs5vdu1nwketo.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248181/discc/galleries/covers/trsk7nzrs5vdu1nwketo.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248194/discc/galleries/photos/vmdifw0akyiehla3vvx3.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248194/discc/galleries/photos/vmdifw0akyiehla3vvx3.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248196/discc/galleries/photos/hxfn2pdo3y8zpnovag4i.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248196/discc/galleries/photos/hxfn2pdo3y8zpnovag4i.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248181/discc/galleries/covers/trsk7nzrs5vdu1nwketo.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248181/discc/galleries/covers/trsk7nzrs5vdu1nwketo.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Teacher Training Program",
+    "description": "<p>Teacher Training Program at Amarawati Purushottam Day Care, Varanasi</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/teacher-training-program/img-20250221-161638.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 10:35:14",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "teacher-training-program",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248199/discc/galleries/photos/c9xic5ehnhvc1n9hpuk0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248199/discc/galleries/photos/c9xic5ehnhvc1n9hpuk0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248197/discc/galleries/covers/dbcqoul1cxjdond6wdld.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248197/discc/galleries/covers/dbcqoul1cxjdond6wdld.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248200/discc/galleries/photos/lwevhy4gvphzsp25oelp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248200/discc/galleries/photos/lwevhy4gvphzsp25oelp.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248197/discc/galleries/covers/dbcqoul1cxjdond6wdld.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248197/discc/galleries/covers/dbcqoul1cxjdond6wdld.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Chips Making &amp; Rehabilitation Program for Divyangjan",
+    "description": "<p>Chips Making &amp; Rehabilitation Program for Divyangjan at Deva Gram Bachhaon, Varanasi</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/chips-making/img-20250307-122146.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 10:51:45",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "chips-making-training-for-divyangjan",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248202/discc/galleries/photos/rcvkvxyav37nktmipbqi.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248202/discc/galleries/photos/rcvkvxyav37nktmipbqi.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248204/discc/galleries/photos/bbsbtmrb1cq1ddduezol.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248204/discc/galleries/photos/bbsbtmrb1cq1ddduezol.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248201/discc/galleries/covers/skgwzqyfv9qs6be0vw5u.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248201/discc/galleries/covers/skgwzqyfv9qs6be0vw5u.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248205/discc/galleries/photos/beyy8xmzjuefcadhfv30.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248205/discc/galleries/photos/beyy8xmzjuefcadhfv30.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248207/discc/galleries/photos/l3vd49kqde7vakva24gk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248207/discc/galleries/photos/l3vd49kqde7vakva24gk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248208/discc/galleries/photos/zdkyr1q64o1odoc6rgs0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248208/discc/galleries/photos/zdkyr1q64o1odoc6rgs0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248209/discc/galleries/photos/vk3tpg6ljyfnsik3fmkv.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248209/discc/galleries/photos/vk3tpg6ljyfnsik3fmkv.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248211/discc/galleries/photos/pef769emojbegwqatfcn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248211/discc/galleries/photos/pef769emojbegwqatfcn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248212/discc/galleries/photos/qsq04lcymgy4cmzk1bwb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248212/discc/galleries/photos/qsq04lcymgy4cmzk1bwb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248214/discc/galleries/photos/b5qawx8ork13lttrvy2x.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248214/discc/galleries/photos/b5qawx8ork13lttrvy2x.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248215/discc/galleries/photos/af3kv0rurbszjhv0wuuk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248215/discc/galleries/photos/af3kv0rurbszjhv0wuuk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248217/discc/galleries/photos/qvo7tmw063ngbc1ikozu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248217/discc/galleries/photos/qvo7tmw063ngbc1ikozu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248218/discc/galleries/photos/zktrakgne8mkgrtyqrvl.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248218/discc/galleries/photos/zktrakgne8mkgrtyqrvl.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248219/discc/galleries/photos/inrsrluaemgqlv15ieky.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248219/discc/galleries/photos/inrsrluaemgqlv15ieky.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248201/discc/galleries/covers/skgwzqyfv9qs6be0vw5u.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248201/discc/galleries/covers/skgwzqyfv9qs6be0vw5u.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Education Faculty of BHU Student Visiting at Deva Center",
+    "description": "<p>Education Faculty of BHU Student Visiting at Deva Center</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/bhu-student-visit/img-20250308-124016.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 11:06:04",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "education-faculty-of-bhu-student-visiting-at-deva-center",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248222/discc/galleries/photos/vxagrf9ai0iqqycsnudr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248222/discc/galleries/photos/vxagrf9ai0iqqycsnudr.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248223/discc/galleries/photos/ccualhxzlwlst9hzttwm.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248223/discc/galleries/photos/ccualhxzlwlst9hzttwm.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248221/discc/galleries/covers/wcyxhj3uak7fpkjvvrct.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248221/discc/galleries/covers/wcyxhj3uak7fpkjvvrct.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248221/discc/galleries/covers/wcyxhj3uak7fpkjvvrct.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248221/discc/galleries/covers/wcyxhj3uak7fpkjvvrct.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Divyang Children of Deva Center Playing HOLI",
+    "description": "<p>Divyang Children of Deva Center Playing HOLI with their mates and teachers</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/holi/0111.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 11:26:57",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "divyang-children-of-deva-center-playing-holi",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248226/discc/galleries/photos/tlux7b5awcpndq3yqhb5.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248226/discc/galleries/photos/tlux7b5awcpndq3yqhb5.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248227/discc/galleries/photos/hdnvgtwnocwqqdmcv3jp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248227/discc/galleries/photos/hdnvgtwnocwqqdmcv3jp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248229/discc/galleries/photos/lp44spzowmlwuoppwdrp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248229/discc/galleries/photos/lp44spzowmlwuoppwdrp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248230/discc/galleries/photos/wnwaukycw4iguyan4pnc.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248230/discc/galleries/photos/wnwaukycw4iguyan4pnc.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248231/discc/galleries/photos/uoqwk7jfkjgb50xjqfdr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248231/discc/galleries/photos/uoqwk7jfkjgb50xjqfdr.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248233/discc/galleries/photos/qh2mbh98tiuyun3ymrob.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248233/discc/galleries/photos/qh2mbh98tiuyun3ymrob.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248234/discc/galleries/photos/wryhkcjudbf3vdeu92qq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248234/discc/galleries/photos/wryhkcjudbf3vdeu92qq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248235/discc/galleries/photos/fywix8wdod90f9gqdwdy.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248235/discc/galleries/photos/fywix8wdod90f9gqdwdy.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248225/discc/galleries/covers/i5frluynycg9rqihk394.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248225/discc/galleries/covers/i5frluynycg9rqihk394.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Down Syndrome Day 2025",
+    "description": "<p>Celebrating Down Syndrome Day 2025 at Education Faculty of BHU, Kamachha, Varanasi with Divyang Children of Deva, Student of Education Faculty of BHU and DEva Staff</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/world-down-syndrome-day-2025-celebration/img-20250321-121437.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 11:36:52",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "down-syndrome-day-2025",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248238/discc/galleries/photos/gjflbxs4abrpasmy7qqk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248238/discc/galleries/photos/gjflbxs4abrpasmy7qqk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248240/discc/galleries/photos/y78yx1p3uvaszydvw3v2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248240/discc/galleries/photos/y78yx1p3uvaszydvw3v2.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248241/discc/galleries/photos/dxlnjbjytflvrq9e7s3k.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248241/discc/galleries/photos/dxlnjbjytflvrq9e7s3k.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248242/discc/galleries/photos/hnvizaac6dfdpnnsit3t.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248242/discc/galleries/photos/hnvizaac6dfdpnnsit3t.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248237/discc/galleries/covers/c3gtvujsmj9f2ka4m2k1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248237/discc/galleries/covers/c3gtvujsmj9f2ka4m2k1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248244/discc/galleries/photos/unriaksqvbgww2inpf79.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248244/discc/galleries/photos/unriaksqvbgww2inpf79.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248245/discc/galleries/photos/fpkgdvht0api4xehzd1v.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248245/discc/galleries/photos/fpkgdvht0api4xehzd1v.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248247/discc/galleries/photos/pnext35xn2okupdzb2va.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248247/discc/galleries/photos/pnext35xn2okupdzb2va.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248248/discc/galleries/photos/rjxzxvy3jymqncm27kne.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248248/discc/galleries/photos/rjxzxvy3jymqncm27kne.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248250/discc/galleries/photos/g7b8kuurlwrdqo5dn3w3.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248250/discc/galleries/photos/g7b8kuurlwrdqo5dn3w3.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248251/discc/galleries/photos/qogs7jbqr2uyrlagcyit.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248251/discc/galleries/photos/qogs7jbqr2uyrlagcyit.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248252/discc/galleries/photos/lw7ew7qxdlohuqpleqmu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248252/discc/galleries/photos/lw7ew7qxdlohuqpleqmu.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248237/discc/galleries/covers/c3gtvujsmj9f2ka4m2k1.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248237/discc/galleries/covers/c3gtvujsmj9f2ka4m2k1.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Institution Honoring Program for Kumbh Mela",
+    "description": "<p>Institution Honoring Program for Kumbh Mela at Vikaas Bhavan, Varanasi</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/vikaas-bhavan/img-20250329-wa0013.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 11:43:26",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "honoring-program-for-kumbh-mela",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248255/discc/galleries/photos/myujuutxmyvksdoxjxc0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248255/discc/galleries/photos/myujuutxmyvksdoxjxc0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248254/discc/galleries/covers/ojs0p75vww8b6ppyg44f.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248254/discc/galleries/covers/ojs0p75vww8b6ppyg44f.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248257/discc/galleries/photos/j1sc3yayb5frkxacwq6t.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248257/discc/galleries/photos/j1sc3yayb5frkxacwq6t.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248258/discc/galleries/photos/mlpgiemuow2ko2gmxryr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248258/discc/galleries/photos/mlpgiemuow2ko2gmxryr.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248260/discc/galleries/photos/fld0i4rygbmzzgc0fm4m.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248260/discc/galleries/photos/fld0i4rygbmzzgc0fm4m.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248254/discc/galleries/covers/ojs0p75vww8b6ppyg44f.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248254/discc/galleries/covers/ojs0p75vww8b6ppyg44f.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Three Days CRE Program",
+    "description": "<p>Three Days CRE Program at Education Faculty BHU, Kamachha, Varanasi on 26, 27, 28, March 2025</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/cre-program-1/222.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-21 12:01:07",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "three-days-cre-program",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248263/discc/galleries/photos/h2z4doguvgptpekvgnva.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248263/discc/galleries/photos/h2z4doguvgptpekvgnva.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248265/discc/galleries/photos/x7y4965joue7imhksvvl.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248265/discc/galleries/photos/x7y4965joue7imhksvvl.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248266/discc/galleries/photos/kpvxmkrr3bsaaige8oyf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248266/discc/galleries/photos/kpvxmkrr3bsaaige8oyf.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248267/discc/galleries/photos/ynitzf8tkxasoeyecu6q.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248267/discc/galleries/photos/ynitzf8tkxasoeyecu6q.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248269/discc/galleries/photos/xbmilqqure48lqfnfxk8.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248269/discc/galleries/photos/xbmilqqure48lqfnfxk8.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248270/discc/galleries/photos/bxvanh6ekrkszeu4qkqu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248270/discc/galleries/photos/bxvanh6ekrkszeu4qkqu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248271/discc/galleries/photos/kf95v8stfhniwfzszxgl.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248271/discc/galleries/photos/kf95v8stfhniwfzszxgl.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248273/discc/galleries/photos/r9scn5kt9lxhidqmx7wx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248273/discc/galleries/photos/r9scn5kt9lxhidqmx7wx.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248274/discc/galleries/photos/lggurgvgtuzbdiysz9c2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248274/discc/galleries/photos/lggurgvgtuzbdiysz9c2.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248275/discc/galleries/photos/aflehbat84md1d0teo6p.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248275/discc/galleries/photos/aflehbat84md1d0teo6p.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248277/discc/galleries/photos/eegsnyxqd4o0wsjmnhpg.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248277/discc/galleries/photos/eegsnyxqd4o0wsjmnhpg.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248278/discc/galleries/photos/hcwqfuf3jxa9dmxkqfom.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248278/discc/galleries/photos/hcwqfuf3jxa9dmxkqfom.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248279/discc/galleries/photos/lu7jeesafftxoxi41j4n.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248279/discc/galleries/photos/lu7jeesafftxoxi41j4n.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248281/discc/galleries/photos/uabrtu3xfjutjhfctpas.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248281/discc/galleries/photos/uabrtu3xfjutjhfctpas.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248282/discc/galleries/photos/v3syvh8ij0ngmjrjwcgt.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248282/discc/galleries/photos/v3syvh8ij0ngmjrjwcgt.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248283/discc/galleries/photos/rqlaubdlnohvb8rrnw9u.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248283/discc/galleries/photos/rqlaubdlnohvb8rrnw9u.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248285/discc/galleries/photos/yhebqe5pww2p4z11lxm3.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248285/discc/galleries/photos/yhebqe5pww2p4z11lxm3.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248286/discc/galleries/photos/qb2wxoomokoevk47tazu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248286/discc/galleries/photos/qb2wxoomokoevk47tazu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248288/discc/galleries/photos/ygqf3eommqcdt7lnrfja.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248288/discc/galleries/photos/ygqf3eommqcdt7lnrfja.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248289/discc/galleries/photos/kgujgp1sgxooypbjpnm8.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248289/discc/galleries/photos/kgujgp1sgxooypbjpnm8.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248291/discc/galleries/photos/s6vgkmhyfi01vpwpypq1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248291/discc/galleries/photos/s6vgkmhyfi01vpwpypq1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248293/discc/galleries/photos/wbrwymort1bqlkmc7ysw.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248293/discc/galleries/photos/wbrwymort1bqlkmc7ysw.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248261/discc/galleries/covers/rzdcwro0nd0u6ezcqj4e.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248261/discc/galleries/covers/rzdcwro0nd0u6ezcqj4e.jpg"
+  },
+  {
+    "id": 20,
+    "name": "World Autism Day 2025",
+    "description": "<p>The Children Of Deva Integrated School for the Handicapped Celebrated World Autism Day 2025 at Asst Ghat, Subha-a-Banaras Manch</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/world-autism-day-2025/img-20250402-062046.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-29 11:28:03",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "world-autism-day-2025",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248296/discc/galleries/photos/tbisznsrsirhv7ah6oem.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248296/discc/galleries/photos/tbisznsrsirhv7ah6oem.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248297/discc/galleries/photos/saamq7kxango1b0kukaf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248297/discc/galleries/photos/saamq7kxango1b0kukaf.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248299/discc/galleries/photos/cen53bkwsiyt1saay5pn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248299/discc/galleries/photos/cen53bkwsiyt1saay5pn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248300/discc/galleries/photos/cgwbwk4tgfis2jnkzszp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248300/discc/galleries/photos/cgwbwk4tgfis2jnkzszp.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248294/discc/galleries/covers/ddfu2hrit0jracaa0f9u.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248294/discc/galleries/covers/ddfu2hrit0jracaa0f9u.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Inner Wheel Club Varanasi Sunrise Visit at Deva Center",
+    "description": "<p>The President &amp; Members of Inner Wheel Club Varanasi Sunrise visited at Deva Center and distributed gift items for Mentally Challenged Children on 4th April 2025</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/inner-wheel-club-varanasi/img-20250404-115538.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-29 11:35:39",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "inner-wheel-club-varanasi",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248304/discc/galleries/photos/iak87xneku2juj7ik6as.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248304/discc/galleries/photos/iak87xneku2juj7ik6as.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248305/discc/galleries/photos/w3pof6jsvfxdwuux5fgy.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248305/discc/galleries/photos/w3pof6jsvfxdwuux5fgy.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248307/discc/galleries/photos/jciscwdi9r8sc7ldgbes.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248307/discc/galleries/photos/jciscwdi9r8sc7ldgbes.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248308/discc/galleries/photos/dsdbb3jvgxjvtotkmdme.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248308/discc/galleries/photos/dsdbb3jvgxjvtotkmdme.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248302/discc/galleries/covers/h1sjsimqod9tdknyvygj.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248302/discc/galleries/covers/h1sjsimqod9tdknyvygj.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Thanks Giving Program at Education of Faculty BHU, Varanasi",
+    "description": "<p>Thanks Giving Program at Education of Faculty BHU, Varanasi</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/thanks-giving-program/img-20250405-123629.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-29 11:42:12",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "thanks-giving-program",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248311/discc/galleries/photos/axaawmxdfyzpcc19vtly.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248311/discc/galleries/photos/axaawmxdfyzpcc19vtly.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248312/discc/galleries/photos/iyno6zj2panl24uvy6sl.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248312/discc/galleries/photos/iyno6zj2panl24uvy6sl.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248309/discc/galleries/covers/rtthxrz84iicoxehnq5t.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248309/discc/galleries/covers/rtthxrz84iicoxehnq5t.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248313/discc/galleries/photos/dz9mmzs4by9xafpxebuf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248313/discc/galleries/photos/dz9mmzs4by9xafpxebuf.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248309/discc/galleries/covers/rtthxrz84iicoxehnq5t.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248309/discc/galleries/covers/rtthxrz84iicoxehnq5t.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Birth Day Celebration Apoorva Rai",
+    "description": "<p> Teachers &amp; Mentally Challenged Children Celebrated Apoorva Rai's Birth Day at Deva Gram Bachhaon, Varanasi</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/birth-day/img-20250415-130235.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-29 11:48:17",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "birth-day-celebration",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248315/discc/galleries/covers/sh0aod8zdtd7572wg90r.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248315/discc/galleries/covers/sh0aod8zdtd7572wg90r.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248316/discc/galleries/photos/uaxnmvxju2j9psvzugz4.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248316/discc/galleries/photos/uaxnmvxju2j9psvzugz4.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248317/discc/galleries/photos/gipe8ezsrljoxo9qxqwz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248317/discc/galleries/photos/gipe8ezsrljoxo9qxqwz.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248315/discc/galleries/covers/sh0aod8zdtd7572wg90r.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248315/discc/galleries/covers/sh0aod8zdtd7572wg90r.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Birth Day Celebration Sunil",
+    "description": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(51,71,112);font-size:16px;\"><span style=\"font-family:'Plus Jakarta Sans', sans-serif;font-style:normal;font-weight:500;word-spacing:0px;\">Teachers &amp; Mentally Challenged Children Celebrated Sunil's Birth Day at Deva Gram Bachhaon, Varanasi</span></span></p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/birth-day-sunil/img-20250418-141508.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-29 11:52:28",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "birth-day-celebration-1",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248320/discc/galleries/photos/yhb9yuwwbsnnmnveuvo8.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248320/discc/galleries/photos/yhb9yuwwbsnnmnveuvo8.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248319/discc/galleries/covers/vwizeqqbieadv8krvgfc.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248319/discc/galleries/covers/vwizeqqbieadv8krvgfc.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248319/discc/galleries/covers/vwizeqqbieadv8krvgfc.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248319/discc/galleries/covers/vwizeqqbieadv8krvgfc.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Student of Dhirendra Mahila PG College Visited at Deva Gram Bachhaon, Varanasi",
+    "description": "<p>Student of Dhirendra Mahila PG College Visited at Deva Gram Bachhaon, Varanasi</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/dhirendra-mahila/img-20250424-135513.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-04-29 12:02:24",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "student-of-dhirendra-mahila-pg-college-visiting",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248323/discc/galleries/photos/gzinf7xoqqhyv9cbtv9n.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248323/discc/galleries/photos/gzinf7xoqqhyv9cbtv9n.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248324/discc/galleries/photos/iavjl0vpik4jnsdio6b0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248324/discc/galleries/photos/iavjl0vpik4jnsdio6b0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248322/discc/galleries/covers/ac29qrqvvgb18re5cmre.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248322/discc/galleries/covers/ac29qrqvvgb18re5cmre.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248326/discc/galleries/photos/atuxgeo3eoqdhc6gulkz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248326/discc/galleries/photos/atuxgeo3eoqdhc6gulkz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248327/discc/galleries/photos/zwbzcqnun7vc0ot42q9q.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248327/discc/galleries/photos/zwbzcqnun7vc0ot42q9q.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248329/discc/galleries/photos/otxnpsznf9pvb8hygiba.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248329/discc/galleries/photos/otxnpsznf9pvb8hygiba.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248330/discc/galleries/photos/fiyryse0twnnt3bncwqn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248330/discc/galleries/photos/fiyryse0twnnt3bncwqn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248331/discc/galleries/photos/ikay1t0cgqja0uesbhjh.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248331/discc/galleries/photos/ikay1t0cgqja0uesbhjh.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248333/discc/galleries/photos/dsbhnqwg4dgmtve6xk87.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248333/discc/galleries/photos/dsbhnqwg4dgmtve6xk87.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248334/discc/galleries/photos/xdwpvhqy4mwcqed1ddq5.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248334/discc/galleries/photos/xdwpvhqy4mwcqed1ddq5.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248336/discc/galleries/photos/yzwinizmhxfdkvs6crn4.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248336/discc/galleries/photos/yzwinizmhxfdkvs6crn4.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248322/discc/galleries/covers/ac29qrqvvgb18re5cmre.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248322/discc/galleries/covers/ac29qrqvvgb18re5cmre.jpg"
+  },
+  {
+    "id": 26,
+    "name": "International Day of Yoga",
+    "description": "<p>Deva International Society for Child Care, Varanasi and National Trust, Govt. of India Celebrate International Day of Yoga at Deva Gram, Bachhaon, Varanasi. There are more than 100 people participated in this program along with Divyang Children with their parents.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/yoga-day/web-1.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-06-23 08:26:19",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "international-day-of-yoga",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248339/discc/galleries/photos/hkhpgvtiqoeqf2hq7vb1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248339/discc/galleries/photos/hkhpgvtiqoeqf2hq7vb1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248340/discc/galleries/photos/b5x8p2afbis39ayqnk2o.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248340/discc/galleries/photos/b5x8p2afbis39ayqnk2o.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248342/discc/galleries/photos/u1ncrrk1vt2x2tpzd8kq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248342/discc/galleries/photos/u1ncrrk1vt2x2tpzd8kq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248344/discc/galleries/photos/acc5xr3kmsel8vjezyqu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248344/discc/galleries/photos/acc5xr3kmsel8vjezyqu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248346/discc/galleries/photos/rmmksgsjourxhhsebjso.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248346/discc/galleries/photos/rmmksgsjourxhhsebjso.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248348/discc/galleries/photos/lx4w5zx5cwu32npeil89.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248348/discc/galleries/photos/lx4w5zx5cwu32npeil89.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248350/discc/galleries/photos/wi3szjulutnmn8iefruo.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248350/discc/galleries/photos/wi3szjulutnmn8iefruo.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248352/discc/galleries/photos/brv9ccib0obvgtabsjjo.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248352/discc/galleries/photos/brv9ccib0obvgtabsjjo.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248353/discc/galleries/photos/jefeujaspokeldd7fm26.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248353/discc/galleries/photos/jefeujaspokeldd7fm26.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248355/discc/galleries/photos/cgcyrh4voaua1z6ayjw6.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248355/discc/galleries/photos/cgcyrh4voaua1z6ayjw6.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248357/discc/galleries/photos/aao0pvqm0101drzfjfzo.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248357/discc/galleries/photos/aao0pvqm0101drzfjfzo.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248359/discc/galleries/photos/s4k5otuwe2cayabrqklt.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248359/discc/galleries/photos/s4k5otuwe2cayabrqklt.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248360/discc/galleries/photos/lcvisffyddmvz4x7ungr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248360/discc/galleries/photos/lcvisffyddmvz4x7ungr.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248362/discc/galleries/photos/l2qvhxzdpq8heskfkn2y.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248362/discc/galleries/photos/l2qvhxzdpq8heskfkn2y.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248337/discc/galleries/covers/c0o6qkylczqcupyphd8y.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248337/discc/galleries/covers/c0o6qkylczqcupyphd8y.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Trip to Mundeshwari Devi",
+    "description": "<p>Deva International Society for child care, Varanasi organised a Trip for Maa Mundeshwari Devi Temple, Kaimur, Bihar for one day. All Staff of Deva center and their families were invited in this one day trip.  </p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/mundeshwari-devi/cq5damweb2000765-7-1.jpeg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-07-01 09:06:57",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "trip-to-mundeshwari-devi",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248366/discc/galleries/photos/w5eghypnbl2yozwlniqf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248366/discc/galleries/photos/w5eghypnbl2yozwlniqf.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248367/discc/galleries/photos/tlpzu5oyu99y7o76bnf4.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248367/discc/galleries/photos/tlpzu5oyu99y7o76bnf4.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248369/discc/galleries/photos/nlndnmmnh5731qqhezth.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248369/discc/galleries/photos/nlndnmmnh5731qqhezth.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248371/discc/galleries/photos/wkn67fgqvthibir0p6k6.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248371/discc/galleries/photos/wkn67fgqvthibir0p6k6.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248373/discc/galleries/photos/wc72mkqo5tbzoi8dotcc.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248373/discc/galleries/photos/wc72mkqo5tbzoi8dotcc.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248375/discc/galleries/photos/jgrwng5ixoziqu3gjyv9.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248375/discc/galleries/photos/jgrwng5ixoziqu3gjyv9.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248377/discc/galleries/photos/gp5xgtvmkmsjbyapbhfp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248377/discc/galleries/photos/gp5xgtvmkmsjbyapbhfp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248379/discc/galleries/photos/nx3sdkyzb8bvovavz1v7.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248379/discc/galleries/photos/nx3sdkyzb8bvovavz1v7.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248364/discc/galleries/covers/ieqyaqszjexsm80agl0n.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248364/discc/galleries/covers/ieqyaqszjexsm80agl0n.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Celebration of School Re-Open",
+    "description": "<p>Deva Center's all Teachers! welcomed all student of Deva with Tilak. </p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/school-re-open/web-copy.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-07-01 09:26:47",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "celebration-of-school-re-open",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248382/discc/galleries/photos/hwfkvgi0qqtida0vlgll.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248382/discc/galleries/photos/hwfkvgi0qqtida0vlgll.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248383/discc/galleries/photos/vm5hngcarjgpijdmxup6.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248383/discc/galleries/photos/vm5hngcarjgpijdmxup6.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248385/discc/galleries/photos/avz8o2ayqy5n9akuhnpp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248385/discc/galleries/photos/avz8o2ayqy5n9akuhnpp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248387/discc/galleries/photos/sr4yr65qczneag2zhgfy.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248387/discc/galleries/photos/sr4yr65qczneag2zhgfy.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248388/discc/galleries/photos/lpdyvziklpvzirr5atba.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248388/discc/galleries/photos/lpdyvziklpvzirr5atba.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248390/discc/galleries/photos/f2dzel0nrnn4pcaufpf4.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248390/discc/galleries/photos/f2dzel0nrnn4pcaufpf4.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248392/discc/galleries/photos/pyphaxyv7yyy8oohx7t9.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248392/discc/galleries/photos/pyphaxyv7yyy8oohx7t9.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248394/discc/galleries/photos/oxp1rihdgflcohrymf6k.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248394/discc/galleries/photos/oxp1rihdgflcohrymf6k.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248380/discc/galleries/covers/zp9ippvf0qpun1jk0kuo.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248380/discc/galleries/covers/zp9ippvf0qpun1jk0kuo.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Birthday Celebration of Madam Elisabeth, France",
+    "description": "<p>Deva International Society for Child Care, Varanasi and Ashadiya Foundation Celebrated Madam Elizabeth's Birth Day at Deva Gram located at Bachhaon, On July 6th 2025. There were more than 70 Children and Adults participated in this Celebration and Enjoy the Cake and Food after that we make a new 10 plantation for acknowledgement of this day. </p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/elisabeth-birth/whatsapp-image-2025-07-06-at-63051-pm-1-1.jpeg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-07-07 12:04:51",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "birthday-celebration-of-madam-elisabeth-france",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248397/discc/galleries/photos/jhkt7rmtgdxvfqlqkrnb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248397/discc/galleries/photos/jhkt7rmtgdxvfqlqkrnb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248399/discc/galleries/photos/sowdqibcbwnwjve07si7.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248399/discc/galleries/photos/sowdqibcbwnwjve07si7.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248400/discc/galleries/photos/ole4olusl8luqqncsy6g.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248400/discc/galleries/photos/ole4olusl8luqqncsy6g.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248402/discc/galleries/photos/wpxykikw3autr9swikyc.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248402/discc/galleries/photos/wpxykikw3autr9swikyc.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248403/discc/galleries/photos/y3krjhhliks1plxivcy2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248403/discc/galleries/photos/y3krjhhliks1plxivcy2.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248405/discc/galleries/photos/ci1ud1kutkezoluuuu7r.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248405/discc/galleries/photos/ci1ud1kutkezoluuuu7r.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248407/discc/galleries/photos/bxs4rkninqddgqpvobky.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248407/discc/galleries/photos/bxs4rkninqddgqpvobky.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248408/discc/galleries/photos/kq2ncpk71afohfipcfca.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248408/discc/galleries/photos/kq2ncpk71afohfipcfca.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248410/discc/galleries/photos/fe5dh7hdptlx56zu4fof.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248410/discc/galleries/photos/fe5dh7hdptlx56zu4fof.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248411/discc/galleries/photos/pdf4tiodyirq5aul0z7l.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248411/discc/galleries/photos/pdf4tiodyirq5aul0z7l.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248413/discc/galleries/photos/wkhpeo7rgq3ys3ejwcnh.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248413/discc/galleries/photos/wkhpeo7rgq3ys3ejwcnh.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248414/discc/galleries/photos/dpwztenqmc7t61hhx9vf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248414/discc/galleries/photos/dpwztenqmc7t61hhx9vf.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248416/discc/galleries/photos/fakjybfo4o3a1jracg7y.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248416/discc/galleries/photos/fakjybfo4o3a1jracg7y.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248417/discc/galleries/photos/srxvezklprargwjlgfrs.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248417/discc/galleries/photos/srxvezklprargwjlgfrs.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248419/discc/galleries/photos/y2yyaswkevs8sqwjvjxj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248419/discc/galleries/photos/y2yyaswkevs8sqwjvjxj.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248420/discc/galleries/photos/o8bruask1buapizjlets.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248420/discc/galleries/photos/o8bruask1buapizjlets.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248422/discc/galleries/photos/fpgep85gclykklnmjvqg.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248422/discc/galleries/photos/fpgep85gclykklnmjvqg.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248423/discc/galleries/photos/ukrp9wyiafwmy5xk6rlx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248423/discc/galleries/photos/ukrp9wyiafwmy5xk6rlx.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248424/discc/galleries/photos/rpekrpg2llmzqicv6nvr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248424/discc/galleries/photos/rpekrpg2llmzqicv6nvr.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248426/discc/galleries/photos/zzzhhmclxv6nag0dteoj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248426/discc/galleries/photos/zzzhhmclxv6nag0dteoj.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248427/discc/galleries/photos/ha7swnehmh8x7ihfamw0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248427/discc/galleries/photos/ha7swnehmh8x7ihfamw0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248429/discc/galleries/photos/invvr8u0q8qc09kcjlly.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248429/discc/galleries/photos/invvr8u0q8qc09kcjlly.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248430/discc/galleries/photos/yihqyqvd4lvgl4ejjsud.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248430/discc/galleries/photos/yihqyqvd4lvgl4ejjsud.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248432/discc/galleries/photos/j8eyggjw60m4jtrgjth3.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248432/discc/galleries/photos/j8eyggjw60m4jtrgjth3.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248434/discc/galleries/photos/gtl5ajvqm0qfp1whuhjv.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248434/discc/galleries/photos/gtl5ajvqm0qfp1whuhjv.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248395/discc/galleries/covers/bpafef2ls3f3wuonswy3.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248395/discc/galleries/covers/bpafef2ls3f3wuonswy3.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Nasha Mukt Yuva Program at Rudraksha Center Sigra",
+    "description": "<p>Mr. Shyam Lal Patel, secretary DISCC and Mr. Pramod Kumar, Accountant DISCC have participated in 3 days programs on Nasha Mukt Yuva for Vikasit India at Rudraksha Center, Sigra, Varanasi from July 18 th to July 20th.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/nasha-mukt-india/5-x-7.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-08-18 09:09:41",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "nasha-mukt-yuva",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248437/discc/galleries/photos/odcdleypeujnumysaqum.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248437/discc/galleries/photos/odcdleypeujnumysaqum.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248439/discc/galleries/photos/zx7b3qbozv43mcwk9nqb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248439/discc/galleries/photos/zx7b3qbozv43mcwk9nqb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248441/discc/galleries/photos/qswcaiakf8z6cla2yo2k.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248441/discc/galleries/photos/qswcaiakf8z6cla2yo2k.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248442/discc/galleries/photos/meypuhrmafqmwhgkz1t1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248442/discc/galleries/photos/meypuhrmafqmwhgkz1t1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248435/discc/galleries/covers/s6mxhodiqut0mif8porx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248435/discc/galleries/covers/s6mxhodiqut0mif8porx.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248435/discc/galleries/covers/s6mxhodiqut0mif8porx.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248435/discc/galleries/covers/s6mxhodiqut0mif8porx.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Sri Krishna Janmotsav Celebration",
+    "description": "<p>Sri Krishna Janmotsav celebration at Deva Gram Bachhaon on 14th August by Deva Gram Children.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/sri-krishna-janmotsav/5x7.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-08-18 09:18:16",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "sri-krishna-janmotsav",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248444/discc/galleries/covers/y9eq6vciyjyy7bxhrrzc.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248444/discc/galleries/covers/y9eq6vciyjyy7bxhrrzc.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248446/discc/galleries/photos/f9eqo5pbeujcx6fxuktb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248446/discc/galleries/photos/f9eqo5pbeujcx6fxuktb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248447/discc/galleries/photos/rfhyvuzddokaivzgfnhn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248447/discc/galleries/photos/rfhyvuzddokaivzgfnhn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248449/discc/galleries/photos/gdv9idbrldornb5xkth0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248449/discc/galleries/photos/gdv9idbrldornb5xkth0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248451/discc/galleries/photos/isssdxt7lpn5u7rnrixn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248451/discc/galleries/photos/isssdxt7lpn5u7rnrixn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248453/discc/galleries/photos/ncpbzbofjtjt8lofvupp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248453/discc/galleries/photos/ncpbzbofjtjt8lofvupp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248455/discc/galleries/photos/e4neypbiqhfcf57uu4xq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248455/discc/galleries/photos/e4neypbiqhfcf57uu4xq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248456/discc/galleries/photos/a86oyb8cxmvb2jlgwafv.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248456/discc/galleries/photos/a86oyb8cxmvb2jlgwafv.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248458/discc/galleries/photos/qui6pltudskghjzsoox7.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248458/discc/galleries/photos/qui6pltudskghjzsoox7.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248460/discc/galleries/photos/ni12agrljkfgan6ix6es.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248460/discc/galleries/photos/ni12agrljkfgan6ix6es.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248444/discc/galleries/covers/y9eq6vciyjyy7bxhrrzc.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248444/discc/galleries/covers/y9eq6vciyjyy7bxhrrzc.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Independence Day 2025",
+    "description": "<p>Independence Day 2025 celebration at Deva Gram Bachhaon.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/independence-day-celebration/5-x-7.jpeg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-08-18 09:26:28",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "independence-day-2025",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248464/discc/galleries/photos/d0gvabos7e53ukwrcunw.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248464/discc/galleries/photos/d0gvabos7e53ukwrcunw.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248466/discc/galleries/photos/mhjbzcwmfqy0j92belak.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248466/discc/galleries/photos/mhjbzcwmfqy0j92belak.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248467/discc/galleries/photos/yyfzslpalqcd1uhngzgq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248467/discc/galleries/photos/yyfzslpalqcd1uhngzgq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248469/discc/galleries/photos/mlwvuy9zngab2eppltds.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248469/discc/galleries/photos/mlwvuy9zngab2eppltds.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248471/discc/galleries/photos/o380t0rxuamxtbwsopr4.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248471/discc/galleries/photos/o380t0rxuamxtbwsopr4.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248473/discc/galleries/photos/i0virpqdonirrzihrdib.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248473/discc/galleries/photos/i0virpqdonirrzihrdib.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248474/discc/galleries/photos/kp5efprgtgkevwu5nscv.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248474/discc/galleries/photos/kp5efprgtgkevwu5nscv.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248476/discc/galleries/photos/kbqxwc5omsyd9zpmtcrf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248476/discc/galleries/photos/kbqxwc5omsyd9zpmtcrf.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248478/discc/galleries/photos/tehfnhfvvspcnpfqugmj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248478/discc/galleries/photos/tehfnhfvvspcnpfqugmj.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248479/discc/galleries/photos/minz1boph7orxyhmynmk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248479/discc/galleries/photos/minz1boph7orxyhmynmk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248481/discc/galleries/photos/dgx3y0nj3e8wqd9xduy1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248481/discc/galleries/photos/dgx3y0nj3e8wqd9xduy1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248483/discc/galleries/photos/mjbozbzrv11yhlzdfzii.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248483/discc/galleries/photos/mjbozbzrv11yhlzdfzii.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248462/discc/galleries/covers/zvodedthppmyf5ychjor.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248462/discc/galleries/covers/zvodedthppmyf5ychjor.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248462/discc/galleries/covers/zvodedthppmyf5ychjor.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248462/discc/galleries/covers/zvodedthppmyf5ychjor.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Birth Day Celebration  of Mr. Narendra Modi, the Prime Minister of India",
+    "description": "<p>Deva Staff and Children Celebrated Birthday of Mr. Modi, Prime Minister of India</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/birth-day-modi-ji/7x5.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-09-19 08:46:16",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "birth-day-celebration-2",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248486/discc/galleries/photos/nruhorijsqs1dvycapnh.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248486/discc/galleries/photos/nruhorijsqs1dvycapnh.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248488/discc/galleries/photos/qv5zb1qwy4irzeezhsmv.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248488/discc/galleries/photos/qv5zb1qwy4irzeezhsmv.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248485/discc/galleries/covers/ffmgeznearvvtdwcbhzi.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248485/discc/galleries/covers/ffmgeznearvvtdwcbhzi.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Visiting by member of Parliament of Andhra Pradesh",
+    "description": "<p>On August 23 Dr. G Thanuja Rani , Member of Parliament, Andhra Pradesh and Uma ji, Commission Member for Women Andhra Pradesh visited at Deva Center and Deva Gram, Bachhaon, Varanasi</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/visiting-by-parliament-member/untitled-1-copy.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-11-03 10:53:22",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "visiting-by-member-of-parliament-of-andhra-pradesh",
+    "images": [],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248490/discc/galleries/covers/chbe65trqyqgsrhmjgvu.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248490/discc/galleries/covers/chbe65trqyqgsrhmjgvu.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Seva Saptah by Bharat Vikash Parishad, Varanasi",
+    "description": "<p>on 23rd August on the behalf of Seva Saptah by Bharat Vikash Parishad visited at Deva Center, Kamachha, Varanasi and distributed many types of Play Instruments for Disabled Children.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/seva-saptah/01.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-11-04 09:49:50",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "seva-saptah-by-bharat-vikash-parishad-varanasi",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248494/discc/galleries/photos/nnxkbe5ikh2ajleqzkr0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248494/discc/galleries/photos/nnxkbe5ikh2ajleqzkr0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248495/discc/galleries/photos/trjxvp2mieywbm1gqubu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248495/discc/galleries/photos/trjxvp2mieywbm1gqubu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248497/discc/galleries/photos/lokdroqlguwgzgtcbpel.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248497/discc/galleries/photos/lokdroqlguwgzgtcbpel.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248492/discc/galleries/covers/reqppw5toubldgrmdnto.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248492/discc/galleries/covers/reqppw5toubldgrmdnto.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248492/discc/galleries/covers/reqppw5toubldgrmdnto.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248492/discc/galleries/covers/reqppw5toubldgrmdnto.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Shram Dan By Deva Gram Staff and Children",
+    "description": "<p>On  September 10th behalf of Supporting work and an Educational Purpose for the Divyang Children, Deva Gram's Staff created a themes to helping around us and Deva Children started some helping work with Deva Staff at Deva Gram Bachhaon, Varanasi.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/shram-dan/1.jpeg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-11-04 10:12:53",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "shram-dan-by-deva-gram-staff-and-children",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248501/discc/galleries/photos/mfkpltprjvyodhhckrig.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248501/discc/galleries/photos/mfkpltprjvyodhhckrig.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248503/discc/galleries/photos/xqya4cjorew5v3obeu9p.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248503/discc/galleries/photos/xqya4cjorew5v3obeu9p.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248505/discc/galleries/photos/n21dlupncrkr7yf1eodp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248505/discc/galleries/photos/n21dlupncrkr7yf1eodp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248507/discc/galleries/photos/krkeam9drm02ptvwjd59.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248507/discc/galleries/photos/krkeam9drm02ptvwjd59.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248509/discc/galleries/photos/qjx9ayiotq1bdip0hyst.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248509/discc/galleries/photos/qjx9ayiotq1bdip0hyst.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248511/discc/galleries/photos/grjo1gigmllcjw4mkxos.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248511/discc/galleries/photos/grjo1gigmllcjw4mkxos.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248513/discc/galleries/photos/kydr0qssrqn3cpahhf3p.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248513/discc/galleries/photos/kydr0qssrqn3cpahhf3p.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248514/discc/galleries/photos/yupxhi6nze1px7hsiqwu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248514/discc/galleries/photos/yupxhi6nze1px7hsiqwu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248516/discc/galleries/photos/frf23vycqzvqbhcngttb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248516/discc/galleries/photos/frf23vycqzvqbhcngttb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248517/discc/galleries/photos/soiacrfu37ggjyl142se.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248517/discc/galleries/photos/soiacrfu37ggjyl142se.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248519/discc/galleries/photos/xkt2xtbhk0tp9ml6ptmg.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248519/discc/galleries/photos/xkt2xtbhk0tp9ml6ptmg.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248499/discc/galleries/covers/d6dh9qwfypqpsuivow9h.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248499/discc/galleries/covers/d6dh9qwfypqpsuivow9h.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248499/discc/galleries/covers/d6dh9qwfypqpsuivow9h.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248499/discc/galleries/covers/d6dh9qwfypqpsuivow9h.jpg"
+  },
+  {
+    "id": 37,
+    "name": "National Sports Day Celebration by Deva Gram Children",
+    "description": "<p>on 29th September 2025 on account of National Sports Day , Deva Gram's Children participated in many games and win so many awards. Awards given by Mr. Shyam Lal Patel, Secretary Deva International Society for Child Care, Varanasi.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/national-sports-day/1.jpeg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-11-04 10:35:35",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "national-sports-day-celebration-by-deva-gram-children",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248522/discc/galleries/photos/o8n19nqzzbpdcssk5mac.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248522/discc/galleries/photos/o8n19nqzzbpdcssk5mac.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248524/discc/galleries/photos/eobasyujrlaqjznulkba.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248524/discc/galleries/photos/eobasyujrlaqjznulkba.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248525/discc/galleries/photos/llouwntjq8e74xzcksx2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248525/discc/galleries/photos/llouwntjq8e74xzcksx2.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248527/discc/galleries/photos/r31wculgl2grcofgmtrz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248527/discc/galleries/photos/r31wculgl2grcofgmtrz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248528/discc/galleries/photos/ontrp3gvozb3a8xxwyjb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248528/discc/galleries/photos/ontrp3gvozb3a8xxwyjb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248530/discc/galleries/photos/z2k0jwjix5smxb2lxpgr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248530/discc/galleries/photos/z2k0jwjix5smxb2lxpgr.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248531/discc/galleries/photos/jsltaialkcqngu4srwsr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248531/discc/galleries/photos/jsltaialkcqngu4srwsr.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248533/discc/galleries/photos/anorwlaaoajmfevbmda8.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248533/discc/galleries/photos/anorwlaaoajmfevbmda8.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248535/discc/galleries/photos/hswyqwjx2yybwi37rxap.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248535/discc/galleries/photos/hswyqwjx2yybwi37rxap.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248536/discc/galleries/photos/jspkkeijoje2jvt3evjn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248536/discc/galleries/photos/jspkkeijoje2jvt3evjn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248538/discc/galleries/photos/hlkl7j7eaabpkcsfqqlt.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248538/discc/galleries/photos/hlkl7j7eaabpkcsfqqlt.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248540/discc/galleries/photos/xfsvlkd6b2gzyzoykrth.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248540/discc/galleries/photos/xfsvlkd6b2gzyzoykrth.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248541/discc/galleries/photos/grjlttqwgtagd9hujvtg.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248541/discc/galleries/photos/grjlttqwgtagd9hujvtg.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248543/discc/galleries/photos/omxqxi9adc0vsbo3imti.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248543/discc/galleries/photos/omxqxi9adc0vsbo3imti.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248545/discc/galleries/photos/rjuzswgvsxvho91nedoo.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248545/discc/galleries/photos/rjuzswgvsxvho91nedoo.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248547/discc/galleries/photos/g8hroov7gxrbcofkzwo9.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248547/discc/galleries/photos/g8hroov7gxrbcofkzwo9.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248549/discc/galleries/photos/rhqjdt3zt3hkwgondkak.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248549/discc/galleries/photos/rhqjdt3zt3hkwgondkak.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248551/discc/galleries/photos/gjlvco7c0dobfglpgcry.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248551/discc/galleries/photos/gjlvco7c0dobfglpgcry.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248552/discc/galleries/photos/hgt4lmhlwqmhknjqbjt5.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248552/discc/galleries/photos/hgt4lmhlwqmhknjqbjt5.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248554/discc/galleries/photos/iypgkeflifn4nswffppu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248554/discc/galleries/photos/iypgkeflifn4nswffppu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248521/discc/galleries/covers/qohnxeislrblglln55rr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248521/discc/galleries/covers/qohnxeislrblglln55rr.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248521/discc/galleries/covers/qohnxeislrblglln55rr.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248521/discc/galleries/covers/qohnxeislrblglln55rr.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Dandia Dance by Deva Children on the Occasion of Navaratri",
+    "description": "<p> Deva Children presents a Dandia Dance on the Occasion of Navaratri,on 29th September 2025  </p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/dandia-dance/1-1.jpeg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-11-04 10:50:13",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "dandia-dance-by-deva-children",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248557/discc/galleries/photos/yfij2csnzzi9tkjomijc.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248557/discc/galleries/photos/yfij2csnzzi9tkjomijc.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248559/discc/galleries/photos/xpqrlc00whyzq6ggj9kb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248559/discc/galleries/photos/xpqrlc00whyzq6ggj9kb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248560/discc/galleries/photos/jpjufdk2so4oobm4wagy.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248560/discc/galleries/photos/jpjufdk2so4oobm4wagy.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248562/discc/galleries/photos/xoxcw8zubk1ojyxzyisq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248562/discc/galleries/photos/xoxcw8zubk1ojyxzyisq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248563/discc/galleries/photos/ks3unianqeltfpaklz3l.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248563/discc/galleries/photos/ks3unianqeltfpaklz3l.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248565/discc/galleries/photos/bgqepxwq4fiuldkqkbal.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248565/discc/galleries/photos/bgqepxwq4fiuldkqkbal.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248567/discc/galleries/photos/tlj4iapsczbkxeq9ixhj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248567/discc/galleries/photos/tlj4iapsczbkxeq9ixhj.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248569/discc/galleries/photos/nn66iukndxtieqc9tkbk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248569/discc/galleries/photos/nn66iukndxtieqc9tkbk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248572/discc/galleries/photos/vc2ri5yy7hxwmebac7by.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248572/discc/galleries/photos/vc2ri5yy7hxwmebac7by.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248573/discc/galleries/photos/ajhkpbtb32czjfbaxrdu.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248573/discc/galleries/photos/ajhkpbtb32czjfbaxrdu.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248575/discc/galleries/photos/tp790dwbuau7a0rkzeyw.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248575/discc/galleries/photos/tp790dwbuau7a0rkzeyw.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248577/discc/galleries/photos/cxw1xmsegtulgfpymeuk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248577/discc/galleries/photos/cxw1xmsegtulgfpymeuk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248579/discc/galleries/photos/gj9xjwvdktfqgmwifb4b.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248579/discc/galleries/photos/gj9xjwvdktfqgmwifb4b.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248580/discc/galleries/photos/su0mmccuxhar99yh709v.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248580/discc/galleries/photos/su0mmccuxhar99yh709v.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248582/discc/galleries/photos/ergz1emisubuigzqkrc4.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248582/discc/galleries/photos/ergz1emisubuigzqkrc4.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248556/discc/galleries/covers/vpmuj5gkvggwe3evdtvi.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248556/discc/galleries/covers/vpmuj5gkvggwe3evdtvi.jpg"
+  },
+  {
+    "id": 39,
+    "name": "34th Deepshikha Mela Celebration at Deva Center, Varanasi",
+    "description": "<p>Deva International Society for Child Care, Varanasi Celebrated their 34th Deepshikha Mela on 11th, 12th, and 13th October 2025. </p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/deepshikha-mela-2025/02.jpeg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-11-04 11:03:15",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "deepshikha-mela-2025",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248586/discc/galleries/photos/tpey73pi0xbwhw5kcrpd.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248586/discc/galleries/photos/tpey73pi0xbwhw5kcrpd.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248588/discc/galleries/photos/knoexedt8zpgwhwsgwdw.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248588/discc/galleries/photos/knoexedt8zpgwhwsgwdw.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248590/discc/galleries/photos/jccbljbp6p9mpvpwoy0y.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248590/discc/galleries/photos/jccbljbp6p9mpvpwoy0y.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248592/discc/galleries/photos/sdgrf0qkjj91idub48ix.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248592/discc/galleries/photos/sdgrf0qkjj91idub48ix.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248594/discc/galleries/photos/niqqx4gsyfmqad8v35aq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248594/discc/galleries/photos/niqqx4gsyfmqad8v35aq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248595/discc/galleries/photos/bvdpjosbtfqveqi65bge.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248595/discc/galleries/photos/bvdpjosbtfqveqi65bge.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248597/discc/galleries/photos/vvorkciih3y8hxih7cye.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248597/discc/galleries/photos/vvorkciih3y8hxih7cye.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248598/discc/galleries/photos/t6b5d43xqytjtgunddr6.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248598/discc/galleries/photos/t6b5d43xqytjtgunddr6.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248600/discc/galleries/photos/aw4b7pbwhhyh6c6du6b6.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248600/discc/galleries/photos/aw4b7pbwhhyh6c6du6b6.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248602/discc/galleries/photos/swtakcqfl1fkzrhxnrja.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248602/discc/galleries/photos/swtakcqfl1fkzrhxnrja.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248603/discc/galleries/photos/uypge27vhbzfs4cmlryd.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248603/discc/galleries/photos/uypge27vhbzfs4cmlryd.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248605/discc/galleries/photos/nr0aqzbe7icd459wzves.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248605/discc/galleries/photos/nr0aqzbe7icd459wzves.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248584/discc/galleries/covers/sn9pqlou8uv1penvx60s.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248584/discc/galleries/covers/sn9pqlou8uv1penvx60s.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248607/discc/galleries/photos/rltivu2ksi388mg2hsdd.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248607/discc/galleries/photos/rltivu2ksi388mg2hsdd.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248584/discc/galleries/covers/sn9pqlou8uv1penvx60s.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248584/discc/galleries/covers/sn9pqlou8uv1penvx60s.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Divya Kala Mela for Divyangjan",
+    "description": "<p>Deva Center's Vocational Department participated in 2 days Divyang Kala Mela through their Divyang Jan Product Stall on October 16 and 17  at Sanskritic Sankul, Chaukaghat, Varanasi. Mr. Sanjay and Mrs. Anupama Srivastava were Incharge of the Stall.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/divya-kala-mela-1/01.jpg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2025-12-10 09:16:17",
+    "updated_at": "2026-03-30 09:28:05",
+    "slug": "divya-kala-mela",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248610/discc/galleries/photos/ur7ul3xwdjcbebljf1t9.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248610/discc/galleries/photos/ur7ul3xwdjcbebljf1t9.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248612/discc/galleries/photos/rvs3hogutkrt74rrisj5.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248612/discc/galleries/photos/rvs3hogutkrt74rrisj5.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248613/discc/galleries/photos/xis9zvurpaz5zwuw2m1y.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248613/discc/galleries/photos/xis9zvurpaz5zwuw2m1y.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248615/discc/galleries/photos/uagom7e45ufp7ynyaorb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248615/discc/galleries/photos/uagom7e45ufp7ynyaorb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248609/discc/galleries/covers/iouxwosirc5ugcbirz6i.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248609/discc/galleries/covers/iouxwosirc5ugcbirz6i.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248616/discc/galleries/photos/lx0pxkxuezbueylgjbg6.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248616/discc/galleries/photos/lx0pxkxuezbueylgjbg6.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248618/discc/galleries/photos/llxcjelmpmkxultuq6rh.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248618/discc/galleries/photos/llxcjelmpmkxultuq6rh.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248620/discc/galleries/photos/aovrc9r6td5iol95g0zj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248620/discc/galleries/photos/aovrc9r6td5iol95g0zj.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248622/discc/galleries/photos/p1akda0txy5xgdush09p.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248622/discc/galleries/photos/p1akda0txy5xgdush09p.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248609/discc/galleries/covers/iouxwosirc5ugcbirz6i.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248609/discc/galleries/covers/iouxwosirc5ugcbirz6i.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Sports and Games Competition at Sampoornanand Stadium, Varanasi",
+    "description": "<p>On the Occasion of Sansad Sports and Games on 8th November 2025, Deva Center's Divyang Children participated in the Sports and Games Competition at Sampurna Nand Stadium, Varanasi.   </p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/sports-and-games/untitled-1-copy-1.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-12-10 09:51:54",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "sports-and-games-competition",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248625/discc/galleries/photos/p34pet6w1r2fzf3cqocw.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248625/discc/galleries/photos/p34pet6w1r2fzf3cqocw.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248627/discc/galleries/photos/fulmlcfvpjmpse6njvui.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248627/discc/galleries/photos/fulmlcfvpjmpse6njvui.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248628/discc/galleries/photos/qm0llbsll81bkm6ctbol.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248628/discc/galleries/photos/qm0llbsll81bkm6ctbol.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248630/discc/galleries/photos/mct0hxfjvgqid3agch5n.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248630/discc/galleries/photos/mct0hxfjvgqid3agch5n.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248632/discc/galleries/photos/h2dfqpeqx0dvqxaoixpj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248632/discc/galleries/photos/h2dfqpeqx0dvqxaoixpj.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248633/discc/galleries/photos/qydcixkadauynlzcxazz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248633/discc/galleries/photos/qydcixkadauynlzcxazz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248635/discc/galleries/photos/qxxvxxghgxyeygrdk3cp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248635/discc/galleries/photos/qxxvxxghgxyeygrdk3cp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248636/discc/galleries/photos/qup8foqcolwqznlmprzf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248636/discc/galleries/photos/qup8foqcolwqznlmprzf.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248638/discc/galleries/photos/qhekonwcuxyxlaa7v9xx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248638/discc/galleries/photos/qhekonwcuxyxlaa7v9xx.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248623/discc/galleries/covers/jai8ijr5ximkcxzlx6ev.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248623/discc/galleries/covers/jai8ijr5ximkcxzlx6ev.jpg"
+  },
+  {
+    "id": 42,
+    "name": "World Disability Day 2025 Celebration",
+    "description": "<p>On the occasion of Disability Day 2025 Deva Center Celebrated 5 days continuous programs, for the support of Divyangjan <br> </p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery/disability-day-2025/01.jpg",
+    "user_id": null,
+    "year": 2025,
+    "status": "published",
+    "created_at": "2025-12-10 10:17:35",
+    "updated_at": "2026-08-03 05:33:06",
+    "slug": "world-disability-day-2025-celebration",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248642/discc/galleries/photos/aizpfv85jnlvqmi0di2z.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248642/discc/galleries/photos/aizpfv85jnlvqmi0di2z.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248643/discc/galleries/photos/jccrwxnztc2w3qd3bnxk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248643/discc/galleries/photos/jccrwxnztc2w3qd3bnxk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248645/discc/galleries/photos/okvrz8u3wy9kehnhpocs.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248645/discc/galleries/photos/okvrz8u3wy9kehnhpocs.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248646/discc/galleries/photos/yqwzr5dxmstvkzbbnbuz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248646/discc/galleries/photos/yqwzr5dxmstvkzbbnbuz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248648/discc/galleries/photos/pwzhnffiujwhs0f3w7m1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248648/discc/galleries/photos/pwzhnffiujwhs0f3w7m1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248650/discc/galleries/photos/aanpfuushh7gqxqtaqat.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248650/discc/galleries/photos/aanpfuushh7gqxqtaqat.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248651/discc/galleries/photos/yeinozr1kl3d6qdygedn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248651/discc/galleries/photos/yeinozr1kl3d6qdygedn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248653/discc/galleries/photos/bjzv8ucqevd90qgcn2pe.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248653/discc/galleries/photos/bjzv8ucqevd90qgcn2pe.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248655/discc/galleries/photos/pw3159wstunjutq9c19v.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248655/discc/galleries/photos/pw3159wstunjutq9c19v.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248656/discc/galleries/photos/orqjfxxmcyykfbiql3j1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248656/discc/galleries/photos/orqjfxxmcyykfbiql3j1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248658/discc/galleries/photos/zovg4qqwi5imgpjo6pzk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248658/discc/galleries/photos/zovg4qqwi5imgpjo6pzk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248660/discc/galleries/photos/g0oliw1tkby75wf7vqt4.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248660/discc/galleries/photos/g0oliw1tkby75wf7vqt4.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248661/discc/galleries/photos/xsuqsvkrrgfa4t2jyodc.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248661/discc/galleries/photos/xsuqsvkrrgfa4t2jyodc.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248663/discc/galleries/photos/pt360xi5innwmiaigemj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248663/discc/galleries/photos/pt360xi5innwmiaigemj.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248664/discc/galleries/photos/uyeoujmdoihogvrhi4pb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248664/discc/galleries/photos/uyeoujmdoihogvrhi4pb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248666/discc/galleries/photos/qjf7gpmt6mc4ibt6hu5x.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248666/discc/galleries/photos/qjf7gpmt6mc4ibt6hu5x.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248668/discc/galleries/photos/vuwtmmmyh2jnhgmcspwn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248668/discc/galleries/photos/vuwtmmmyh2jnhgmcspwn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248669/discc/galleries/photos/s8a0wph7a1qevjbbh6wa.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248669/discc/galleries/photos/s8a0wph7a1qevjbbh6wa.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248671/discc/galleries/photos/r3ddpfsp9xejcle55w7g.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248671/discc/galleries/photos/r3ddpfsp9xejcle55w7g.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248673/discc/galleries/photos/mspq4ssxslcf8gmtlitp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248673/discc/galleries/photos/mspq4ssxslcf8gmtlitp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248674/discc/galleries/photos/nyut3t9cxnzeciatohv9.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248674/discc/galleries/photos/nyut3t9cxnzeciatohv9.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248676/discc/galleries/photos/wczjhsa7pjsmjmwwakny.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248676/discc/galleries/photos/wczjhsa7pjsmjmwwakny.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248678/discc/galleries/photos/batlffetlour7tclaksz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248678/discc/galleries/photos/batlffetlour7tclaksz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248680/discc/galleries/photos/xozcdaixkvdith4jicob.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248680/discc/galleries/photos/xozcdaixkvdith4jicob.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248681/discc/galleries/photos/flbosirhn4k3exs20fsy.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248681/discc/galleries/photos/flbosirhn4k3exs20fsy.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248640/discc/galleries/covers/dr2p6oifn1uspnwq7ovo.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248640/discc/galleries/covers/dr2p6oifn1uspnwq7ovo.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248683/discc/galleries/photos/zzu7sn7djuor0o4vxt0s.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248683/discc/galleries/photos/zzu7sn7djuor0o4vxt0s.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248684/discc/galleries/photos/gmra6v6b220fi2ffsokd.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248684/discc/galleries/photos/gmra6v6b220fi2ffsokd.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248686/discc/galleries/photos/ucsvgbczenz8vn2bjgzl.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248686/discc/galleries/photos/ucsvgbczenz8vn2bjgzl.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248688/discc/galleries/photos/x0wek7ri185dglrz5h1a.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248688/discc/galleries/photos/x0wek7ri185dglrz5h1a.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248690/discc/galleries/photos/arlfjc6syynjjxkjtujz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248690/discc/galleries/photos/arlfjc6syynjjxkjtujz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248691/discc/galleries/photos/ymekwq7jokxnknr9jzhx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248691/discc/galleries/photos/ymekwq7jokxnknr9jzhx.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248693/discc/galleries/photos/tfvnmniorwkj2kdspcm1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248693/discc/galleries/photos/tfvnmniorwkj2kdspcm1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248695/discc/galleries/photos/dmpwu4o1qgabjumnpfqm.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248695/discc/galleries/photos/dmpwu4o1qgabjumnpfqm.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248640/discc/galleries/covers/dr2p6oifn1uspnwq7ovo.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248640/discc/galleries/covers/dr2p6oifn1uspnwq7ovo.jpg"
+  },
+  {
+    "id": 43,
+    "name": "Lui Brel's Day (2nd January 2026)",
+    "description": "<p>Lui Brel's Day Celebration at St. John's School BLW, Varanasi</p>",
+    "is_featured": 0,
+    "order": 1,
+    "image": "assets/image-gallery/2nd-january-program/whatsapp-image-2026-01-24-at-110756-am-1.jpeg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2026-03-30 07:57:57",
+    "updated_at": "2026-03-30 07:59:22",
+    "slug": "lui-brels-day-2nd-january-2026",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248697/discc/galleries/covers/k8kuop5hpuystssze01r.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248697/discc/galleries/covers/k8kuop5hpuystssze01r.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248699/discc/galleries/photos/auntlhp1ttz58hrdwb46.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248699/discc/galleries/photos/auntlhp1ttz58hrdwb46.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248701/discc/galleries/photos/jalpm6ltkkuuryrgpumw.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248701/discc/galleries/photos/jalpm6ltkkuuryrgpumw.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248703/discc/galleries/photos/uflrrtvty8irntjrk1jk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248703/discc/galleries/photos/uflrrtvty8irntjrk1jk.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248705/discc/galleries/photos/qzqfuz8emmmbufe6y6u2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248705/discc/galleries/photos/qzqfuz8emmmbufe6y6u2.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248706/discc/galleries/photos/iv5plq1kix3xrxqorwso.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248706/discc/galleries/photos/iv5plq1kix3xrxqorwso.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248708/discc/galleries/photos/g6yiojjo0fdxglfdolrs.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248708/discc/galleries/photos/g6yiojjo0fdxglfdolrs.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248710/discc/galleries/photos/efi38lrkqiz7kehehtfb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248710/discc/galleries/photos/efi38lrkqiz7kehehtfb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248712/discc/galleries/photos/z9tjmjg33cx8bsqbhfxx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248712/discc/galleries/photos/z9tjmjg33cx8bsqbhfxx.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248714/discc/galleries/photos/aaazzyumpbwr3qcfa4yr.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248714/discc/galleries/photos/aaazzyumpbwr3qcfa4yr.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248715/discc/galleries/photos/iy11ufflpvdykrrrlbmk.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248715/discc/galleries/photos/iy11ufflpvdykrrrlbmk.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248697/discc/galleries/covers/k8kuop5hpuystssze01r.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248697/discc/galleries/covers/k8kuop5hpuystssze01r.jpg"
+  },
+  {
+    "id": 44,
+    "name": "Lohari Celebration at Deva Gram Bachhaon",
+    "description": "<p>Deva Center's Staff and Children celebrated Lohari Festival on 12 January 2026 at Deva Gram Bachhaon, a unit of Deva International Society for child Care, Varanasi. </p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery-2026/lohari-2026/whatsapp-image-2026-01-13-at-21114-pm.jpeg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2026-03-30 08:08:57",
+    "updated_at": "2026-03-30 08:08:57",
+    "slug": "lohari-celebration-at-deva-gram-bachhaon",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248719/discc/galleries/photos/imhbsy27jlpc39fvwpbf.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248719/discc/galleries/photos/imhbsy27jlpc39fvwpbf.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248721/discc/galleries/photos/u7butxc0pnngxhxxbz3j.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248721/discc/galleries/photos/u7butxc0pnngxhxxbz3j.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248723/discc/galleries/photos/yywisetszkhhlazhtet2.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248723/discc/galleries/photos/yywisetszkhhlazhtet2.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248725/discc/galleries/photos/mxzivsghjg883piyfif4.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248725/discc/galleries/photos/mxzivsghjg883piyfif4.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248727/discc/galleries/photos/lnaizcjmi5qmgvhzvagb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248727/discc/galleries/photos/lnaizcjmi5qmgvhzvagb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248729/discc/galleries/photos/ztcjoad8czqmuypcrmwv.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248729/discc/galleries/photos/ztcjoad8czqmuypcrmwv.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248717/discc/galleries/covers/gboiyuci7ohtu0rh6shi.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248717/discc/galleries/covers/gboiyuci7ohtu0rh6shi.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248717/discc/galleries/covers/gboiyuci7ohtu0rh6shi.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248717/discc/galleries/covers/gboiyuci7ohtu0rh6shi.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Basant Panchami 2026",
+    "description": "<p>All Deva Staff Celebrated Basant Panchami at Deva Gram Bachhaon on 23 January 2026.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery-2026/basant-panchami-2026/whatsapp-image-2026-01-23-at-43953-pm.jpeg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2026-03-30 08:14:08",
+    "updated_at": "2026-03-30 08:14:08",
+    "slug": "basant-panchami-2026",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248731/discc/galleries/covers/ujg8app8s6je9bng3plh.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248731/discc/galleries/covers/ujg8app8s6je9bng3plh.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248733/discc/galleries/photos/hftddmptrg7mksjbsj9c.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248733/discc/galleries/photos/hftddmptrg7mksjbsj9c.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248735/discc/galleries/photos/fglo7z84czrays8i20hb.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248735/discc/galleries/photos/fglo7z84czrays8i20hb.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248737/discc/galleries/photos/yt1qsyrtqalcvqwrjpo3.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248737/discc/galleries/photos/yt1qsyrtqalcvqwrjpo3.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248739/discc/galleries/photos/trlsz75pvbgpfi63kskl.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248739/discc/galleries/photos/trlsz75pvbgpfi63kskl.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248740/discc/galleries/photos/o8zdy6q9eaxrlk4kfofm.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248740/discc/galleries/photos/o8zdy6q9eaxrlk4kfofm.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248731/discc/galleries/covers/ujg8app8s6je9bng3plh.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248731/discc/galleries/covers/ujg8app8s6je9bng3plh.jpg"
+  },
+  {
+    "id": 46,
+    "name": "Republic Day 2026",
+    "description": "<p>Deva Staff and Children Celebrated 76th Republic Day at Deva Gram Bachhaon (a unit of Deva International Society for Child Care, Varanasi.)</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery-2026/republic-day-2026/whatsapp-image-2026-01-26-at-11921-pm.jpeg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2026-03-30 08:19:05",
+    "updated_at": "2026-03-30 08:19:05",
+    "slug": "republic-day-2026",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248744/discc/galleries/photos/ylrhffwxlzm9pwsgtmgg.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248744/discc/galleries/photos/ylrhffwxlzm9pwsgtmgg.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248746/discc/galleries/photos/mxsmbfr3gjbnq57b7gdp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248746/discc/galleries/photos/mxsmbfr3gjbnq57b7gdp.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248748/discc/galleries/photos/uh22swu1di7xknyxj9i0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248748/discc/galleries/photos/uh22swu1di7xknyxj9i0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248750/discc/galleries/photos/cavhqrtp8uf2m8rpocj9.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248750/discc/galleries/photos/cavhqrtp8uf2m8rpocj9.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248752/discc/galleries/photos/gggcrjvjofcpxkxg6q20.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248752/discc/galleries/photos/gggcrjvjofcpxkxg6q20.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248742/discc/galleries/covers/sguz5bizo5ypcftbbq5z.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248742/discc/galleries/covers/sguz5bizo5ypcftbbq5z.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248754/discc/galleries/photos/al2kkelkcavfhbeuc4nj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248754/discc/galleries/photos/al2kkelkcavfhbeuc4nj.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248742/discc/galleries/covers/sguz5bizo5ypcftbbq5z.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248742/discc/galleries/covers/sguz5bizo5ypcftbbq5z.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Intellectual Disability Program",
+    "description": "<p>Deva International Society for Child Care collaboration with many NGOs of Varanasi organised Sports and Games program for Intellectual Disabled Children of Varanasi on 13 February 2026 at Amphy Theater Ground BHU, Varanasi. The Chief Guest of this program was Mr. Chandu Champion (a Paralympic Player) . He won many Gold Medal for India.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery-2026/intellectual-disability-program/whatsapp-image-2026-02-14-at-143229.jpeg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2026-03-30 09:17:25",
+    "updated_at": "2026-03-30 09:17:25",
+    "slug": "intellectual-disability-program",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248755/discc/galleries/covers/wzfyfzfbvsqbyqk0iboi.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248755/discc/galleries/covers/wzfyfzfbvsqbyqk0iboi.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248758/discc/galleries/photos/r8gtmq13awsmlwl7qzij.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248758/discc/galleries/photos/r8gtmq13awsmlwl7qzij.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248759/discc/galleries/photos/bexfqiwieemvaumtvwr9.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248759/discc/galleries/photos/bexfqiwieemvaumtvwr9.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248761/discc/galleries/photos/qjebtc748wbajrg2doiz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248761/discc/galleries/photos/qjebtc748wbajrg2doiz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248763/discc/galleries/photos/kignguqezchwf8q4ceny.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248763/discc/galleries/photos/kignguqezchwf8q4ceny.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248764/discc/galleries/photos/ggfdffvfzojhko5mgr1f.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248764/discc/galleries/photos/ggfdffvfzojhko5mgr1f.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248766/discc/galleries/photos/dmpidyblizk6tjrtxrrs.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248766/discc/galleries/photos/dmpidyblizk6tjrtxrrs.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248767/discc/galleries/photos/a3kkpg3ma6plehsdie8f.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248767/discc/galleries/photos/a3kkpg3ma6plehsdie8f.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248769/discc/galleries/photos/qltn0rt173tnr0phkjgl.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248769/discc/galleries/photos/qltn0rt173tnr0phkjgl.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248771/discc/galleries/photos/pvuiwaumacsd90l8ee0y.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248771/discc/galleries/photos/pvuiwaumacsd90l8ee0y.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248772/discc/galleries/photos/vvf8votha1amlqagecqn.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248772/discc/galleries/photos/vvf8votha1amlqagecqn.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248774/discc/galleries/photos/nvqjwoacvdxgenrqmloy.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248774/discc/galleries/photos/nvqjwoacvdxgenrqmloy.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248776/discc/galleries/photos/yzxwcpcnzs25m4x7pjci.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248776/discc/galleries/photos/yzxwcpcnzs25m4x7pjci.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248778/discc/galleries/photos/nahvbbw5xcmcjmjtciix.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248778/discc/galleries/photos/nahvbbw5xcmcjmjtciix.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248779/discc/galleries/photos/j7qpar47jiz2lsfzqneq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248779/discc/galleries/photos/j7qpar47jiz2lsfzqneq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248781/discc/galleries/photos/weaejmihbemgupfmhao1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248781/discc/galleries/photos/weaejmihbemgupfmhao1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248783/discc/galleries/photos/u0gkhfbrfbvvsqxcsknw.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248783/discc/galleries/photos/u0gkhfbrfbvvsqxcsknw.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248785/discc/galleries/photos/ttyd7l2noewwb8jvxgji.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248785/discc/galleries/photos/ttyd7l2noewwb8jvxgji.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248787/discc/galleries/photos/t2kaf52qkyo8kux6w95r.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248787/discc/galleries/photos/t2kaf52qkyo8kux6w95r.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248789/discc/galleries/photos/ulw8rxkogubqjkjaoq50.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248789/discc/galleries/photos/ulw8rxkogubqjkjaoq50.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248790/discc/galleries/photos/rgv13c1cpzpex5j3uf5x.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248790/discc/galleries/photos/rgv13c1cpzpex5j3uf5x.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248755/discc/galleries/covers/wzfyfzfbvsqbyqk0iboi.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248755/discc/galleries/covers/wzfyfzfbvsqbyqk0iboi.jpg"
+  },
+  {
+    "id": 48,
+    "name": "Purple fair 2026 for Divyangjan",
+    "description": "<p>Deva Children and staff participated 3 days Purple fair 2026 for Divyangjan organised by department of Empowerment of Persons with Disabilities (Divyangjans) M.S.J. &amp; E. Govt of India.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery-2026/purple-pair-2026-for-divyangjan/untitled-1-copy.jpg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2026-03-30 09:26:02",
+    "updated_at": "2026-03-30 09:26:02",
+    "slug": "purple-fair-2026-for-divyangjan",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248794/discc/galleries/photos/xgozcai4qdkrrddkrpzo.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248794/discc/galleries/photos/xgozcai4qdkrrddkrpzo.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248796/discc/galleries/photos/i0djvku439xdvk472k3q.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248796/discc/galleries/photos/i0djvku439xdvk472k3q.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248798/discc/galleries/photos/vteqkczv70f6wayqct90.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248798/discc/galleries/photos/vteqkczv70f6wayqct90.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248799/discc/galleries/photos/e6atrw3yrtp4klw9lv49.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248799/discc/galleries/photos/e6atrw3yrtp4klw9lv49.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248801/discc/galleries/photos/xj9c7pjjs3zxkkjhkgt0.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248801/discc/galleries/photos/xj9c7pjjs3zxkkjhkgt0.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248803/discc/galleries/photos/rahpzal5nabvrus5vkfx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248803/discc/galleries/photos/rahpzal5nabvrus5vkfx.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248805/discc/galleries/photos/qsnfcgwn3xtczytul4qd.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248805/discc/galleries/photos/qsnfcgwn3xtczytul4qd.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248793/discc/galleries/covers/jfsn4tcemvpz7vjkvus5.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248793/discc/galleries/covers/jfsn4tcemvpz7vjkvus5.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248793/discc/galleries/covers/jfsn4tcemvpz7vjkvus5.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248793/discc/galleries/covers/jfsn4tcemvpz7vjkvus5.jpg"
+  },
+  {
+    "id": 49,
+    "name": "Ramayan Play by Deva Children",
+    "description": "<p>On the occasion of Autism Day 2026 Deva Disabled Children Play a Role of Ramayana Character like Ramchandra, Sita Ji, Hanuman Ji with the help of Dr. Tulsi and his team</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery-2026/purple-pair-2026-for-divyangjan/autism-day/01.jpg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2026-04-07 10:19:17",
+    "updated_at": "2026-04-13 08:49:26",
+    "slug": "ramayan-pay-by-deva-children",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248808/discc/galleries/photos/psbnp9hea9k1tfwcuog1.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248808/discc/galleries/photos/psbnp9hea9k1tfwcuog1.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248810/discc/galleries/photos/n5u8jibgvdnoyln0fjln.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248810/discc/galleries/photos/n5u8jibgvdnoyln0fjln.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248812/discc/galleries/photos/aqupcr7vmjye07wlc0gm.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248812/discc/galleries/photos/aqupcr7vmjye07wlc0gm.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248814/discc/galleries/photos/x9njlchq5oog155qdv81.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248814/discc/galleries/photos/x9njlchq5oog155qdv81.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248816/discc/galleries/photos/uvtrzk29kmmrynpno5jx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248816/discc/galleries/photos/uvtrzk29kmmrynpno5jx.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248806/discc/galleries/covers/yo9knftewezbw5vnee65.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248806/discc/galleries/covers/yo9knftewezbw5vnee65.jpg"
+  },
+  {
+    "id": 50,
+    "name": "World Yoga Day 2026",
+    "description": "<p>Yoga Day Celebrated by Staff and Children. It was the 2 days celebration program organised by Deva Center. On 1st day Painting Creation Program for Divyang Children and 2nd day Yoga Abhyas training by  Dr. Tulsi and Team.</p>",
+    "is_featured": 0,
+    "order": 0,
+    "image": "assets/image-gallery-2026/world-yoga-day-2026/01.jpg",
+    "user_id": null,
+    "year": 2026,
+    "status": "published",
+    "created_at": "2026-07-11 04:15:48",
+    "updated_at": "2026-07-11 04:19:20",
+    "slug": "world-yoga-day-2026",
+    "images": [
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248819/discc/galleries/photos/uguftp9eku8m5b3vp9zj.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248819/discc/galleries/photos/uguftp9eku8m5b3vp9zj.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248821/discc/galleries/photos/lwihsnpkthykxfnjtqbw.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248821/discc/galleries/photos/lwihsnpkthykxfnjtqbw.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248823/discc/galleries/photos/ppbyy27gvcsgoblogkd5.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248823/discc/galleries/photos/ppbyy27gvcsgoblogkd5.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248824/discc/galleries/photos/nngjnymu5hdsixeea3hq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248824/discc/galleries/photos/nngjnymu5hdsixeea3hq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248826/discc/galleries/photos/fglbglu0k7gvavfgodlx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248826/discc/galleries/photos/fglbglu0k7gvavfgodlx.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248828/discc/galleries/photos/nvyszc0fiiiaeulqnksg.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248828/discc/galleries/photos/nvyszc0fiiiaeulqnksg.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248830/discc/galleries/photos/ukii6ftdsfijff25efwq.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248830/discc/galleries/photos/ukii6ftdsfijff25efwq.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248832/discc/galleries/photos/ndms0giutoctpjcdth7m.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248832/discc/galleries/photos/ndms0giutoctpjcdth7m.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248834/discc/galleries/photos/gawuvrpaght97bclpifa.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248834/discc/galleries/photos/gawuvrpaght97bclpifa.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248835/discc/galleries/photos/fol7l8to0gk5yicdvdrh.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248835/discc/galleries/photos/fol7l8to0gk5yicdvdrh.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248837/discc/galleries/photos/mkffyzki2yvakflzvhej.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248837/discc/galleries/photos/mkffyzki2yvakflzvhej.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248839/discc/galleries/photos/bc8tycuk7kjaljhbhdnc.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248839/discc/galleries/photos/bc8tycuk7kjaljhbhdnc.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248841/discc/galleries/photos/bnjalbghrwjmkx6re0dx.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248841/discc/galleries/photos/bnjalbghrwjmkx6re0dx.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248843/discc/galleries/photos/qpte6kwavoc6wrjuusfy.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248843/discc/galleries/photos/qpte6kwavoc6wrjuusfy.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248844/discc/galleries/photos/jlha5xvaqayeogkknenz.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248844/discc/galleries/photos/jlha5xvaqayeogkknenz.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248846/discc/galleries/photos/kniwzttxqqwmiz0xysjm.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248846/discc/galleries/photos/kniwzttxqqwmiz0xysjm.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248848/discc/galleries/photos/afsht9htvcr3njr1btu9.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248848/discc/galleries/photos/afsht9htvcr3njr1btu9.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248849/discc/galleries/photos/k43divnqgtnxxowmsiwi.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248849/discc/galleries/photos/k43divnqgtnxxowmsiwi.jpg"
+      },
+      {
+        "img": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248851/discc/galleries/photos/bywchbddifw6snsmmakp.jpg",
+        "description": "",
+        "cloudinaryUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248851/discc/galleries/photos/bywchbddifw6snsmmakp.jpg"
+      }
+    ],
+    "imageUrl": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248818/discc/galleries/covers/ixuf56zugujnahuzrnsi.jpg",
+    "cloudinaryCover": "https://res.cloudinary.com/djbiwbdo/image/upload/v1789248818/discc/galleries/covers/ixuf56zugujnahuzrnsi.jpg"
+  }
+]

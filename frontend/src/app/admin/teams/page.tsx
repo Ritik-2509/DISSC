@@ -1,148 +1,258 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import {
+  Users,
+  Plus,
+  Edit,
+  Mail,
+  Phone,
+  MapPin,
+  X,
+  Save,
+  CheckCircle2
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-
-const API_URL = "/api"; 
+import { CloudinaryUploadWidget } from "@/components/admin/CloudinaryUploadWidget";
+import { CLOUDINARY_IMAGES } from "@/lib/cloudinary-images";
+import { saveAdminItem, deleteAdminItem } from "@/lib/admin-client";
 
 export default function AdminTeams() {
-  const [teams, setTeams] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [isCreating, setIsCreating] = useState(false);
-  const [formData, setFormData] = useState({ name: "", role: "", bio: "", image: "" });
-
-  const fetchTeams = () => {
-    setLoading(true);
-    fetch(`${API_URL}/teams`)
-      .then(res => res.json())
-      .then(data => {
-        setTeams(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Error fetching teams:", err);
-        setLoading(false);
-      });
-  };
+  const [teams, setTeams] = useState<any[]>([]);
+  const [editingMember, setEditingMember] = useState<any | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    fetchTeams();
+    fetch("/firestore_export/teams.json")
+      .then((res) => res.json())
+      .then((data) => setTeams(data))
+      .catch(() => {
+        setTeams([
+          {
+            id: 1,
+            name: "Dr. C. Tulsi Das",
+            title: "Founder President & Director",
+            photoUrl: CLOUDINARY_IMAGES.drTulsiPortrait,
+            description: "Ph.D. (Psychiatry - Clinical Psychologist). Recipient of Best Professional Psychologist Award.",
+            email: "disccindia@gmail.com",
+            phone: "+91 7007453168",
+          },
+          {
+            id: 2,
+            name: "Jean-Max Tassel",
+            title: "Chief International Patron",
+            photoUrl: CLOUDINARY_IMAGES.foundersMeet,
+            description: "French art historian and philanthropist supporting DISCC for over 25 years.",
+            email: "contact@deva-europe.org",
+            phone: "+33 1 42 68 00 00",
+          }
+        ]);
+      });
   }, []);
 
-  const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this team member?")) return;
-    try {
-      await fetch(`${API_URL}/teams/${id}`, { method: "DELETE" });
-      fetchTeams();
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const handleCreate = async (e: React.FormEvent) => {
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await fetch(`${API_URL}/teams`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData })
-      });
-      setIsCreating(false);
-      setFormData({ name: "", role: "", bio: "", image: "" });
-      fetchTeams();
-    } catch (err) {
-      console.error(err);
+    if (!editingMember) return;
+
+    let target: any;
+    if (editingMember.id && teams.some((t) => t.id === editingMember.id)) {
+      target = { ...editingMember, updated_at: new Date().toISOString() };
+      setTeams(teams.map((t) => (t.id === editingMember.id ? target : t)));
+    } else {
+      target = { ...editingMember, id: Date.now(), created_at: new Date().toISOString() };
+      setTeams([target, ...teams]);
     }
+
+    setEditingMember(null);
+    setShowModal(false);
+    await saveAdminItem("teams", target);
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
+    <div className="space-y-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Manage Team</h1>
-          <p className="text-muted-foreground">Manage the leadership and core members.</p>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Governance & Staff</span>
+            <span className="text-xs bg-secondary/10 text-secondary px-2 py-0.5 rounded-full font-bold">
+              {teams.length} Members
+            </span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-display font-black text-secondary mt-1">
+            Teams & Leadership Management
+          </h1>
+          <p className="text-xs text-muted-foreground">
+            Manage trustees, clinical psychologists, and key operations leadership.
+          </p>
         </div>
-        <Button onClick={() => setIsCreating(!isCreating)}>
-          {isCreating ? "Cancel" : "Add Team Member"}
+
+        <Button
+          onClick={() =>
+            setEditingMember({
+              id: null,
+              name: "",
+              title: "",
+              description: "",
+              photoUrl: "",
+              email: "",
+              phone: "",
+              location: "Varanasi, India",
+            })
+          }
+          className="rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-xs uppercase tracking-wider h-11 px-5 flex items-center gap-2"
+        >
+          <Plus className="w-4 h-4" />
+          <span>Add Member</span>
         </Button>
       </div>
 
-      {isCreating && (
-        <div className="border rounded-xl bg-card p-6 mb-8 shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">Add Team Member</h2>
-          <form onSubmit={handleCreate} className="space-y-4">
-            <div>
-              <label className="text-sm font-medium mb-1 block">Name</label>
-              <Input 
-                required 
-                value={formData.name} 
-                onChange={(e) => setFormData({...formData, name: e.target.value})} 
-                placeholder="Full Name" 
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium mb-1 block">Role</label>
-              <Input 
-                required
-                value={formData.role} 
-                onChange={(e) => setFormData({...formData, role: e.target.value})} 
-                placeholder="e.g. Director, Founder" 
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium mb-1 block">Image URL</label>
-              <Input 
-                value={formData.image} 
-                onChange={(e) => setFormData({...formData, image: e.target.value})} 
-                placeholder="https://..." 
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium mb-1 block">Bio</label>
-              <Textarea 
-                required 
-                rows={3}
-                value={formData.bio} 
-                onChange={(e) => setFormData({...formData, bio: e.target.value})} 
-                placeholder="Brief bio..." 
-              />
-            </div>
-            <Button type="submit">Save Member</Button>
-          </form>
-        </div>
-      )}
-
-      <div className="border rounded-xl bg-card">
-        {loading ? (
-          <div className="p-8 text-center text-muted-foreground">Loading...</div>
-        ) : teams.length === 0 ? (
-          <div className="p-8 text-center text-muted-foreground">No team members found.</div>
-        ) : (
-          <div className="divide-y">
-            {teams.map((member: any) => (
-              <div key={member.id} className="p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  {member.image && (
-                    /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={member.image} alt="" className="w-16 h-16 rounded-md object-cover grayscale" />
-                  )}
-                  <div>
-                    <h3 className="font-medium">{member.name}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {member.role}
-                    </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {teams.map((member) => (
+          <div
+            key={member.id}
+            className="bg-card rounded-3xl border border-border p-6 shadow-xs flex flex-col justify-between space-y-5"
+          >
+            <div className="space-y-4">
+              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-muted border border-border">
+                {member.photoUrl || member.photo ? (
+                  <Image
+                    src={member.photoUrl || member.photo}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                    <Users className="w-12 h-12 text-muted-foreground/40" />
                   </div>
+                )}
+              </div>
+
+              <div>
+                <h3 className="font-display font-bold text-lg text-secondary">{member.name}</h3>
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">{member.title}</p>
+              </div>
+
+              <p className="text-xs text-muted-foreground line-clamp-3 leading-relaxed">
+                {member.description || "Member of the leadership and clinical team at DISCC Varanasi."}
+              </p>
+
+              <div className="space-y-1.5 pt-2 border-t border-border/60 text-[11px] text-muted-foreground">
+                {member.email && (
+                  <p className="flex items-center gap-2">
+                    <Mail className="w-3.5 h-3.5 text-primary" />
+                    <span>{member.email}</span>
+                  </p>
+                )}
+                {member.phone && (
+                  <p className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-primary" />
+                    <span>{member.phone}</span>
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => setEditingMember({ ...member })}
+              className="w-full rounded-xl text-xs font-bold border-border hover:border-primary text-secondary"
+            >
+              <Edit className="w-3.5 h-3.5 mr-1" />
+              Edit Profile
+            </Button>
+          </div>
+        ))}
+      </div>
+
+      {/* Edit Modal */}
+      {editingMember && (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-card rounded-3xl border border-border shadow-2xl max-w-lg w-full p-6 space-y-5">
+            <div className="flex items-center justify-between border-b border-border pb-3">
+              <h3 className="font-display font-black text-xl text-secondary">
+                {editingMember.id ? "Edit Team Member" : "New Team Member"}
+              </h3>
+              <button onClick={() => setEditingMember(null)} className="text-muted-foreground hover:text-secondary">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSave} className="space-y-4">
+              <div className="space-y-1">
+                <label className="text-xs font-semibold text-secondary">Full Name</label>
+                <input
+                  type="text"
+                  value={editingMember.name || ""}
+                  onChange={(e) => setEditingMember({ ...editingMember, name: e.target.value })}
+                  required
+                  className="w-full h-11 px-3.5 rounded-xl border border-border text-sm outline-none focus:border-primary"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs font-semibold text-secondary">Designation / Role</label>
+                <input
+                  type="text"
+                  value={editingMember.title || ""}
+                  onChange={(e) => setEditingMember({ ...editingMember, title: e.target.value })}
+                  required
+                  className="w-full h-11 px-3.5 rounded-xl border border-border text-sm outline-none focus:border-primary"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs font-semibold text-secondary">Bio / Description</label>
+                <textarea
+                  value={editingMember.description || ""}
+                  onChange={(e) => setEditingMember({ ...editingMember, description: e.target.value })}
+                  rows={3}
+                  className="w-full p-3 rounded-xl border border-border text-sm outline-none focus:border-primary"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="text-xs font-semibold text-secondary">Email</label>
+                  <input
+                    type="email"
+                    value={editingMember.email || ""}
+                    onChange={(e) => setEditingMember({ ...editingMember, email: e.target.value })}
+                    className="w-full h-10 px-3 rounded-xl border border-border text-xs outline-none focus:border-primary"
+                  />
                 </div>
-                <div className="flex gap-2">
-                  <Button variant="destructive" size="sm" onClick={() => handleDelete(member.id)}>Delete</Button>
+                <div className="space-y-1">
+                  <label className="text-xs font-semibold text-secondary">Phone</label>
+                  <input
+                    type="tel"
+                    value={editingMember.phone || ""}
+                    onChange={(e) => setEditingMember({ ...editingMember, phone: e.target.value })}
+                    className="w-full h-10 px-3 rounded-xl border border-border text-xs outline-none focus:border-primary"
+                  />
                 </div>
               </div>
-            ))}
+
+              <CloudinaryUploadWidget
+                label="Portrait Photo (Cloudinary)"
+                currentValue={editingMember.photoUrl || editingMember.photo || ""}
+                onSuccess={(url) => setEditingMember({ ...editingMember, photoUrl: url, photo: url })}
+              />
+
+              <div className="pt-3 flex justify-end gap-2">
+                <Button type="button" variant="ghost" onClick={() => setEditingMember(null)}>
+                  Cancel
+                </Button>
+                <Button type="submit" className="rounded-xl bg-primary text-white font-bold text-xs uppercase tracking-wider">
+                  Save Profile
+                </Button>
+              </div>
+            </form>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
