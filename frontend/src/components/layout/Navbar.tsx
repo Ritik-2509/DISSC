@@ -390,8 +390,21 @@ export function Navbar() {
             </Link>
           </nav>
 
-          {/* Right Corner: Donate CTA Button */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Right Corner: Accessibility & Donate CTA Buttons */}
+          <div className="hidden sm:flex items-center gap-2.5">
+            <button
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  const event = new CustomEvent("open-accessibility-toolbox");
+                  window.dispatchEvent(event);
+                }
+              }}
+              title="Open Accessibility Toolbox (WCAG AA/AAA)"
+              className="h-10 px-3.5 rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary border border-secondary/20 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-secondary" />
+              <span>A11y</span>
+            </button>
             <Link href="/donate">
               <Button
                 size="sm"

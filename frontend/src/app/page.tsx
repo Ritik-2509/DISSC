@@ -24,6 +24,8 @@ import {
 } from "lucide-react";
 import { CLOUDINARY_IMAGES } from "@/lib/cloudinary-images";
 import { ProgramDetailModal, ProgramItem } from "@/components/ui/ProgramDetailModal";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import { ImpactCalculator } from "@/components/ui/ImpactCalculator";
 
 // Authentic programs data with SDG Color Profiles
 const PROGRAMS_DATA: ProgramItem[] = [
@@ -224,41 +226,41 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 2. Creative Hero Section with Prominent CM Award Ceremony Spotlight */}
-      <section className="relative w-full overflow-hidden pt-10 pb-16 md:pt-14 md:pb-24 border-b border-border/60 bg-gradient-to-b from-white via-muted/20 to-background">
+      {/* 2. Creative Hero Section with High-Impact Editorial Layout */}
+      <section className="relative w-full overflow-hidden pt-12 pb-20 md:pt-16 md:pb-28 border-b border-border/60 bg-gradient-to-b from-white via-muted/15 to-background">
         <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
               <RevealStagger>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4 text-primary" />
+                  <ShieldCheck className="w-4 h-4 text-primary flex-shrink-0" />
                   <span>DEVA International Society for Child Care (DISCC)</span>
                 </div>
               </RevealStagger>
 
               <RevealStagger delay={0.08}>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-black tracking-tight text-secondary leading-[1.06]">
-                  Nurturing Pure Souls With Scientific Care and Love
+                <h1 className="text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl font-display font-black tracking-tight text-secondary leading-[1.05]">
+                  Nurturing Pure Souls with Scientific Care and Love
                 </h1>
               </RevealStagger>
 
               <RevealStagger delay={0.16}>
                 <p className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed max-w-2xl">
-                  Pioneering clinical psychology, autism and intellectual disability rehabilitation, and girl child empowerment in the sacred city of Varanasi since 1991.
+                  Pioneering clinical psychology, autism rehabilitation, and rural girl child empowerment in the sacred city of Varanasi since 1991.
                 </p>
               </RevealStagger>
 
               <RevealStagger delay={0.24}>
                 <div className="flex flex-wrap items-center gap-4 pt-2">
                   <Link href="/donate">
-                    <Button size="lg" className="h-14 px-8 rounded-full font-bold uppercase text-xs tracking-wider bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all">
+                    <Button size="lg" className="h-14 px-8 rounded-full font-bold uppercase text-xs tracking-wider bg-primary hover:bg-primary/90 text-white shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
                       <Heart className="w-4 h-4 mr-2 fill-white" />
                       Support a Special Child
                     </Button>
                   </Link>
                   <Link href="/our-work">
-                    <Button size="lg" variant="outline" className="h-14 px-8 rounded-full font-bold uppercase text-xs tracking-wider border-secondary/30 hover:border-primary text-secondary hover:text-primary">
+                    <Button size="lg" variant="outline" className="h-14 px-8 rounded-full font-bold uppercase text-xs tracking-wider border-secondary/30 hover:border-primary text-secondary hover:text-primary transition-all">
                       Explore What We Do
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -268,8 +270,8 @@ export default function Home() {
 
               {/* Chief Minister Award Callout Badge */}
               <RevealStagger delay={0.32}>
-                <div className="pt-4 border-t border-border/70 flex items-center gap-4 text-sm text-foreground/90">
-                  <div className="w-11 h-11 rounded-2xl bg-accent/20 flex items-center justify-center text-secondary font-bold flex-shrink-0">
+                <div className="pt-5 border-t border-border/70 flex items-center gap-4 text-sm text-foreground/90">
+                  <div className="w-12 h-12 rounded-2xl bg-accent/25 flex items-center justify-center text-secondary font-bold flex-shrink-0 shadow-xs">
                     <Award className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
@@ -277,29 +279,37 @@ export default function Home() {
                       Best Professional Award by Chief Minister of Uttar Pradesh
                     </span>
                     <span className="text-xs text-muted-foreground">
-                      Conferred upon Dr. C. Tulsi Das for groundbreaking contributions to mental health and neurodivergent care
+                      Conferred upon Dr. C. Tulsi Das for groundbreaking psychiatric leadership in neurodivergent care
                     </span>
                   </div>
                 </div>
               </RevealStagger>
             </div>
 
-            {/* Right Visual Composition: Prominent CM Award & Children Photo */}
+            {/* Right Visual Composition: Prominent CM Award & Children Photo with Framer Motion Physics */}
             <div className="lg:col-span-5 relative space-y-4">
               {/* Main Prominent Award Picture Card */}
-              <RevealStagger delay={0.15} className="relative z-20">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/10] w-full group">
+              <motion.div
+                initial={{ opacity: 0, y: 25, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
+                className="relative z-20"
+              >
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/11] w-full group bg-slate-900">
                   <Image
                     src={CLOUDINARY_IMAGES.roleModelAward}
                     alt="Dr. Tulsi Das Receiving Award from Chief Minister of Uttar Pradesh"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-secondary/20 to-transparent" />
-                  <div className="absolute bottom-4 left-5 right-5 text-white">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="px-2.5 py-0.5 rounded-full bg-accent text-secondary text-[10px] font-black uppercase tracking-wider">
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent" />
+                  <div className="absolute bottom-5 left-5 right-5 text-white">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="px-2.5 py-0.5 rounded-full bg-accent text-secondary text-[10px] font-black uppercase tracking-wider shadow-xs">
                         State Honor
                       </span>
                     </div>
@@ -311,53 +321,69 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </RevealStagger>
+              </motion.div>
 
               {/* Overlapping Secondary Card: Children of Deva Center */}
-              <RevealStagger delay={0.28} className="relative -mt-8 ml-auto w-11/12 sm:w-4/5 z-30">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[16/9] group">
+              <motion.div
+                initial={{ opacity: 0, y: 35, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3 } }}
+                className="relative -mt-10 ml-auto w-11/12 sm:w-4/5 z-30"
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/9] group bg-card">
                   <Image
                     src={CLOUDINARY_IMAGES.awardCeremony}
                     alt="DISCC Award Ceremony Milestone"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 35vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-4 right-4 text-white">
                     <p className="font-bold text-xs text-white">Deva Center Varanasi</p>
-                    <p className="text-[11px] text-white/80">32 years of transforming neurodivergent lives</p>
+                    <p className="text-[11px] text-white/85">32 years of transforming neurodivergent lives</p>
                   </div>
                 </div>
-              </RevealStagger>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Verified Impact Metrics Bar */}
+      {/* 3. Verified Impact Metrics Bar with Live Animated Counts */}
       <section className="py-12 bg-secondary text-white w-full border-b border-white/10">
         <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/15">
             <div className="pt-4 md:pt-0 md:px-6 space-y-1">
-              <span className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-accent">32+</span>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-accent tracking-tight">
+                <AnimatedCounter value={32} suffix="+" />
+              </div>
               <p className="text-xs uppercase tracking-wider font-semibold text-white/80">Years in Varanasi</p>
               <p className="text-xs text-white/60">Founded in 1991</p>
             </div>
 
             <div className="pt-4 md:pt-0 md:px-6 space-y-1">
-              <span className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white">98,000+</span>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white tracking-tight">
+                <AnimatedCounter value={98000} suffix="+" />
+              </div>
               <p className="text-xs uppercase tracking-wider font-semibold text-white/80">Families Supported</p>
               <p className="text-xs text-white/60">Clinical psychology & guidance</p>
             </div>
 
             <div className="pt-4 md:pt-0 md:px-6 space-y-1">
-              <span className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-accent">9</span>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-accent tracking-tight">
+                <AnimatedCounter value={9} />
+              </div>
               <p className="text-xs uppercase tracking-wider font-semibold text-white/80">Dedicated Centers</p>
               <p className="text-xs text-white/60">Urban and rural campuses</p>
             </div>
 
             <div className="pt-4 md:pt-0 md:px-6 space-y-1">
-              <span className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white">235+</span>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white tracking-tight">
+                <AnimatedCounter value={235} suffix="+" />
+              </div>
               <p className="text-xs uppercase tracking-wider font-semibold text-white/80">Awards & Honors</p>
               <p className="text-xs text-white/60">PM & CM State Recognitions</p>
             </div>
@@ -628,7 +654,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Authentic Photo Moments from Original Archives */}
+      {/* 6. Interactive Live Impact & Donation Calculator */}
+      <ImpactCalculator />
+
+      {/* 7. Authentic Photo Moments from Original Archives */}
       <section className="py-20 md:py-28 border-b border-border/60 w-full bg-background">
         <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">

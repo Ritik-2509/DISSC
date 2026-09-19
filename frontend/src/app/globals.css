@@ -147,3 +147,124 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* =========================================================
+   WCAG 2.2 ACCESSIBILITY TOOLBOX SYSTEM (Inspired by Botmartz)
+   ========================================================= */
+
+/* 1. Font Size Scaling */
+html.a11y-font-medium {
+  font-size: 115% !important;
+}
+html.a11y-font-large {
+  font-size: 130% !important;
+}
+html.a11y-font-xlarge {
+  font-size: 145% !important;
+}
+
+/* 2. High Contrast Mode (WCAG AAA) */
+html.a11y-high-contrast {
+  --background: oklch(0.05 0 0) !important;
+  --foreground: oklch(0.99 0 0) !important;
+  --card: oklch(0.1 0 0) !important;
+  --card-foreground: oklch(0.99 0 0) !important;
+  --secondary: oklch(0.15 0 0) !important;
+  --muted: oklch(0.18 0 0) !important;
+  --muted-foreground: oklch(0.85 0 0) !important;
+  --border: oklch(0.4 0 0) !important;
+  filter: contrast(125%);
+}
+
+html.a11y-high-contrast body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.a11y-high-contrast .bg-card,
+html.a11y-high-contrast .bg-white {
+  background-color: #121212 !important;
+  color: #FFFFFF !important;
+  border-color: #444444 !important;
+}
+
+/* 3. Grayscale Mode */
+html.a11y-grayscale {
+  filter: grayscale(100%) !important;
+}
+
+/* 4. Invert Colors Mode */
+html.a11y-invert {
+  filter: invert(100%) hue-rotate(180deg) !important;
+}
+html.a11y-invert img,
+html.a11y-invert video {
+  filter: invert(100%) hue-rotate(180deg) !important;
+}
+
+/* 5. Dyslexia-Friendly Typography */
+html.a11y-dyslexic,
+html.a11y-dyslexic * {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* 6. Spacing & Leading */
+html.a11y-letter-wide * {
+  letter-spacing: 0.08em !important;
+}
+html.a11y-letter-wider * {
+  letter-spacing: 0.15em !important;
+}
+html.a11y-line-relaxed p,
+html.a11y-line-relaxed span {
+  line-height: 1.8 !important;
+}
+html.a11y-line-loose p,
+html.a11y-line-loose span {
+  line-height: 2.2 !important;
+}
+
+/* 7. Highlight Links */
+html.a11y-highlight-links a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: #00194C !important;
+  font-weight: 700 !important;
+}
+
+/* 8. Underline Headings */
+html.a11y-heading-underlines h1,
+html.a11y-heading-underlines h2,
+html.a11y-heading-underlines h3,
+html.a11y-heading-underlines h4 {
+  text-decoration: underline !important;
+  text-decoration-color: #9C211E !important;
+  text-underline-offset: 6px !important;
+}
+
+/* 9. Big Mouse Cursor */
+html.a11y-big-cursor,
+html.a11y-big-cursor * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="%2300194C" stroke="%23F59E0B" stroke-width="2"><path d="M3 3l7 18 3-7 7-3L3 3z"/></svg>'), auto !important;
+}
+
+/* 10. Stop Animations */
+html.a11y-stop-animations *,
+html.a11y-stop-animations *::before,
+html.a11y-stop-animations *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* 11. Focus Highlight (Bright Neon Focus Ring) */
+html.a11y-focus-highlight *:focus,
+html.a11y-focus-highlight *:focus-visible {
+  outline: 4px solid #00E5FF !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.8) !important;
+}
+

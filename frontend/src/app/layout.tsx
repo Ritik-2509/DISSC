@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { AccessibilityProvider } from "@/components/accessibility/AccessibilityContext";
+import { AccessibilityToolbox } from "@/components/accessibility/AccessibilityToolbox";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,9 +35,12 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${outfit.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground selection:bg-primary selection:text-white`}
       >
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AccessibilityProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <AccessibilityToolbox />
+        </AccessibilityProvider>
       </body>
     </html>
   );
