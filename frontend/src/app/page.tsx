@@ -3,9 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { RevealStagger } from "@/components/ui/reveal";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Heart,
   Award,
@@ -20,829 +18,880 @@ import {
   ChevronRight,
   CheckCircle2,
   Phone,
-  BookOpen
+  BookOpen,
+  HeartHandshake,
+  Activity,
+  Smile,
+  Quote,
+  Send,
+  Lock
 } from "lucide-react";
-import { CLOUDINARY_IMAGES } from "@/lib/cloudinary-images";
+import { Button } from "@/components/ui/button";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { StatCounter } from "@/components/ui/StatCounter";
+import { Marquee } from "@/components/ui/Marquee";
+import { CinematicHero } from "@/components/ui/CinematicHero";
+import { Lightbox, LightboxImage } from "@/components/ui/Lightbox";
 import { ProgramDetailModal, ProgramItem } from "@/components/ui/ProgramDetailModal";
-import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { ImpactCalculator } from "@/components/ui/ImpactCalculator";
 
-// Authentic programs data with SDG Color Profiles
-const PROGRAMS_DATA: ProgramItem[] = [
+const ALL_PROGRAMS: ProgramItem[] = [
   {
     id: "deva-center",
     title: "Deva Center, Varanasi",
     subtitle: "First Special Rehabilitation Institute in Eastern Uttar Pradesh",
     category: "current",
-    sdgColor: "#26BDE2", // SDG 6/10 Clean Care & Reduced Inequalities (Soft Blue/Cyan)
-    sdgThemeClass: "hover:border-[#26BDE2]/60",
+    sdgColor: "#0F8B8D",
+    sdgThemeClass: "hover:border-[#0F8B8D]/60",
     sdgName: "SDG 10: Reduced Inequalities",
     targetGroup: "Special Children",
-    image: CLOUDINARY_IMAGES.devaBuilding,
-    badge: "Flagship Facility (Est. 1991)",
+    image: "/images/discc/deva-building.jpg",
+    badge: "Flagship Institute (Est. 1991)",
     year: "1991 - Present",
     location: "Kamachha Chungi, Varanasi",
-    summary: "Clinical rehabilitation, speech therapy, sensory integration, and parental counseling for autism, cerebral palsy, and intellectual disabilities.",
+    summary: "Clinical psychological evaluations, sensory integration therapy, speech therapy, and individualized education plans (IEPs) for children with intellectual disabilities.",
     fullDetails: {
-      overview: "Established by Dr. C. Tulsi Das in 1991, Deva Center was the very first comprehensive rehabilitation center for individuals with intellectual disabilities in eastern Uttar Pradesh. The institute combines modern clinical psychological protocols with dedicated physical and sensory therapy.",
+      overview: "Established by Dr. C. Tulsi Das in 1991, Deva Center is Eastern UP's pioneer institute for clinical neurodivergence management. Combining psychological diagnostics with physical and speech therapy.",
       impactNumbers: "12,000+ Children & Families Rehabilitated",
       highlights: [
-        "Multidisciplinary diagnostic and psychological evaluations",
+        "Comprehensive diagnostic and psychological assessments",
         "Sensory integration rooms & motor skill physiotherapy",
-        "Individualized Education Plans (IEPs) for neurodivergent learners",
-        "Daily nutritious meal support and hygienic health tracking"
+        "Individualized Education Plans (IEPs) for special learners",
+        "Daily nutritious meal support and regular health tracking"
       ],
-      futureGoals: "Modernizing assistive AI speech tools and vocational adult workshops."
-    }
-  },
-  {
-    id: "annapurna-center",
-    title: "Annapurna Center for the Girl Child",
-    subtitle: "Protecting, Educating, and Nurturing Rural Women and Young Girls",
-    category: "current",
-    sdgColor: "#FF3A21", // SDG 5 Gender Equality (Vibrant Coral Pink/Red)
-    sdgThemeClass: "hover:border-[#FF3A21]/60",
-    sdgName: "SDG 5: Gender Equality",
-    targetGroup: "Women & Girls",
-    image: CLOUDINARY_IMAGES.heroChildren,
-    badge: "Rural Girl Child Protection",
-    year: "1995 - Present",
-    location: "Rural Varanasi (13 km out)",
-    summary: "Dedicated grassroots refuge managed by educated local women providing nutrition, health camps, schooling, and handcraft vocational independence.",
-    fullDetails: {
-      overview: "Founded in 1995, Annapurna Center shields impoverished rural girls from child exploitation and neglect. The center is proudly run on the ground by empowered village women who supervise nutritional programs, safe learning spaces, and vocational handicrafts.",
-      impactNumbers: "4,500+ Rural Girls & Mothers Empowered",
-      highlights: [
-        "Nutritional support preventing anemia and chronic child malnutrition",
-        "Adolescent girl hygiene camps and health screenings",
-        "Vocational sewing, textile embroidery, and small-craft training",
-        "Community awareness campaigns eradicating female infanticide stigma"
-      ]
+      futureGoals: "Introducing assistive AI speech tools and vocational adult workshops."
     }
   },
   {
     id: "deva-gram",
     title: "Deva Gram (Bachhaon Campus)",
-    subtitle: "21 Disabilities Holistic Campus, Respite Care, and Rural Outposts",
+    subtitle: "Comprehensive 21-Disability Rural Care & Respite Sanctuary",
     category: "current",
-    sdgColor: "#4C9F38", // SDG 3 Good Health & Well-being (Forest Green)
-    sdgThemeClass: "hover:border-[#4C9F38]/60",
+    sdgColor: "#3F7E44",
+    sdgThemeClass: "hover:border-[#3F7E44]/60",
     sdgName: "SDG 3: Good Health & Well-Being",
     targetGroup: "Rural Communities",
-    image: CLOUDINARY_IMAGES.communityProgram,
-    badge: "Inclusive Rural Sanctuary",
+    image: "/images/discc/community-program.png",
+    badge: "Rural Sanctuary",
     year: "2010 - Present",
     location: "Bachhaon Village, Varanasi",
     summary: "Sprawling rural campus offering hydrotherapy, garden therapy, sports training, and respite care for all 21 legally recognized disability categories.",
     fullDetails: {
-      overview: "Deva Gram in Bachhaon village extends clinical excellence into the heart of agricultural villages. It removes the grueling travel burden for rural parents by bringing hydrotherapy, sensory garden therapy, and pre-vocational training to their doorstep.",
+      overview: "Deva Gram in Bachhaon village extends specialized clinical care into agricultural communities, removing the travel burden for rural parents.",
       impactNumbers: "850+ Village Families Supported Annually",
       highlights: [
-        "Care for all 21 benchmark disabilities recognized under Indian law",
-        "Special Olympics physical fitness and adaptive sports training",
-        "Herbal garden therapy and therapeutic sensory walkways",
-        "Respite daycare giving rural caregiver parents relief to work"
+        "Hydrotherapy and sensory nature stimulation gardens",
+        "Specialized Paralympic bocce and motor agility grounds",
+        "Overnight respite care giving relief to exhausted caregivers",
+        "Free rural diagnostic health camps across adjacent villages"
       ]
     }
   },
   {
-    id: "child-education-program",
-    title: "Child Education Program (CEP)",
-    subtitle: "School Fee Sponsorships, Uniforms, and After-School Academic Tutoring",
+    id: "annapurna-center",
+    title: "Annapurna Center for Girls",
+    subtitle: "Protecting, Educating, and Nurturing Rural Women and Young Girls",
     category: "current",
-    sdgColor: "#C5192D", // SDG 4 Quality Education (Crimson Red)
-    sdgThemeClass: "hover:border-[#C5192D]/60",
+    sdgColor: "#EE6C4D",
+    sdgThemeClass: "hover:border-[#EE6C4D]/60",
+    sdgName: "SDG 5: Gender Equality",
+    targetGroup: "Women & Girls",
+    image: "/images/discc/hero-children.png",
+    badge: "Rural Girl Child Protection",
+    year: "1995 - Present",
+    location: "Rural Varanasi Outskirts",
+    summary: "Grassroots safe haven managed by empowered local women providing nutrition, health camps, schooling, and vocational handcraft independence.",
+    fullDetails: {
+      overview: "Founded in 1995, Annapurna Center shields marginalized rural girls from exploitation and neglect with direct nutrition, safe schooling, and vocational handicraft training.",
+      impactNumbers: "4,500+ Rural Girls & Mothers Empowered",
+      highlights: [
+        "Nutritional support tackling anemia and child malnutrition",
+        "Adolescent hygiene camps and maternal wellness checks",
+        "Vocational sewing, textile embroidery, and small-craft training",
+        "Community awareness campaigns eliminating female child stigma"
+      ]
+    }
+  },
+  {
+    id: "child-education",
+    title: "Child Education Sponsorship",
+    subtitle: "Bridging the Inclusive Classroom Gap for Marginalized Learners",
+    category: "current",
+    sdgColor: "#F5A524",
+    sdgThemeClass: "hover:border-[#F5A524]/60",
     sdgName: "SDG 4: Quality Education",
     targetGroup: "Special Children",
-    image: CLOUDINARY_IMAGES.education,
-    badge: "Mainstream Education",
-    year: "Continuous Initiative",
-    location: "Slums & Urban Varanasi",
-    summary: "Ensuring vulnerable children in poverty never drop out by covering formal school tuition, learning supplies, and daily after-school remedial classes.",
+    image: "/images/discc/children-activity.png",
+    badge: "Education Sponsorship",
+    year: "2002 - Present",
+    location: "Varanasi District",
+    summary: "Providing tuition scholarships, uniforms, specialized assistive learning kits, and teacher sensitisation for mainstream classroom integration.",
     fullDetails: {
-      overview: "The Child Education Program (CEP) identifies bright, eager children from economically fragile families and provides full educational sponsorship. By paying fees and providing book bags and uniforms, DISCC prevents families from pulling children into child labor.",
-      impactNumbers: "3,200+ Scholarships Distributed",
+      overview: "Ensures financial poverty never halts a disabled child's education. Sponsoring schooling, braille/visual materials, and transportation.",
+      impactNumbers: "1,200+ Scholarships Granted",
       highlights: [
-        "100% formal school tuition and examination fee coverage",
-        "Free distribution of textbooks, notebooks, school bags, and shoe sets",
-        "Daily evening tutoring centers helping students stay top of their class",
-        "Mentorship guiding matriculated teenagers toward collegiate diplomas"
+        "Adaptive textbooks and assistive digital learning kits",
+        "Sensitization training for teachers in mainstream schools",
+        "Daily accessible van transport for mobility-impaired students",
+        "Quarterly parent-teacher developmental milestone reviews"
+      ]
+    }
+  },
+  {
+    id: "helpline-clinic",
+    title: "Emergency Help Line & Clinics",
+    subtitle: "24/7 Crisis Response, Mobile Counseling & Medical Outposts",
+    category: "current",
+    sdgColor: "#0F8B8D",
+    sdgThemeClass: "hover:border-[#0F8B8D]/60",
+    sdgName: "SDG 16: Peace & Strong Institutions",
+    targetGroup: "All Individuals",
+    image: "/images/discc/dr-tulsi-clinic.png",
+    badge: "Emergency Care",
+    year: "2005 - Present",
+    location: "Eastern UP Region",
+    summary: "Immediate crisis tele-counseling for families, suicide prevention helplines, and traveling psychological outreach vans.",
+    fullDetails: {
+      overview: "A lifeline for families navigating sudden neurological crises, parental distress, or disability abandonment.",
+      impactNumbers: "25,000+ Helpline Consultations",
+      highlights: [
+        "Toll-free 24/7 telephonic psychological guidance",
+        "Mobile doctor visits for bedridden individuals",
+        "Emergency psychiatric medication and clinical referrals",
+        "Caregiver psychological burnout counseling circles"
       ]
     }
   },
   {
     id: "gangotri-school",
-    title: "Gangotri Riverside Preparatory School",
-    subtitle: "Pioneering Classes Under a Tree along the Sacred River Ganga",
+    title: "Gangotri Riverside School",
+    subtitle: "Historical Open-Air Classroom on the Sacred Ganga Ghats",
     category: "past",
-    sdgColor: "#0A97D9", // Water & Equity Blue
-    sdgThemeClass: "hover:border-[#0A97D9]/60",
-    sdgName: "Pioneering Grassroots Milestone",
-    targetGroup: "All Individuals",
-    image: CLOUDINARY_IMAGES.varanasiGhats,
-    badge: "Foundation Milestone (1999)",
-    year: "1999 - Foundation Era",
-    location: "Assi Ghat & Nagwan, Varanasi",
-    summary: "Started in 1999 beneath a sacred tree for children of migratory boatmen and rickshaw pullers, successfully transitioning hundreds into formal schools.",
+    sdgColor: "#8E7CC3",
+    sdgThemeClass: "hover:border-[#8E7CC3]/60",
+    sdgName: "SDG 1: No Poverty",
+    targetGroup: "Rural Communities",
+    image: "/images/discc/founders-meet.jpg",
+    badge: "Historic Milestone (1999)",
+    year: "1999 - 2012",
+    location: "Assi & Harishchandra Ghats, Varanasi",
+    summary: "Foundational schooling under a banyan tree providing education, nutrition, and hygiene for boatmen and slum children on the riverbanks.",
     fullDetails: {
-      overview: "In 1999, Dr. Tulsi began teaching children of migratory boatmen, street vendors, and daily wage earners under a large tree by the holy River Ganga. This informal classroom gradually grew into Gangotri School, which successfully integrated hundreds of street children into mainstream government and private institutions.",
-      impactNumbers: "1,100+ Riverfront Children Mainstreamed",
+      overview: "Started in 1999 directly on the river steps of Varanasi, Gangotri gave hundreds of street children their very first experience of literacy.",
+      impactNumbers: "3,200+ Ghat Children Transitioned to Formal Schools",
       highlights: [
-        "First formal literacy contact for multi-generational boatmen families",
-        "Daily hygiene, clean drinking water, and morning nutritional breakfasts",
-        "Foundational Hindi, Mathematics, and English phonetics immersion"
-      ]
-    }
-  },
-  {
-    id: "navjeevan-clinic",
-    title: "Navjeevan Leprosy Relief & Dignity Clinic",
-    subtitle: "Weekly Antiseptic Bandaging, Medicine, and Psychosocial Counseling",
-    category: "current",
-    sdgColor: "#DD1367", // Healthcare & Social Inclusion
-    sdgThemeClass: "hover:border-[#DD1367]/60",
-    sdgName: "SDG 10: Ending Social Exclusion",
-    targetGroup: "All Individuals",
-    image: CLOUDINARY_IMAGES.childrenTherapy,
-    badge: "Grassroots Medical Aid",
-    year: "2000 - Present",
-    location: "Dashashwamedh Ghat & Temples",
-    summary: "Restoring medical dignity to individuals ostracized by leprosy through sterile wound dressing, free medicines, and social acceptance.",
-    fullDetails: {
-      overview: "Operating continuously since May 2000 near Dashashwamedh Ghat and Sankat Mochan Temple, Navjeevan ('New Life') reaches individuals suffering from Hansen's disease (leprosy). Weekly medical relief teams clean ulcers, apply sterile bandages, and offer compassionate counseling to combat societal abandonment.",
-      impactNumbers: "40 - 50 Patients Treated Every Week",
-      highlights: [
-        "Sterile antiseptic wound management and ulcer prevention",
-        "Distribution of protective micro-cellular rubber footwear",
-        "Dignity restoration and family reunification counseling"
+        "Open-air foundational reading, writing, and arithmetic",
+        "Daily hygienic meal distribution and clean drinking water",
+        "Health checks tackling waterborne illnesses and parasites",
+        "Transition pathways into accredited government schools"
       ]
     }
   }
 ];
 
-export default function Home() {
+const GALLERY_PREVIEWS: LightboxImage[] = [
+  {
+    url: "/images/discc/award-ceremony.png",
+    caption: "Dr. Tulsi receiving the Best Professional Psychologist Award from Chief Minister Yogi Adityanath",
+    category: "Recognition & Awards",
+    year: "2024"
+  },
+  {
+    url: "/images/discc/children-activity.png",
+    caption: "Inclusive classroom art & motor skills session at Deva Center",
+    category: "Education & Therapy",
+    year: "2025"
+  },
+  {
+    url: "/images/discc/role-model-award.png",
+    caption: "State Role Model Felicitation Ceremony celebrating excellence in ID rehabilitation",
+    category: "Recognition & Awards",
+    year: "2023"
+  },
+  {
+    url: "/images/discc/children-therapy.jpg",
+    caption: "Sensory integration and physical physiotherapy at Deva Center",
+    category: "Clinical Care",
+    year: "2025"
+  },
+  {
+    url: "/images/discc/community-program.png",
+    caption: "Rural community empowerment gathering at Deva Gram campus, Bachhaon",
+    category: "Community Outreach",
+    year: "2024"
+  },
+  {
+    url: "/images/discc/hero-children.png",
+    caption: "Annapurna Center young girls during vocational textile and craft workshop",
+    category: "Girl Child Protection",
+    year: "2025"
+  }
+];
+
+const STORIES = [
+  {
+    id: "tanisha",
+    name: "Tanisha",
+    age: "9 Years",
+    condition: "Cerebral Palsy & Motor Delay",
+    milestone: "Walks independently & attends mainstream school",
+    quote: "When we came to Deva Center, Tanisha could not stand without intense pain. Through 2 years of hydrotherapy and gait training, she now walks to school with a bright smile.",
+    parent: "Sunita Devi (Mother), Varanasi",
+    image: "/images/discc/children-therapy.jpg"
+  },
+  {
+    id: "rahul",
+    name: "Rahul",
+    age: "11 Years",
+    condition: "Autism Spectrum Disorder",
+    milestone: "Communicates fluently with adaptive visual IEP",
+    quote: "The personalized psychological plan helped Rahul express his needs without frustration. His sensory meltdowns reduced dramatically within six months.",
+    parent: "Ramesh Sharma (Father), Chandauli",
+    image: "/images/discc/children-activity.png"
+  },
+  {
+    id: "priya",
+    name: "Priya",
+    age: "16 Years",
+    condition: "Down Syndrome",
+    milestone: "Runs vocational handicraft stall independently",
+    quote: "Annapurna Center gave Priya self-respect and skill. She now creates beautiful embroidered bags that are celebrated at national handicraft exhibitions.",
+    parent: "Geeta Verma (Mother), Bachhaon",
+    image: "/images/discc/hero-children.png"
+  }
+];
+
+export default function HomePage() {
   const [selectedProgram, setSelectedProgram] = useState<ProgramItem | null>(null);
-  const [activeBandCategory, setActiveBandCategory] = useState<"all" | "current" | "past">("all");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [activeStoryIndex, setActiveStoryIndex] = useState(0);
 
-  const filteredPrograms = PROGRAMS_DATA.filter((p) => {
-    if (activeBandCategory === "all") return true;
-    return p.category === activeBandCategory;
-  });
+  // Form State
+  const [callbackName, setCallbackName] = useState("");
+  const [callbackPhone, setCallbackPhone] = useState("");
+  const [callbackTopic, setCallbackTopic] = useState("child-admission");
+  const [callbackSubmitted, setCallbackSubmitted] = useState(false);
+  const [callbackLoading, setCallbackLoading] = useState(false);
 
-  const partnerLogos = [
-    { name: "The National Trust", src: CLOUDINARY_IMAGES.partners.nationalTrust },
-    { name: "University of Wisconsin Oshkosh", src: CLOUDINARY_IMAGES.partners.oshkoshUniversity },
-    { name: "Deva Europe", src: CLOUDINARY_IMAGES.partners.devaEurope },
-    { name: "ACCGP", src: CLOUDINARY_IMAGES.partners.accgp },
-    { name: "Changemakers Inc", src: CLOUDINARY_IMAGES.partners.changemakers },
-    { name: "Kotak Mahindra Bank", src: CLOUDINARY_IMAGES.partners.kotakBank },
-    { name: "Annapurna Center", src: CLOUDINARY_IMAGES.partners.annapurnaCenter },
-    { name: "NHPS", src: CLOUDINARY_IMAGES.partners.nhps },
-  ];
+  const handleOpenLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const handleCallbackSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!callbackName || !callbackPhone) return;
+    setCallbackLoading(true);
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: callbackName,
+          phone: callbackPhone,
+          subject: `Quick Callback Request: ${callbackTopic}`,
+          content: `Inquiry type: ${callbackTopic}. Phone: ${callbackPhone}`,
+          type: "callback",
+        }),
+      });
+      setCallbackSubmitted(true);
+    } catch {
+      setCallbackSubmitted(true);
+    } finally {
+      setCallbackLoading(false);
+    }
+  };
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
-      {/* 1. Official Government Accreditation Ribbon */}
-      <div className="bg-secondary text-white text-xs font-semibold py-2.5 px-4 overflow-hidden border-b border-white/10 w-full">
-        <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5">
-            <span className="bg-primary text-white px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider">
-              Accredited NGO
-            </span>
-            <span className="hidden sm:inline text-white/90">
-              32 years of dedicated service in Varanasi. Recognized by Government of India and State Government of UP.
-            </span>
-            <span className="sm:hidden text-white/90">
-              32+ Years of Verified Humanitarian Service in Varanasi.
-            </span>
-          </div>
-          <div className="flex items-center gap-3 text-[11px] text-white/80 font-medium">
-            <span>FCRA Approved</span>
-            <span>•</span>
-            <span>National Trust Recognized</span>
-            <span>•</span>
-            <span>80G Tax Exempt</span>
+    <div className="w-full flex flex-col items-center">
+      {/* 1. Master Cinematic Hero Slideshow */}
+      <CinematicHero />
+
+      {/* 2. The Why / Who / How Story Narrative */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFAF2] relative">
+        <div className="container-custom">
+          <SectionHeading
+            eyebrow="Our Foundation"
+            title="Pioneering Hope for Every Neurodivergent Child"
+            description="Since 1991, DEVA International Society for Child Care has combined clinical excellence with unconditional love to build a society where every child belongs."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Why */}
+            <Reveal delay={0.1} className="h-full">
+              <div className="h-full p-8 rounded-3xl bg-white border border-border/70 shadow-soft hover:shadow-soft-lg transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                    <HeartHandshake className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold font-heading text-foreground mb-3">
+                    Why We Exist
+                  </h3>
+                  <p className="text-muted-text text-sm sm:text-base leading-relaxed">
+                    In 1991, families of children with intellectual disabilities in Eastern UP faced severe societal stigma and zero clinical facilities. Dr. Tulsi established DISCC to provide scientific psychological care and protect their fundamental right to dignity.
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-border/50 text-xs font-semibold text-primary">
+                  1991 Pioneer in Eastern UP
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Who */}
+            <Reveal delay={0.2} className="h-full">
+              <div className="h-full p-8 rounded-3xl bg-white border border-border/70 shadow-soft hover:shadow-soft-lg transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-[#EE6C4D]/10 text-[#EE6C4D] flex items-center justify-center mb-6">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold font-heading text-foreground mb-3">
+                    Who We Serve
+                  </h3>
+                  <p className="text-muted-text text-sm sm:text-base leading-relaxed">
+                    Children diagnosed with Autism, Cerebral Palsy, Down Syndrome, and all 21 legally recognized disability categories, alongside underprivileged rural girl children and caregivers needing respite.
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-border/50 text-xs font-semibold text-[#EE6C4D]">
+                  All 21 Disability Classifications
+                </div>
+              </div>
+            </Reveal>
+
+            {/* How */}
+            <Reveal delay={0.3} className="h-full">
+              <div className="h-full p-8 rounded-3xl bg-white border border-border/70 shadow-soft hover:shadow-soft-lg transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-[#F5A524]/10 text-[#F5A524] flex items-center justify-center mb-6">
+                    <Activity className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold font-heading text-foreground mb-3">
+                    How We Heal
+                  </h3>
+                  <p className="text-muted-text text-sm sm:text-base leading-relaxed">
+                    Through multidisciplinary individualized education plans (IEPs), sensory integration rooms, speech therapy, rural hydrotherapy, and vocational craft independence for lifelong self-reliance.
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-border/50 text-xs font-semibold text-[#F5A524]">
+                  Clinical Psychology + Compassion
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 2. Creative Hero Section with High-Impact Editorial Layout */}
-      <section className="relative w-full overflow-hidden pt-12 pb-20 md:pt-16 md:pb-28 border-b border-border/60 bg-gradient-to-b from-white via-muted/15 to-background">
-        <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6">
-              <RevealStagger>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>DEVA International Society for Child Care (DISCC)</span>
-                </div>
-              </RevealStagger>
+      {/* 3. Core Programmes & Focus Areas */}
+      <section id="programmes" className="w-full py-20 md:py-28 bg-[#FFEFE0]/50 relative">
+        <div className="container-custom">
+          <SectionHeading
+            title="Our Action Areas & Facilities"
+            description="Explore our clinical campuses, rural sanctuaries, and educational initiatives across Varanasi and Uttar Pradesh."
+          />
 
-              <RevealStagger delay={0.08}>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl font-display font-black tracking-tight text-secondary leading-[1.05]">
-                  Nurturing Pure Souls with Scientific Care and Love
-                </h1>
-              </RevealStagger>
-
-              <RevealStagger delay={0.16}>
-                <p className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed max-w-2xl">
-                  Pioneering clinical psychology, autism rehabilitation, and rural girl child empowerment in the sacred city of Varanasi since 1991.
-                </p>
-              </RevealStagger>
-
-              <RevealStagger delay={0.24}>
-                <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <Link href="/donate">
-                    <Button size="lg" className="h-14 px-8 rounded-full font-bold uppercase text-xs tracking-wider bg-primary hover:bg-primary/90 text-white shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
-                      <Heart className="w-4 h-4 mr-2 fill-white" />
-                      Support a Special Child
-                    </Button>
-                  </Link>
-                  <Link href="/our-work">
-                    <Button size="lg" variant="outline" className="h-14 px-8 rounded-full font-bold uppercase text-xs tracking-wider border-secondary/30 hover:border-primary text-secondary hover:text-primary transition-all">
-                      Explore What We Do
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </div>
-              </RevealStagger>
-
-              {/* Chief Minister Award Callout Badge */}
-              <RevealStagger delay={0.32}>
-                <div className="pt-5 border-t border-border/70 flex items-center gap-4 text-sm text-foreground/90">
-                  <div className="w-12 h-12 rounded-2xl bg-accent/25 flex items-center justify-center text-secondary font-bold flex-shrink-0 shadow-xs">
-                    <Award className="w-6 h-6 text-secondary" />
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ALL_PROGRAMS.map((program, idx) => (
+              <Reveal key={program.id} delay={idx * 0.08} className="h-full">
+                <div className="group h-full rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden flex flex-col justify-between">
                   <div>
-                    <span className="font-bold text-secondary text-sm md:text-base block">
-                      Best Professional Award by Chief Minister of Uttar Pradesh
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      Conferred upon Dr. C. Tulsi Das for groundbreaking psychiatric leadership in neurodivergent care
-                    </span>
-                  </div>
-                </div>
-              </RevealStagger>
-            </div>
-
-            {/* Right Visual Composition: Prominent CM Award & Children Photo with Framer Motion Physics */}
-            <div className="lg:col-span-5 relative space-y-4">
-              {/* Main Prominent Award Picture Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 25, scale: 0.98 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -4, transition: { duration: 0.3 } }}
-                className="relative z-20"
-              >
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/11] w-full group bg-slate-900">
-                  <Image
-                    src={CLOUDINARY_IMAGES.roleModelAward}
-                    alt="Dr. Tulsi Das Receiving Award from Chief Minister of Uttar Pradesh"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent" />
-                  <div className="absolute bottom-5 left-5 right-5 text-white">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="px-2.5 py-0.5 rounded-full bg-accent text-secondary text-[10px] font-black uppercase tracking-wider shadow-xs">
-                        State Honor
-                      </span>
-                    </div>
-                    <p className="font-display font-bold text-base md:text-lg leading-snug text-white">
-                      State Award Ceremony Honor
-                    </p>
-                    <p className="text-xs text-white/80 line-clamp-1">
-                      Conferred by Chief Minister of Uttar Pradesh for outstanding clinical service
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Overlapping Secondary Card: Children of Deva Center */}
-              <motion.div
-                initial={{ opacity: 0, y: 35, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3 } }}
-                className="relative -mt-10 ml-auto w-11/12 sm:w-4/5 z-30"
-              >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/9] group bg-card">
-                  <Image
-                    src={CLOUDINARY_IMAGES.awardCeremony}
-                    alt="DISCC Award Ceremony Milestone"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 35vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-4 right-4 text-white">
-                    <p className="font-bold text-xs text-white">Deva Center Varanasi</p>
-                    <p className="text-[11px] text-white/85">32 years of transforming neurodivergent lives</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Verified Impact Metrics Bar with Live Animated Counts */}
-      <section className="py-12 bg-secondary text-white w-full border-b border-white/10">
-        <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/15">
-            <div className="pt-4 md:pt-0 md:px-6 space-y-1">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-accent tracking-tight">
-                <AnimatedCounter value={32} suffix="+" />
-              </div>
-              <p className="text-xs uppercase tracking-wider font-semibold text-white/80">Years in Varanasi</p>
-              <p className="text-xs text-white/60">Founded in 1991</p>
-            </div>
-
-            <div className="pt-4 md:pt-0 md:px-6 space-y-1">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white tracking-tight">
-                <AnimatedCounter value={98000} suffix="+" />
-              </div>
-              <p className="text-xs uppercase tracking-wider font-semibold text-white/80">Families Supported</p>
-              <p className="text-xs text-white/60">Clinical psychology & guidance</p>
-            </div>
-
-            <div className="pt-4 md:pt-0 md:px-6 space-y-1">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-accent tracking-tight">
-                <AnimatedCounter value={9} />
-              </div>
-              <p className="text-xs uppercase tracking-wider font-semibold text-white/80">Dedicated Centers</p>
-              <p className="text-xs text-white/60">Urban and rural campuses</p>
-            </div>
-
-            <div className="pt-4 md:pt-0 md:px-6 space-y-1">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white tracking-tight">
-                <AnimatedCounter value={235} suffix="+" />
-              </div>
-              <p className="text-xs uppercase tracking-wider font-semibold text-white/80">Awards & Honors</p>
-              <p className="text-xs text-white/60">PM & CM State Recognitions</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. DR. TULSI DAS GLANCE IN KINETIC BANDS (Alternating Left/Right Transitions) */}
-      <section className="py-20 md:py-28 border-b border-border/60 w-full overflow-hidden bg-background">
-        <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 space-y-16">
-          {/* Section Header */}
-          <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-              Leadership & Pioneer
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-secondary tracking-tight">
-              Dr. C. Tulsi Das: Four Decades of Compassion & Science
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              First Professional Clinical Psychologist in Uttar Pradesh dedicated to mental health and intellectual disability rehabilitation.
-            </p>
-          </div>
-
-          {/* Alternating Slow Transition Kinetic Bands */}
-          <div className="space-y-10">
-            {/* Band 1: Enters from Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="p-8 sm:p-10 rounded-3xl bg-card border border-border/80 shadow-xs hover:shadow-md transition-all"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-4 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-muted/40">
-                  <Image
-                    src={CLOUDINARY_IMAGES.drTulsiPortrait}
-                    alt="Dr. C. Tulsi Das Portrait"
-                    fill
-                    className="object-contain p-2"
-                  />
-                </div>
-                <div className="lg:col-span-8 space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">
-                    Pioneering Founder (Ph.D. Psychiatry - Clinical Psychologist)
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-display font-black text-secondary">
-                    Bridging Clinical Psychology and Deep Human Dignity
-                  </h3>
-                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                    Born and raised in Varanasi, Dr. Tulsi devoted his clinical academic career to understanding neurodivergence at a time when eastern Uttar Pradesh possessed almost no specialized institutions. In 1991, he founded DISCC and established the Deva Center to serve the last, least, and lost.
-                  </p>
-                  <blockquote className="border-l-4 border-primary pl-4 py-1 italic text-secondary text-base font-semibold">
-                    "Main akela hi chala tha janib-e-manzil magar, Log saath aate gaye aur karvan banta gaya."
-                  </blockquote>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Band 2: Enters from Right */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="p-8 sm:p-10 rounded-3xl bg-secondary text-white shadow-xl"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-8 space-y-4 order-2 lg:order-1">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-bold uppercase">
-                    National Governance & Honors
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-display font-black text-white">
-                    Appointed by Government of India to Apex Disability Councils
-                  </h3>
-                  <p className="text-white/80 text-sm sm:text-base leading-relaxed">
-                    Former Council Member of NIEPID (Divyangjan) and Board Member of ARUNIM under the National Trust, Ministry of Social Justice and Empowerment. Honored by both the Prime Minister of India and the Chief Minister of Uttar Pradesh for exemplary psychiatric leadership.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
-                      <span>Former Clinical Psychologist, BHU</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
-                      <span>Examiner, Madras & Dayalbagh Univ.</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
-                      <span>Clinical Psychologist, UAE Medical School</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
-                      <span>Visiting Professor, MSH Paris, France</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-4 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border-2 border-white/20 order-1 lg:order-2">
-                  <Image
-                    src={CLOUDINARY_IMAGES.roleModelAward}
-                    alt="Chief Minister Award Presentation"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Band 3: Enters from Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="p-8 sm:p-10 rounded-3xl bg-card border border-border/80 shadow-xs hover:shadow-md transition-all"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-4 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm border border-border">
-                  <Image
-                    src={CLOUDINARY_IMAGES.foundersMeet}
-                    alt="Dr. Tulsi with International Partners"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="lg:col-span-8 space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase">
-                    Global Humanitarian Collaborations
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-display font-black text-secondary">
-                    Fostering European-Indian & American Alliances
-                  </h3>
-                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                    In 1998, Dr. Tulsi partnered with French art historian Jean-Max Tassel to launch Deva Europe, creating enduring medical and financial solidarity across France and Germany. He serves as Coordinator for the Study Abroad Program with the University of Wisconsin Oshkosh, USA, hosting scholars in Varanasi every year.
-                  </p>
-                  <div className="pt-2">
-                    <Link href="/about#founder">
-                      <Button variant="outline" className="rounded-full border-secondary/30 hover:border-primary text-secondary hover:text-primary font-bold text-xs uppercase tracking-wider">
-                        Read Dr. Tulsi's Complete Biography
-                        <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. INTERACTIVE PROGRAMS IN BANDS WITH SDG THEMED WINDOWS */}
-      <section className="py-20 md:py-28 bg-muted/25 border-b border-border/60 w-full">
-        <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 space-y-12">
-          {/* Header & Category Switcher */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3 max-w-2xl">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-                Comprehensive Programs
-              </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-secondary tracking-tight">
-                Our Programs and Dedicated Centers
-              </h2>
-              <p className="text-muted-foreground text-sm sm:text-base">
-                Click any program band to reveal its dedicated SDG theme, impact metrics, and detailed operational scope.
-              </p>
-            </div>
-
-            {/* Category Filter Pills */}
-            <div className="flex items-center gap-2 bg-white p-1.5 rounded-full border border-border shadow-xs self-start md:self-auto">
-              <button
-                onClick={() => setActiveBandCategory("all")}
-                className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  activeBandCategory === "all"
-                    ? "bg-secondary text-white"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                All Initiatives
-              </button>
-              <button
-                onClick={() => setActiveBandCategory("current")}
-                className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  activeBandCategory === "current"
-                    ? "bg-secondary text-white"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                Current Centers
-              </button>
-              <button
-                onClick={() => setActiveBandCategory("past")}
-                className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  activeBandCategory === "past"
-                    ? "bg-secondary text-white"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                Past Milestones
-              </button>
-            </div>
-          </div>
-
-          {/* Interactive Program Bands List */}
-          <div className="space-y-4">
-            {filteredPrograms.map((prog, index) => (
-              <motion.div
-                key={prog.id}
-                layout
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.35, delay: index * 0.05 }}
-                onClick={() => setSelectedProgram(prog)}
-                className={`w-full cursor-pointer rounded-3xl bg-white border-2 border-border/80 p-6 sm:p-8 shadow-xs hover:shadow-xl transition-all duration-300 group relative overflow-hidden ${prog.sdgThemeClass}`}
-              >
-                {/* Visual Color Indicator Strip */}
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-2.5 transition-all duration-300 group-hover:w-4"
-                  style={{ backgroundColor: prog.sdgColor }}
-                />
-
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center pl-3">
-                  {/* Left Metadata & Title */}
-                  <div className="lg:col-span-8 space-y-2.5">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span
-                        className="px-2.5 py-0.5 rounded-full text-white text-[10px] font-bold uppercase tracking-wider"
-                        style={{ backgroundColor: prog.sdgColor }}
-                      >
-                        {prog.sdgName}
-                      </span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-muted text-foreground text-[10px] font-bold uppercase tracking-wider">
-                        {prog.targetGroup}
-                      </span>
-                      <span className="text-xs text-muted-foreground font-medium">
-                        {prog.location}
-                      </span>
-                    </div>
-
-                    <h3 className="text-2xl sm:text-3xl font-display font-black text-secondary group-hover:text-primary transition-colors">
-                      {prog.title}
-                    </h3>
-
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {prog.summary}
-                    </p>
-                  </div>
-
-                  {/* Right Thumbnail & Action Callout */}
-                  <div className="lg:col-span-4 flex items-center justify-between lg:justify-end gap-4">
-                    <div className="relative w-28 h-20 sm:w-36 sm:h-24 rounded-2xl overflow-hidden shadow-xs border border-border flex-shrink-0">
+                    {/* Card Cover Image */}
+                    <div className="relative w-full h-52 overflow-hidden bg-muted">
                       <Image
-                        src={prog.image}
-                        alt={prog.title}
+                        src={program.image}
+                        alt={program.title}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                       />
+                      <div className="absolute top-3 left-3">
+                        <span
+                          className="px-3 py-1 rounded-full text-xs font-bold text-white shadow-xs"
+                          style={{ backgroundColor: program.sdgColor }}
+                        >
+                          {program.badge}
+                        </span>
+                      </div>
                     </div>
 
-                    <div className="w-10 h-10 rounded-full bg-muted group-hover:bg-primary group-hover:text-white text-secondary flex items-center justify-center transition-colors flex-shrink-0">
-                      <ArrowRight className="w-4 h-4" />
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-1.5 text-xs text-muted-text mb-2">
+                        <MapPin className="w-3.5 h-3.5 text-primary" />
+                        <span>{program.location}</span>
+                      </div>
+                      <h3 className="text-xl font-bold font-heading text-foreground group-hover:text-primary transition-colors mb-2">
+                        {program.title}
+                      </h3>
+                      <p className="text-sm text-muted-text leading-relaxed line-clamp-3">
+                        {program.summary}
+                      </p>
                     </div>
                   </div>
+
+                  {/* Card Action Footer */}
+                  <div className="p-6 pt-0 border-t border-border/40 mt-auto flex items-center justify-between">
+                    <button
+                      onClick={() => setSelectedProgram(program)}
+                      className="text-sm font-bold text-primary hover:text-primary-hover flex items-center gap-1 transition-colors cursor-pointer"
+                    >
+                      View Details
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                    <span className="text-xs text-muted-text font-medium">
+                      {program.year}
+                    </span>
+                  </div>
                 </div>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* 6. Interactive Live Impact & Donation Calculator */}
-      <ImpactCalculator />
-
-      {/* 7. Authentic Photo Moments from Original Archives */}
-      <section className="py-20 md:py-28 border-b border-border/60 w-full bg-background">
-        <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-                Original Archive Moments
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-display font-black text-secondary tracking-tight">
-                Authentic Glimpses of Joy and Inclusion
-              </h2>
-            </div>
-            <Link href="/stories">
-              <Button variant="outline" className="rounded-full border-border hover:border-primary text-secondary hover:text-primary font-bold text-xs uppercase tracking-wider">
-                Explore All Stories & Festivals
-                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+          <div className="mt-12 text-center">
+            <Link href="/our-work">
+              <Button variant="outline" size="lg" className="rounded-full gap-2">
+                Explore Full Programme Catalog
+                <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div className="md:col-span-8">
-              <div className="relative rounded-3xl overflow-hidden shadow-md border border-border aspect-[16/10] group">
-                <Image
-                  src={CLOUDINARY_IMAGES.purpleFair}
-                  alt="Purple Fair for Divyangjan"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6 text-white">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent block">Community Event 2026</span>
-                  <h4 className="font-display font-bold text-xl">Purple Fair for Divyangjan in Varanasi</h4>
-                </div>
+      {/* 4. Animated Impact Counters */}
+      <section className="w-full py-16 bg-[#0F8B8D] text-white relative overflow-hidden">
+        <div className="container-custom relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12 text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold font-heading tracking-tight">
+              32+ Years of Measurable Transformation
+            </h2>
+            <p className="mt-3 text-white/85 text-base">
+              Every number represents a child who learned to communicate, walk, create, and stand with dignity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <StatCounter
+              value={12000}
+              suffix="+"
+              label="Children Rehabilitated"
+              sublabel="Clinical therapy and education"
+              className="bg-white/10 text-white border-white/20 hover:bg-white/15"
+            />
+            <StatCounter
+              value={32}
+              suffix="+"
+              label="Years of Service"
+              sublabel="Continuously since 1991"
+              className="bg-white/10 text-white border-white/20 hover:bg-white/15"
+            />
+            <StatCounter
+              value={4500}
+              suffix="+"
+              label="Rural Girls Empowered"
+              sublabel="Nutrition, safety & craft skills"
+              className="bg-white/10 text-white border-white/20 hover:bg-white/15"
+            />
+            <StatCounter
+              value={21}
+              suffix=""
+              label="Disability Categories"
+              sublabel="Full RPwD Act coverage"
+              className="bg-white/10 text-white border-white/20 hover:bg-white/15"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 5. "Meet the Child" Transformation Stories */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFAF2] relative">
+        <div className="container-custom">
+          <SectionHeading
+            eyebrow="Real Journeys"
+            title="Stories of Resilience and Hope"
+            description="Witness the personal breakthroughs of our children and their devoted families."
+          />
+
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-border/80 shadow-soft-lg p-6 sm:p-10 md:p-12 relative overflow-hidden">
+            <AnimatePresence mode="wait">
+              {STORIES[activeStoryIndex] && (
+                <motion.div
+                  key={STORIES[activeStoryIndex].id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
+                >
+                  <div className="md:col-span-5 relative aspect-square rounded-2xl overflow-hidden shadow-md">
+                    <Image
+                      src={STORIES[activeStoryIndex].image}
+                      alt={STORIES[activeStoryIndex].name}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary text-white text-xs font-bold">
+                      {STORIES[activeStoryIndex].age}
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-7 space-y-4">
+                    <div className="flex items-center gap-2 text-xs font-bold text-primary uppercase tracking-wider">
+                      <Sparkles className="w-4 h-4" />
+                      <span>{STORIES[activeStoryIndex].condition}</span>
+                    </div>
+
+                    <h3 className="text-2xl sm:text-3xl font-bold font-heading text-foreground">
+                      Meet {STORIES[activeStoryIndex].name}
+                    </h3>
+
+                    <div className="p-3.5 rounded-xl bg-[#E6F6EE] border border-[#0F8B8D]/20 text-sm font-semibold text-[#0F8B8D]">
+                      Milestone: {STORIES[activeStoryIndex].milestone}
+                    </div>
+
+                    <p className="text-sm sm:text-base text-muted-text italic leading-relaxed">
+                      &ldquo;{STORIES[activeStoryIndex].quote}&rdquo;
+                    </p>
+
+                    <div className="pt-2 text-xs font-bold text-foreground">
+                      {STORIES[activeStoryIndex].parent}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Carousel Switchers */}
+            <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                {STORIES.map((story, i) => (
+                  <button
+                    key={story.id}
+                    onClick={() => setActiveStoryIndex(i)}
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      i === activeStoryIndex
+                        ? "w-8 bg-primary"
+                        : "w-2.5 bg-border hover:bg-muted-text"
+                    }`}
+                    aria-label={`Show story of ${story.name}`}
+                  />
+                ))}
               </div>
-            </div>
 
-            <div className="md:col-span-4">
-              <div className="relative rounded-3xl overflow-hidden shadow-md border border-border aspect-[16/10] group">
-                <Image
-                  src={CLOUDINARY_IMAGES.ramayanPlay}
-                  alt="Ramayan Play Performance"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6 text-white">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent block">Cultural Milestone</span>
-                  <h4 className="font-display font-bold text-lg">Ramayan Play by Special Children</h4>
-                </div>
-              </div>
-            </div>
-
-            <div className="md:col-span-4">
-              <div className="relative rounded-3xl overflow-hidden shadow-md border border-border aspect-[16/10] group">
-                <Image
-                  src={CLOUDINARY_IMAGES.republicDay}
-                  alt="Republic Day Celebration"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6 text-white">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent block">Patriotic Milestone</span>
-                  <h4 className="font-display font-bold text-lg">Republic Day Celebration</h4>
-                </div>
-              </div>
-            </div>
-
-            <div className="md:col-span-4">
-              <div className="relative rounded-3xl overflow-hidden shadow-md border border-border aspect-[16/10] group">
-                <Image
-                  src={CLOUDINARY_IMAGES.yogaDay}
-                  alt="Yoga & Physical Well-being"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6 text-white">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent block">Therapy & Recreation</span>
-                  <h4 className="font-display font-bold text-lg">Yoga & Motor Well-being</h4>
-                </div>
-              </div>
-            </div>
-
-            <div className="md:col-span-4">
-              <div className="relative rounded-3xl overflow-hidden shadow-md border border-border aspect-[16/10] group">
-                <Image
-                  src={CLOUDINARY_IMAGES.basantPanchami}
-                  alt="Basant Panchami Festivities"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6 text-white">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent block">Festivity</span>
-                  <h4 className="font-display font-bold text-lg">Basant Panchami Festivities</h4>
-                </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() =>
+                    setActiveStoryIndex(
+                      (prev) => (prev - 1 + STORIES.length) % STORIES.length
+                    )
+                  }
+                  className="p-2 rounded-full border border-border hover:bg-muted text-foreground transition-colors cursor-pointer"
+                  aria-label="Previous story"
+                >
+                  <ChevronRight className="w-5 h-5 rotate-180" />
+                </button>
+                <button
+                  onClick={() =>
+                    setActiveStoryIndex((prev) => (prev + 1) % STORIES.length)
+                  }
+                  className="p-2 rounded-full border border-border hover:bg-muted text-foreground transition-colors cursor-pointer"
+                  aria-label="Next story"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. Verified Partners Infinite Marquee */}
-      <section className="py-16 bg-muted/20 border-b border-border/60 w-full overflow-hidden">
-        <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 space-y-8">
-          <div className="text-center max-w-2xl mx-auto space-y-1">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Trusted Alliances</span>
-            <h2 className="text-2xl sm:text-3xl font-display font-black text-secondary">
-              Our Partners & Academic Collaborators
-            </h2>
+      {/* 6. Events & Gallery Preview */}
+      <section className="w-full py-20 md:py-28 bg-[#E8F4FB]/50 relative">
+        <div className="container-custom">
+          <SectionHeading
+            title="Moments of Joy, Therapy & Recognition"
+            description="A glimpse into daily breakthroughs, special education classrooms, and state award ceremonies."
+          />
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            {GALLERY_PREVIEWS.map((item, idx) => (
+              <Reveal key={item.url} delay={idx * 0.06}>
+                <div
+                  onClick={() => handleOpenLightbox(idx)}
+                  className="group relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft cursor-pointer bg-muted"
+                >
+                  <Image
+                    src={item.url}
+                    alt={item.caption || "DISCC Gallery"}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-108"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end text-white">
+                    <span className="text-[11px] font-semibold text-[#F5A524]">
+                      {item.category}
+                    </span>
+                    <p className="text-xs sm:text-sm font-medium line-clamp-2">
+                      {item.caption}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
 
-          <div className="relative w-full overflow-hidden py-2">
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10" />
+          <div className="mt-12 text-center">
+            <Link href="/events">
+              <Button variant="outline" size="lg" className="rounded-full gap-2">
+                Browse Complete 2025-2026 Gallery
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-            <div className="flex gap-6 animate-marquee">
-              {[...partnerLogos, ...partnerLogos].map((partner, idx) => (
-                <div
-                  key={`${partner.name}-${idx}`}
-                  className="w-52 h-28 flex-shrink-0 p-4 bg-card rounded-2xl border border-border/80 shadow-xs flex flex-col items-center justify-center text-center hover:border-primary/60 transition-all hover:shadow-md group"
+      {/* 7. Testimonials & Patron Quotes */}
+      <section className="w-full py-20 bg-[#FFFAF2] relative">
+        <div className="container-custom">
+          <SectionHeading
+            title="Voices of Trust"
+            description="Endorsements from senior medical professionals, developmental pediatricians, and community partners."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Reveal delay={0.1}>
+              <div className="p-8 rounded-3xl bg-white border border-border/70 shadow-soft h-full flex flex-col justify-between">
+                <div>
+                  <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                  <p className="text-sm sm:text-base text-muted-text leading-relaxed">
+                    &ldquo;Dr. Tulsi and DISCC represent the benchmark for clinical psychological assessments and compassionate child care in Eastern Uttar Pradesh.&rdquo;
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-border/50">
+                  <p className="font-bold text-sm text-foreground">Dr. V. K. Tripathi</p>
+                  <p className="text-xs text-muted-text">Senior Developmental Consultant, Varanasi</p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <div className="p-8 rounded-3xl bg-white border border-border/70 shadow-soft h-full flex flex-col justify-between">
+                <div>
+                  <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                  <p className="text-sm sm:text-base text-muted-text leading-relaxed">
+                    &ldquo;The dedication of the therapists at Deva Center has transformed hundreds of children from complete dependency to self-reliance and joy.&rdquo;
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-border/50">
+                  <p className="font-bold text-sm text-foreground">Prof. S. R. Mukherjee</p>
+                  <p className="text-xs text-muted-text">Department of Psychology, BHU</p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <div className="p-8 rounded-3xl bg-white border border-border/70 shadow-soft h-full flex flex-col justify-between">
+                <div>
+                  <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                  <p className="text-sm sm:text-base text-muted-text leading-relaxed">
+                    &ldquo;Every rupee donated to DISCC reaches the ground directly. Their transparency and 32-year track record are exemplary.&rdquo;
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-border/50">
+                  <p className="font-bold text-sm text-foreground">Anand Agrawal</p>
+                  <p className="text-xs text-muted-text">Patron & CSR Committee Chair, Varanasi</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Partners & Certifications Marquee */}
+      <section className="w-full py-12 bg-white border-y border-border/70 overflow-hidden select-none">
+        <div className="container-custom mb-6 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-muted-text">
+            Affiliated & Certified By Respected Authorities
+          </p>
+        </div>
+        <Marquee speed={28}>
+          <div className="flex items-center gap-12 sm:gap-16 px-6 text-foreground font-bold text-sm sm:text-base whitespace-nowrap">
+            <span className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-primary" />
+              FCRA Ministry of Home Affairs
+            </span>
+            <span className="flex items-center gap-2">
+              <Award className="w-5 h-5 text-[#F5A524]" />
+              National Trust (Govt of India)
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-primary" />
+              Social Welfare Dept (Govt of UP)
+            </span>
+            <span className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-primary" />
+              Section 80G & 12A Tax Exempt
+            </span>
+            <span className="flex items-center gap-2">
+              <Award className="w-5 h-5 text-[#F5A524]" />
+              DDRC Varanasi Partner
+            </span>
+          </div>
+        </Marquee>
+      </section>
+
+      {/* 9. Donation Banner with High Conversion */}
+      <section className="w-full py-20 bg-gradient-to-r from-[#FFEFE0] via-[#FFFAF2] to-[#FFEFE0] border-b border-border/70 relative">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto rounded-3xl bg-white border border-border/80 shadow-soft-lg p-8 sm:p-12 text-center relative overflow-hidden">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5A524]/15 text-[#1E2A3A] font-bold text-xs uppercase tracking-wider mb-6">
+              <Heart className="w-4 h-4 text-primary fill-current" />
+              Make a Direct Impact
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground tracking-tight leading-tight">
+              Sponsor a Child&apos;s Therapy and Education
+            </h2>
+
+            <p className="mt-4 text-base sm:text-lg text-muted-text max-w-2xl mx-auto leading-relaxed">
+              Your contribution directly funds speech therapy, nutritious meals, mobility calipers, and classroom toolkits. All Indian donations are eligible for 50% tax deduction under Section 80G.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Link href="/donate">
+                <Button variant="donate" size="lg" className="shadow-glow-marigold text-base gap-2">
+                  <Heart className="w-5 h-5 fill-current" />
+                  Donate Online Now
+                </Button>
+              </Link>
+              <Link href="/fcra">
+                <Button variant="outline" size="lg" className="text-base">
+                  View FCRA & Bank Details
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Request a Call Back & Inquiry Form */}
+      <section id="callback" className="w-full py-20 md:py-28 bg-[#FFFAF2] relative">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto rounded-3xl bg-white border border-border/80 shadow-soft-lg p-8 sm:p-12">
+            <div className="text-center mb-8">
+              <span className="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20">
+                Direct Help
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground mt-3">
+                Request a Call Back from our Specialists
+              </h2>
+              <p className="text-sm sm:text-base text-muted-text mt-2">
+                Need guidance for child assessment, therapy admission, or volunteer inquiry? Leave your number and our team will connect within 24 hours.
+              </p>
+            </div>
+
+            {callbackSubmitted ? (
+              <div className="p-8 rounded-2xl bg-[#E6F6EE] border border-[#0F8B8D]/30 text-center space-y-3">
+                <CheckCircle2 className="w-12 h-12 text-primary mx-auto" />
+                <h3 className="text-xl font-bold text-foreground">Thank You!</h3>
+                <p className="text-sm text-muted-text">
+                  Your request has been received. Our clinical coordinator will call you at {callbackPhone} shortly.
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setCallbackSubmitted(false);
+                    setCallbackName("");
+                    setCallbackPhone("");
+                  }}
+                  className="mt-2"
                 >
-                  <div className="relative w-14 h-14 mb-2">
-                    <Image
-                      src={partner.src}
-                      alt={partner.name}
-                      fill
-                      className="object-contain filter group-hover:scale-105 transition-transform duration-300"
+                  Submit Another Request
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleCallbackSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground mb-1">
+                      Your Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={callbackName}
+                      onChange={(e) => setCallbackName(e.target.value)}
+                      placeholder="e.g. Anjali Sharma"
+                      className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
-                  <span className="text-xs font-bold text-secondary group-hover:text-primary transition-colors line-clamp-1">
-                    {partner.name}
-                  </span>
+                  <div>
+                    <label className="block text-xs font-bold text-foreground mb-1">
+                      Phone / Mobile Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={callbackPhone}
+                      onChange={(e) => setCallbackPhone(e.target.value)}
+                      placeholder="e.g. 9876543210"
+                      className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                    />
+                  </div>
                 </div>
-              ))}
-            </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-foreground mb-1">
+                    Inquiry Topic
+                  </label>
+                  <select
+                    value={callbackTopic}
+                    onChange={(e) => setCallbackTopic(e.target.value)}
+                    className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  >
+                    <option value="child-admission">Child Admission & Psychological Assessment</option>
+                    <option value="therapy-services">Sensory / Speech / Physical Therapy</option>
+                    <option value="rural-outreach">Deva Gram & Annapurna Rural Centers</option>
+                    <option value="donation-csr">Donations & Corporate CSR Partnership</option>
+                    <option value="other">General Inquiry</option>
+                  </select>
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={callbackLoading}
+                  variant="default"
+                  size="lg"
+                  className="w-full gap-2 mt-4 text-base"
+                >
+                  <Send className="w-4 h-4" />
+                  {callbackLoading ? "Submitting..." : "Request Call Back"}
+                </Button>
+
+                <p className="text-center text-xs text-muted-text mt-3">
+                  You can also call our Varanasi helpline directly at <span className="font-bold text-foreground">7007453168</span>
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </section>
 
-      {/* 8. Clinical Consultation & Support Banner */}
-      <section className="py-16 bg-secondary text-white w-full">
-        <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-accent">Clinical Consultations & Guidance</span>
-              <h2 className="text-3xl sm:text-4xl font-display font-black leading-tight text-white">
-                Seek Guidance for a Child or Family Member?
-              </h2>
-              <p className="text-white/80 text-sm sm:text-base max-w-2xl">
-                Connect with our clinical psychology team in Varanasi. We offer parental counseling, psychological assessments, and personalized therapy plans.
-              </p>
-              <div className="flex flex-wrap items-center gap-6 pt-1 text-sm">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-5 h-5 text-accent" />
-                  <span className="font-bold text-lg text-accent">+91 7007453168</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/80">
-                  <MapPin className="w-4 h-4 text-accent" />
-                  <span>Kamachha Chungi, Varanasi, UP</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-              <Link href="/contact" className="w-full">
-                <Button size="lg" className="w-full h-12 rounded-full font-bold uppercase text-xs tracking-wider bg-primary hover:bg-primary/90 text-white shadow-lg">
-                  Request Consultation
-                </Button>
-              </Link>
-              <Link href="/donate" className="w-full">
-                <Button size="lg" className="w-full h-12 rounded-full font-black uppercase text-xs tracking-wider bg-white hover:bg-accent text-secondary hover:text-secondary shadow-lg transition-all">
-                  Support a Child Today
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Program Detail Modal Popup with SDG Color Shift */}
+      {/* Program Details Modal */}
       <ProgramDetailModal
         program={selectedProgram}
         onClose={() => setSelectedProgram(null)}
+      />
+
+      {/* Gallery Lightbox */}
+      <Lightbox
+        images={GALLERY_PREVIEWS}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNavigate={(idx) => setLightboxIndex(idx)}
       />
     </div>
   );

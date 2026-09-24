@@ -9,22 +9,31 @@ import {
   Copy,
   Check,
   Filter,
-  Cloud,
   FileText,
   ExternalLink,
-  Plus
+  Plus,
+  Trash2,
+  X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CloudinaryUploadWidget } from "@/components/admin/CloudinaryUploadWidget";
-import { saveAdminItem } from "@/lib/admin-client";
+import { saveAdminItem, deleteAdminItem } from "@/lib/admin-client";
+
+interface MediaFile {
+  id: string | number;
+  name: string;
+  url?: string;
+  fullUrl?: string;
+  cloudinaryUrl?: string;
+  mime_type?: string;
+  created_at?: string;
+}
 
 export default function AdminMediaLibrary() {
-  const [mediaItems, setMediaItems] = useState<any[]>([]);
+  const [mediaItems, setMediaItems] = useState<MediaFile[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [filterType, setFilterType] = useState<string>("all");
-  const [copiedId, setCopiedId] = useState<number | null>(null);
+  const [copiedId, setCopiedId] = useState<string | number | null>(null);
   const [loading, setLoading] = useState(true);
-  const [showUploader, setShowUploader] = useState(false);
+  const [previewItem, setPreviewItem] = useState<MediaFile | null>(null);
   const [visibleCount, setVisibleCount] = useState(36);
 
   useEffect(() => {
@@ -41,33 +50,22 @@ export default function AdminMediaLibrary() {
       });
   }, []);
 
-  const handleCopy = (id: number, url: string) => {
+  const handleCopy = (id: string | number, url: string) => {
     navigator.clipboard.writeText(url);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const handleNewUpload = async (url: string) => {
-    const newItem = {
-      id: Date.now(),
-      name: `Cloudinary Upload ${new Date().toLocaleDateString()}`,
-      fullUrl: url,
-      cloudinaryUrl: url,
-      mime_type: "image/jpeg",
-      created_at: new Date().toISOString(),
-    };
-    setMediaItems([newItem, ...mediaItems]);
-    setShowUploader(false);
-    await saveAdminItem("media", newItem);
+  const handleDelete = async (id: string | number) => {
+    if (confirm("Are you sure you want to delete this media asset?")) {
+      setMediaItems(mediaItems.filter((m) => m.id !== id));
+      if (previewItem?.id === id) setPreviewItem(null);
+      await deleteAdminItem("media", id);
+    }
   };
 
   const filteredMedia = mediaItems.filter((item) => {
-    const matchesSearch = item.name && item.name.toLowerCase().includes(searchQuery.toLowerCase());
-    if (!matchesSearch) return false;
-    if (filterType === "all") return true;
-    if (filterType === "image") return item.mime_type?.startsWith("image");
-    if (filterType === "pdf") return item.mime_type?.includes("pdf");
-    return true;
+    return item.name && item.name.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
   return (
@@ -75,143 +73,136 @@ export default function AdminMediaLibrary() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Media Asset Storage</span>
-            <span className="text-xs bg-accent/20 text-secondary px-2 py-0.5 rounded-full font-bold">
-              {mediaItems.length} Assets
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-display font-black text-secondary mt-1">
-            Media Library & Cloudinary Storage
+          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-foreground">
+            Media & Asset Library
           </h1>
-          <p className="text-xs text-muted-foreground">
-            Browse 750+ client images and upload new high-resolution assets directly to Cloudinary.
+          <p className="text-xs sm:text-sm text-muted-text">
+            Search, copy URLs, and manage over 750+ photos, PDF reports, and brand logos.
           </p>
         </div>
 
-        <Button
-          onClick={() => setShowUploader(!showUploader)}
-          className="rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-xs uppercase tracking-wider h-11 px-5 flex items-center gap-2 shadow-sm"
-        >
-          <Upload className="w-4 h-4" />
-          <span>Upload to Cloudinary</span>
-        </Button>
+        <div className="flex items-center gap-2">
+          <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary">
+            {mediaItems.length} Total Files
+          </span>
+        </div>
       </div>
 
-      {/* Cloudinary Uploader Dropzone Drawer */}
-      {showUploader && (
-        <div className="p-6 bg-card rounded-3xl border-2 border-dashed border-primary/40 shadow-md space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-secondary font-bold text-sm">
-              <Cloud className="w-4 h-4 text-primary" />
-              <span>Cloudinary Fast Uploader</span>
+      {/* Search Bar */}
+      <div className="p-4 rounded-3xl bg-white border border-border/80 shadow-soft flex items-center gap-3">
+        <Search className="w-4 h-4 text-muted-text" />
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search media files by filename (e.g. clinic, award, hero)..."
+          className="flex-1 bg-transparent text-sm text-foreground focus:outline-none"
+        />
+        <span className="text-xs text-muted-text font-bold">
+          {filteredMedia.length} Matches
+        </span>
+      </div>
+
+      {/* Preview Modal */}
+      {previewItem && (
+        <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-primary/30 shadow-soft-lg space-y-6">
+          <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-4">
+            <div>
+              <h2 className="text-xl font-bold font-heading text-foreground">
+                {previewItem.name}
+              </h2>
+              <p className="text-xs font-mono text-muted-text mt-1 truncate max-w-xl">
+                {previewItem.url || previewItem.fullUrl || previewItem.cloudinaryUrl}
+              </p>
             </div>
             <button
-              onClick={() => setShowUploader(false)}
-              className="text-xs text-muted-foreground hover:text-secondary"
+              onClick={() => setPreviewItem(null)}
+              className="p-2 rounded-full hover:bg-muted text-muted-text cursor-pointer"
             >
-              Close
+              <X className="w-5 h-5" />
             </button>
           </div>
-          <CloudinaryUploadWidget
-            label="Select image file to upload directly to Cloudinary (folder: discc/media)"
-            folder="discc/media"
-            onSuccess={handleNewUpload}
-          />
+
+          <div className="relative aspect-video max-h-96 w-full rounded-2xl overflow-hidden bg-black/5 border border-border">
+            <Image
+              src={previewItem.url || previewItem.fullUrl || previewItem.cloudinaryUrl || "/images/discc/children-activity.png"}
+              alt={previewItem.name}
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          <div className="flex justify-between items-center pt-2">
+            <Button
+              onClick={() =>
+                handleCopy(
+                  previewItem.id,
+                  previewItem.url || previewItem.fullUrl || previewItem.cloudinaryUrl || ""
+                )
+              }
+              variant="default"
+              size="sm"
+              className="gap-2"
+            >
+              {copiedId === previewItem.id ? (
+                <>
+                  <Check className="w-4 h-4" />
+                  URL Copied!
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4" />
+                  Copy Asset URL
+                </>
+              )}
+            </Button>
+
+            <Button
+              onClick={() => handleDelete(previewItem.id)}
+              variant="destructive"
+              size="sm"
+              className="gap-2"
+            >
+              <Trash2 className="w-4 h-4" />
+              Delete File
+            </Button>
+          </div>
         </div>
       )}
 
-      {/* Search and Filter Controls */}
-      <div className="flex flex-col sm:flex-row items-center gap-4 bg-card p-4 rounded-2xl border border-border shadow-xs">
-        <div className="relative flex-1 w-full">
-          <Search className="w-4 h-4 text-muted-foreground absolute left-3.5 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            placeholder="Search media files by name..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-11 pl-10 pr-4 rounded-xl border border-border text-sm outline-none focus:border-primary"
-          />
-        </div>
-
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          <Filter className="w-4 h-4 text-muted-foreground hidden sm:inline" />
-          <select
-            value={filterType}
-            onChange={(e) => setFilterType(e.target.value)}
-            className="h-11 px-4 rounded-xl border border-border text-xs font-semibold text-secondary outline-none focus:border-primary bg-card w-full sm:w-auto"
-          >
-            <option value="all">All File Types</option>
-            <option value="image">Images Only</option>
-            <option value="pdf">Documents & PDFs</option>
-          </select>
-        </div>
-      </div>
-
-      {/* Media Gallery Grid */}
+      {/* Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {filteredMedia.slice(0, visibleCount).map((item) => {
-          const isImage = item.mime_type ? item.mime_type.startsWith("image") : true;
-          const displayUrl = item.cloudinaryUrl || item.fullUrl || `https://disccindia.org/storage/${item.url}`;
+          const imgUrl = item.url || item.fullUrl || item.cloudinaryUrl || "/images/discc/children-activity.png";
 
           return (
             <div
               key={item.id}
-              className="bg-card rounded-2xl border border-border overflow-hidden shadow-xs hover:shadow-md transition-all group flex flex-col justify-between"
+              onClick={() => setPreviewItem(item)}
+              className="group relative aspect-square rounded-2xl overflow-hidden bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all cursor-pointer p-1"
             >
-              <div className="relative aspect-square bg-muted/40 w-full overflow-hidden flex items-center justify-center">
-                {isImage && displayUrl ? (
-                  <Image
-                    src={displayUrl}
-                    alt={item.name || "Media"}
-                    fill
-                    loading="lazy"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    unoptimized
-                  />
-                ) : (
-                  <FileText className="w-8 h-8 text-muted-foreground/60" />
-                )}
-
-                {item.cloudinaryUrl && (
-                  <span className="absolute top-2 left-2 bg-emerald-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-xs">
-                    Cloudinary
-                  </span>
-                )}
+              <div className="relative w-full h-full rounded-xl overflow-hidden bg-muted">
+                <Image
+                  src={imgUrl}
+                  alt={item.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform"
+                />
               </div>
 
-              <div className="p-3 space-y-2">
-                <p className="font-bold text-xs text-secondary truncate" title={item.name}>
-                  {item.name || `Asset #${item.id}`}
-                </p>
-                <div className="flex items-center justify-between gap-1 pt-1 border-t border-border/60 text-[10px]">
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white rounded-2xl">
+                <p className="text-[11px] font-bold truncate">{item.name}</p>
+                <div className="flex justify-end gap-1">
                   <button
-                    onClick={() => handleCopy(item.id, displayUrl)}
-                    className="inline-flex items-center gap-1 text-primary hover:text-secondary font-bold transition-colors"
-                    title="Copy URL to clipboard"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleCopy(item.id, imgUrl);
+                    }}
+                    className="p-1.5 rounded-lg bg-white/20 hover:bg-white/40 text-white"
+                    title="Copy URL"
                   >
-                    {copiedId === item.id ? (
-                      <>
-                        <Check className="w-3 h-3 text-emerald-600" />
-                        <span className="text-emerald-600">Copied</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3 h-3" />
-                        <span>Copy URL</span>
-                      </>
-                    )}
+                    {copiedId === item.id ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                   </button>
-
-                  <a
-                    href={displayUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-muted-foreground hover:text-secondary p-1"
-                    title="Open full size"
-                  >
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
                 </div>
               </div>
             </div>
@@ -219,14 +210,14 @@ export default function AdminMediaLibrary() {
         })}
       </div>
 
-      {filteredMedia.length > visibleCount && (
-        <div className="text-center py-6">
+      {visibleCount < filteredMedia.length && (
+        <div className="text-center pt-4">
           <Button
             onClick={() => setVisibleCount((prev) => prev + 36)}
             variant="outline"
-            className="rounded-full px-6 py-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-all shadow-xs"
+            className="rounded-full px-8"
           >
-            Load More Assets ({visibleCount} of {filteredMedia.length} displayed)
+            Load More Assets ({filteredMedia.length - visibleCount} remaining)
           </Button>
         </div>
       )}

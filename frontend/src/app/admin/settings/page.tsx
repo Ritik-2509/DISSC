@@ -9,8 +9,9 @@ import {
   MapPin,
   Save,
   CheckCircle2,
-  Cloud,
-  ShieldCheck
+  ShieldCheck,
+  CreditCard,
+  Share2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { saveAdminItem } from "@/lib/admin-client";
@@ -19,17 +20,24 @@ export default function AdminSettings() {
   const [saved, setSaved] = useState(false);
   const [formData, setFormData] = useState({
     siteName: "DEVA International Society for Child Care (DISCC)",
-    tagline: "Empowering Pure Hearts With Dignity and Care",
-    helplinePhone: "+91 7007453168",
+    tagline: "First Professional Clinical Psychology & Special Rehabilitation in Eastern UP",
+    founder: "Dr. C. Tulsi Das (CM State Award Recipient)",
+    helplinePhone: "7007453168",
+    alternatePhone1: "9415303557",
+    alternatePhone2: "9129853531",
     email: "disccindia@gmail.com",
     address: "B.21/100, Bind Bhavan, Kamachha Chungi, Varanasi, Uttar Pradesh 221010, India",
+    workingHours: "Monday to Saturday: 8:00 AM - 5:00 PM (Sunday Closed)",
     bankName: "Kotak Mahindra Bank",
     accountName: "Deva International Society for Child Care",
     accountNumber: "4112108180",
     ifscCode: "KKBK0005291",
-    fcraNumber: "Registered humanitarian NGO (1991)",
+    accountType: "Current Account",
+    upiId: "4112108180@kotak",
+    fcraStatus: "FCRA Registered Non Governmental Organization (1991)",
+    tax80gStatus: "Section 80G & 12A Certified",
     facebookUrl: "https://www.facebook.com/profile.php?id=100072381330610",
-    youtubeUrl: "https://www.youtube.com/@disccvaranasi3882/videos",
+    youtubeUrl: "https://www.youtube.com/@disccvaranasi3882",
   });
 
   const handleSave = async (e: React.FormEvent) => {
@@ -43,178 +51,262 @@ export default function AdminSettings() {
     <div className="space-y-8 max-w-4xl">
       {/* Header */}
       <div>
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary">System Configurations</span>
-        </div>
-        <h1 className="text-2xl sm:text-3xl font-display font-black text-secondary mt-1">
-          Website & Organization Settings
+        <h1 className="text-2xl sm:text-3xl font-bold font-heading text-foreground">
+          Organization & System Settings
         </h1>
-        <p className="text-xs text-muted-foreground">
-          Update public contact hotlines, bank donation parameters, and official social channels.
+        <p className="text-xs sm:text-sm text-muted-text">
+          Update public contact hotlines, bank donation parameters, FCRA numbers, and social channels.
         </p>
       </div>
 
       {saved && (
-        <div className="p-4 rounded-2xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-          <span>Settings successfully updated in memory and synced with site configuration!</span>
+        <div className="p-4 rounded-2xl bg-[#E6F6EE] border border-[#0F8B8D]/30 text-[#0F8B8D] text-xs sm:text-sm font-bold flex items-center gap-2">
+          <CheckCircle2 className="w-5 h-5" />
+          <span>Organization settings saved and synchronized successfully!</span>
         </div>
       )}
 
-      <form onSubmit={handleSave} className="space-y-8">
-        {/* Organization Identity */}
-        <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-xs space-y-5">
-          <div className="flex items-center gap-3 border-b border-border pb-3">
-            <Building2 className="w-5 h-5 text-primary" />
-            <h2 className="font-display font-bold text-lg text-secondary">General Identity</h2>
+      <form onSubmit={handleSave} className="space-y-6">
+        {/* 1. General Organization Identity */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-white border border-border/80 shadow-soft space-y-4">
+          <div className="flex items-center gap-2.5 border-b border-border/60 pb-3 text-primary font-bold text-sm">
+            <Building2 className="w-4 h-4" />
+            <span>General Identity & Accreditation</span>
           </div>
 
-          <div className="space-y-4 text-xs">
-            <div className="space-y-1">
-              <label className="font-semibold text-secondary">Organization Name</label>
+          <div className="space-y-3">
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Organization Legal Name
+              </label>
               <input
                 type="text"
                 value={formData.siteName}
                 onChange={(e) => setFormData({ ...formData, siteName: e.target.value })}
-                className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
               />
             </div>
 
-            <div className="space-y-1">
-              <label className="font-semibold text-secondary">Official Mission Tagline</label>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Tagline / Value Proposition
+              </label>
               <input
                 type="text"
                 value={formData.tagline}
                 onChange={(e) => setFormData({ ...formData, tagline: e.target.value })}
-                className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
               />
             </div>
 
-            <div className="space-y-1">
-              <label className="font-semibold text-secondary">Varanasi Physical Address</label>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Founder Credential Line
+              </label>
               <input
                 type="text"
-                value={formData.address}
-                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
+                value={formData.founder}
+                onChange={(e) => setFormData({ ...formData, founder: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
               />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <label className="font-semibold text-secondary">Helpline Contact</label>
-                <input
-                  type="text"
-                  value={formData.helplinePhone}
-                  onChange={(e) => setFormData({ ...formData, helplinePhone: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-semibold text-secondary">Official Email Address</label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
-                />
-              </div>
             </div>
           </div>
         </div>
 
-        {/* Bank Donation Information */}
-        <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-xs space-y-5">
-          <div className="flex items-center gap-3 border-b border-border pb-3">
-            <ShieldCheck className="w-5 h-5 text-primary" />
-            <h2 className="font-display font-bold text-lg text-secondary">Bank Donation Details (80G & FCRA)</h2>
+        {/* 2. Contact & Helplines */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-white border border-border/80 shadow-soft space-y-4">
+          <div className="flex items-center gap-2.5 border-b border-border/60 pb-3 text-primary font-bold text-sm">
+            <Phone className="w-4 h-4" />
+            <span>Contact Information & Helplines</span>
           </div>
 
-          <div className="space-y-4 text-xs">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <label className="font-semibold text-secondary">Account Holder Name</label>
-                <input
-                  type="text"
-                  value={formData.accountName}
-                  onChange={(e) => setFormData({ ...formData, accountName: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-semibold text-secondary">Bank Name</label>
-                <input
-                  type="text"
-                  value={formData.bankName}
-                  onChange={(e) => setFormData({ ...formData, bankName: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
-                />
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Primary Helpline *
+              </label>
+              <input
+                type="text"
+                value={formData.helplinePhone}
+                onChange={(e) => setFormData({ ...formData, helplinePhone: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary font-mono"
+              />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <label className="font-semibold text-secondary">Account Number (A/c)</label>
-                <input
-                  type="text"
-                  value={formData.accountNumber}
-                  onChange={(e) => setFormData({ ...formData, accountNumber: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm font-mono font-bold"
-                />
-              </div>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Alternate Phone 1
+              </label>
+              <input
+                type="text"
+                value={formData.alternatePhone1}
+                onChange={(e) => setFormData({ ...formData, alternatePhone1: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary font-mono"
+              />
+            </div>
 
-              <div className="space-y-1">
-                <label className="font-semibold text-secondary">IFSC Code</label>
-                <input
-                  type="text"
-                  value={formData.ifscCode}
-                  onChange={(e) => setFormData({ ...formData, ifscCode: e.target.value })}
-                  className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm font-mono font-bold"
-                />
-              </div>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Alternate Phone 2
+              </label>
+              <input
+                type="text"
+                value={formData.alternatePhone2}
+                onChange={(e) => setFormData({ ...formData, alternatePhone2: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary font-mono"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Official Email
+              </label>
+              <input
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Consultation Hours
+              </label>
+              <input
+                type="text"
+                value={formData.workingHours}
+                onChange={(e) => setFormData({ ...formData, workingHours: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-xs font-bold text-foreground mb-1">
+              Registered Physical Address
+            </label>
+            <input
+              type="text"
+              value={formData.address}
+              onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+              className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+            />
+          </div>
+        </div>
+
+        {/* 3. Bank & Donation Parameters */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-white border border-border/80 shadow-soft space-y-4">
+          <div className="flex items-center gap-2.5 border-b border-border/60 pb-3 text-primary font-bold text-sm">
+            <CreditCard className="w-4 h-4" />
+            <span>Bank & UPI Donation Parameters</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Bank Name
+              </label>
+              <input
+                type="text"
+                value={formData.bankName}
+                onChange={(e) => setFormData({ ...formData, bankName: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Account Holder Name
+              </label>
+              <input
+                type="text"
+                value={formData.accountName}
+                onChange={(e) => setFormData({ ...formData, accountName: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Account Number
+              </label>
+              <input
+                type="text"
+                value={formData.accountNumber}
+                onChange={(e) => setFormData({ ...formData, accountNumber: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary font-mono"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                IFSC Code
+              </label>
+              <input
+                type="text"
+                value={formData.ifscCode}
+                onChange={(e) => setFormData({ ...formData, ifscCode: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary font-mono"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                UPI ID (Virtual Payment Address)
+              </label>
+              <input
+                type="text"
+                value={formData.upiId}
+                onChange={(e) => setFormData({ ...formData, upiId: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary font-mono"
+              />
             </div>
           </div>
         </div>
 
-        {/* Social Media Links */}
-        <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-xs space-y-5">
-          <div className="flex items-center gap-3 border-b border-border pb-3">
-            <Settings className="w-5 h-5 text-primary" />
-            <h2 className="font-display font-bold text-lg text-secondary">Social Media Channels</h2>
+        {/* 4. Social & Media Channels */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-white border border-border/80 shadow-soft space-y-4">
+          <div className="flex items-center gap-2.5 border-b border-border/60 pb-3 text-primary font-bold text-sm">
+            <Share2 className="w-4 h-4" />
+            <span>Social & Video Channels</span>
           </div>
 
-          <div className="space-y-4 text-xs">
-            <div className="space-y-1">
-              <label className="font-semibold text-secondary">Facebook Page URL</label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                YouTube Channel
+              </label>
               <input
-                type="url"
-                value={formData.facebookUrl}
-                onChange={(e) => setFormData({ ...formData, facebookUrl: e.target.value })}
-                className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
-              />
-            </div>
-
-            <div className="space-y-1">
-              <label className="font-semibold text-secondary">YouTube Channel URL</label>
-              <input
-                type="url"
+                type="text"
                 value={formData.youtubeUrl}
                 onChange={(e) => setFormData({ ...formData, youtubeUrl: e.target.value })}
-                className="w-full h-11 px-3.5 rounded-xl border border-border outline-none focus:border-primary text-sm"
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Facebook Page
+              </label>
+              <input
+                type="text"
+                value={formData.facebookUrl}
+                onChange={(e) => setFormData({ ...formData, facebookUrl: e.target.value })}
+                className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
               />
             </div>
           </div>
         </div>
 
         <div className="flex justify-end pt-2">
-          <Button
-            type="submit"
-            className="rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-xs uppercase tracking-wider px-8 h-12 flex items-center gap-2 shadow-sm"
-          >
+          <Button type="submit" variant="default" size="lg" className="rounded-full gap-2 px-8">
             <Save className="w-4 h-4" />
-            <span>Save All Configurations</span>
+            Save All Settings
           </Button>
         </div>
       </form>

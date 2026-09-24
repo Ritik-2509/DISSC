@@ -5,102 +5,91 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.985 0.005 85); /* warm off-white #FAF9F6 */
-  --foreground: oklch(0.18 0.03 260); /* deep navy charcoal #0F172A */
+  /* Warm Hopeful Light Theme Tokens (DISCC 2026) */
+  --background: #FFFAF2; /* Warm Ivory */
+  --surface: #FFFFFF;    /* Pure White */
+  --surface-peach: #FFEFE0; /* Soft Peach */
+  --surface-sky: #E8F4FB;   /* Soft Sky Blue */
+  --surface-mint: #E6F6EE;  /* Soft Mint */
+  --surface-lavender: #F3EFFC; /* Soft Lavender */
   
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.03 260);
+  --foreground: #1E2A3A;  /* Deep Ink Text */
+  --muted-text: #5B6B7C;  /* Muted Slate Text */
   
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.03 260);
+  --primary: #0F8B8D;     /* Warm Hopeful Primary Teal */
+  --primary-hover: #0D7A7C;
+  --primary-foreground: #FFFFFF;
   
-  /* DISCC Royal Crimson & Deep Navy */
-  --primary: oklch(0.44 0.16 28); /* #9C211E */
-  --primary-foreground: oklch(0.99 0 0);
+  --accent-marigold: #F5A524; /* Marigold (Donate / Primary CTA) */
+  --accent-coral: #EE6C4D;    /* Coral */
+  --accent-lavender: #8E7CC3; /* Lavender */
   
-  --secondary: oklch(0.24 0.11 262); /* #00194C Deep Navy */
-  --secondary-foreground: oklch(0.99 0 0);
+  --card: #FFFFFF;
+  --card-foreground: #1E2A3A;
   
-  --accent: oklch(0.72 0.16 75); /* #F59E0B Warm Amber Gold */
-  --accent-foreground: oklch(0.15 0.03 260);
+  --popover: #FFFFFF;
+  --popover-foreground: #1E2A3A;
   
-  --muted: oklch(0.95 0.008 85);
-  --muted-foreground: oklch(0.46 0.03 260);
+  --secondary: #E8F4FB;
+  --secondary-foreground: #0F8B8D;
   
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0 0);
+  --muted: #F5EFE6;
+  --muted-foreground: #5B6B7C;
   
-  --border: oklch(0.91 0.008 85);
-  --input: oklch(0.91 0.008 85);
-  --ring: oklch(0.44 0.16 28);
+  --destructive: #E53E3E;
+  --destructive-foreground: #FFFFFF;
   
-  --radius: 0.75rem;
-
-  /* SDG Colors preserved for reference */
-  --sdg-1: #E5243B;
-  --sdg-2: #DDA63A;
-  --sdg-3: #4C9F38;
-  --sdg-4: #C5192D;
-  --sdg-5: #FF3A21;
-  --sdg-6: #26BDE2;
-  --sdg-7: #FCC30B;
-  --sdg-8: #A21942;
-  --sdg-9: #FD6925;
-  --sdg-10: #DD1367;
-  --sdg-11: #FD9D24;
-  --sdg-12: #BF8B2E;
-  --sdg-13: #3F7E44;
-  --sdg-14: #0A97D9;
-  --sdg-15: #56C02B;
-  --sdg-16: #00689D;
-  --sdg-17: #19486A;
+  --border: #E8DFD3;
+  --input: #E8DFD3;
+  --ring: #0F8B8D;
+  
+  --radius: 1.25rem; /* 20px base radius */
+  --radius-lg: 1.75rem; /* 28px card radius */
+  --radius-xl: 2rem; /* 32px prominent card radius */
+  --radius-full: 9999px;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-peach: var(--surface-peach);
+  --color-surface-sky: var(--surface-sky);
+  --color-surface-mint: var(--surface-mint);
+  --color-surface-lavender: var(--surface-lavender);
+  
   --color-foreground: var(--foreground);
+  --color-muted-text: var(--muted-text);
+  
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-marigold: var(--accent-marigold);
+  --color-coral: var(--accent-coral);
+  --color-lavender: var(--accent-lavender);
+  
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-sdg-1: var(--sdg-1);
-  --color-sdg-2: var(--sdg-2);
-  --color-sdg-3: var(--sdg-3);
-  --color-sdg-4: var(--sdg-4);
-  --color-sdg-5: var(--sdg-5);
-  --color-sdg-6: var(--sdg-6);
-  --color-sdg-7: var(--sdg-7);
-  --color-sdg-8: var(--sdg-8);
-  --color-sdg-9: var(--sdg-9);
-  --color-sdg-10: var(--sdg-10);
-  --color-sdg-11: var(--sdg-11);
-  --color-sdg-12: var(--sdg-12);
-  --color-sdg-13: var(--sdg-13);
-  --color-sdg-14: var(--sdg-14);
-  --color-sdg-15: var(--sdg-15);
-  --color-sdg-16: var(--sdg-16);
-  --color-sdg-17: var(--sdg-17);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
   
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
 
   --font-sans: var(--font-sans);
-  --font-display: var(--font-display);
+  --font-heading: var(--font-heading);
+  --font-devanagari: var(--font-devanagari);
 }
 
 @layer base {
@@ -108,27 +97,42 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans min-h-screen w-full overflow-x-hidden;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), Georgia, serif;
+    letter-spacing: -0.02em;
+    color: var(--foreground);
   }
 }
 
-/* Full Width Fluid Layout Across All Resolutions */
-.container {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding-left: clamp(1rem, 3.5vw, 4rem) !important;
-  padding-right: clamp(1rem, 3.5vw, 4rem) !important;
+/* Fluid Layout & Container Standard */
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 4vw, 2.5rem);
+  padding-right: clamp(1rem, 4vw, 2.5rem);
 }
 
-.fluid-full-width {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding-left: clamp(1rem, 3.5vw, 4rem);
-  padding-right: clamp(1rem, 3.5vw, 4rem);
+.container-wide {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 4vw, 3rem);
+  padding-right: clamp(1rem, 4vw, 3rem);
 }
 
-/* Horizontal Floating Motion Loop (Partner Logos) */
-@keyframes marquee {
+/* Smooth Infinite Marquee */
+@keyframes smooth-marquee {
   0% {
     transform: translateX(0%);
   }
@@ -137,134 +141,94 @@
   }
 }
 
-.animate-marquee {
+.animate-smooth-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: smooth-marquee 32s linear infinite;
   will-change: transform;
 }
 
-.animate-marquee:hover {
+.animate-smooth-marquee:hover {
   animation-play-state: paused;
 }
 
-/* =========================================================
-   WCAG 2.2 ACCESSIBILITY TOOLBOX SYSTEM (Inspired by Botmartz)
-   ========================================================= */
+/* Soft Glow & Depth Shadows */
+.shadow-soft {
+  box-shadow: 0 10px 30px -5px rgba(30, 42, 58, 0.05), 0 4px 12px -2px rgba(30, 42, 58, 0.03);
+}
 
-/* 1. Font Size Scaling */
-html.a11y-font-medium {
+.shadow-soft-lg {
+  box-shadow: 0 20px 40px -10px rgba(30, 42, 58, 0.08), 0 8px 18px -4px rgba(30, 42, 58, 0.04);
+}
+
+.shadow-glow-marigold {
+  box-shadow: 0 8px 24px -4px rgba(245, 165, 36, 0.35);
+}
+
+.shadow-glow-teal {
+  box-shadow: 0 8px 24px -4px rgba(15, 139, 141, 0.28);
+}
+
+/* Glassmorphic Navbar Overlay */
+.glass-nav {
+  background: rgba(255, 250, 242, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(232, 223, 211, 0.6);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Accessibility Modes (Preserved & Enhanced) */
+html.a11y-font-large {
   font-size: 115% !important;
 }
-html.a11y-font-large {
+html.a11y-font-xlarge {
   font-size: 130% !important;
 }
-html.a11y-font-xlarge {
-  font-size: 145% !important;
-}
-
-/* 2. High Contrast Mode (WCAG AAA) */
 html.a11y-high-contrast {
-  --background: oklch(0.05 0 0) !important;
-  --foreground: oklch(0.99 0 0) !important;
-  --card: oklch(0.1 0 0) !important;
-  --card-foreground: oklch(0.99 0 0) !important;
-  --secondary: oklch(0.15 0 0) !important;
-  --muted: oklch(0.18 0 0) !important;
-  --muted-foreground: oklch(0.85 0 0) !important;
-  --border: oklch(0.4 0 0) !important;
-  filter: contrast(125%);
+  --background: #000000 !important;
+  --foreground: #FFFFFF !important;
+  --surface: #121212 !important;
+  --card: #1A1A1A !important;
+  --border: #444444 !important;
+  filter: contrast(120%);
 }
-
-html.a11y-high-contrast body {
-  background-color: #000000 !important;
-  color: #FFFFFF !important;
-}
-
-html.a11y-high-contrast .bg-card,
-html.a11y-high-contrast .bg-white {
-  background-color: #121212 !important;
-  color: #FFFFFF !important;
-  border-color: #444444 !important;
-}
-
-/* 3. Grayscale Mode */
-html.a11y-grayscale {
-  filter: grayscale(100%) !important;
-}
-
-/* 4. Invert Colors Mode */
-html.a11y-invert {
-  filter: invert(100%) hue-rotate(180deg) !important;
-}
-html.a11y-invert img,
-html.a11y-invert video {
-  filter: invert(100%) hue-rotate(180deg) !important;
-}
-
-/* 5. Dyslexia-Friendly Typography */
-html.a11y-dyslexic,
 html.a11y-dyslexic * {
   font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
-  letter-spacing: 0.05em !important;
 }
-
-/* 6. Spacing & Leading */
-html.a11y-letter-wide * {
-  letter-spacing: 0.08em !important;
-}
-html.a11y-letter-wider * {
-  letter-spacing: 0.15em !important;
-}
-html.a11y-line-relaxed p,
-html.a11y-line-relaxed span {
-  line-height: 1.8 !important;
-}
-html.a11y-line-loose p,
-html.a11y-line-loose span {
-  line-height: 2.2 !important;
-}
-
-/* 7. Highlight Links */
-html.a11y-highlight-links a {
-  text-decoration: underline !important;
-  text-decoration-thickness: 2px !important;
-  text-underline-offset: 4px !important;
-  background-color: rgba(245, 158, 11, 0.2) !important;
-  color: #00194C !important;
-  font-weight: 700 !important;
-}
-
-/* 8. Underline Headings */
-html.a11y-heading-underlines h1,
-html.a11y-heading-underlines h2,
-html.a11y-heading-underlines h3,
-html.a11y-heading-underlines h4 {
-  text-decoration: underline !important;
-  text-decoration-color: #9C211E !important;
-  text-underline-offset: 6px !important;
-}
-
-/* 9. Big Mouse Cursor */
-html.a11y-big-cursor,
-html.a11y-big-cursor * {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="%2300194C" stroke="%23F59E0B" stroke-width="2"><path d="M3 3l7 18 3-7 7-3L3 3z"/></svg>'), auto !important;
-}
-
-/* 10. Stop Animations */
-html.a11y-stop-animations *,
-html.a11y-stop-animations *::before,
-html.a11y-stop-animations *::after {
+html.a11y-stop-animations * {
   animation: none !important;
   transition: none !important;
   scroll-behavior: auto !important;
 }
-
-/* 11. Focus Highlight (Bright Neon Focus Ring) */
-html.a11y-focus-highlight *:focus,
+html.a11y-big-cursor,
+html.a11y-big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='%230F172A' stroke='%23FFFFFF' stroke-width='1.5'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z'/%3E%3C/svg%3E"), auto !important;
+}
 html.a11y-focus-highlight *:focus-visible {
-  outline: 4px solid #00E5FF !important;
+  outline: 3px solid #0F8B8D !important;
   outline-offset: 3px !important;
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.8) !important;
+  box-shadow: 0 0 0 5px rgba(15, 139, 141, 0.4) !important;
+}
+html.a11y-highlight-links a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+  color: #0F8B8D !important;
+  font-weight: 700 !important;
+}
+html.a11y-heading-underlines h1,
+html.a11y-heading-underlines h2,
+html.a11y-heading-underlines h3 {
+  text-decoration: underline !important;
+  text-decoration-color: #F5A524 !important;
+  text-decoration-thickness: 3px !important;
+  text-underline-offset: 6px !important;
 }
 

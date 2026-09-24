@@ -1,231 +1,316 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { RevealStagger } from "@/components/ui/reveal";
+import { motion } from "framer-motion";
+import {
+  Award,
+  ShieldCheck,
+  CheckCircle2,
+  Calendar,
+  Heart,
+  Users,
+  Building2,
+  GraduationCap,
+  Sparkles,
+  ArrowRight,
+  MapPin,
+  PhoneCall
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Globe2, Scale, MapPin, Phone, Mail, Award, CheckCircle2, Heart } from "lucide-react";
-import { db } from "@/lib/firebase-admin";
-import { CLOUDINARY_IMAGES } from "@/lib/cloudinary-images";
-import { AppointmentBookingForm } from "@/components/forms/AppointmentBookingForm";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
-async function getTeams() {
-  try {
-    const snapshot = await db.collection("teams").get();
-    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-  } catch {
-    return [];
+const TIMELINE = [
+  {
+    year: "1991",
+    title: "Foundation of DISCC & Deva Center",
+    desc: "Dr. C. Tulsi Das established DEVA International Society for Child Care in Kamachha, Varanasi, opening the region's first specialized clinical diagnostic and rehabilitation institute for intellectual disability management.",
+    badge: "Origin"
+  },
+  {
+    year: "1995",
+    title: "Annapurna Center for the Girl Child",
+    desc: "Expanded into rural Varanasi to shield impoverished young girls from malnutrition and illiteracy, creating a secure learning and vocational training refuge managed by local village women.",
+    badge: "Expansion"
+  },
+  {
+    year: "1998",
+    title: "International Partnership & Deva Europe",
+    desc: "Met French art historian Jean-Max Tassel, fostering an enduring Indo-European charitable partnership that connected international pediatric volunteers with grassroots Varanasi projects.",
+    badge: "Global Solidarity"
+  },
+  {
+    year: "1999",
+    title: "Gangotri Riverside Open-Air School",
+    desc: "Pioneered foundational education under a tree on the holy Ganga ghats for boatmen and street children, transitioning over 3,200 street youth into formal government schooling.",
+    badge: "Milestone"
+  },
+  {
+    year: "2010",
+    title: "Deva Gram Rural Campus (Bachhaon)",
+    desc: "Built an expansive rural rehabilitation sanctuary offering hydrotherapy, sensory garden therapy, and overnight respite care for all 21 legally recognized disability categories.",
+    badge: "Sanctuary"
+  },
+  {
+    year: "2024",
+    title: "Best Professional Psychologist State Award",
+    desc: "Dr. Tulsi was conferred the prestigious Best Professional Psychologist Award by Uttar Pradesh Chief Minister Yogi Adityanath for 32+ years of extraordinary humanitarian service.",
+    badge: "State Honour"
   }
-}
+];
 
-export default async function AboutPage() {
-  const leaders = await getTeams();
+const LEADERSHIP_TEAM = [
+  {
+    name: "Dr. C. Tulsi Das",
+    role: "Founder President & Clinical Director",
+    credentials: "Ph.D. (Psychiatry - Clinical Psychology)",
+    bio: "Recipient of Best Professional Psychologist Award from the Chief Minister of UP (Yogi Adityanath). 40+ years dedicated to clinical ID diagnostics and pediatric welfare.",
+    image: "/images/discc/dr-tulsi-portrait.jpg"
+  },
+  {
+    name: "Jean-Max Tassel",
+    role: "Chief International Patron",
+    credentials: "Art Historian & Philanthropist (France)",
+    bio: "Co-architect of Deva Europe for 25+ years, establishing international philanthropic networks supporting medical and educational sponsorships in Varanasi.",
+    image: "/images/discc/founders-meet.jpg"
+  },
+  {
+    name: "Er. Raaj Deva",
+    role: "Director of Operations & Infrastructure",
+    credentials: "B.Tech, Systems & Operations",
+    bio: "Leading rural facility expansion, sensory integration lab modernization, and administrative compliance across all DISCC campuses.",
+    image: "/images/discc/deva-building.jpg"
+  }
+];
 
-  const leadershipList = [
-    {
-      name: "Dr. C. Tulsi Das",
-      role: "Founder President & Director",
-      desc: "Ph.D. (Psychiatry - Clinical Psychologist). Recipient of Best Professional Psychologist Award from Chief Minister of UP and honored by Prime Minister of India. Over 40 years of pioneering work.",
-      image: CLOUDINARY_IMAGES.drTulsiPortrait
-    },
-    {
-      name: "Jean-Max Tassel",
-      role: "Chief International Patron",
-      desc: "French art historian and philanthropist who met Dr. Tulsi in 1998. Key partner for over 25 years in fostering European-Indian medical and charitable solidarity.",
-      image: CLOUDINARY_IMAGES.foundersMeet
-    },
-    {
-      name: "Er. Raaj Deva",
-      role: "Director of Operations",
-      desc: "Leading daily management, community center extensions, infrastructure modernization, and technological integration across DISCC facilities.",
-      image: CLOUDINARY_IMAGES.devaBuilding
-    }
-  ];
-
+export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen pt-12 pb-32 bg-background text-foreground">
-      <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 space-y-28">
-        
-        {/* Header */}
-        <RevealStagger className="w-full space-y-6">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-            About DISCC India
-          </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-secondary tracking-tight leading-[1.05] max-w-5xl">
-            Serving the Last, Least, and Lost in Varanasi
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-normal pt-2 max-w-4xl">
-            Established in 1991 to bring medical dignity, scientific rehabilitation, and educational hope to children and families with intellectual disabilities.
-          </p>
-        </RevealStagger>
-
-        {/* Founding Story Section */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center border-t border-border/70 pt-16">
-          <RevealStagger className="md:col-span-7 space-y-6 text-foreground/80 text-base md:text-lg leading-relaxed">
-            <h2 className="text-3xl font-display font-black text-secondary tracking-tight">
-              A Legacy of Compassion and Science
-            </h2>
-            <p>
-              Dr. Chellapilla Tulsi Das was born and brought up in the holy city of Varanasi. Growing up with a deep devotion to community welfare inherited from his mother, he dedicated his clinical academic career to understanding the human mind.
-            </p>
-            <p>
-              While finishing his Doctoral degree in clinical psychology, he had close personal encounters with families struggling under the immense emotional and financial isolation of intellectual disabilities. At the time, Uttar Pradesh had almost no specialized institutions for neurodivergent children.
-            </p>
-            <p>
-              In 1991, DEVA International Society for Child Care (DISCC) was formally founded and registered as a humanitarian Non Governmental Organization. Shortly after, DEVA Center was established as the first comprehensive rehabilitation facility for individuals with intellectual disabilities in eastern Uttar Pradesh.
-            </p>
-            
-            <blockquote className="border-l-4 border-primary pl-6 py-4 my-6 italic text-secondary font-display font-semibold text-xl leading-snug bg-muted/40 rounded-r-2xl">
-              "Main akela hi chala tha janib-e-manzil magar<br />
-              Log saath aate gaye aur karvan banta gaya"
-            </blockquote>
-
-            <p>
-              In 1998, Dr. Tulsi met Mr. Jean-Max Tassel, an eminent French art historian. Their cross-cultural friendship laid the foundation for Deva Europe, connecting French, German, and American volunteers with grassroots initiatives in Varanasi for over a quarter of a century.
-            </p>
-          </RevealStagger>
-          
-          <RevealStagger delay={0.15} className="md:col-span-5 space-y-4">
-            <div className="w-full aspect-[4/5] rounded-3xl overflow-hidden relative shadow-xl border-4 border-white">
-              <Image
-                src={CLOUDINARY_IMAGES.devaBuilding}
-                alt="Deva Center Building in Varanasi"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-4 left-5 right-5 text-white">
-                <p className="font-display font-bold text-base">Deva Center Headquarters</p>
-                <p className="text-xs text-white/80">Kamachha Chungi, Varanasi, India</p>
-              </div>
-            </div>
-            
-            <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden relative shadow-md border-2 border-border">
-              <Image
-                src={CLOUDINARY_IMAGES.drTulsiClinic}
-                alt="Dr. Tulsi Clinical Consultation"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </RevealStagger>
-        </div>
-
-        {/* Vision, Mission, Values */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border/70 pt-16">
-          <RevealStagger className="p-8 rounded-3xl bg-card border border-border/80 shadow-xs space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-              <BookOpen className="w-6 h-6" />
-            </div>
-            <h3 className="text-2xl font-display font-black text-secondary uppercase tracking-tight">Our Vision</h3>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              Every child thrives with dignity. Every person with intellectual differences is treated with reverence, full human rights, and social inclusion.
-            </p>
-          </RevealStagger>
-          
-          <RevealStagger delay={0.1} className="p-8 rounded-3xl bg-card border border-border/80 shadow-xs space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center">
-              <Globe2 className="w-6 h-6" />
-            </div>
-            <h3 className="text-2xl font-display font-black text-secondary uppercase tracking-tight">Our Mission</h3>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              To dismantle systemic barriers of poverty and ignorance by pairing clinical expertise with grassroots compassionate care across urban and rural UP.
-            </p>
-          </RevealStagger>
-          
-          <RevealStagger delay={0.2} className="p-8 rounded-3xl bg-card border border-border/80 shadow-xs space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-accent/20 text-secondary flex items-center justify-center">
-              <Scale className="w-6 h-6" />
-            </div>
-            <h3 className="text-2xl font-display font-black text-secondary uppercase tracking-tight">Our Philosophy</h3>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              Local wisdom combined with global evidence. We listen to families, respect Indian cultural realities, and apply rigorous modern psychology.
-            </p>
-          </RevealStagger>
-        </div>
-
-        {/* Founder & Leadership */}
-        <div id="founder" className="border-t border-border/70 pt-20 space-y-12">
-          <RevealStagger className="space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-              Guidance and Governance
+    <div className="w-full flex flex-col items-center bg-[#FFFAF2]">
+      {/* 1. Hero Section */}
+      <section className="w-full pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-[#FFEFE0]/60 to-[#FFFAF2] relative overflow-hidden">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <span className="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 inline-block mb-4">
+              Since 1991 · Varanasi, India
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-secondary tracking-tight">
-              Leadership Committed to Service
-            </h2>
-          </RevealStagger>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {leadershipList.map((leader, i) => (
-              <RevealStagger key={leader.name} delay={i * 0.1} className="p-6 bg-card rounded-3xl border border-border/80 shadow-xs space-y-5 flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="w-full aspect-square rounded-2xl overflow-hidden relative shadow-sm bg-muted/30">
-                    <Image
-                      src={leader.image}
-                      alt={leader.name}
-                      fill
-                      className="object-contain p-2"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-display font-black text-secondary">{leader.name}</h4>
-                    <p className="text-xs font-bold uppercase tracking-wider text-primary">{leader.role}</p>
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{leader.desc}</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading text-foreground tracking-tight leading-[1.1]">
+              A 32-Year Journey of Clinical Science & Unconditional Love
+            </h1>
+            <p className="mt-6 text-lg sm:text-xl text-muted-text leading-relaxed max-w-[60ch]">
+              Founded by Dr. C. Tulsi Das to transform the lives of children with intellectual disabilities across Eastern Uttar Pradesh through evidence-based psychological rehabilitation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Founder Profile & Award Spotlight */}
+      <section className="w-full py-16 md:py-24 bg-white border-y border-border/70 relative">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left: Founder Award Photo */}
+            <Reveal className="lg:col-span-5">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft-lg border-4 border-white bg-muted">
+                <Image
+                  src="/images/discc/award-ceremony.png"
+                  alt="Dr. Tulsi receiving award from UP CM Yogi Adityanath"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <span className="px-3 py-1 rounded-full bg-[#F5A524] text-[#1E2A3A] font-bold text-xs">
+                    State Felicitation
+                  </span>
+                  <p className="font-heading font-bold text-lg mt-2 leading-tight">
+                    Dr. Tulsi Conferred Best Psychologist Award
+                  </p>
+                  <p className="text-xs text-white/80 mt-1">
+                    By Chief Minister of Uttar Pradesh, Yogi Adityanath
+                  </p>
                 </div>
-              </RevealStagger>
+              </div>
+            </Reveal>
+
+            {/* Right: Founder Narrative */}
+            <Reveal delay={0.15} className="lg:col-span-7 space-y-6">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary">
+                Meet the Founder
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground">
+                Dr. C. Tulsi Das, Ph.D.
+              </h2>
+              <p className="text-muted-text text-base sm:text-lg leading-relaxed">
+                Born and raised in the ancient city of Varanasi, Dr. Chellapilla Tulsi Das dedicated his clinical career to neurodevelopmental psychiatry and intellectual disability management. In the early 1990s, when neurodivergent children were hidden away due to severe societal stigma, Dr. Tulsi opened Eastern UP&apos;s first multidisciplinary clinic.
+              </p>
+              <p className="text-muted-text text-base sm:text-lg leading-relaxed">
+                Over four decades, he has conducted thousands of psychological assessments, designed individualized education plans (IEPs), and built inclusive community networks that have touched more than 12,000 lives.
+              </p>
+
+              <blockquote className="border-l-4 border-primary pl-6 py-4 my-4 bg-[#FFFAF2] rounded-r-2xl italic text-foreground font-heading text-lg">
+                &ldquo;Every child, irrespective of neurological impairment, carries a sacred spark of human dignity and potential. Our duty is simply to provide the right clinical bridge.&rdquo;
+              </blockquote>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <Link href="/contact">
+                  <Button variant="default" size="lg" className="rounded-full">
+                    Consult with our Team
+                  </Button>
+                </Link>
+                <Link href="/donate">
+                  <Button variant="donate" size="lg" className="rounded-full shadow-glow-marigold">
+                    Support our Work
+                  </Button>
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Interactive Vertical Timeline */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFAF2] relative">
+        <div className="container-custom">
+          <SectionHeading
+            eyebrow="Chronicle of Impact"
+            title="Milestones in Humanitarian Service"
+            description="How a humble clinic in Kamachha expanded into a multifaceted statewide welfare movement."
+          />
+
+          <div className="max-w-4xl mx-auto relative mt-12">
+            {/* Center line */}
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2" />
+
+            <div className="space-y-12">
+              {TIMELINE.map((item, idx) => {
+                const isEven = idx % 2 === 0;
+                return (
+                  <Reveal key={item.year} delay={idx * 0.08}>
+                    <div
+                      className={`relative flex flex-col md:flex-row items-start ${
+                        isEven ? "md:flex-row-reverse" : ""
+                      } gap-6 md:gap-12 pl-10 md:pl-0`}
+                    >
+                      {/* Timeline Node Point */}
+                      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary flex items-center justify-center shadow-md z-10">
+                        <span className="w-2 h-2 rounded-full bg-primary" />
+                      </div>
+
+                      {/* Content Card */}
+                      <div className={`w-full md:w-1/2 ${isEven ? "md:text-left" : "md:text-left"}`}>
+                        <div className="p-6 rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all duration-300">
+                          <div className="flex items-center gap-2.5 mb-2">
+                            <span className="text-xl font-extrabold font-heading text-primary">
+                              {item.year}
+                            </span>
+                            <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#F5A524]/15 text-[#1E2A3A]">
+                              {item.badge}
+                            </span>
+                          </div>
+                          <h3 className="text-lg font-bold font-heading text-foreground mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-muted-text leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Certifications & Legal Standing */}
+      <section className="w-full py-16 bg-white border-y border-border/70 relative">
+        <div className="container-custom">
+          <SectionHeading
+            title="Certifications & Transparency"
+            description="DISCC adheres to highest statutory compliance standards under Government of India guidelines."
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-6 rounded-3xl bg-[#FFFAF2] border border-border/70 text-center">
+              <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-3" />
+              <h3 className="font-bold text-base text-foreground">FCRA Registered</h3>
+              <p className="text-xs text-muted-text mt-1">
+                Authorized by Ministry of Home Affairs to receive foreign philanthropic contributions.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-[#FFFAF2] border border-border/70 text-center">
+              <Award className="w-10 h-10 text-[#F5A524] mx-auto mb-3" />
+              <h3 className="font-bold text-base text-foreground">National Trust Certified</h3>
+              <p className="text-xs text-muted-text mt-1">
+                Recognized for Autism, Cerebral Palsy, Mental Retardation & Multiple Disabilities.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-[#FFFAF2] border border-border/70 text-center">
+              <CheckCircle2 className="w-10 h-10 text-primary mx-auto mb-3" />
+              <h3 className="font-bold text-base text-foreground">Section 80G & 12A</h3>
+              <p className="text-xs text-muted-text mt-1">
+                All Indian donations eligible for 50% income tax exemption under Section 80G.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-[#FFFAF2] border border-border/70 text-center">
+              <Building2 className="w-10 h-10 text-primary mx-auto mb-3" />
+              <h3 className="font-bold text-base text-foreground">UP Social Welfare</h3>
+              <p className="text-xs text-muted-text mt-1">
+                Officially accredited non governmental organization by Department of Social Welfare UP.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Multidisciplinary Leadership Team */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFAF2] relative">
+        <div className="container-custom">
+          <SectionHeading
+            title="Leadership & Governance"
+            description="Guided by veteran clinical psychologists, operations experts, and global philanthropic patrons."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {LEADERSHIP_TEAM.map((member, idx) => (
+              <Reveal key={member.name} delay={idx * 0.1}>
+                <div className="rounded-3xl bg-white border border-border/80 shadow-soft overflow-hidden h-full flex flex-col justify-between">
+                  <div>
+                    <div className="relative aspect-[4/3] w-full bg-muted">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold font-heading text-foreground">
+                        {member.name}
+                      </h3>
+                      <p className="text-xs font-bold text-primary mt-0.5">
+                        {member.role}
+                      </p>
+                      <p className="text-[11px] text-muted-text font-medium mt-0.5">
+                        {member.credentials}
+                      </p>
+                      <p className="text-sm text-muted-text mt-3 leading-relaxed">
+                        {member.bio}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
-
-        {/* Contact & Consultation Section */}
-        <div id="contact" className="border-t border-border/70 pt-20 pb-10">
-          <div className="bg-secondary rounded-3xl p-8 md:p-14 text-white">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-              <div className="lg:col-span-6 space-y-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-accent">Contact and Consultations</span>
-                <h3 className="text-3xl sm:text-4xl font-display font-black">
-                  Visit or Connect With DISCC
-                </h3>
-                <p className="text-white/80 text-sm md:text-base leading-relaxed">
-                  We welcome families, social workers, volunteers, researchers, and donors. Reach out for appointments, student admissions, or general inquiries.
-                </p>
-
-                <div className="space-y-4 pt-2 text-sm text-white/90">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span>B.21/100, Bind Bhavan, Kamachha Chungi, Varanasi, Uttar Pradesh 221010, India</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span>Direct Helpline: +91 7007453168</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span>disccindia@gmail.com</span>
-                  </div>
-                </div>
-
-                <div className="pt-4 flex items-center gap-2 text-xs text-white/70">
-                  <CheckCircle2 className="w-4 h-4 text-accent" />
-                  <span>FCRA Registered Humanitarian Non Governmental Organization</span>
-                </div>
-              </div>
-
-              {/* Consultation Booking Card */}
-              <div className="lg:col-span-6 bg-card text-foreground rounded-2xl p-8 shadow-xl border border-border space-y-4">
-                <h4 className="font-display font-bold text-xl text-secondary">
-                  Request an Appointment or Information
-                </h4>
-                <p className="text-xs text-muted-foreground">
-                  Leave your details and our coordinator in Varanasi will connect with you promptly.
-                </p>
-
-                <AppointmentBookingForm />
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      </section>
     </div>
   );
 }

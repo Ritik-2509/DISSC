@@ -7,21 +7,35 @@ import {
   BookOpen,
   Plus,
   Search,
-  Edit,
-  ExternalLink,
-  CheckCircle2,
-  Clock,
+  Edit2,
+  Trash2,
   Save,
-  X
+  X,
+  Calendar,
+  Sparkles,
+  CheckCircle2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CloudinaryUploadWidget } from "@/components/admin/CloudinaryUploadWidget";
 import { saveAdminItem, deleteAdminItem } from "@/lib/admin-client";
 
+interface BlogItem {
+  id: string | number;
+  name: string;
+  slug: string;
+  category: string;
+  description: string;
+  content: string;
+  image?: string;
+  is_featured?: boolean;
+  status: "published" | "draft";
+  created_at?: string;
+}
+
 export default function AdminBlogs() {
-  const [blogs, setBlogs] = useState<any[]>([]);
+  const [blogs, setBlogs] = useState<BlogItem[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [editingBlog, setEditingBlog] = useState<any | null>(null);
+  const [editingBlog, setEditingBlog] = useState<BlogItem | null>(null);
+  const [isNew, setIsNew] = useState(false);
 
   useEffect(() => {
     fetch("/firestore_export/blogs.json")
@@ -33,7 +47,10 @@ export default function AdminBlogs() {
             id: 1,
             name: "How Specialized Therapy Transforms Young Minds",
             slug: "how-specialized-therapy-transforms-young-minds",
+            category: "Clinical Care",
             description: "An overview of rehabilitation techniques applied at Deva Center Varanasi.",
+            content: "Full article content covering clinical psychology and sensory integration...",
+            image: "/images/discc/children-activity.png",
             status: "published",
             created_at: "2026-01-15",
           },
@@ -41,7 +58,10 @@ export default function AdminBlogs() {
             id: 2,
             name: "The Power of Community Care in Rural Bachhaon",
             slug: "community-care-in-rural-bachhaon",
-            description: "Addressing stigma and expanding intellectual disability management.",
+            category: "Rural Outreach",
+            description: "Addressing stigma and expanding intellectual disability management in rural villages.",
+            content: "Deva Gram in Bachhaon village extends comprehensive care...",
+            image: "/images/discc/community-program.png",
             status: "published",
             created_at: "2025-11-20",
           }
@@ -49,208 +69,309 @@ export default function AdminBlogs() {
       });
   }, []);
 
-  const filteredBlogs = blogs.filter((b) =>
-    (b.name && b.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
-    (b.description && b.description.toLowerCase().includes(searchQuery.toLowerCase()))
+  const filteredBlogs = blogs.filter(
+    (b) =>
+      (b.name && b.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (b.description && b.description.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingBlog) return;
 
-    let targetBlog: any;
-    if (editingBlog.id && blogs.some((b) => b.id === editingBlog.id)) {
-      targetBlog = { ...editingBlog, updated_at: new Date().toISOString() };
+    let targetBlog: BlogItem;
+    if (!isNew && blogs.some((b) => b.id === editingBlog.id)) {
+      targetBlog = { ...editingBlog };
       setBlogs(blogs.map((b) => (b.id === editingBlog.id ? targetBlog : b)));
     } else {
-      targetBlog = { ...editingBlog, id: Date.now(), created_at: new Date().toISOString(), updated_at: new Date().toISOString() };
+      targetBlog = {
+        ...editingBlog,
+        id: Date.now(),
+        created_at: new Date().toISOString().split("T")[0],
+      };
       setBlogs([targetBlog, ...blogs]);
     }
 
     setEditingBlog(null);
+    setIsNew(false);
     await saveAdminItem("blogs", targetBlog);
+  };
+
+  const handleDelete = async (id: string | number) => {
+    if (confirm("Are you sure you want to delete this blog post?")) {
+      setBlogs(blogs.filter((b) => b.id !== id));
+      if (editingBlog?.id === id) setEditingBlog(null);
+      await deleteAdminItem("blogs", id);
+    }
   };
 
   return (
     <div className="space-y-8">
+      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Publications & Articles</span>
-            <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">
-              {blogs.length} Posts
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-display font-black text-secondary mt-1">
-            Blogs and Success Stories
+          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-foreground">
+            Articles & Impact Stories
           </h1>
-          <p className="text-xs text-muted-foreground">
-            Manage public articles, field updates, and clinical education posts.
+          <p className="text-xs sm:text-sm text-muted-text">
+            Publish educational articles, clinical breakthroughs, and field updates.
           </p>
         </div>
 
         <Button
-          onClick={() =>
+          onClick={() => {
+            setIsNew(true);
             setEditingBlog({
-              id: null,
+              id: Date.now(),
               name: "",
               slug: "",
+              category: "Clinical Care",
               description: "",
               content: "",
+              image: "/images/discc/children-activity.png",
+              is_featured: false,
               status: "published",
-              imageUrl: "",
-            })
-          }
-          className="rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-xs uppercase tracking-wider h-11 px-5 flex items-center gap-2"
+            });
+          }}
+          variant="default"
+          size="sm"
+          className="rounded-full gap-2"
         >
           <Plus className="w-4 h-4" />
-          <span>Write New Article</span>
+          Write New Article
         </Button>
       </div>
 
-      {/* Search Input */}
-      <div className="bg-card p-4 rounded-2xl border border-border shadow-xs">
-        <div className="relative">
-          <Search className="w-4 h-4 text-muted-foreground absolute left-3.5 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            placeholder="Search stories and articles..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-11 pl-10 pr-4 rounded-xl border border-border text-sm outline-none focus:border-primary"
-          />
-        </div>
+      {/* Search */}
+      <div className="p-4 rounded-3xl bg-white border border-border/80 shadow-soft flex items-center gap-3">
+        <Search className="w-4 h-4 text-muted-text" />
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search articles by title or keyword..."
+          className="flex-1 bg-transparent text-sm text-foreground focus:outline-none"
+        />
+        <span className="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full">
+          {filteredBlogs.length} Articles
+        </span>
       </div>
 
-      {/* Blog Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredBlogs.map((post) => (
-          <div
-            key={post.id}
-            className="bg-card rounded-3xl border border-border overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
-          >
-            <div className="space-y-4">
-              <div className="relative aspect-[16/10] bg-muted w-full overflow-hidden">
-                {post.imageUrl || post.image ? (
-                  <Image
-                    src={post.imageUrl || post.image}
-                    alt={post.name}
-                    fill
-                    className="object-cover"
-                    unoptimized
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                    <BookOpen className="w-8 h-8 text-muted-foreground/50" />
-                  </div>
-                )}
-                <span className="absolute top-3 left-3 bg-secondary text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
-                  {post.status || "published"}
-                </span>
+      {/* Editor Form */}
+      {editingBlog && (
+        <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-primary/30 shadow-soft-lg space-y-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl font-bold font-heading text-foreground">
+              {isNew ? "Write New Article" : "Edit Article"}
+            </h2>
+            <button
+              onClick={() => setEditingBlog(null)}
+              className="text-xs font-bold text-muted-text hover:text-foreground cursor-pointer"
+            >
+              Cancel
+            </button>
+          </div>
+
+          <form onSubmit={handleSave} className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  Article Title *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={editingBlog.name}
+                  onChange={(e) =>
+                    setEditingBlog({
+                      ...editingBlog,
+                      name: e.target.value,
+                      slug: e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+                    })
+                  }
+                  placeholder="e.g. World Autism Awareness Day: Building Inclusive Classrooms"
+                  className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+                />
               </div>
 
-              <div className="p-5 space-y-2">
-                <h3 className="font-display font-bold text-base text-secondary line-clamp-2">
-                  {post.name}
-                </h3>
-                <p className="text-xs text-muted-foreground line-clamp-3">
-                  {post.description || "Article about DISCC clinical initiatives and child rehabilitation."}
-                </p>
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  URL Slug
+                </label>
+                <input
+                  type="text"
+                  value={editingBlog.slug}
+                  onChange={(e) =>
+                    setEditingBlog({ ...editingBlog, slug: e.target.value })
+                  }
+                  placeholder="e.g. world-autism-day-classrooms"
+                  className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary font-mono"
+                />
               </div>
             </div>
 
-            <div className="p-5 pt-0 flex items-center justify-between border-t border-border/60 mt-4 pt-3 text-xs">
-              <span className="text-muted-foreground text-[11px]">
-                {post.created_at ? post.created_at.split("T")[0].split(" ")[0] : "Recent"}
-              </span>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  Category
+                </label>
+                <select
+                  value={editingBlog.category}
+                  onChange={(e) =>
+                    setEditingBlog({ ...editingBlog, category: e.target.value })
+                  }
+                  className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+                >
+                  <option value="Clinical Care">Clinical Psychology & Therapy</option>
+                  <option value="Rural Outreach">Rural Outreach & Sanctuaries</option>
+                  <option value="Education">Inclusive Special Education</option>
+                  <option value="Events">Festivals & Celebrations</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  Featured Image URL
+                </label>
+                <input
+                  type="text"
+                  value={editingBlog.image || ""}
+                  onChange={(e) =>
+                    setEditingBlog({ ...editingBlog, image: e.target.value })
+                  }
+                  placeholder="/images/discc/children-activity.png"
+                  className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  Status
+                </label>
+                <select
+                  value={editingBlog.status}
+                  onChange={(e) =>
+                    setEditingBlog({
+                      ...editingBlog,
+                      status: e.target.value as "published" | "draft",
+                    })
+                  }
+                  className="w-full h-11 px-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+                >
+                  <option value="published">Published</option>
+                  <option value="draft">Draft</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Short Summary / Excerpt
+              </label>
+              <textarea
+                rows={2}
+                value={editingBlog.description}
+                onChange={(e) =>
+                  setEditingBlog({ ...editingBlog, description: e.target.value })
+                }
+                placeholder="One or two sentences explaining the story..."
+                className="w-full p-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                Full Article Content
+              </label>
+              <textarea
+                rows={6}
+                value={editingBlog.content}
+                onChange={(e) =>
+                  setEditingBlog({ ...editingBlog, content: e.target.value })
+                }
+                placeholder="Write the full story or report here..."
+                className="w-full p-4 rounded-xl border border-border bg-[#FFFAF2]/50 text-sm focus:outline-none focus:border-primary font-mono text-xs"
+              />
+            </div>
+
+            <div className="flex justify-end gap-3 pt-4">
               <Button
-                size="sm"
+                type="button"
                 variant="outline"
-                onClick={() => setEditingBlog({ ...post })}
-                className="rounded-xl text-xs font-bold border-border hover:border-primary text-secondary"
+                onClick={() => setEditingBlog(null)}
               >
-                <Edit className="w-3.5 h-3.5 mr-1" />
-                Edit
+                Cancel
               </Button>
+              <Button type="submit" variant="default" className="gap-2">
+                <Save className="w-4 h-4" />
+                Save Article
+              </Button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      {/* Blog Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {filteredBlogs.map((b) => (
+          <div
+            key={b.id}
+            className="p-6 rounded-3xl bg-white border border-border/80 shadow-soft flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between gap-2 mb-3">
+                <span className="px-3 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">
+                  {b.category || "General"}
+                </span>
+                <span
+                  className={`px-2.5 py-0.5 rounded-full text-[10.5px] font-bold ${
+                    b.status === "published"
+                      ? "bg-[#E6F6EE] text-[#0F8B8D]"
+                      : "bg-muted text-muted-text"
+                  }`}
+                >
+                  {b.status || "published"}
+                </span>
+              </div>
+
+              <h3 className="font-heading font-bold text-lg text-foreground mb-1">
+                {b.name}
+              </h3>
+              <p className="text-xs text-muted-text line-clamp-2">
+                {b.description}
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-border/60 mt-4 flex items-center justify-between">
+              <span className="text-xs text-muted-text font-medium">
+                {b.created_at || "Recent"}
+              </span>
+              <div className="flex items-center gap-2">
+                <Button
+                  onClick={() => {
+                    setIsNew(false);
+                    setEditingBlog(b);
+                  }}
+                  variant="outline"
+                  size="sm"
+                  className="gap-1 text-xs"
+                >
+                  <Edit2 className="w-3.5 h-3.5" />
+                  Edit
+                </Button>
+                <Button
+                  onClick={() => handleDelete(b.id)}
+                  variant="destructive"
+                  size="sm"
+                  className="p-2"
+                >
+                  <Trash2 className="w-3.5 h-3.5" />
+                </Button>
+              </div>
             </div>
           </div>
         ))}
       </div>
-
-      {/* Edit / New Blog Modal */}
-      {editingBlog && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-card rounded-3xl border border-border shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden">
-            <div className="p-6 border-b border-border flex items-center justify-between bg-muted/20">
-              <h3 className="font-display font-black text-xl text-secondary">
-                {editingBlog.id ? "Edit Article" : "Create New Story / Blog"}
-              </h3>
-              <button onClick={() => setEditingBlog(null)} className="text-muted-foreground hover:text-secondary">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <form onSubmit={handleSave} className="p-6 space-y-5 overflow-y-auto flex-1">
-              <div className="space-y-1">
-                <label className="text-xs font-semibold text-secondary">Article Title</label>
-                <input
-                  type="text"
-                  value={editingBlog.name || ""}
-                  onChange={(e) => setEditingBlog({ ...editingBlog, name: e.target.value })}
-                  required
-                  className="w-full h-11 px-3.5 rounded-xl border border-border text-sm outline-none focus:border-primary"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label className="text-xs font-semibold text-secondary">URL Slug</label>
-                <input
-                  type="text"
-                  value={editingBlog.slug || ""}
-                  onChange={(e) => setEditingBlog({ ...editingBlog, slug: e.target.value })}
-                  required
-                  className="w-full h-11 px-3.5 rounded-xl border border-border text-sm outline-none focus:border-primary font-mono"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label className="text-xs font-semibold text-secondary">Short Excerpt / Summary</label>
-                <textarea
-                  value={editingBlog.description || ""}
-                  onChange={(e) => setEditingBlog({ ...editingBlog, description: e.target.value })}
-                  rows={2}
-                  className="w-full p-3 rounded-xl border border-border text-sm outline-none focus:border-primary"
-                />
-              </div>
-
-              <CloudinaryUploadWidget
-                label="Cover Image (Cloudinary or Direct URL)"
-                currentValue={editingBlog.imageUrl || editingBlog.image || ""}
-                onSuccess={(url) => setEditingBlog({ ...editingBlog, imageUrl: url, image: url })}
-              />
-
-              <div className="space-y-1">
-                <label className="text-xs font-semibold text-secondary">Full Article Content</label>
-                <textarea
-                  value={editingBlog.content || ""}
-                  onChange={(e) => setEditingBlog({ ...editingBlog, content: e.target.value })}
-                  rows={6}
-                  className="w-full p-3 rounded-xl border border-border text-xs font-mono outline-none focus:border-primary"
-                />
-              </div>
-
-              <div className="pt-4 border-t border-border flex justify-end gap-2">
-                <Button type="button" variant="ghost" onClick={() => setEditingBlog(null)}>
-                  Cancel
-                </Button>
-                <Button type="submit" className="rounded-xl bg-primary text-white font-bold text-xs uppercase tracking-wider">
-                  Save Article
-                </Button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

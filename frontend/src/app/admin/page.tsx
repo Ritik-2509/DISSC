@@ -11,24 +11,27 @@ import {
   Users,
   ArrowRight,
   Database,
-  Cloud,
   CheckCircle2,
-  Clock,
+  Sliders,
   Sparkles,
   ShieldCheck,
-  Plus
+  Plus,
+  Heart,
+  PhoneCall
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function getStats() {
   const exportDir = path.join(process.cwd(), "firestore_export");
   let counts = {
+    hero: 4,
+    projects: 8,
     pages: 39,
-    blogs: 3,
+    blogs: 6,
     media: 755,
     galleries: 44,
     contacts: 1571,
-    teams: 5,
+    teams: 3,
   };
 
   let recentContacts: any[] = [];
@@ -56,7 +59,7 @@ function getStats() {
       if (fs.existsSync(cFile)) {
         const conts = JSON.parse(fs.readFileSync(cFile, "utf8"));
         counts.contacts = conts.length;
-        recentContacts = conts.slice(-5).reverse();
+        recentContacts = conts.slice(-6).reverse();
       }
 
       const tFile = path.join(exportDir, "teams.json");
@@ -71,226 +74,155 @@ function getStats() {
 
 export default function AdminDashboard() {
   const { counts, recentContacts, recentGalleries } = getStats();
-  const isCloudinarySet = Boolean(process.env.CLOUDINARY_API_KEY && process.env.CLOUDINARY_CLOUD_NAME);
 
   return (
     <div className="space-y-8">
-      {/* Welcome Banner */}
-      <div className="bg-secondary rounded-3xl p-6 md:p-8 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm border border-white/10">
+      {/* 1. Header Banner */}
+      <div className="bg-gradient-to-r from-[#FFEFE0] via-[#FFFAF2] to-[#FFEFE0] rounded-3xl p-6 sm:p-8 border border-border/80 shadow-soft flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-accent text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
             <ShieldCheck className="w-3.5 h-3.5" />
-            <span>DISCC Central Administration Console</span>
+            <span>DISCC Central Administration</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-display font-black text-white">
-            Welcome, Raaj Deva
+          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-foreground">
+            Welcome to DISCC CMS Portal
           </h1>
-          <p className="text-xs text-white/75 max-w-xl">
-            Complete management of DISCC India web assets, clinical programs, original photo galleries, and database synchronization.
+          <p className="text-xs sm:text-sm text-muted-text max-w-xl leading-relaxed">
+            Manage clinical programmes, hero slides, photo galleries, donor acknowledgments, and family consultation requests.
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <Link href="/admin/migration">
-            <Button className="rounded-full bg-accent text-secondary hover:bg-accent/90 font-bold text-xs uppercase tracking-wider px-5 h-11 shadow-sm flex items-center gap-2">
-              <Database className="w-4 h-4" />
-              <span>Firebase Migration</span>
+          <Link href="/admin/hero">
+            <Button variant="default" size="sm" className="rounded-full gap-1.5 shadow-soft">
+              <Sliders className="w-4 h-4" />
+              Manage Hero Slides
             </Button>
           </Link>
-          <Link href="/admin/media">
-            <Button className="rounded-full bg-white hover:bg-accent text-secondary hover:text-secondary font-bold text-xs uppercase tracking-wider px-5 h-11 shadow-sm flex items-center gap-2 transition-all">
-              <Cloud className="w-4 h-4" />
-              <span>Media Library</span>
+          <Link href="/admin/contact">
+            <Button variant="donate" size="sm" className="rounded-full gap-1.5 shadow-glow-marigold">
+              <MessageSquare className="w-4 h-4" />
+              View Inquiries ({counts.contacts})
             </Button>
           </Link>
         </div>
       </div>
 
-      {/* Metrics Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <Link href="/admin/pages" className="group">
-          <div className="p-6 rounded-3xl bg-card border border-border shadow-xs hover:border-primary/50 transition-all space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Pages</span>
-              <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                <FileText className="w-5 h-5" />
-              </div>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-display font-black text-secondary">{counts.pages}</p>
-              <p className="text-[11px] text-muted-foreground mt-1 flex items-center gap-1">
-                <span>All client pages indexed</span>
-                <ArrowRight className="w-3 h-3 text-primary" />
-              </p>
-            </div>
+      {/* 2. Key Metrics Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <Link href="/admin/hero" className="p-5 rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all">
+          <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-3">
+            <Sliders className="w-5 h-5" />
           </div>
+          <p className="text-2xl font-bold font-heading text-foreground">{counts.hero}</p>
+          <p className="text-xs text-muted-text font-semibold mt-0.5">Hero Slides</p>
         </Link>
 
-        <Link href="/admin/media" className="group">
-          <div className="p-6 rounded-3xl bg-card border border-border shadow-xs hover:border-primary/50 transition-all space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Media Files</span>
-              <div className="w-10 h-10 rounded-2xl bg-accent/20 text-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
-                <ImageIcon className="w-5 h-5" />
-              </div>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-display font-black text-secondary">{counts.media}</p>
-              <p className="text-[11px] text-muted-foreground mt-1 flex items-center gap-1">
-                <span>Cloudinary ready</span>
-                <ArrowRight className="w-3 h-3 text-primary" />
-              </p>
-            </div>
+        <Link href="/admin/projects" className="p-5 rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all">
+          <div className="w-10 h-10 rounded-2xl bg-[#0F8B8D]/10 text-[#0F8B8D] flex items-center justify-center mb-3">
+            <Sparkles className="w-5 h-5" />
           </div>
+          <p className="text-2xl font-bold font-heading text-foreground">{counts.projects}</p>
+          <p className="text-xs text-muted-text font-semibold mt-0.5">Programmes</p>
         </Link>
 
-        <Link href="/admin/gallery" className="group">
-          <div className="p-6 rounded-3xl bg-card border border-border shadow-xs hover:border-primary/50 transition-all space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Galleries</span>
-              <div className="w-10 h-10 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Images className="w-5 h-5" />
-              </div>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-display font-black text-secondary">{counts.galleries}</p>
-              <p className="text-[11px] text-muted-foreground mt-1 flex items-center gap-1">
-                <span>2025 and 2026 albums</span>
-                <ArrowRight className="w-3 h-3 text-primary" />
-              </p>
-            </div>
+        <Link href="/admin/gallery" className="p-5 rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all">
+          <div className="w-10 h-10 rounded-2xl bg-[#F5A524]/10 text-[#F5A524] flex items-center justify-center mb-3">
+            <Images className="w-5 h-5" />
           </div>
+          <p className="text-2xl font-bold font-heading text-foreground">{counts.galleries}</p>
+          <p className="text-xs text-muted-text font-semibold mt-0.5">Photo Albums</p>
         </Link>
 
-        <Link href="/admin/contact" className="group">
-          <div className="p-6 rounded-3xl bg-card border border-border shadow-xs hover:border-primary/50 transition-all space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Inquiries</span>
-              <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                <MessageSquare className="w-5 h-5" />
-              </div>
-            </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-display font-black text-secondary">{counts.contacts}</p>
-              <p className="text-[11px] text-muted-foreground mt-1 flex items-center gap-1">
-                <span>Total messages captured</span>
-                <ArrowRight className="w-3 h-3 text-primary" />
-              </p>
-            </div>
+        <Link href="/admin/media" className="p-5 rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all">
+          <div className="w-10 h-10 rounded-2xl bg-[#EE6C4D]/10 text-[#EE6C4D] flex items-center justify-center mb-3">
+            <ImageIcon className="w-5 h-5" />
           </div>
+          <p className="text-2xl font-bold font-heading text-foreground">{counts.media}</p>
+          <p className="text-xs text-muted-text font-semibold mt-0.5">Media Assets</p>
+        </Link>
+
+        <Link href="/admin/blogs" className="p-5 rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all">
+          <div className="w-10 h-10 rounded-2xl bg-[#8E7CC3]/10 text-[#8E7CC3] flex items-center justify-center mb-3">
+            <BookOpen className="w-5 h-5" />
+          </div>
+          <p className="text-2xl font-bold font-heading text-foreground">{counts.blogs}</p>
+          <p className="text-xs text-muted-text font-semibold mt-0.5">Articles & Stories</p>
+        </Link>
+
+        <Link href="/admin/contact" className="p-5 rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all">
+          <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-3">
+            <MessageSquare className="w-5 h-5" />
+          </div>
+          <p className="text-2xl font-bold font-heading text-foreground">{counts.contacts}</p>
+          <p className="text-xs text-muted-text font-semibold mt-0.5">Inquiries</p>
         </Link>
       </div>
 
-      {/* Cloudinary Integration Status Bar */}
-      <div className={`p-5 rounded-2xl border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 ${
-        isCloudinarySet ? "bg-emerald-50 border-emerald-200 text-emerald-950" : "bg-amber-50 border-amber-200 text-amber-950"
-      }`}>
-        <div className="flex items-center gap-3">
-          <Cloud className={`w-6 h-6 ${isCloudinarySet ? "text-emerald-600" : "text-amber-600"}`} />
+      {/* 3. Recent Contacts & Inquiries */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-white border border-border/80 shadow-soft space-y-6">
+        <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs font-bold">
-              {isCloudinarySet ? "Cloudinary API Connected" : "Cloudinary Setup Required"}
-            </p>
-            <p className="text-[11px] opacity-85">
-              {isCloudinarySet
-                ? "Your Cloudinary credentials are active. Images upload directly to your cloud storage."
-                : "Add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET in frontend/.env.local."}
+            <h2 className="text-xl font-bold font-heading text-foreground">
+              Recent Consultations & Inquiries
+            </h2>
+            <p className="text-xs text-muted-text">
+              Real-time patient assessments, volunteer registrations, and callback requests
             </p>
           </div>
+          <Link href="/admin/contact">
+            <Button variant="outline" size="sm" className="rounded-full gap-1 text-xs">
+              View All Inquiries
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Button>
+          </Link>
         </div>
-        <Link href="/admin/media">
-          <Button size="sm" variant="outline" className="text-xs rounded-xl font-bold bg-white text-secondary hover:bg-muted">
-            Manage Cloud Storage
-          </Button>
-        </Link>
-      </div>
 
-      {/* Main Grid: Recent Inquiries & Recent Galleries */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Left Col: Recent Contact Messages */}
-        <div className="lg:col-span-7 bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-xs space-y-6">
-          <div className="flex items-center justify-between border-b border-border pb-4">
-            <div>
-              <h2 className="text-lg font-display font-black text-secondary">Recent Contact Inquiries</h2>
-              <p className="text-xs text-muted-foreground">Inquiries from families, donors and volunteers</p>
-            </div>
-            <Link href="/admin/contact">
-              <Button variant="ghost" size="sm" className="text-xs text-primary font-bold hover:text-secondary">
-                View All {counts.contacts} <ArrowRight className="w-3.5 h-3.5 ml-1" />
-              </Button>
-            </Link>
-          </div>
-
-          <div className="divide-y divide-border/60">
-            {recentContacts.map((contact, i) => (
-              <div key={contact.id || i} className="py-3.5 flex items-start justify-between gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-sm text-secondary">{contact.name || "Anonymous"}</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-muted text-muted-foreground font-medium">
-                      {contact.phone || "No phone"}
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr className="border-b border-border/60 text-muted-text font-bold uppercase text-[10.5px]">
+                <th className="pb-3">Name / Contact</th>
+                <th className="pb-3">Phone</th>
+                <th className="pb-3">Subject / Request</th>
+                <th className="pb-3">Status</th>
+                <th className="pb-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border/40">
+              {recentContacts.map((contact, i) => (
+                <tr key={contact.id || i} className="hover:bg-[#FFFAF2]/50 transition-colors">
+                  <td className="py-3.5 font-bold text-foreground">
+                    {contact.name || "Anonymous Visitor"}
+                    {contact.email && (
+                      <span className="block text-[11px] text-muted-text font-normal">
+                        {contact.email}
+                      </span>
+                    )}
+                  </td>
+                  <td className="py-3.5 font-mono text-xs font-semibold text-primary">
+                    {contact.phone || "-"}
+                  </td>
+                  <td className="py-3.5 text-muted-text max-w-xs truncate">
+                    {contact.subject || contact.content || "Assessment Booking"}
+                  </td>
+                  <td className="py-3.5">
+                    <span className="px-2.5 py-1 rounded-full text-[10.5px] font-bold bg-[#E6F6EE] text-[#0F8B8D]">
+                      {contact.status || "new"}
                     </span>
-                  </div>
-                  <p className="text-xs text-primary font-medium">{contact.email || "No email"}</p>
-                  <p className="text-xs text-muted-foreground line-clamp-1 max-w-md">
-                    {contact.content || contact.subject || "Inquiry submission"}
-                  </p>
-                </div>
-                <span className="text-[11px] text-muted-foreground flex-shrink-0 flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
-                  <span>{contact.created_at ? contact.created_at.split(" ")[0] : "Recent"}</span>
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right Col: Gallery Showcase */}
-        <div className="lg:col-span-5 bg-card rounded-3xl p-6 sm:p-8 border border-border shadow-xs space-y-6">
-          <div className="flex items-center justify-between border-b border-border pb-4">
-            <div>
-              <h2 className="text-lg font-display font-black text-secondary">Recent Galleries</h2>
-              <p className="text-xs text-muted-foreground">Active event photo albums</p>
-            </div>
-            <Link href="/admin/gallery">
-              <Button variant="ghost" size="sm" className="text-xs text-primary font-bold hover:text-secondary">
-                View All <ArrowRight className="w-3.5 h-3.5 ml-1" />
-              </Button>
-            </Link>
-          </div>
-
-          <div className="space-y-4">
-            {recentGalleries.map((gal, i) => (
-              <div key={gal.id || i} className="flex items-center gap-4 p-2 rounded-2xl hover:bg-muted/40 transition-colors">
-                <div className="relative w-16 h-14 rounded-xl overflow-hidden bg-muted border border-border flex-shrink-0">
-                  {gal.imageUrl ? (
-                    <Image
-                      src={gal.imageUrl}
-                      alt={gal.name}
-                      fill
-                      className="object-cover"
-                      unoptimized
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-muted-foreground text-[10px]">No image</div>
-                  )}
-                </div>
-                <div className="truncate flex-1">
-                  <p className="font-bold text-sm text-secondary truncate">{gal.name}</p>
-                  <p className="text-xs text-muted-foreground">{gal.year || "2026"} • {Array.isArray(gal.images) ? gal.images.length : 0} photos</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="pt-2">
-            <Link href="/admin/gallery">
-              <Button className="w-full h-11 rounded-xl bg-secondary hover:bg-secondary/90 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-                <Plus className="w-4 h-4" />
-                <span>Create New Gallery Album</span>
-              </Button>
-            </Link>
-          </div>
+                  </td>
+                  <td className="py-3.5 text-right">
+                    <Link
+                      href="/admin/contact"
+                      className="text-xs font-bold text-primary hover:underline"
+                    >
+                      Respond
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

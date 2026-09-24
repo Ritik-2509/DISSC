@@ -1,214 +1,388 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealStagger } from "@/components/ui/reveal";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Building2,
+  Users,
+  Heart,
+  GraduationCap,
+  Sparkles,
+  MapPin,
+  Calendar,
+  CheckCircle2,
+  ArrowRight,
+  PhoneCall,
+  Activity,
+  HeartPulse,
+  BookOpen
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Building2, Heart, HeartPulse, Sparkles, MapPin, ChevronRight, Phone } from "lucide-react";
-import { db } from "@/lib/firebase-admin";
-import { CLOUDINARY_IMAGES } from "@/lib/cloudinary-images";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ProgramDetailModal, ProgramItem } from "@/components/ui/ProgramDetailModal";
 
-async function getPrograms() {
-  try {
-    const snapshot = await db.collection("pages").get();
-    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-  } catch {
-    return [];
-  }
-}
-
-export default async function OurWorkPage() {
-  const backendPrograms = await getPrograms();
-
-  const officialPrograms = [
-    {
-      id: "deva-center",
-      title: "Deva Center, Varanasi",
-      category: "Special Rehabilitation and Child Care",
-      icon: Building2,
-      image: CLOUDINARY_IMAGES.devaBuilding,
-      badge: "Flagship Facility (Est. 1991)",
-      content:
-        "The first specialized institute established in Uttar Pradesh for the rehabilitation of individuals with intellectual disabilities, autism, cerebral palsy, and multiple developmental differences. Offering daily speech therapy, sensory integration, physical rehabilitation, cognitive training, and parental guidance under clinical psychologist supervision. Has treated and followed up over 12,000 children and families across UP, Bihar, and Nepal."
-    },
-    {
-      id: "deva-gram",
-      title: "Deva Gram (Bachhaon)",
-      category: "Rural Inclusive Community & 21 Disabilities",
-      icon: MapPin,
-      image: CLOUDINARY_IMAGES.communityProgram,
-      badge: "Rural Outreach",
-      content:
-        "Located in Bachhaon village (Varanasi), Deva Gram bridges clinical excellence and rural reality. It provides daycare, respite hostel care, pre-vocational and vocational workshops, economic empowerment, and holistic therapies including hydrotherapy, garden therapy, sensory training, and Special Olympics sports training for all 21 categories of disabilities recognized under Indian law."
-    },
-    {
-      id: "annapurna-center",
-      title: "Annapurna Center",
-      category: "Empowering Rural Women & the Girl Child",
-      icon: Heart,
-      image: CLOUDINARY_IMAGES.heroChildren,
-      badge: "Est. 1995",
-      content:
-        "Situated 13 km outside Varanasi city, Annapurna Center is DISCC's dedicated rural center established in 1995. Managed directly by educated village women, it shields young girls from exploitation, provides supplementary nutrition, health camps, hygiene education, and culturally tailored vocational handcraft training to foster economic self-reliance."
-    },
-    {
-      id: "gangotri-school",
-      title: "Gangotri Riverside Preparatory School",
-      category: "Education for Migratory & Street Children",
-      icon: BookOpen,
-      image: CLOUDINARY_IMAGES.varanasiGhats,
-      badge: "Assi Ghat & Nagwan (Est. 1999)",
-      content:
-        "Founded in 1999 under a tree near Assi Ghat and Nagwan, Gangotri provides value-based foundational education, hygiene habits, and confidence to children of migratory boatmen, rickshaw pullers, and daily laborers along the River Ganga. Top students are sponsored into mainstream formal schools with all tuition, uniforms, and books covered."
-    },
-    {
-      id: "ambedkar-school",
-      title: "Ambedkar Integrated School",
-      category: "Rural Grassroots Village Education",
-      icon: Sparkles,
-      image: CLOUDINARY_IMAGES.education,
-      badge: "Nakati Raghunathpur Village",
-      content:
-        "Established in response to community elders in Nakati Raghunathpur village (50 km from Varanasi), where children had zero formal schooling access. Operating with four trained local educators from the same community, the school provides foundational literacy, math, study materials, and nutritional support to over 70 village boys and girls."
-    },
-    {
-      id: "navjeevan-clinic",
-      title: "Navjeevan Clinic & Care",
-      category: "Leprosy Relief & Dignity",
-      icon: HeartPulse,
-      image: CLOUDINARY_IMAGES.childrenTherapy,
-      badge: "Dashashwamedh Ghat (Est. 2000)",
-      content:
-        "Navjeevan ('Giving a New Life') was founded in May 2000 near Dashashwamedh Ghat and Sankat Mochan Temple to serve one of society's most ostracized groups: individuals affected by leprosy. Every week, DISCC medical workers provide clinical wound bandaging, antiseptic dressing, essential medicines, and family counseling to 40-50 patients."
-    },
-    {
-      id: "child-education-program",
-      title: "Child Education Program (CEP)",
-      category: "Scholarships & Mainstream Schooling",
-      icon: BookOpen,
-      image: CLOUDINARY_IMAGES.childrenActivity,
-      badge: "Education Access",
-      content:
-        "The CEP identifies bright and economically vulnerable children from slums and marginalized settlements and ensures their uninterrupted education. DISCC covers school tuition fees, books, uniforms, shoes, and after-school remedial tutoring so no child is forced into child labor."
-    },
-    {
-      id: "emergency-helpline",
-      title: "Help Line & Crisis Intervention",
-      category: "Immediate Medical & Assistive Aid",
-      icon: HeartPulse,
-      image: CLOUDINARY_IMAGES.pressCoverage,
-      badge: "Emergency Service",
-      content:
-        "A grassroots emergency lifeline for families facing sudden medical crises or extreme poverty. DISCC provides emergency distribution of wheelchairs, hearing aids, orthotics, hospital referrals, and crisis psychological counseling to ensure vulnerable children are not abandoned or neglected."
-    },
-    {
-      id: "changemakers-ventures",
-      title: "Changemakers Inc & Dr. Tulsi's Ventures",
-      category: "Trauma Meditation, Police Training & Systemic Reform",
-      icon: Sparkles,
-      image: CLOUDINARY_IMAGES.awardCeremony,
-      badge: "UP Police & Corporate Impact",
-      content:
-        "Led by Dr. Tulsi Das, Changemakers Inc provides specialized mental health programs, including trauma relief through meditation for over 600 mothers of disabled children at Banaras Hindu University, stress management training for 500+ UP Police UP100 emergency personnel (Project SAAHAS), and nationwide advocacy through NIEPID and the National Trust."
+const PROGRAMS: ProgramItem[] = [
+  {
+    id: "deva-center",
+    title: "Deva Center, Varanasi",
+    subtitle: "First Specialized ID Rehabilitation Institute in Eastern UP",
+    category: "current",
+    sdgColor: "#0F8B8D",
+    sdgThemeClass: "hover:border-[#0F8B8D]/60",
+    sdgName: "SDG 10: Reduced Inequalities",
+    targetGroup: "Special Children",
+    image: "/images/discc/deva-building.jpg",
+    badge: "Flagship Institute (Est. 1991)",
+    year: "1991 - Present",
+    location: "Kamachha Chungi, Varanasi",
+    summary: "Comprehensive psychological evaluations, sensory integration rooms, speech therapy, and individualized education plans (IEPs) for autism, cerebral palsy, and intellectual differences.",
+    fullDetails: {
+      overview: "Established by Dr. C. Tulsi Das in 1991, Deva Center was Eastern UP's very first comprehensive rehabilitation institute. It combines clinical psychology with dedicated sensory and motor therapy.",
+      impactNumbers: "12,000+ Children & Families Rehabilitated",
+      highlights: [
+        "Multidisciplinary diagnostic and psychological evaluations",
+        "Sensory integration rooms & motor skill physiotherapy",
+        "Individualized Education Plans (IEPs) for special learners",
+        "Daily nutritious meal support and hygienic health tracking"
+      ],
+      futureGoals: "Modernizing assistive AI speech tools and vocational adult workshops."
     }
-  ];
+  },
+  {
+    id: "deva-gram",
+    title: "Deva Gram (Bachhaon Campus)",
+    subtitle: "21-Disabilities Holistic Care, Hydrotherapy & Respite Sanctuary",
+    category: "current",
+    sdgColor: "#3F7E44",
+    sdgThemeClass: "hover:border-[#3F7E44]/60",
+    sdgName: "SDG 3: Good Health & Well-Being",
+    targetGroup: "Rural Communities",
+    image: "/images/discc/community-program.png",
+    badge: "Rural Sanctuary",
+    year: "2010 - Present",
+    location: "Bachhaon Village, Varanasi",
+    summary: "Expansive rural campus offering hydrotherapy, garden therapy, sports training, and respite care for all 21 legally recognized disability classifications.",
+    fullDetails: {
+      overview: "Deva Gram in Bachhaon village extends specialized clinical care into agricultural communities, removing the travel burden for rural parents.",
+      impactNumbers: "850+ Village Families Supported Annually",
+      highlights: [
+        "Hydrotherapy and sensory nature stimulation gardens",
+        "Specialized Paralympic bocce and motor agility grounds",
+        "Overnight respite care giving relief to exhausted caregivers",
+        "Free rural diagnostic health camps across adjacent villages"
+      ]
+    }
+  },
+  {
+    id: "annapurna-center",
+    title: "Annapurna Center for the Girl Child",
+    subtitle: "Protecting, Educating, and Nurturing Rural Women and Young Girls",
+    category: "current",
+    sdgColor: "#EE6C4D",
+    sdgThemeClass: "hover:border-[#EE6C4D]/60",
+    sdgName: "SDG 5: Gender Equality",
+    targetGroup: "Women & Girls",
+    image: "/images/discc/hero-children.png",
+    badge: "Rural Girl Protection",
+    year: "1995 - Present",
+    location: "Rural Varanasi Outskirts",
+    summary: "Dedicated grassroots refuge managed by educated local women providing nutrition, health camps, schooling, and vocational handcraft independence.",
+    fullDetails: {
+      overview: "Founded in 1995, Annapurna Center shields impoverished rural girls from child exploitation and neglect with direct nutrition, safe schooling, and vocational handicraft training.",
+      impactNumbers: "4,500+ Rural Girls & Mothers Empowered",
+      highlights: [
+        "Nutritional support tackling anemia and child malnutrition",
+        "Adolescent hygiene camps and maternal wellness checks",
+        "Vocational sewing, textile embroidery, and small-craft training",
+        "Community awareness campaigns eliminating female child stigma"
+      ]
+    }
+  },
+  {
+    id: "child-education-program",
+    title: "Child Education Program (CEP)",
+    subtitle: "Tuition, Adaptive Kits & Mainstream School Integration",
+    category: "current",
+    sdgColor: "#F5A524",
+    sdgThemeClass: "hover:border-[#F5A524]/60",
+    sdgName: "SDG 4: Quality Education",
+    targetGroup: "Special Children",
+    image: "/images/discc/children-activity.png",
+    badge: "Inclusive Education",
+    year: "2002 - Present",
+    location: "Varanasi Urban & Rural",
+    summary: "Sponsoring school tuition, uniforms, adaptive learning toolkits, and teacher sensitization for children from vulnerable socioeconomic backgrounds.",
+    fullDetails: {
+      overview: "Ensures financial poverty never halts a disabled child's education. Sponsoring schooling, braille/visual materials, and transportation.",
+      impactNumbers: "1,200+ Scholarships Granted",
+      highlights: [
+        "Adaptive textbooks and assistive digital learning kits",
+        "Sensitization training for teachers in mainstream schools",
+        "Daily accessible van transport for mobility-impaired students",
+        "Quarterly parent-teacher developmental milestone reviews"
+      ]
+    }
+  },
+  {
+    id: "navjeevan-clinic",
+    title: "Navjeevan Clinic & Care",
+    subtitle: "Dignity, Wound Care & Clinical Aid for Leprosy Patients",
+    category: "current",
+    sdgColor: "#8E7CC3",
+    sdgThemeClass: "hover:border-[#8E7CC3]/60",
+    sdgName: "SDG 3: Good Health & Well-Being",
+    targetGroup: "All Individuals",
+    image: "/images/discc/children-therapy.jpg",
+    badge: "Medical Relief",
+    year: "2000 - Present",
+    location: "Dashashwamedh & Sankat Mochan, Varanasi",
+    summary: "Weekly antiseptic wound care, sterile dressing, medicines, and social integration support for leprosy-affected individuals and their families.",
+    fullDetails: {
+      overview: "Navjeevan ('Giving a New Life') was founded in 2000 to bring compassionate medical aid to one of society's most ostracized groups.",
+      impactNumbers: "40-50 Patients Treated Weekly",
+      highlights: [
+        "Weekly sterile wound dressing and ulcer management",
+        "Free distribution of essential antibiotics and vitamins",
+        "Social stigma reduction and family counseling circles",
+        "Assistive footwear and protective mobility gear"
+      ]
+    }
+  },
+  {
+    id: "helpline",
+    title: "Emergency Help Line & Mobile Outreach",
+    subtitle: "24/7 Crisis Support, Diagnostic Camps & Assistive Devices",
+    category: "current",
+    sdgColor: "#0F8B8D",
+    sdgThemeClass: "hover:border-[#0F8B8D]/60",
+    sdgName: "SDG 16: Peace & Strong Institutions",
+    targetGroup: "All Individuals",
+    image: "/images/discc/dr-tulsi-clinic.png",
+    badge: "24/7 Emergency Line",
+    year: "2005 - Present",
+    location: "Eastern UP Region",
+    summary: "Immediate crisis tele-counseling for families, suicide prevention guidance, and emergency distribution of wheelchairs, calipers, and hearing aids.",
+    fullDetails: {
+      overview: "A vital community lifeline for families navigating neurological crises, sudden disability diagnoses, or emergency distress.",
+      impactNumbers: "25,000+ Calls Resolved",
+      highlights: [
+        "Toll-free 24/7 telephonic psychological guidance",
+        "Emergency distribution of wheelchairs, hearing aids & orthotics",
+        "Mobile doctor visits for bedridden individuals",
+        "Caregiver psychological burnout counseling circles"
+      ]
+    }
+  },
+  {
+    id: "gangotri-school",
+    title: "Gangotri Riverside School",
+    subtitle: "Historical Open-Air Classroom on the Sacred Ganga Ghats",
+    category: "past",
+    sdgColor: "#0F8B8D",
+    sdgThemeClass: "hover:border-[#0F8B8D]/60",
+    sdgName: "SDG 1: No Poverty",
+    targetGroup: "Rural Communities",
+    image: "/images/discc/founders-meet.jpg",
+    badge: "Historic Milestone (1999)",
+    year: "1999 - 2012",
+    location: "Assi & Harishchandra Ghats, Varanasi",
+    summary: "Foundational schooling under a banyan tree providing education, nutrition, and hygiene for boatmen and slum children on the riverbanks.",
+    fullDetails: {
+      overview: "Started in 1999 directly on the river steps of Varanasi, Gangotri gave hundreds of street children their very first experience of literacy.",
+      impactNumbers: "3,200+ Ghat Children Transitioned to Formal Schools",
+      highlights: [
+        "Open-air foundational reading, writing, and arithmetic",
+        "Daily hygienic meal distribution and clean drinking water",
+        "Health checks tackling waterborne illnesses and parasites",
+        "Transition pathways into accredited government schools"
+      ]
+    }
+  },
+  {
+    id: "ambedkar-school",
+    title: "Ambedkar Integrated School",
+    subtitle: "Grassroots Village Literacy in Remote Rural Settlements",
+    category: "past",
+    sdgColor: "#F5A524",
+    sdgThemeClass: "hover:border-[#F5A524]/60",
+    sdgName: "SDG 4: Quality Education",
+    targetGroup: "Rural Communities",
+    image: "/images/discc/education.jpg",
+    badge: "Rural Literacy",
+    year: "2003 - 2015",
+    location: "Nakati Raghunathpur (50 km from Varanasi)",
+    summary: "Established in a remote hamlet with zero prior school access, providing literacy and nutrition to over 70 village boys and girls.",
+    fullDetails: {
+      overview: "Operating with four trained local educators from the same community, the school built foundational literacy in an underserved tribal belt.",
+      impactNumbers: "70+ First-Generation Learners",
+      highlights: [
+        "Daily Hindi and Mathematics foundational curriculum",
+        "Nutritious midday meals preventing child malnutrition",
+        "Free distribution of textbooks, slates, and uniform kits",
+        "Successful integration of graduates into regional middle schools"
+      ]
+    }
+  }
+];
+
+export default function OurWorkPage() {
+  const [selectedCategory, setSelectedCategory] = useState<"all" | "current" | "past">("all");
+  const [selectedProgram, setSelectedProgram] = useState<ProgramItem | null>(null);
+
+  const filteredPrograms = PROGRAMS.filter((p) => {
+    if (selectedCategory === "all") return true;
+    return p.category === selectedCategory;
+  });
 
   return (
-    <div className="flex flex-col min-h-screen pt-12 pb-32 bg-background text-foreground">
-      <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 space-y-28">
-        
-        {/* Header */}
-        <RevealStagger className="w-full space-y-6">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-            Our Centers and Initiatives
-          </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-secondary tracking-tight leading-[1.05] max-w-5xl">
-            Comprehensive Programs for Dignity and Growth
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-normal pt-2 max-w-4xl">
-            From early sensory intervention to girl child nutrition and rural outreach, DISCC operates 9 dedicated initiatives across Varanasi.
-          </p>
-        </RevealStagger>
+    <div className="w-full flex flex-col items-center bg-[#FFFAF2]">
+      {/* 1. Page Header */}
+      <section className="w-full pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-[#FFEFE0]/60 to-[#FFFAF2] relative">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <span className="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 inline-block mb-4">
+              Comprehensive Welfare & Rehabilitation
+            </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading text-foreground tracking-tight leading-[1.1]">
+              Our Action Areas, Campuses & Programmes
+            </h1>
+            <p className="mt-6 text-lg sm:text-xl text-muted-text leading-relaxed max-w-[60ch]">
+              From Eastern UP&apos;s first clinical ID institute in Varanasi to rural sanctuaries and girl child empowerment outposts.
+            </p>
 
-        {/* Programs List */}
-        <div className="space-y-28 border-t border-border/70 pt-16">
-          {officialPrograms.map((program, i) => {
-            const Icon = program.icon;
-            const isReversed = i % 2 !== 0;
-
-            return (
-              <div key={program.id} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                {/* Visual Column */}
-                <RevealStagger className={`md:col-span-6 ${isReversed ? 'md:order-2' : ''}`}>
-                  <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border-4 border-white group">
-                    <Image
-                      src={program.image}
-                      alt={program.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4 bg-secondary/90 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full backdrop-blur-sm">
-                      {program.badge}
-                    </div>
-                  </div>
-                </RevealStagger>
-
-                {/* Content Column */}
-                <RevealStagger delay={0.1} className={`md:col-span-6 space-y-6 ${isReversed ? 'md:order-1' : ''}`}>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary">
-                      <Icon className="w-4 h-4" />
-                      <span>{program.category}</span>
-                    </div>
-                    <h2 className="text-3xl sm:text-4xl font-display font-black text-secondary tracking-tight">
-                      {program.title}
-                    </h2>
-                  </div>
-
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    {program.content}
-                  </p>
-
-                  <div className="flex flex-wrap items-center gap-4 pt-2">
-                    <Link href="/contact">
-                      <Button className="h-12 px-6 rounded-full font-bold uppercase text-xs tracking-wider bg-secondary hover:bg-secondary/90 text-white">
-                        Connect with Center <ChevronRight className="ml-1.5 w-4 h-4" />
-                      </Button>
-                    </Link>
-                    <Link href="/donate">
-                      <Button variant="outline" className="h-12 px-6 rounded-full font-bold uppercase text-xs tracking-wider border-border hover:border-primary text-secondary hover:text-primary">
-                        Sponsor this Program
-                      </Button>
-                    </Link>
-                  </div>
-                </RevealStagger>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Helpline Callout Banner */}
-        <div className="bg-secondary rounded-3xl p-8 md:p-12 text-white border border-border">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-accent">Direct Contact</span>
-              <h3 className="font-display font-black text-2xl md:text-3xl">
-                Have Questions About Admissions or Volunteering?
-              </h3>
-              <p className="text-white/80 text-sm md:text-base">
-                Call our Varanasi office directly or write to disccindia@gmail.com.
-              </p>
-            </div>
-            <div className="flex items-center gap-4 flex-shrink-0">
-              <a href="tel:+917007453168">
-                <Button size="lg" className="h-14 px-8 rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-xs uppercase tracking-wider shadow-lg flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  Call: +91 7007453168
-                </Button>
-              </a>
+            {/* Filter Tabs */}
+            <div className="mt-8 flex flex-wrap items-center gap-2">
+              <button
+                onClick={() => setSelectedCategory("all")}
+                className={`px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                  selectedCategory === "all"
+                    ? "bg-primary text-white shadow-soft"
+                    : "bg-white text-muted-text hover:bg-muted border border-border"
+                }`}
+              >
+                All Initiatives ({PROGRAMS.length})
+              </button>
+              <button
+                onClick={() => setSelectedCategory("current")}
+                className={`px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                  selectedCategory === "current"
+                    ? "bg-primary text-white shadow-soft"
+                    : "bg-white text-muted-text hover:bg-muted border border-border"
+                }`}
+              >
+                Active Facilities & Programs (6)
+              </button>
+              <button
+                onClick={() => setSelectedCategory("past")}
+                className={`px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                  selectedCategory === "past"
+                    ? "bg-primary text-white shadow-soft"
+                    : "bg-white text-muted-text hover:bg-muted border border-border"
+                }`}
+              >
+                Historic Milestones (2)
+              </button>
             </div>
           </div>
         </div>
+      </section>
 
-      </div>
+      {/* 2. Program Grid */}
+      <section className="w-full py-16 md:py-24 bg-white border-y border-border/70 relative">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredPrograms.map((program, idx) => (
+              <Reveal key={program.id} delay={idx * 0.08} className="h-full">
+                <div className="group h-full rounded-3xl bg-[#FFFAF2]/50 border border-border/80 shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden flex flex-col justify-between">
+                  <div>
+                    {/* Image */}
+                    <div className="relative w-full h-56 overflow-hidden bg-muted">
+                      <Image
+                        src={program.image}
+                        alt={program.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span
+                          className="px-3 py-1 rounded-full text-xs font-bold text-white shadow-xs"
+                          style={{ backgroundColor: program.sdgColor }}
+                        >
+                          {program.badge}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-1.5 text-xs text-muted-text mb-2">
+                        <MapPin className="w-3.5 h-3.5 text-primary" />
+                        <span>{program.location}</span>
+                      </div>
+                      <h3 className="text-xl font-bold font-heading text-foreground group-hover:text-primary transition-colors mb-2">
+                        {program.title}
+                      </h3>
+                      <p className="text-xs font-semibold text-primary/90 mb-3">
+                        {program.subtitle}
+                      </p>
+                      <p className="text-sm text-muted-text leading-relaxed line-clamp-3">
+                        {program.summary}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="p-6 pt-0 border-t border-border/40 mt-auto flex items-center justify-between">
+                    <button
+                      onClick={() => setSelectedProgram(program)}
+                      className="text-sm font-bold text-primary hover:text-primary-hover flex items-center gap-1 transition-colors cursor-pointer"
+                    >
+                      Read Full Details
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                    <span className="text-xs text-muted-text font-medium">
+                      {program.year}
+                    </span>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Call to Action Banner */}
+      <section className="w-full py-16 bg-[#FFEFE0] relative">
+        <div className="container-custom text-center max-w-3xl mx-auto space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground">
+            Want to Visit or Enroll a Child in our Programs?
+          </h2>
+          <p className="text-base text-muted-text leading-relaxed">
+            Our clinical doors at Kamachha Chungi, Varanasi are open Monday through Saturday. We offer comprehensive diagnostic evaluations and parent counseling.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <Link href="/contact#callback">
+              <Button variant="default" size="lg" className="rounded-full">
+                Schedule Assessment Visit
+              </Button>
+            </Link>
+            <Link href="/donate">
+              <Button variant="donate" size="lg" className="rounded-full shadow-glow-marigold">
+                Sponsor Program Supplies
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Modal Detail */}
+      <ProgramDetailModal
+        program={selectedProgram}
+        onClose={() => setSelectedProgram(null)}
+      />
     </div>
   );
 }
