@@ -207,24 +207,20 @@ export function Navbar() {
         </nav>
 
         {/* Desktop Action CTAs */}
+        {/* Desktop Action CTAs */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link href="/contact#callback">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="font-bold text-xs text-[#2C3E50] hover:text-[#0F8B8D] hover:bg-[#EAE4D9]/60"
-            >
-              Request Callback
-            </Button>
+          <Link
+            href="/contact#callback"
+            className="px-3.5 py-1.5 rounded-full font-bold text-xs text-[#2C3E50] hover:text-[#0F8B8D] hover:bg-[#EAE4D9]/60 transition-colors"
+          >
+            Request Callback
           </Link>
-          <Link href="/donate">
-            <Button
-              size="sm"
-              className="gap-1.5 bg-[#F5A524] hover:bg-[#E09314] text-[#1A2530] font-extrabold rounded-full px-5 h-9 shadow-sm hover:shadow-md transition-all"
-            >
-              <Heart className="w-4 h-4 fill-current text-[#1A2530]" />
-              <span>Donate</span>
-            </Button>
+          <Link
+            href="/donate"
+            className="inline-flex items-center gap-1.5 bg-[#F5A524] hover:bg-[#E09314] text-[#1A2530] font-extrabold rounded-full px-5 h-9 text-xs shadow-sm hover:shadow-md transition-all cursor-pointer"
+          >
+            <Heart className="w-4 h-4 fill-current text-[#1A2530]" />
+            <span>Donate</span>
           </Link>
         </div>
 
@@ -267,21 +263,17 @@ export function Navbar() {
                 <Link
                   href="/donate"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#F5A524] hover:bg-[#E09314] text-[#1A2530] font-extrabold rounded-full py-3 text-sm shadow-xs"
                 >
-                  <Button size="lg" className="w-full gap-2 bg-[#F5A524] hover:bg-[#E09314] text-[#1A2530] font-extrabold rounded-full">
-                    <Heart className="w-5 h-5 fill-current" />
-                    Support a Child (Donate)
-                  </Button>
+                  <Heart className="w-5 h-5 fill-current" />
+                  <span>Support a Child (Donate)</span>
                 </Link>
                 <Link
                   href="/contact#callback"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full"
+                  className="w-full inline-flex items-center justify-center border border-[#C8BFB3] text-[#1A2530] font-bold rounded-full py-2.5 text-sm hover:bg-[#EAE4D9]/60"
                 >
-                  <Button variant="outline" size="lg" className="w-full border-[#C8BFB3] text-[#1A2530] rounded-full">
-                    Request a Call Back
-                  </Button>
+                  Request a Call Back
                 </Link>
               </div>
             </div>

@@ -163,7 +163,7 @@
     "description": "",
     "status": "published",
     "created_at": "2024-11-20 17:34:08",
-    "updated_at": "2026-09-12T23:45:38.422Z",
+    "updated_at": "2026-03-24 09:22:12",
     "slug": "deva-center",
     "imageUrl": null
   },
@@ -267,7 +267,7 @@
   },
   {
     "id": 20,
-    "name": "Contactt",
+    "name": "Contact",
     "content": "<shortcode>[branch-offices title=\"Head Office at Varanasi, India\" image=\"rrrrrr-copy.jpg\" quantity=\"2\" title_1=\"DEVA International Society for Child Care\" address_1=\"DEVA Integrated School for the Handicapped B.21/100, Bind Bhavan, Kamachha Chungi, VARANASI-221010 Uttar Pradesh, INDIA\" phone_1=\"+919129853531, +9415303557, +9336902942\" email_1=\"Office : disccindia@gmail.com, Dr. Tulsi's personal : &nbsp;tulsi_discc_cv@hotmail.com\" title_2=\"Deva Gram\" address_2=\"Deva Institute for The Empowerment of Disabilities, Branch/Location: “Deva Gram” Bachhaon, Varanasi\" phone_2=\"+919129853531, +9415303557, +9336902942\" email_2=\"Office : disccindia@gmail.com, Dr. Tulsi's personal : &nbsp;tulsi_discc_cv@hotmail.com\"][/branch-offices]</shortcode><div class=\"contact-maps-row\"><shortcode>[google-map post_style=\"style-4\" address=\"DEVA International Society for Child Care, Varanasi, India\"][/google-map]</shortcode><div class=\"contact-maps-divider\" aria-hidden=\"true\"></div><shortcode>[google-map post_style=\"style-4\" address=\"Deva Institute for Empowerment of Disabilities, Varanasi, India\"][/google-map]</shortcode></div>",
     "user_id": 1,
     "image": null,
@@ -275,7 +275,7 @@
     "description": "",
     "status": "published",
     "created_at": "2024-11-20 17:34:08",
-    "updated_at": "2026-09-14T16:48:47.273Z",
+    "updated_at": "2026-08-03 05:46:21",
     "slug": "contact",
     "imageUrl": null
   },
