@@ -17,7 +17,8 @@ import {
   Sparkles,
   PhoneCall,
   Calendar,
-  BookOpen
+  BookOpen,
+  ShieldCheck
 } from "lucide-react";
 
 interface SubItem {
@@ -68,7 +69,7 @@ export function Navbar() {
   const [programmesOpen, setProgrammesOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 30) {
+    if (latest > 20) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -84,14 +85,12 @@ export function Navbar() {
     { href: "/contact", label: "Contact" },
   ];
 
-  const isHome = pathname === "/";
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled || !isHome
-          ? "glass-nav py-3 shadow-soft text-foreground"
-          : "bg-[#050C18]/75 backdrop-blur-md py-3.5 border-b border-white/10 text-white"
+        scrolled
+          ? "bg-[#FAF7F0]/95 backdrop-blur-md py-3 shadow-xs border-b border-[#E8DFD3]"
+          : "bg-[#FAF7F0]/90 backdrop-blur-xs py-3.5 border-b border-[#E8DFD3]/70"
       }`}
     >
       <div className="container-custom flex items-center justify-between">
@@ -101,7 +100,7 @@ export function Navbar() {
           className="flex items-center gap-3 group focus:outline-none"
           aria-label="DISCC India Home"
         >
-          <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white p-1 flex-shrink-0 shadow-soft border border-border/60 transition-transform group-hover:scale-105">
+          <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white p-1 flex-shrink-0 shadow-xs border border-[#E8DFD3] transition-transform group-hover:scale-105">
             <Image
               src="/images/discc/logo.png"
               alt="DISCC Emblem"
@@ -111,21 +110,17 @@ export function Navbar() {
             />
           </div>
           <div className="flex flex-col">
-            <span className={`font-heading font-extrabold text-lg sm:text-xl tracking-tight leading-tight transition-colors ${
-              scrolled || !isHome ? "text-foreground group-hover:text-primary" : "text-white group-hover:text-[#F5A524]"
-            }`}>
-              DISCC <span className={scrolled || !isHome ? "text-primary font-bold" : "text-[#F5A524] font-bold"}>INDIA</span>
+            <span className="font-heading font-extrabold text-lg sm:text-xl tracking-tight leading-tight text-[#1A2530] group-hover:text-[#0F8B8D] transition-colors">
+              DISCC <span className="text-[#0F8B8D] font-bold">INDIA</span>
             </span>
-            <span className={`text-[10.5px] uppercase tracking-wider font-medium leading-none ${
-              scrolled || !isHome ? "text-muted-text" : "text-slate-300"
-            }`}>
+            <span className="text-[10.5px] uppercase tracking-wider font-semibold text-[#5B6B7C] leading-none">
               Deva Child Care · Varanasi
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1.5" aria-label="Main Navigation">
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Main Navigation">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
 
@@ -141,12 +136,8 @@ export function Navbar() {
                     href={link.href}
                     className={`flex items-center gap-1 px-3.5 py-2 text-sm font-semibold rounded-full transition-colors ${
                       isActive || pathname.startsWith("/our-work")
-                        ? scrolled || !isHome
-                          ? "text-primary bg-primary/10"
-                          : "text-[#F5A524] bg-white/10 font-bold"
-                        : scrolled || !isHome
-                        ? "text-foreground/90 hover:text-primary hover:bg-black/5"
-                        : "text-white/90 hover:text-white hover:bg-white/10"
+                        ? "text-[#0F8B8D] bg-[#0F8B8D]/10 font-bold"
+                        : "text-[#2C3E50] hover:text-[#0F8B8D] hover:bg-[#EAE4D9]/60"
                     }`}
                   >
                     {link.label}
@@ -161,11 +152,11 @@ export function Navbar() {
                   <AnimatePresence>
                     {programmesOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
+                        exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-80 p-3 rounded-2xl bg-[#0B1528] text-white shadow-2xl border border-white/15 z-50"
+                        className="absolute top-full left-0 mt-2 w-80 p-3 rounded-2xl bg-white text-[#1A2530] shadow-xl border border-[#E8DFD3] z-50"
                       >
                         <div className="space-y-1">
                           {programmeItems.map((item) => {
@@ -175,16 +166,16 @@ export function Navbar() {
                                 key={item.title}
                                 href={item.href}
                                 onClick={() => setProgrammesOpen(false)}
-                                className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group"
+                                className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F0] transition-colors group"
                               >
-                                <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                                <div className="p-2 rounded-lg bg-[#0F8B8D]/10 text-[#0F8B8D] group-hover:bg-[#0F8B8D] group-hover:text-white transition-colors">
                                   <Icon className="w-4 h-4" />
                                 </div>
                                 <div className="flex-1">
-                                  <p className="text-xs font-bold text-white group-hover:text-[#F5A524] transition-colors">
+                                  <p className="text-xs font-bold text-[#1A2530] group-hover:text-[#0F8B8D] transition-colors">
                                     {item.title}
                                   </p>
-                                  <p className="text-[11px] text-slate-300 line-clamp-1 mt-0.5">
+                                  <p className="text-[11px] text-[#5B6B7C] line-clamp-1 mt-0.5">
                                     {item.desc}
                                   </p>
                                 </div>
@@ -205,12 +196,8 @@ export function Navbar() {
                 href={link.href}
                 className={`px-3.5 py-2 text-sm font-semibold rounded-full transition-colors ${
                   isActive
-                    ? scrolled || !isHome
-                      ? "text-primary bg-primary/10"
-                      : "text-[#F5A524] bg-white/10 font-bold"
-                    : scrolled || !isHome
-                    ? "text-foreground/90 hover:text-primary hover:bg-black/5"
-                    : "text-white/90 hover:text-white hover:bg-white/10"
+                    ? "text-[#0F8B8D] bg-[#0F8B8D]/10 font-bold"
+                    : "text-[#2C3E50] hover:text-[#0F8B8D] hover:bg-[#EAE4D9]/60"
                 }`}
               >
                 {link.label}
@@ -225,9 +212,7 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="sm"
-              className={`font-bold text-xs ${
-                scrolled || !isHome ? "text-foreground" : "text-white hover:bg-white/15"
-              }`}
+              className="font-bold text-xs text-[#2C3E50] hover:text-[#0F8B8D] hover:bg-[#EAE4D9]/60"
             >
               Request Callback
             </Button>
@@ -235,9 +220,9 @@ export function Navbar() {
           <Link href="/donate">
             <Button
               size="sm"
-              className="gap-1.5 bg-[#F5A524] hover:bg-[#E09314] text-[#0F172A] font-extrabold rounded-full px-5 h-9 shadow-lg hover:scale-105 transition-all"
+              className="gap-1.5 bg-[#F5A524] hover:bg-[#E09314] text-[#1A2530] font-extrabold rounded-full px-5 h-9 shadow-sm hover:shadow-md transition-all"
             >
-              <Heart className="w-4 h-4 fill-current" />
+              <Heart className="w-4 h-4 fill-current text-[#1A2530]" />
               <span>Donate</span>
             </Button>
           </Link>
@@ -246,11 +231,7 @@ export function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`lg:hidden p-2.5 rounded-full border shadow-soft cursor-pointer ${
-            scrolled || !isHome
-              ? "bg-white/80 hover:bg-white text-foreground border-border/80"
-              : "bg-black/50 hover:bg-black/70 text-white border-white/20"
-          }`}
+          className="lg:hidden p-2.5 rounded-full border border-[#E8DFD3] bg-white text-[#1A2530] shadow-xs cursor-pointer"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -264,33 +245,33 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white/95 backdrop-blur-lg border-b border-border shadow-soft-lg overflow-hidden"
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-[#FAF7F0] border-b border-[#E8DFD3] shadow-md overflow-hidden"
           >
-            <div className="container-custom py-6 flex flex-col gap-2">
+            <div className="container-custom py-5 flex flex-col gap-1.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
+                  className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
                     pathname === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground hover:bg-black/5"
+                      ? "bg-[#0F8B8D]/10 text-[#0F8B8D] font-bold"
+                      : "text-[#1A2530] hover:bg-[#EAE4D9]/60"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border/60 flex flex-col gap-3">
+              <div className="pt-4 border-t border-[#E8DFD3] flex flex-col gap-2.5">
                 <Link
                   href="/donate"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full"
                 >
-                  <Button variant="donate" size="lg" className="w-full gap-2 shadow-glow-marigold">
+                  <Button size="lg" className="w-full gap-2 bg-[#F5A524] hover:bg-[#E09314] text-[#1A2530] font-extrabold rounded-full">
                     <Heart className="w-5 h-5 fill-current" />
-                    Donate Now
+                    Support a Child (Donate)
                   </Button>
                 </Link>
                 <Link
@@ -298,7 +279,7 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full"
                 >
-                  <Button variant="outline" size="lg" className="w-full">
+                  <Button variant="outline" size="lg" className="w-full border-[#C8BFB3] text-[#1A2530] rounded-full">
                     Request a Call Back
                   </Button>
                 </Link>

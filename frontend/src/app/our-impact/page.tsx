@@ -1,225 +1,143 @@
 import Image from "next/image";
 import Link from "next/link";
-import { RevealStagger } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Heart, Building2, ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
-import { CLOUDINARY_IMAGES } from "@/lib/cloudinary-images";
+import { HandUnderline } from "@/components/ui/HandDrawn";
+
+const IMPACT_NUMBERS = [
+  { value: "12,000+", label: "Children & Families Rehabilitated", detail: "Across Eastern Uttar Pradesh since 1991" },
+  { value: "35 Years", label: "Continuous Clinical Service", detail: "Founded by Dr. C. Tulsi Das in Varanasi" },
+  { value: "21", label: "Disability Categories Supported", detail: "Full diagnostic and clinical therapeutic coverage" },
+  { value: "100%", label: "Tax Exemption (80G & 12A)", detail: "Authorized under Ministry of Home Affairs (FCRA)" },
+];
+
+const CLINICAL_OUTCOMES = [
+  {
+    title: "Pediatric Motor & Sensory Independence",
+    stat: "84% of children",
+    desc: "Demonstrate measurable improvements in gait stability, posture regulation, and sensory integration within 12 months of structured therapy."
+  },
+  {
+    title: "Alternative & Augmentative Communication (AAC)",
+    stat: "78% non-verbal learners",
+    desc: "Develop active communication routines utilizing customized visual IEP schedules and speech-language oral motor toolkits."
+  },
+  {
+    title: "Mainstream School Integration",
+    stat: "3,200+ students",
+    desc: "Successfully transitioned from bridge special education classes into formal regular government and private schools."
+  },
+  {
+    title: "Vocational & Artisan Self-Sufficiency",
+    stat: "450+ young adults",
+    desc: "Earn regular monthly income through textile embroidery, handicraft packaging, and small-batch artisan cooperatives."
+  }
+];
 
 export default function ImpactPage() {
-  const verifiedStats = [
-    {
-      number: "32+",
-      label: "Years of Dedicated Service",
-      detail: "Founded in Varanasi in 1991 as an NGO dedicated to disability welfare and mental health.",
-      icon: ShieldCheck,
-    },
-    {
-      number: "98,000+",
-      label: "Families Supported",
-      detail: "Providing clinical therapy, psychiatric consultation, and emotional guidance across UP.",
-      icon: Users,
-    },
-    {
-      number: "235+",
-      label: "Recognitions and Honors",
-      detail: "Including honors from the Prime Minister of India and Chief Minister of Uttar Pradesh.",
-      icon: Award,
-    },
-    {
-      number: "9",
-      label: "Operational Centers",
-      detail: "Comprehensive urban and rural institutions providing continuous rehabilitation and education.",
-      icon: Building2,
-    },
-  ];
-
-  const milestones = [
-    {
-      year: "1991",
-      title: "Establishment of DISCC & Deva Center",
-      description: "Dr. C. Tulsi Das founded DISCC in Varanasi and opened the first institute for rehabilitation of mentally challenged individuals in Uttar Pradesh."
-    },
-    {
-      year: "1998",
-      title: "Deva Europe International Alliance",
-      description: "Initiated long term humanitarian and academic collaboration with French art historian Jean-Max Tassel, expanding global support."
-    },
-    {
-      year: "1999",
-      title: "Gangotri Bridge Education Program",
-      description: "Began informal classes beneath a tree along the holy Ganga, integrating hundreds of marginalized children into regular schools."
-    },
-    {
-      year: "2010",
-      title: "Deva Gram Bachhaon Expansion",
-      description: "Inaugurated dedicated rural center in Bachhaon village to extend specialized therapies to agricultural communities."
-    },
-    {
-      year: "2018",
-      title: "Chief Minister Best Professional Award",
-      description: "Dr. Tulsi received the prestigious Best Professional Psychologist Award from the Chief Minister of Uttar Pradesh."
-    },
-    {
-      year: "Present",
-      title: "Purple Fair & Modern Specialized Units",
-      description: "Annual multi-disciplinary Divyangjan festivals, study abroad programs with University of Wisconsin Oshkosh, and life-skills training."
-    }
-  ];
-
   return (
-    <div className="flex flex-col min-h-screen pt-12 pb-32 bg-background text-foreground">
-      <div className="w-full px-4 sm:px-8 lg:px-12 2xl:px-16 space-y-28">
-        
-        {/* Header */}
-        <RevealStagger className="w-full space-y-6">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-            Verified Impact
-          </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-secondary tracking-tight leading-[1.05] max-w-5xl">
-            Transforming Lives Across Generations
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-normal pt-2 max-w-4xl">
-            Tangible outcomes from 32 years of clinical dedication, grassroots intervention, and institutional development in Varanasi.
-          </p>
-        </RevealStagger>
-
-        {/* Big Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 border-t border-border/70 pt-16">
-          {verifiedStats.map((stat, i) => {
-            const Icon = stat.icon;
-            return (
-              <RevealStagger key={stat.label} delay={i * 0.08} className="p-8 rounded-3xl bg-card border border-border shadow-xs space-y-4 flex flex-col justify-between">
-                <div className="space-y-3">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h2 className="text-4xl md:text-5xl font-display font-black text-secondary tracking-tight">
-                    {stat.number}
-                  </h2>
-                  <p className="text-sm font-bold uppercase tracking-wider text-primary">
-                    {stat.label}
-                  </p>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {stat.detail}
-                </p>
-              </RevealStagger>
-            );
-          })}
-        </div>
-
-        {/* National Recognition Section */}
-        <div className="border-t border-border/70 pt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <RevealStagger className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-                National Acclaim
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-display font-black text-secondary tracking-tight">
-                Honored at the Highest Levels of Governance
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                The humanitarian initiatives of DISCC have received official accolades from the Prime Minister of India and the Government of Uttar Pradesh for exemplary service to individuals with mental health and intellectual challenges.
-              </p>
-              
-              <div className="space-y-3 pt-2">
-                <div className="flex items-start gap-3 text-sm text-foreground/80">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Best Professional Psychologist Award conferred by Chief Minister of Uttar Pradesh</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-foreground/80">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Official Council Member of NIEPID (Divyangjan) under Government of India</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-foreground/80">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>ARUNIM Board Member, National Trust, Ministry of Social Justice and Empowerment</span>
-                </div>
-              </div>
-            </RevealStagger>
-
-            <RevealStagger delay={0.15} className="lg:col-span-6 space-y-4">
-              <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[16/9]">
-                <Image
-                  src={CLOUDINARY_IMAGES.roleModelAward}
-                  alt="DISCC Role Model Award Recognition"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative rounded-2xl overflow-hidden shadow-md border-2 border-border aspect-[4/3]">
-                  <Image
-                    src={CLOUDINARY_IMAGES.awardCeremony}
-                    alt="Award Ceremony Honor"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="relative rounded-2xl overflow-hidden shadow-md border-2 border-border aspect-[4/3]">
-                  <Image
-                    src={CLOUDINARY_IMAGES.pressCoverage}
-                    alt="Media Coverage and Acclaim"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </RevealStagger>
+    <div className="w-full flex flex-col items-center bg-[#FAF7F0] text-[#1A2530]">
+      
+      {/* 1. Header */}
+      <section className="w-full pt-28 pb-14 md:pt-36 md:pb-20 border-b border-[#E8DFD3] bg-[#FAF7F0]">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <span className="text-xs font-bold text-[#0F8B8D] uppercase tracking-widest block mb-2">
+              Verified Longitudinal Impact · 1991 to Present
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#1A2530] leading-tight">
+              Transforming Special Lives Across Generations.
+            </h1>
+            <div className="mt-2 mb-4">
+              <HandUnderline className="text-[#F5A524] w-48 h-3.5" />
+            </div>
+            <p className="text-base sm:text-lg text-[#5B6B7C] leading-relaxed">
+              Tangible clinical outcomes and social empowerment resulting from 35 years of scientific dedication and grassroots community building in Varanasi.
+            </p>
           </div>
         </div>
+      </section>
 
-        {/* Chronological Milestones */}
-        <div className="border-t border-border/70 pt-16 space-y-12">
-          <RevealStagger className="space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary border-b-2 border-primary/30 pb-1 inline-block">
-              Key Chronology
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-black text-secondary tracking-tight">
-              Three Decades of Continuous Evolution
-            </h2>
-          </RevealStagger>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {milestones.map((m, i) => (
-              <RevealStagger key={m.year} delay={i * 0.08} className="p-6 rounded-3xl bg-muted/40 border border-border/80 space-y-3">
-                <span className="text-xs font-black px-3 py-1 rounded-full bg-secondary text-white inline-block">
-                  {m.year}
+      {/* 2. Big Metrics Strip */}
+      <section className="w-full py-16 bg-[#F2EDE2] border-b border-[#E8DFD3]">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {IMPACT_NUMBERS.map((m, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#1A2530] tracking-tight">
+                  {m.value}
                 </span>
-                <h3 className="font-display font-bold text-lg text-secondary">{m.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{m.description}</p>
-              </RevealStagger>
+                <HandUnderline className="text-[#D97706] w-28 h-2.5 my-1" />
+                <h3 className="text-xs sm:text-sm font-bold text-[#1A2530] mt-1">
+                  {m.label}
+                </h3>
+                <p className="text-[11.5px] text-[#5B6B7C] mt-0.5 max-w-[220px]">
+                  {m.detail}
+                </p>
+              </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Bottom CTA */}
-        <div className="bg-secondary rounded-3xl p-8 md:p-14 text-white flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-3 max-w-xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent">Be Part of the Impact</span>
-            <h3 className="text-3xl sm:text-4xl font-display font-black">
-              Help Us Expand Our Care to More Families
+      {/* 3. Clinical Outcomes Breakdown */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFDF9] border-b border-[#E8DFD3]">
+        <div className="container-custom">
+          
+          <div className="max-w-2xl mb-14 text-left">
+            <span className="text-xs font-bold text-[#0F8B8D] uppercase tracking-widest block mb-1">
+              Measurable Milestones
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#1A2530]">
+              Clinical Outcomes & Rehabilitation Data.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {CLINICAL_OUTCOMES.map((item, idx) => (
+              <div
+                key={idx}
+                className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E8DFD3] shadow-xs flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-2xl sm:text-3xl font-heading font-bold text-[#0F8B8D] block mb-2">
+                    {item.stat}
+                  </span>
+                  <h3 className="text-lg font-bold text-[#1A2530] mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-[#5B6B7C] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. Action Banner */}
+      <section className="w-full py-16 bg-[#FAF7F0]">
+        <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6 p-8 rounded-3xl bg-[#FFF3E0] border border-[#F5A524]/40">
+          <div>
+            <h3 className="text-2xl font-heading font-bold text-[#1A2530]">
+              Help Us Expand Clinical Capacity for Another 10,000 Children.
             </h3>
-            <p className="text-white/80 text-sm md:text-base">
-              Every donation helps fund daily therapy sessions, special education materials, nutritious meals, and assistive equipment.
+            <p className="text-sm text-[#5B6B7C] mt-1">
+              Your gift enables daily sensory therapy, speech diagnostics, and assistive mobility equipment.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-4 flex-shrink-0">
+          <div className="shrink-0">
             <Link href="/donate">
-              <Button size="lg" className="h-14 px-8 rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-xs uppercase tracking-wider shadow-lg flex items-center gap-2">
-                <Heart className="w-4 h-4 fill-white" />
-                Make a Contribution
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button size="lg" className="h-14 px-8 rounded-full bg-white hover:bg-accent text-secondary hover:text-secondary font-black text-xs uppercase tracking-wider shadow-lg border-2 border-white transition-all">
-                Visit Varanasi Center <ArrowRight className="w-4 h-4 ml-1.5" />
+              <Button size="lg" className="bg-[#1A2530] hover:bg-[#0F8B8D] text-white font-bold rounded-full px-7 cursor-pointer">
+                Support a Child Today
               </Button>
             </Link>
           </div>
         </div>
+      </section>
 
-      </div>
     </div>
   );
 }

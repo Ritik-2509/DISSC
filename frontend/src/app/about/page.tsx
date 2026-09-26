@@ -12,305 +12,376 @@ import {
   Users,
   Building2,
   GraduationCap,
-  Sparkles,
   ArrowRight,
   MapPin,
-  PhoneCall
+  Sparkles
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { HandUnderline, HandCircle } from "@/components/ui/HandDrawn";
 
-const TIMELINE = [
+const TIMELINE_EVENTS = [
   {
     year: "1991",
-    title: "Foundation of DISCC & Deva Center",
-    desc: "Dr. C. Tulsi Das established DEVA International Society for Child Care in Kamachha, Varanasi, opening the region's first specialized clinical diagnostic and rehabilitation institute for intellectual disability management.",
-    badge: "Origin"
+    title: "Foundation of Deva Center at Kamachha",
+    narrative: "Dr. C. Tulsi Das founded DEVA International Society for Child Care (DISCC) in Kamachha, Varanasi, opening Eastern Uttar Pradesh's first specialized clinical diagnostic and rehabilitation center for intellectual disabilities.",
+    tag: "Genesis",
+    image: "/images/discc/dr-tulsi-clinic.png",
+    caption: "Early clinical diagnostic sessions in Kamachha, 1991"
   },
   {
     year: "1995",
-    title: "Annapurna Center for the Girl Child",
-    desc: "Expanded into rural Varanasi to shield impoverished young girls from malnutrition and illiteracy, creating a secure learning and vocational training refuge managed by local village women.",
-    badge: "Expansion"
+    title: "Annapurna Center for Rural Girls",
+    narrative: "Expanded into rural Varanasi to shield impoverished young girls from malnutrition and lack of schooling, creating a secure community center managed by empowered local women.",
+    tag: "Rural Outreach",
+    image: "/images/discc/hero-children.png",
+    caption: "Annapurna Center vocational workshop"
   },
   {
     year: "1998",
-    title: "International Partnership & Deva Europe",
-    desc: "Met French art historian Jean-Max Tassel, fostering an enduring Indo-European charitable partnership that connected international pediatric volunteers with grassroots Varanasi projects.",
-    badge: "Global Solidarity"
-  },
-  {
-    year: "1999",
-    title: "Gangotri Riverside Open-Air School",
-    desc: "Pioneered foundational education under a tree on the holy Ganga ghats for boatmen and street children, transitioning over 3,200 street youth into formal government schooling.",
-    badge: "Milestone"
+    title: "Indo-European Alliance with Jean-Max Tassel",
+    narrative: "Established an enduring international solidarity partnership with French art historian Jean-Max Tassel, connecting European pediatric specialists and donor networks to Varanasi.",
+    tag: "Global Solidarity",
+    image: "/images/discc/founders-meet.jpg",
+    caption: "Dr. Tulsi Das with Jean-Max Tassel and international patrons"
   },
   {
     year: "2010",
-    title: "Deva Gram Rural Campus (Bachhaon)",
-    desc: "Built an expansive rural rehabilitation sanctuary offering hydrotherapy, sensory garden therapy, and overnight respite care for all 21 legally recognized disability categories.",
-    badge: "Sanctuary"
+    title: "Deva Gram 21-Disability Rural Sanctuary",
+    narrative: "Inaugurated an expansive rural rehabilitation campus in Bachhaon village equipped with hydrotherapy, sensory stimulation nature paths, and caregiver respite lodging.",
+    tag: "Campus Expansion",
+    image: "/images/discc/community-program.png",
+    caption: "Deva Gram open-air hydrotherapy and community grounds"
   },
   {
-    year: "2024",
-    title: "Best Professional Psychologist State Award",
-    desc: "Dr. Tulsi was conferred the prestigious Best Professional Psychologist Award by Uttar Pradesh Chief Minister Yogi Adityanath for 32+ years of extraordinary humanitarian service.",
-    badge: "State Honour"
+    year: "2019",
+    title: "State Award from UP CM Yogi Adityanath",
+    narrative: "Hon'ble Chief Minister of Uttar Pradesh Yogi Adityanath conferred the Best Professional Psychologist State Award to Dr. Tulsi Das for three decades of extraordinary humanitarian service.",
+    tag: "State Honor",
+    image: "/images/discc/award-ceremony.png",
+    caption: "State Felicitation Ceremony in Lucknow"
+  },
+  {
+    year: "Today",
+    title: "35 Years of Dignity & 12,000+ Families",
+    narrative: "Operating across both clinical and rural campuses with full FCRA registration, 80G tax exemption, and specialized pediatric therapeutic equipment.",
+    tag: "Living Legacy",
+    image: "/images/discc/children-activity.png",
+    caption: "Modern interactive classroom at Deva Center"
   }
 ];
 
-const LEADERSHIP_TEAM = [
+const STAMP_CERTIFICATIONS = [
+  { code: "FCRA Registered", authority: "Ministry of Home Affairs, Govt. of India", detail: "Authorized for International Aid" },
+  { code: "Section 80G", authority: "Income Tax Department", detail: "50% Tax Exemption for Donors" },
+  { code: "Section 12A", authority: "Income Tax Act 1961", detail: "Non-Profit Entity Exemption" },
+  { code: "National Trust", authority: "Ministry of Social Justice & Empowerment", detail: "Reg. for Autism, CP, MR & Multiple Disabilities" },
+  { code: "PwD Registration", authority: "State PwD Commissionerate, Uttar Pradesh", detail: "Official Disability Institute License" },
+];
+
+const FAMILY_TEAM = [
   {
     name: "Dr. C. Tulsi Das",
-    role: "Founder President & Clinical Director",
+    role: "Founder President & Clinical Psychologist",
     credentials: "Ph.D. (Psychiatry - Clinical Psychology)",
-    bio: "Recipient of Best Professional Psychologist Award from the Chief Minister of UP (Yogi Adityanath). 40+ years dedicated to clinical ID diagnostics and pediatric welfare.",
-    image: "/images/discc/dr-tulsi-portrait.jpg"
+    note: "40+ years in neurodivergence rehabilitation. UP Chief Minister State Award recipient.",
+    image: "/images/discc/dr-tulsi-portrait.jpg",
+    span: "lg:col-span-5"
   },
   {
     name: "Jean-Max Tassel",
     role: "Chief International Patron",
     credentials: "Art Historian & Philanthropist (France)",
-    bio: "Co-architect of Deva Europe for 25+ years, establishing international philanthropic networks supporting medical and educational sponsorships in Varanasi.",
-    image: "/images/discc/founders-meet.jpg"
+    note: "Co-founder of Deva Europe, establishing 25+ years of European medical cooperation.",
+    image: "/images/discc/founders-meet.jpg",
+    span: "lg:col-span-4"
   },
   {
     name: "Er. Raaj Deva",
-    role: "Director of Operations & Infrastructure",
-    credentials: "B.Tech, Systems & Operations",
-    bio: "Leading rural facility expansion, sensory integration lab modernization, and administrative compliance across all DISCC campuses.",
-    image: "/images/discc/deva-building.jpg"
+    role: "Director of Infrastructure & Strategy",
+    credentials: "B.Tech (Systems & Operations)",
+    note: "Overseeing rural campus expansion, digital accessibility, and clinical compliance.",
+    image: "/images/discc/deva-building.jpg",
+    span: "lg:col-span-3"
   }
 ];
 
 export default function AboutPage() {
   return (
-    <div className="w-full flex flex-col items-center bg-[#FFFAF2]">
-      {/* 1. Hero Section */}
-      <section className="w-full pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-[#FFEFE0]/60 to-[#FFFAF2] relative overflow-hidden">
+    <div className="w-full flex flex-col items-center bg-[#FAF7F0] text-[#1A2530]">
+      
+      {/* 1. Founder & Archival Hero */}
+      <section className="w-full pt-28 pb-16 md:pt-36 md:pb-24 border-b border-[#E8DFD3] relative overflow-hidden bg-[#FAF7F0]">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <span className="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 inline-block mb-4">
-              Since 1991 · Varanasi, India
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading text-foreground tracking-tight leading-[1.1]">
-              A 32-Year Journey of Clinical Science & Unconditional Love
-            </h1>
-            <p className="mt-6 text-lg sm:text-xl text-muted-text leading-relaxed max-w-[60ch]">
-              Founded by Dr. C. Tulsi Das to transform the lives of children with intellectual disabilities across Eastern Uttar Pradesh through evidence-based psychological rehabilitation.
-            </p>
-          </div>
-        </div>
-      </section>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Left: Headline & Founder Philosophy */}
+            <div className="lg:col-span-6 flex flex-col text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF3E0] border border-[#F5A524]/40 text-[#8B4500] w-fit mb-5 shadow-xs">
+                <ShieldCheck className="w-4 h-4 text-[#D97706]" />
+                <span className="text-xs font-bold uppercase tracking-wider">
+                  Est. 1991 in Varanasi · 35 Years of Care
+                </span>
+              </div>
 
-      {/* 2. Founder Profile & Award Spotlight */}
-      <section className="w-full py-16 md:py-24 bg-white border-y border-border/70 relative">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left: Founder Award Photo */}
-            <Reveal className="lg:col-span-5">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft-lg border-4 border-white bg-muted">
-                <Image
-                  src="/images/discc/award-ceremony.png"
-                  alt="Dr. Tulsi receiving award from UP CM Yogi Adityanath"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <span className="px-3 py-1 rounded-full bg-[#F5A524] text-[#1E2A3A] font-bold text-xs">
-                    State Felicitation
-                  </span>
-                  <p className="font-heading font-bold text-lg mt-2 leading-tight">
-                    Dr. Tulsi Conferred Best Psychologist Award
-                  </p>
-                  <p className="text-xs text-white/80 mt-1">
-                    By Chief Minister of Uttar Pradesh, Yogi Adityanath
-                  </p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#1A2530] leading-[1.15] mb-4">
+                A Lifetime Dedicated to the Dignity of Special Children.
+              </h1>
+
+              <div className="mb-4">
+                <HandUnderline className="text-[#F5A524] w-48 h-3.5" />
+              </div>
+
+              <p className="text-base sm:text-lg text-[#3E5062] font-medium leading-relaxed mb-6">
+                Founded by clinical psychologist Dr. C. Tulsi Das, DISCC emerged from an urgent need in Eastern Uttar Pradesh: replacing societal neglect with rigorous clinical science and unconditional love.
+              </p>
+
+              <div className="p-5 rounded-2xl bg-white border border-[#E8DFD3] shadow-xs mb-6">
+                <p className="text-sm font-serif italic text-[#1A2530] leading-relaxed">
+                  &ldquo;When a child with special needs is given early clinical assessment, sensory regulation, and patient guidance, they discover their inherent human dignity. We do not look at disabilities as limits; we build the bridges to life.&rdquo;
+                </p>
+                <div className="mt-3 flex items-center justify-between text-xs text-[#5B6B7C]">
+                  <span className="font-bold text-[#1A2530]">Dr. C. Tulsi Das</span>
+                  <span className="font-semibold text-[#0F8B8D]">Ph.D. Clinical Psychology</span>
                 </div>
               </div>
-            </Reveal>
 
-            {/* Right: Founder Narrative */}
-            <Reveal delay={0.15} className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                Meet the Founder
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold font-heading text-foreground">
-                Dr. C. Tulsi Das, Ph.D.
-              </h2>
-              <p className="text-muted-text text-base sm:text-lg leading-relaxed">
-                Born and raised in the ancient city of Varanasi, Dr. Chellapilla Tulsi Das dedicated his clinical career to neurodevelopmental psychiatry and intellectual disability management. In the early 1990s, when neurodivergent children were hidden away due to severe societal stigma, Dr. Tulsi opened Eastern UP&apos;s first multidisciplinary clinic.
-              </p>
-              <p className="text-muted-text text-base sm:text-lg leading-relaxed">
-                Over four decades, he has conducted thousands of psychological assessments, designed individualized education plans (IEPs), and built inclusive community networks that have touched more than 12,000 lives.
-              </p>
-
-              <blockquote className="border-l-4 border-primary pl-6 py-4 my-4 bg-[#FFFAF2] rounded-r-2xl italic text-foreground font-heading text-lg">
-                &ldquo;Every child, irrespective of neurological impairment, carries a sacred spark of human dignity and potential. Our duty is simply to provide the right clinical bridge.&rdquo;
-              </blockquote>
-
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex items-center gap-4">
                 <Link href="/contact">
-                  <Button variant="default" size="lg" className="rounded-full">
-                    Consult with our Team
+                  <Button size="lg" className="bg-[#0F8B8D] hover:bg-[#0D7A7C] text-white font-bold rounded-full px-7 shadow-xs cursor-pointer">
+                    Connect with Dr. Tulsi
                   </Button>
                 </Link>
                 <Link href="/donate">
-                  <Button variant="donate" size="lg" className="rounded-full shadow-glow-marigold">
-                    Support our Work
+                  <Button variant="outline" size="lg" className="border-[#C8BFB3] text-[#1A2530] font-bold rounded-full px-6 cursor-pointer">
+                    Support Our Work
                   </Button>
                 </Link>
               </div>
-            </Reveal>
+            </div>
+
+            {/* Right: Uncropped Award Felicitation Photo */}
+            <div className="lg:col-span-6">
+              <div className="relative bg-white p-3.5 sm:p-4 rounded-3xl border border-[#E8DFD3] shadow-md">
+                <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-[#F2ECE1]">
+                  <Image
+                    src="/images/discc/award-ceremony.png"
+                    alt="Dr. Tulsi receiving State Award from UP CM Yogi Adityanath"
+                    fill
+                    priority
+                    className="object-contain sm:object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-xs text-xs font-bold text-[#1A2530] shadow-xs border border-[#E8DFD3]">
+                    State Award 2019
+                  </div>
+                </div>
+
+                <div className="p-3">
+                  <h2 className="text-sm sm:text-base font-bold text-[#1A2530]">
+                    Best Professional Psychologist State Award
+                  </h2>
+                  <p className="text-xs text-[#5B6B7C] mt-1">
+                    Conferred by Hon&apos;ble UP Chief Minister Yogi Adityanath celebrating Dr. Tulsi&apos;s pioneering rehabilitation work for intellectual disabilities across Eastern UP.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* 3. Interactive Vertical Timeline */}
-      <section className="w-full py-20 md:py-28 bg-[#FFFAF2] relative">
+      {/* 2. Hand-Drawn Animated Scroll Timeline (1991 -> Today) */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFDF9] border-b border-[#E8DFD3] relative">
         <div className="container-custom">
-          <SectionHeading
-            eyebrow="Chronicle of Impact"
-            title="Milestones in Humanitarian Service"
-            description="How a humble clinic in Kamachha expanded into a multifaceted statewide welfare movement."
-          />
+          
+          <div className="max-w-2xl mb-16 text-left">
+            <span className="text-xs font-bold text-[#D97706] uppercase tracking-widest block mb-2">
+              Historical Milestones
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#1A2530]">
+              The 35-Year Timeline of Grassroots Impact.
+            </h2>
+            <p className="text-sm sm:text-base text-[#5B6B7C] mt-2">
+              From an open-air riverfront clinic in 1991 to Eastern UP&apos;s leading pediatric neuro-rehabilitation sanctuaries.
+            </p>
+          </div>
 
-          <div className="max-w-4xl mx-auto relative mt-12">
-            {/* Center line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2" />
+          {/* Vertical Editorial Timeline Stream */}
+          <div className="relative border-l-2 border-[#D97706]/40 ml-4 sm:ml-8 space-y-16 pl-6 sm:pl-10">
+            {TIMELINE_EVENTS.map((evt, idx) => (
+              <div key={evt.year} className="relative group">
+                
+                {/* Hand-drawn bullet marker */}
+                <div className="absolute -left-[35px] sm:-left-[51px] top-1.5 w-6 h-6 rounded-full bg-[#FAF7F0] border-2 border-[#D97706] flex items-center justify-center text-[10px] font-bold text-[#D97706] shadow-xs">
+                  <span className="w-2 h-2 rounded-full bg-[#D97706]" />
+                </div>
 
-            <div className="space-y-12">
-              {TIMELINE.map((item, idx) => {
-                const isEven = idx % 2 === 0;
-                return (
-                  <Reveal key={item.year} delay={idx * 0.08}>
-                    <div
-                      className={`relative flex flex-col md:flex-row items-start ${
-                        isEven ? "md:flex-row-reverse" : ""
-                      } gap-6 md:gap-12 pl-10 md:pl-0`}
-                    >
-                      {/* Timeline Node Point */}
-                      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary flex items-center justify-center shadow-md z-10">
-                        <span className="w-2 h-2 rounded-full bg-primary" />
-                      </div>
-
-                      {/* Content Card */}
-                      <div className={`w-full md:w-1/2 ${isEven ? "md:text-left" : "md:text-left"}`}>
-                        <div className="p-6 rounded-3xl bg-white border border-border/80 shadow-soft hover:shadow-soft-lg transition-all duration-300">
-                          <div className="flex items-center gap-2.5 mb-2">
-                            <span className="text-xl font-extrabold font-heading text-primary">
-                              {item.year}
-                            </span>
-                            <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#F5A524]/15 text-[#1E2A3A]">
-                              {item.badge}
-                            </span>
-                          </div>
-                          <h3 className="text-lg font-bold font-heading text-foreground mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-sm text-muted-text leading-relaxed">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  
+                  {/* Text & Narrative */}
+                  <div className="lg:col-span-7 space-y-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl sm:text-3xl font-heading font-extrabold text-[#D97706]">
+                        {evt.year}
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#FFF3E0] text-[#8B4500] text-xs font-bold">
+                        {evt.tag}
+                      </span>
                     </div>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 4. Certifications & Legal Standing */}
-      <section className="w-full py-16 bg-white border-y border-border/70 relative">
-        <div className="container-custom">
-          <SectionHeading
-            title="Certifications & Transparency"
-            description="DISCC adheres to highest statutory compliance standards under Government of India guidelines."
-          />
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#1A2530] font-heading">
+                      {evt.title}
+                    </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-3xl bg-[#FFFAF2] border border-border/70 text-center">
-              <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-3" />
-              <h3 className="font-bold text-base text-foreground">FCRA Registered</h3>
-              <p className="text-xs text-muted-text mt-1">
-                Authorized by Ministry of Home Affairs to receive foreign philanthropic contributions.
-              </p>
-            </div>
+                    <p className="text-sm sm:text-base text-[#4A5D70] leading-relaxed pt-1">
+                      {evt.narrative}
+                    </p>
+                  </div>
 
-            <div className="p-6 rounded-3xl bg-[#FFFAF2] border border-border/70 text-center">
-              <Award className="w-10 h-10 text-[#F5A524] mx-auto mb-3" />
-              <h3 className="font-bold text-base text-foreground">National Trust Certified</h3>
-              <p className="text-xs text-muted-text mt-1">
-                Recognized for Autism, Cerebral Palsy, Mental Retardation & Multiple Disabilities.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-[#FFFAF2] border border-border/70 text-center">
-              <CheckCircle2 className="w-10 h-10 text-primary mx-auto mb-3" />
-              <h3 className="font-bold text-base text-foreground">Section 80G & 12A</h3>
-              <p className="text-xs text-muted-text mt-1">
-                All Indian donations eligible for 50% income tax exemption under Section 80G.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-[#FFFAF2] border border-border/70 text-center">
-              <Building2 className="w-10 h-10 text-primary mx-auto mb-3" />
-              <h3 className="font-bold text-base text-foreground">UP Social Welfare</h3>
-              <p className="text-xs text-muted-text mt-1">
-                Officially accredited non governmental organization by Department of Social Welfare UP.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Multidisciplinary Leadership Team */}
-      <section className="w-full py-20 md:py-28 bg-[#FFFAF2] relative">
-        <div className="container-custom">
-          <SectionHeading
-            title="Leadership & Governance"
-            description="Guided by veteran clinical psychologists, operations experts, and global philanthropic patrons."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {LEADERSHIP_TEAM.map((member, idx) => (
-              <Reveal key={member.name} delay={idx * 0.1}>
-                <div className="rounded-3xl bg-white border border-border/80 shadow-soft overflow-hidden h-full flex flex-col justify-between">
-                  <div>
-                    <div className="relative aspect-[4/3] w-full bg-muted">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold font-heading text-foreground">
-                        {member.name}
-                      </h3>
-                      <p className="text-xs font-bold text-primary mt-0.5">
-                        {member.role}
-                      </p>
-                      <p className="text-[11px] text-muted-text font-medium mt-0.5">
-                        {member.credentials}
-                      </p>
-                      <p className="text-sm text-muted-text mt-3 leading-relaxed">
-                        {member.bio}
+                  {/* Archival Photograph */}
+                  <div className="lg:col-span-5">
+                    <div className="bg-white p-2.5 rounded-2xl border border-[#E8DFD3] shadow-xs">
+                      <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-[#F2ECE1]">
+                        <Image
+                          src={evt.image}
+                          alt={evt.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 35vw"
+                        />
+                      </div>
+                      <p className="text-[11.5px] text-[#7A8B9E] font-medium mt-2 px-1">
+                        {evt.caption}
                       </p>
                     </div>
                   </div>
+
                 </div>
-              </Reveal>
+
+              </div>
             ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. Official Regulatory Certifications (Stamp Aesthetic - No Icon Cards) */}
+      <section className="w-full py-16 bg-[#FAF7F0] border-b border-[#E8DFD3]">
+        <div className="container-custom">
+          
+          <div className="mb-10 text-left">
+            <span className="text-xs font-bold text-[#0F8B8D] uppercase tracking-widest block mb-1">
+              Statutory Governance
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[#1A2530]">
+              Official Accreditations & Tax Status.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {STAMP_CERTIFICATIONS.map((cert, i) => (
+              <div
+                key={i}
+                className="p-5 rounded-2xl bg-white border border-[#E8DFD3] shadow-xs flex flex-col justify-between"
+              >
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[#0F8B8D]/10 text-[#0F8B8D] text-xs font-bold mb-2">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>{cert.code}</span>
+                  </div>
+                  <h4 className="text-sm font-bold text-[#1A2530] leading-snug">
+                    {cert.authority}
+                  </h4>
+                  <p className="text-xs text-[#5B6B7C] mt-1.5 leading-relaxed">
+                    {cert.detail}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-[#F0EAE1] text-[11px] font-semibold text-[#7A8B9E]">
+                  Verified & Active Compliance
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. The Family Wall (Organic Portrait Collage) */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFDF9] border-b border-[#E8DFD3]">
+        <div className="container-custom">
+          
+          <div className="max-w-2xl mb-14 text-left">
+            <span className="text-xs font-bold text-[#D97706] uppercase tracking-widest block mb-1">
+              Leadership & Patrons
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#1A2530]">
+              The Guiding Pillars Behind DISCC.
+            </h2>
+            <p className="text-sm text-[#5B6B7C] mt-1.5">
+              Clinicians, international patrons, and operations specialists devoted to the children of Varanasi.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {FAMILY_TEAM.map((member, i) => (
+              <div
+                key={i}
+                className={`${member.span} bg-white p-5 rounded-3xl border border-[#E8DFD3] shadow-xs flex flex-col justify-between`}
+              >
+                <div>
+                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[#F2ECE1] mb-4">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
+                  </div>
+                  <span className="text-xs font-bold text-[#0F8B8D]">
+                    {member.credentials}
+                  </span>
+                  <h3 className="text-xl font-heading font-bold text-[#1A2530] mt-0.5">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs font-semibold text-[#D97706] mb-2">
+                    {member.role}
+                  </p>
+                  <p className="text-xs sm:text-sm text-[#5B6B7C] leading-relaxed">
+                    {member.note}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. Direct Visit & Contact Action */}
+      <section className="w-full py-16 bg-[#FAF7F0]">
+        <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6 p-8 rounded-3xl bg-[#FFF3E0] border border-[#F5A524]/40 text-left">
+          <div>
+            <h3 className="text-2xl font-heading font-bold text-[#1A2530]">
+              Visit Our Campuses in Kamachha and Bachhaon.
+            </h3>
+            <p className="text-sm text-[#5B6B7C] mt-1">
+              We welcome parents, clinicians, donors, and researchers for guided walkthroughs and consultations.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <Link href="/contact">
+              <Button size="lg" className="bg-[#1A2530] hover:bg-[#0F8B8D] text-white font-bold rounded-full px-6 cursor-pointer">
+                Schedule a Visit
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

@@ -14,7 +14,7 @@ export interface ProgramItem {
   sdgColor: string;
   sdgThemeClass: string;
   sdgName: string;
-  targetGroup: "Women & Girls" | "Special Children" | "Rural Communities" | "All Individuals";
+  targetGroup: string;
   image: string;
   badge: string;
   year: string;

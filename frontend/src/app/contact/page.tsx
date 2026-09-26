@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -13,12 +14,11 @@ import {
   Send,
   CheckCircle2,
   ChevronDown,
-  HelpCircle,
-  AlertCircle
+  Plus,
+  Minus
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { HandUnderline } from "@/components/ui/HandDrawn";
 
 const FAQS = [
   {
@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: "How can international volunteers or scholars participate?",
-    a: "We welcome pediatricians, special educators, speech therapists, and university study abroad cohorts. Please select 'Volunteer / Internship' in the form below and attach your background details."
+    a: "We welcome pediatricians, special educators, speech therapists, and university study abroad cohorts. Please select 'Volunteer or Academic Research' in the form and provide your background details."
   },
   {
     q: "Is my donation eligible for tax exemption?",
@@ -50,7 +50,6 @@ export default function ContactPage() {
     phone: "",
     subject: "child-assessment",
     message: "",
-    honeypot: "", // anti-spam honeypot
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -58,7 +57,6 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.honeypot) return; // bot detected
     if (!formData.name || !formData.phone) return;
 
     setLoading(true);
@@ -84,180 +82,73 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center bg-[#FFFAF2]">
+    <div className="w-full flex flex-col items-center bg-[#FAF7F0] text-[#1A2530]">
+      
       {/* 1. Header */}
-      <section className="w-full pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-[#FFEFE0]/60 to-[#FFFAF2] relative">
+      <section className="w-full pt-28 pb-14 md:pt-36 md:pb-20 border-b border-[#E8DFD3] bg-[#FAF7F0]">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <span className="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 inline-block mb-4">
-              Get in Touch · Varanasi
+            <span className="text-xs font-bold text-[#0F8B8D] uppercase tracking-widest block mb-2">
+              Direct Clinical Inquiries · Varanasi
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading text-foreground tracking-tight leading-[1.1]">
-              Consult Our Specialists or Inquire Today
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#1A2530] leading-tight">
+              Consult Our Specialists or Schedule a Visit.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-muted-text leading-relaxed max-w-[60ch]">
-              Our clinical psychologists, administrative team, and rural coordinators in Varanasi are here to assist your family.
+            <div className="mt-2 mb-4">
+              <HandUnderline className="text-[#F5A524] w-48 h-3.5" />
+            </div>
+            <p className="text-base sm:text-lg text-[#5B6B7C] leading-relaxed">
+              Our clinical psychologists, administrative team, and rural coordinators in Varanasi are available for parent evaluations and campus appointments.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 2. Contact Details & Interactive Form */}
-      <section className="w-full py-16 md:py-24 bg-white border-y border-border/70 relative">
+      {/* 2. Calm Two-Column Contact Section (Unboxed Layout) */}
+      <section className="w-full py-16 md:py-24 bg-[#FFFDF9] border-b border-[#E8DFD3]">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left: Contact Information Cards */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="p-8 rounded-3xl bg-[#FFFAF2] border border-border/80 shadow-soft space-y-6">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                    Headquarters & Clinic
-                  </span>
-                  <h3 className="text-2xl font-bold font-heading text-foreground mt-1">
-                    Deva Center, Varanasi
-                  </h3>
-                  <p className="text-xs text-muted-text mt-1">
-                    First Special Rehabilitation Institute in Eastern Uttar Pradesh
-                  </p>
-                </div>
-
-                <div className="space-y-4 text-sm text-foreground">
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-border/80 flex items-center justify-center shrink-0 text-primary shadow-xs">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-bold">Registered Office</p>
-                      <p className="text-xs text-muted-text leading-relaxed mt-0.5">
-                        B.21/100, Bind Bhavan, Kamachha Chungi, Varanasi - 221010, Uttar Pradesh, India
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-border/80 flex items-center justify-center shrink-0 text-primary shadow-xs">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-bold">Helpline & WhatsApp</p>
-                      <p className="text-xs text-muted-text leading-relaxed mt-0.5">
-                        7007453168 / 9415303557 / 9129853531
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-border/80 flex items-center justify-center shrink-0 text-primary shadow-xs">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-bold">Official Email</p>
-                      <p className="text-xs text-muted-text leading-relaxed mt-0.5">
-                        disccindia@gmail.com
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-border/80 flex items-center justify-center shrink-0 text-primary shadow-xs">
-                      <Clock className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-bold">Working Hours</p>
-                      <p className="text-xs text-muted-text leading-relaxed mt-0.5">
-                        Monday to Saturday: 8:00 AM - 5:00 PM (Sunday Closed)
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-border/60 flex items-center gap-2 text-xs text-muted-text">
-                  <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
-                  <span>FCRA & National Trust Certified Humanitarian Society</span>
-                </div>
-              </div>
-
-              {/* Emergency Hotline Alert */}
-              <div className="p-6 rounded-3xl bg-[#E6F6EE] border border-[#0F8B8D]/30 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-soft">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground text-sm">
-                    Urgent Child Crisis?
-                  </h4>
-                  <p className="text-xs text-muted-text mt-0.5">
-                    Call Dr. Tulsi&apos;s direct clinical line: <span className="font-bold text-primary">7007453168</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Contact Form */}
-            <div className="lg:col-span-7">
-              <div className="p-8 sm:p-10 rounded-3xl bg-[#FFFAF2] border border-border/80 shadow-soft">
-                <h3 className="text-2xl font-bold font-heading text-foreground mb-2">
-                  Send an Inquiry / Book Assessment
-                </h3>
-                <p className="text-sm text-muted-text mb-6">
-                  Please fill out the form below. Our clinical coordinator will respond within 24 hours.
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            {/* Left: Clean Form */}
+            <div className="lg:col-span-6">
+              <div className="max-w-xl">
+                <h2 className="text-2xl font-heading font-bold text-[#1A2530] mb-2">
+                  Send an Inquiry or Book Assessment
+                </h2>
+                <p className="text-sm text-[#5B6B7C] mb-8">
+                  Fill in your contact details below and our team will get back to you promptly.
                 </p>
 
                 {submitted ? (
-                  <div className="p-8 rounded-2xl bg-white border border-primary/30 text-center space-y-4">
-                    <CheckCircle2 className="w-14 h-14 text-primary mx-auto" />
-                    <h4 className="text-2xl font-bold text-foreground">Message Received!</h4>
-                    <p className="text-sm text-muted-text max-w-md mx-auto">
-                      Thank you for contacting DISCC India. Our team will get in touch with you at {formData.phone || formData.email}.
+                  <div className="p-8 rounded-3xl bg-[#E6F6EE] border border-[#0F8B8D]/30 text-center">
+                    <CheckCircle2 className="w-12 h-12 text-[#0F8B8D] mx-auto mb-3" />
+                    <h3 className="text-xl font-heading font-bold text-[#1A2530]">
+                      Inquiry Successfully Received
+                    </h3>
+                    <p className="text-sm text-[#5B6B7C] mt-2">
+                      Our clinical counselor will call your phone number within 24 business hours.
                     </p>
-                    <Button
-                      variant="outline"
-                      onClick={() => {
-                        setSubmitted(false);
-                        setFormData({
-                          name: "",
-                          email: "",
-                          phone: "",
-                          subject: "child-assessment",
-                          message: "",
-                          honeypot: "",
-                        });
-                      }}
-                      className="mt-2"
-                    >
-                      Send Another Inquiry
-                    </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    {/* Honeypot anti-spam field */}
-                    <input
-                      type="text"
-                      name="website"
-                      tabIndex={-1}
-                      autoComplete="off"
-                      value={formData.honeypot}
-                      onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
-                      className="hidden"
-                    />
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="e.g. Ramesh Chandra"
+                        className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
+                      />
+                    </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-bold text-foreground mb-1.5">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder="e.g. Ramesh Chandra"
-                          className="w-full h-11 px-4 rounded-xl border border-border bg-white text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-xs font-bold text-foreground mb-1.5">
+                        <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
                           Phone Number *
                         </label>
                         <input
@@ -265,121 +156,190 @@ export default function ContactPage() {
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="e.g. 9876543210"
-                          className="w-full h-11 px-4 rounded-xl border border-border bg-white text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                          placeholder="10-digit mobile"
+                          className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
                         />
                       </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-bold text-foreground mb-1.5">
-                          Email Address (Optional)
+                        <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                          Email Address
                         </label>
                         <input
                           type="email"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="e.g. name@example.com"
-                          className="w-full h-11 px-4 rounded-xl border border-border bg-white text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                          placeholder="name@domain.com"
+                          className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
                         />
-                      </div>
-
-                      <div>
-                        <label className="block text-xs font-bold text-foreground mb-1.5">
-                          Inquiry Type *
-                        </label>
-                        <select
-                          value={formData.subject}
-                          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                          className="w-full h-11 px-4 rounded-xl border border-border bg-white text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-                        >
-                          <option value="child-assessment">Child Assessment & Rehabilitation</option>
-                          <option value="speech-sensory">Speech & Sensory Integration Therapy</option>
-                          <option value="rural-admissions">Deva Gram (Bachhaon) Admissions</option>
-                          <option value="annapurna-girl-child">Annapurna Girl Child Center</option>
-                          <option value="volunteer-internship">Volunteer / Study Abroad Internship</option>
-                          <option value="csr-donation">Donations & Corporate CSR Partnership</option>
-                          <option value="other">General Inquiry</option>
-                        </select>
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-foreground mb-1.5">
-                        Your Message / Child Details
+                      <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                        Inquiry Topic
+                      </label>
+                      <select
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
+                      >
+                        <option value="child-assessment">Child Developmental & Psychological Assessment</option>
+                        <option value="speech-therapy">Speech & Sensory Therapy Consultation</option>
+                        <option value="rural-admissions">Deva Gram (Bachhaon) Rural Campus Services</option>
+                        <option value="volunteer-research">Volunteer or Academic Research Exchange</option>
+                        <option value="donor-csr">Donor, CSR & Corporate Sponsorship</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                        Additional Context or Questions
                       </label>
                       <textarea
                         rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Please share age of child, diagnosis, current concerns or questions..."
-                        className="w-full p-4 rounded-xl border border-border bg-white text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                        placeholder="Tell us about the child's age, condition, or your specific requirements..."
+                        className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
                       />
                     </div>
 
                     <Button
                       type="submit"
                       disabled={loading}
-                      variant="default"
                       size="lg"
-                      className="w-full gap-2 text-base mt-2"
+                      className="w-full bg-[#1A2530] hover:bg-[#0F8B8D] text-white font-bold rounded-xl h-12 text-sm shadow-xs cursor-pointer"
                     >
-                      <Send className="w-4 h-4" />
-                      {loading ? "Sending Message..." : "Submit Inquiry"}
+                      {loading ? "Sending Message..." : "Submit Consultation Request"}
                     </Button>
                   </form>
                 )}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 3. Frequently Asked Questions (Accordion) */}
-      <section className="w-full py-20 bg-[#FFFAF2] relative">
-        <div className="container-custom max-w-3xl">
-          <SectionHeading
-            title="Frequently Asked Questions"
-            description="Clear answers about appointments, therapy admissions, and donor governance."
-          />
-
-          <div className="space-y-4">
-            {FAQS.map((faq, index) => (
-              <div
-                key={index}
-                className="rounded-2xl bg-white border border-border/80 shadow-soft overflow-hidden transition-colors"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-heading font-bold text-base sm:text-lg text-foreground cursor-pointer"
-                >
-                  <span>{faq.q}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-primary shrink-0 transition-transform duration-200 ${
-                      openFaq === index ? "rotate-180" : ""
-                    }`}
+            {/* Right: Center Details & Location Photograph */}
+            <div className="lg:col-span-6 space-y-8">
+              
+              <div className="relative bg-white p-3 rounded-2xl border border-[#E8DFD3] shadow-xs">
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-[#F2ECE1]">
+                  <Image
+                    src="/images/discc/dr-tulsi-clinic.png"
+                    alt="Deva Center Kamachha Clinic"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                </button>
-                <AnimatePresence>
-                  {openFaq === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.25 }}
-                    >
-                      <div className="px-6 pb-6 text-sm sm:text-base text-muted-text leading-relaxed border-t border-border/40 pt-4">
-                        {faq.a}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                </div>
+                <div className="p-3">
+                  <span className="text-xs font-bold text-[#0F8B8D]">
+                    Flagship Institute
+                  </span>
+                  <h3 className="text-base font-bold text-[#1A2530]">
+                    Deva Center Clinical Headquarters
+                  </h3>
+                  <p className="text-xs text-[#5B6B7C]">
+                    B.21/100, Bind Bhavan, Kamachha Chungi, Varanasi, UP 221010
+                  </p>
+                </div>
               </div>
-            ))}
+
+              <div className="space-y-4 pt-2">
+                <div className="p-4 rounded-xl bg-white border border-[#E8DFD3] flex items-start gap-3">
+                  <Phone className="w-4 h-4 text-[#0F8B8D] shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-xs font-bold text-[#1A2530] uppercase tracking-wider">
+                      Helpline & Clinical Appointments
+                    </h4>
+                    <p className="text-sm font-semibold text-[#1A2530] mt-0.5">
+                      7007453168 / 9415303557 / 9129853531
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white border border-[#E8DFD3] flex items-start gap-3">
+                  <Mail className="w-4 h-4 text-[#0F8B8D] shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-xs font-bold text-[#1A2530] uppercase tracking-wider">
+                      Official Inquiries
+                    </h4>
+                    <p className="text-sm font-semibold text-[#1A2530] mt-0.5">
+                      disccindia@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-white border border-[#E8DFD3] flex items-start gap-3">
+                  <Clock className="w-4 h-4 text-[#0F8B8D] shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-xs font-bold text-[#1A2530] uppercase tracking-wider">
+                      Center Operating Hours
+                    </h4>
+                    <p className="text-sm text-[#5B6B7C] mt-0.5">
+                      Monday to Saturday: 8:00 AM - 5:00 PM (Sundays reserved for caregiver workshops)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
           </div>
+
         </div>
       </section>
+
+      {/* 3. FAQ Section (Generous Whitespace Editorial List - No Cards) */}
+      <section className="w-full py-20 bg-[#FAF7F0]">
+        <div className="container-custom max-w-3xl">
+          
+          <div className="mb-12 text-left">
+            <span className="text-xs font-bold text-[#D97706] uppercase tracking-widest block mb-1">
+              Common Questions
+            </span>
+            <h2 className="text-3xl font-heading font-bold text-[#1A2530]">
+              Frequently Asked Questions.
+            </h2>
+          </div>
+
+          <div className="divide-y divide-[#E8DFD3]">
+            {FAQS.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+
+              return (
+                <div key={idx} className="py-5">
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full flex items-center justify-between text-left gap-4 font-bold text-base sm:text-lg text-[#1A2530] hover:text-[#0F8B8D] transition-colors cursor-pointer"
+                  >
+                    <span>{faq.q}</span>
+                    <span className="p-1 rounded-full bg-white border border-[#E8DFD3] text-[#5B6B7C] shrink-0">
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    </span>
+                  </button>
+
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-sm sm:text-base text-[#5B6B7C] pt-3 leading-relaxed">
+                          {faq.a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
     </div>
   );
 }
