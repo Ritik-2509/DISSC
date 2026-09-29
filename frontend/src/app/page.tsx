@@ -30,7 +30,7 @@ import { VibrantHero } from "@/components/ui/VibrantHero";
 import { GovernmentRecognitionTicker } from "@/components/ui/GovernmentRecognitionTicker";
 import { InteractiveProgramShowcase } from "@/components/ui/InteractiveProgramShowcase";
 import { StoryShowcase } from "@/components/ui/StoryShowcase";
-import { InteractiveSponsorship } from "@/components/ui/InteractiveSponsorship";
+import { PartnerMarquee } from "@/components/ui/PartnerMarquee";
 
 export default function HomePage() {
   // Quick callback form state
@@ -66,7 +66,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center bg-[#FFFDF9] text-slate-900">
+    <div className="w-full flex flex-col items-center bg-[#F6F4EE] text-slate-900">
       
       {/* 1. Grand Animated Vibrant Hero (Features UP CM Yogi Adityanath Award & Dr. Tulsi) */}
       <VibrantHero />
@@ -74,79 +74,129 @@ export default function HomePage() {
       {/* 2. Official Government Honors Ticker */}
       <GovernmentRecognitionTicker />
 
-      {/* 3. The 1991 Genesis & Grassroots Mission (Editorial Narrative) */}
-      <section className="w-full py-20 md:py-28 bg-[#FFFDF7] border-b border-amber-200/60 relative">
+      {/* 3. The 1991 Genesis & Founder Profile Section (Styled with Reference Layout) */}
+      <section className="w-full py-20 md:py-28 bg-[#F6F4EE] border-b border-[#E5E0D4] relative overflow-hidden">
         <div className="container-custom">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* Left: Founder Documentary Photograph & Quote */}
-            <div className="lg:col-span-5 flex flex-col">
-              <div className="relative bg-white p-4 rounded-3xl border-2 border-amber-200 shadow-xl">
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
+            {/* Left: Founder Portrait with Forest Green Floating Quote Badge */}
+            <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 flex justify-center lg:justify-start"
+            >
+              <div className="relative w-full max-w-[400px] aspect-[4/5] sm:h-[490px]">
+                {/* Main Portrait of Dr. Tulsi Das */}
+                <div className="relative w-full h-full rounded-[28px] sm:rounded-[34px] overflow-hidden bg-[#EFE9DF] shadow-xl shadow-stone-900/5 border border-stone-200">
                   <Image
-                    src="/images/discc/dr-tulsi-portrait.jpg"
-                    alt="Dr. C. Tulsi Das with special children"
+                    src="/images/discc/dr-tulsi-clinic.png"
+                    alt="Dr. C. Tulsi Das, Founder President of DISCC India"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 1024px) 100vw, 40vw"
+                    priority
                   />
                 </div>
-                <div className="p-4 bg-gradient-to-r from-amber-50 to-teal-50 rounded-2xl mt-4 border border-amber-100">
-                  <p className="text-xs sm:text-sm font-serif italic text-slate-800 leading-relaxed">
+
+                {/* Overlapping Forest Green Quote Badge (Bottom-Right) */}
+                <div className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-6 bg-[#184639] text-white p-5 sm:p-6 rounded-[22px] max-w-[260px] sm:max-w-[285px] shadow-2xl z-10 border border-emerald-900/40">
+                  <span className="block text-[11px] font-bold tracking-[0.18em] text-emerald-200/90 uppercase">
+                    DR. C. TULSI DAS, PH.D.
+                  </span>
+                  <span className="block text-[10px] font-medium tracking-[0.14em] text-stone-300 uppercase mt-0.5">
+                    FOUNDER PRESIDENT · EST. 1991
+                  </span>
+                  <p className="mt-3 font-serif italic text-white text-sm sm:text-[14px] leading-snug">
                     &ldquo;Disability is not a lack of capability. It is a societal lack of appropriate, compassionate scientific support.&rdquo;
-                  </p>
-                  <p className="text-xs font-black text-slate-900 mt-2">
-                    Dr. C. Tulsi Das <span className="font-normal text-slate-500">· Founder President & Clinical Psychologist</span>
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Right: Flowing Vibrant Mission Narrative */}
-            <div className="lg:col-span-7 flex flex-col justify-center text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-100 text-teal-800 border border-teal-300 text-xs font-bold uppercase tracking-wider mb-3 w-fit">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>The 1991 Genesis in Varanasi</span>
+            {/* Right: Authentic DISCC Narrative & 3 Core Clinical Pillars */}
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              className="lg:col-span-7 flex flex-col justify-center text-left lg:pl-4"
+            >
+              
+              {/* Eyebrow: Warm Brown Accent Bar + THE 1991 GENESIS */}
+              <div className="inline-flex items-center gap-3 mb-5">
+                <span className="w-8 h-[2px] bg-[#9A5B32] shrink-0 inline-block" />
+                <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#8C5E3C]">
+                  THE 1991 GENESIS IN VARANASI
+                </span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 leading-tight mb-6">
-                Bridging the Deep Vacuum with Clinical Science & Compassion.
+              {/* Main Headline */}
+              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-serif font-bold text-slate-900 tracking-tight leading-[1.18]">
+                Bridging the deep void
+                <span className="block font-serif italic text-[#1D5443] font-normal mt-1">
+                  with clinical science & empathy.
+                </span>
               </h2>
 
-              <div className="space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
-                <p>
-                  In 1991, families raising children with intellectual disabilities in Varanasi faced an isolating reality: deep social stigma, zero diagnostic centers, and no inclusive schooling.
-                </p>
-                <p>
-                  Equipped with clinical training and profound compassion, Dr. C. Tulsi Das established <strong>DEVA International Society for Child Care (DISCC)</strong>. Rather than offering temporary charity, DISCC established a rigorous clinical standard: pediatric psychological diagnostics, sensory integration gym therapy, speech therapy, and customized Individualized Education Plans (IEPs).
-                </p>
-                <p>
-                  Today, spanning our <strong>Deva Center in Kamachha</strong> and our expansive <strong>Deva Gram rural sanctuary in Bachhaon</strong>, we provide continuous rehabilitation across all 21 legally recognized disability categories.
-                </p>
+              {/* Narrative Paragraph */}
+              <p className="text-base sm:text-[17px] text-slate-600 leading-relaxed font-normal mt-6 max-w-2xl">
+                In 1991, Eastern Uttar Pradesh lacked specialized diagnostic centers and inclusive schooling for children with intellectual disabilities. Rather than offering temporary charity, clinical psychologist <strong>Dr. C. Tulsi Das</strong> established <strong>DEVA International Society for Child Care (DISCC)</strong> to introduce rigorous developmental assessments, pediatric therapies, and structured life-skills rehabilitation.
+              </p>
+
+              {/* 3 Core Clinical Pillars (Fitting the Reference 3-Column System) */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 mt-10 pt-8 border-t border-stone-200/90">
+                <div>
+                  <h3 className="text-lg font-serif font-bold text-slate-900">
+                    Pediatric Diagnostics
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                    Comprehensive clinical profiling across all 21 RPwD conditions.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-serif font-bold text-slate-900">
+                    Multi-Sensory Therapy
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                    Sensory integration gym, speech correction & adaptive hydrotherapy.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-serif font-bold text-slate-900">
+                    Deva Gram Sanctuary
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                    5-acre rural campus providing free therapy & life-skills schooling.
+                  </p>
+                </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-slate-200 flex flex-wrap items-center gap-6">
+              {/* Action Buttons / Links */}
+              <div className="flex flex-wrap items-center gap-6 mt-8">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-teal-700 hover:text-teal-800 group cursor-pointer"
+                  className="inline-flex items-center gap-2 text-[#1D5443] hover:text-[#123B2E] font-bold text-base group transition-colors cursor-pointer"
                 >
-                  <span>Read Dr. Tulsi&apos;s Full 35-Year Journey</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <span>Read Dr. Tulsi&apos;s Full 35-Year Story</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                 </Link>
+
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-slate-800 hover:text-teal-700 cursor-pointer"
+                  className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold text-sm transition-colors cursor-pointer"
                 >
-                  <span>Schedule a Campus Walkthrough</span>
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                  <span>Schedule Campus Walkthrough</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
                 </Link>
               </div>
 
-            </div>
+            </motion.div>
 
           </div>
-
         </div>
       </section>
 
@@ -156,17 +206,23 @@ export default function HomePage() {
       {/* 5. Emotional Stories of Breakthroughs (Rubaroo Style) */}
       <StoryShowcase />
 
-      {/* 6. Child Sponsorship Calculator (Dynamic Tiers) */}
-      <InteractiveSponsorship />
+      {/* 6. Institutional & Corporate Partner Companies (Motion Marquee) */}
+      <PartnerMarquee />
 
       {/* 7. Consultation & Immediate Help Booking */}
-      <section className="w-full py-20 bg-gradient-to-br from-[#FFF9F2] via-white to-[#FFF5E8] border-b border-amber-200/80 relative">
+      <section className="w-full py-20 bg-white border-b border-amber-200/80 relative">
         <div className="container-custom">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
             {/* Left: Direct Consultation Appeal */}
-            <div className="lg:col-span-6 flex flex-col text-left">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-6 flex flex-col text-left"
+            >
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold uppercase tracking-wider mb-3 w-fit">
                 <Phone className="w-3.5 h-3.5" />
                 <span>Parent Consultation Helpline</span>
@@ -197,10 +253,16 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right: Booking Form */}
-            <div className="lg:col-span-6">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              className="lg:col-span-6"
+            >
               <div className="bg-white p-6 sm:p-8 rounded-3xl border-2 border-amber-200 shadow-xl">
                 <h3 className="text-xl font-heading font-black text-slate-900 mb-2">
                   Schedule a Consultation or Campus Visit
@@ -273,7 +335,7 @@ export default function HomePage() {
                   </form>
                 )}
               </div>
-            </div>
+            </motion.div>
 
           </div>
 

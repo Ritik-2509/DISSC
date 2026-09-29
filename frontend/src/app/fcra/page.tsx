@@ -28,9 +28,9 @@ export default function FcraPage() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center bg-[#FFFAF2]">
+    <div className="w-full flex flex-col items-center bg-[#F6F4EE]">
       {/* 1. Header */}
-      <section className="w-full pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-[#FFEFE0]/60 to-[#FFFAF2] relative">
+      <section className="w-full pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-[#F6F4EE] to-white relative">
         <div className="container-custom">
           <div className="max-w-3xl">
             <span className="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 inline-block mb-4">
@@ -138,7 +138,7 @@ export default function FcraPage() {
       </section>
 
       {/* 3. Foreign Donor Wire Remittance Notice */}
-      <section className="w-full py-20 bg-[#FFEFE0] relative">
+      <section className="w-full py-20 bg-[#F6F4EE] relative">
         <div className="container-custom max-w-4xl">
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-border/80 shadow-soft space-y-6">
             <div>

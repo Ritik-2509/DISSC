@@ -52,8 +52,9 @@ function readCollection(collectionName: string): any[] {
 }
 
 function writeCollection(collectionName: string, data: any[]) {
-  const primaryPath = path.join(process.cwd(), "public", "firestore_export", `${collectionName}.json`);
-  const backupPath = path.join(process.cwd(), "firestore_export", `${collectionName}.json`);
+  const primaryPath = getCollectionFilePath(collectionName);
+  const backupFilename = path.basename(primaryPath);
+  const backupPath = path.join(process.cwd(), "firestore_export", backupFilename);
 
   const jsonStr = JSON.stringify(data, null, 2);
 

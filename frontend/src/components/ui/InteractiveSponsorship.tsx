@@ -37,7 +37,7 @@ export function InteractiveSponsorship() {
   const [selectedTier, setSelectedTier] = useState(0);
 
   return (
-    <section className="w-full py-20 md:py-28 bg-[#FFFDF9] border-b border-amber-200/70 relative">
+    <section className="w-full py-20 md:py-28 bg-white border-b border-amber-200/70 relative">
       <div className="container-custom">
         
         {/* Header */}

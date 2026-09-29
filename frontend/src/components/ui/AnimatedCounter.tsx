@@ -7,7 +7,7 @@ interface AnimatedCounterProps {
   value: number;
   suffix?: string;
   prefix?: string;
-  duration?: number;
+  duration?: number; // In seconds
   className?: string;
 }
 
@@ -15,27 +15,29 @@ export function AnimatedCounter({
   value,
   suffix = "",
   prefix = "",
-  duration = 2,
+  duration = 3, // Exactly 3 seconds default
   className = "",
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.4 });
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   useEffect(() => {
     if (!isInView) return;
 
     let startTime: number | null = null;
     let animationFrameId: number;
+    const durationMs = duration * 1000;
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      
-      // Easing: easeOutExpo
-      const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const currentVal = Math.floor(easeOut * value);
-      
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / durationMs, 1);
+
+      // Cubic ease-out: lively dynamic counting with smooth landing at exactly 3 seconds
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.round(ease * value);
+
       setCount(currentVal);
 
       if (progress < 1) {

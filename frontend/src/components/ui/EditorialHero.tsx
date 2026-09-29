@@ -91,7 +91,7 @@ export function EditorialHero() {
   const current = HERO_MOMENTS[activeMoment];
 
   return (
-    <section className="w-full pt-28 pb-16 md:pt-36 md:pb-24 bg-[#FAF7F0] border-b border-[#E8DFD3] overflow-hidden relative">
+    <section className="w-full pt-28 pb-16 md:pt-36 md:pb-24 bg-[#F6F4EE] border-b border-[#E5E0D4] overflow-hidden relative">
       {/* Subtle paper grain / soft background tint */}
       <div className="absolute inset-0 bg-radial from-amber-50/50 via-transparent to-transparent pointer-events-none opacity-60" />
 

@@ -6,3 +6,10 @@ node_modules
 dist
 build
 .firebase
+Thumbs.db
+*.pyc
+__pycache__/
+
+# Local drive download cache (assets safely hosted on Cloudinary CDN)
+frontend/public/drive_assets/
+scripts/*.py

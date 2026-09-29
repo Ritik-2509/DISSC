@@ -54,17 +54,17 @@ export default function DonatePage() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center bg-[#FAF7F0] text-[#1A2530]">
+    <div className="w-full flex flex-col items-center bg-[#F6F4EE] text-[#182321]">
       
       {/* 1. Page Header */}
-      <section className="w-full pt-28 pb-14 md:pt-36 md:pb-20 border-b border-[#E8DFD3] bg-[#FAF7F0]">
+      <section className="w-full pt-28 pb-14 md:pt-36 md:pb-20 border-b border-[#E5E0D4] bg-[#F6F4EE]">
         <div className="container-custom">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-[#FFF3E0] text-[#8B4500] border border-[#F5A524]/40 mb-3 shadow-xs">
               <ShieldCheck className="w-4 h-4 text-[#D97706]" />
               50% Tax Exemption Under Section 80G
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#1A2530] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#182321] leading-tight">
               Invest in Pure Minds & Dignified Futures.
             </h1>
             <div className="mt-2 mb-4">
@@ -78,19 +78,19 @@ export default function DonatePage() {
       </section>
 
       {/* 2. Interactive Tiers & Bank Details */}
-      <section className="w-full py-16 md:py-24 bg-[#FFFDF9] border-b border-[#E8DFD3]">
+      <section className="w-full py-16 md:py-24 bg-white border-b border-[#E5E0D4]">
         <div className="container-custom">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left: Sponsorship Tier Selection */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E8DFD3] shadow-xs space-y-6">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E5E0D4] shadow-xs space-y-6">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0F8B8D]">
                     Direct Sponsorship Impact
                   </span>
-                  <h2 className="text-2xl font-heading font-bold text-[#1A2530] mt-1">
+                  <h2 className="text-2xl font-heading font-bold text-[#182321] mt-1">
                     Select a Contribution Tier
                   </h2>
                 </div>
@@ -106,10 +106,10 @@ export default function DonatePage() {
                       className={`p-4 rounded-2xl text-left border transition-all cursor-pointer ${
                         selectedAmount === tier.amount && !customAmount
                           ? "bg-[#FFF9F0] border-[#F5A524] shadow-xs"
-                          : "bg-white border-[#E8DFD3] hover:border-[#C8BFB3]"
+                          : "bg-white border-[#E5E0D4] hover:border-[#C8BFB3]"
                       }`}
                     >
-                      <span className="text-xl font-heading font-extrabold text-[#1A2530] block">
+                      <span className="text-xl font-heading font-extrabold text-[#182321] block">
                         ₹{tier.amount.toLocaleString("en-IN")}
                       </span>
                       <span className="text-xs font-bold text-[#0F8B8D] block mt-0.5">
@@ -124,7 +124,7 @@ export default function DonatePage() {
 
                 {/* Custom Amount */}
                 <div>
-                  <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-[#182321] uppercase tracking-wider mb-2">
                     Or Enter Custom Amount (INR)
                   </label>
                   <div className="relative">
@@ -139,7 +139,7 @@ export default function DonatePage() {
                         setCustomAmount(e.target.value);
                         if (e.target.value) setSelectedAmount(0);
                       }}
-                      className="w-full pl-9 pr-4 py-3 rounded-xl border border-[#E8DFD3] text-base font-bold text-[#1A2530] focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
+                      className="w-full pl-9 pr-4 py-3 rounded-xl border border-[#E5E0D4] text-base font-bold text-[#182321] focus:outline-none focus:border-[#0F8B8D] bg-[#F6F4EE]"
                     />
                   </div>
                 </div>
@@ -156,22 +156,22 @@ export default function DonatePage() {
             {/* Right: Bank Transfer & UPI Details */}
             <div className="lg:col-span-6 space-y-6">
               
-              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E8DFD3] shadow-xs space-y-6">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E5E0D4] shadow-xs space-y-6">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#D97706]">
                     Direct NEFT / RTGS / IMPS
                   </span>
-                  <h2 className="text-2xl font-heading font-bold text-[#1A2530] mt-1">
+                  <h2 className="text-2xl font-heading font-bold text-[#182321] mt-1">
                     Official DISCC Bank Account
                   </h2>
                 </div>
 
                 <div className="space-y-3 text-xs sm:text-sm">
                   
-                  <div className="p-3.5 rounded-xl bg-[#FAF7F0] border border-[#E8DFD3] flex items-center justify-between">
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
                     <div>
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">Account Name</span>
-                      <span className="font-bold text-[#1A2530]">DEVA International Society for Child Care</span>
+                      <span className="font-bold text-[#182321]">DEVA International Society for Child Care</span>
                     </div>
                     <button
                       onClick={() => handleCopy("DEVA International Society for Child Care", "name")}
@@ -181,10 +181,10 @@ export default function DonatePage() {
                     </button>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#FAF7F0] border border-[#E8DFD3] flex items-center justify-between">
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
                     <div>
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">Account Number</span>
-                      <span className="font-bold text-[#1A2530] font-mono text-base">30584729105</span>
+                      <span className="font-bold text-[#182321] font-mono text-base">30584729105</span>
                     </div>
                     <button
                       onClick={() => handleCopy("30584729105", "acc")}
@@ -194,10 +194,10 @@ export default function DonatePage() {
                     </button>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#FAF7F0] border border-[#E8DFD3] flex items-center justify-between">
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
                     <div>
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">IFSC Code</span>
-                      <span className="font-bold text-[#1A2530] font-mono text-base">SBIN0001618</span>
+                      <span className="font-bold text-[#182321] font-mono text-base">SBIN0001618</span>
                     </div>
                     <button
                       onClick={() => handleCopy("SBIN0001618", "ifsc")}
@@ -207,14 +207,14 @@ export default function DonatePage() {
                     </button>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#FAF7F0] border border-[#E8DFD3] flex items-center justify-between">
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
                     <div>
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">Bank & Branch</span>
-                      <span className="font-bold text-[#1A2530]">State Bank of India (Kamachha, Varanasi)</span>
+                      <span className="font-bold text-[#182321]">State Bank of India (Kamachha, Varanasi)</span>
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#FAF7F0] border border-[#E8DFD3] flex items-center justify-between">
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
                     <div>
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">Direct UPI ID</span>
                       <span className="font-bold text-[#0F8B8D] font-mono">disccindia@sbi</span>

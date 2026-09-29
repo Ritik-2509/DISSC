@@ -15,17 +15,17 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative bg-[#FFEFE0] text-foreground border-t border-border/80 pt-16 pb-12 overflow-hidden select-none">
+    <footer className="relative bg-[#182321] text-[#F6F4EE] border-t border-[#2A3835] pt-16 pb-12 overflow-hidden select-none">
       {/* Soft background organic accent blobs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#0F8B8D]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#F5A524]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#0F8B8D]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#F5A524]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-border/70">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-[#2A3835]">
           {/* Column 1: Brand & Founder Credibility */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 rounded-full bg-white p-1 shadow-soft border border-border/60">
+              <div className="relative w-12 h-12 rounded-full bg-white/10 p-1 shadow-soft border border-white/20">
                 <Image
                   src="/images/discc/logo.png"
                   alt="DISCC Logo"
@@ -34,27 +34,27 @@ export function Footer() {
                 />
               </div>
               <div>
-                <span className="font-heading font-extrabold text-xl tracking-tight text-foreground block group-hover:text-primary transition-colors">
-                  DISCC <span className="text-primary font-bold">INDIA</span>
+                <span className="font-heading font-extrabold text-xl tracking-tight text-white block group-hover:text-[#F5A524] transition-colors">
+                  DISCC <span className="text-[#F5A524] font-bold">INDIA</span>
                 </span>
-                <span className="text-[11px] text-muted-text font-medium uppercase tracking-wider block">
+                <span className="text-[11px] text-[#A2B1AD] font-medium uppercase tracking-wider block">
                   DEVA International Society for Child Care
                 </span>
               </div>
             </Link>
 
-            <p className="text-sm text-muted-text leading-relaxed">
+            <p className="text-sm text-[#C8D1CE] leading-relaxed">
               Founded in 1991 in Varanasi by Dr. C. Tulsi Das, recipient of the Best Professional Psychologist Award by the Chief Minister of Uttar Pradesh. Empowering neurodivergent and marginalized children with specialized clinical rehabilitation, therapy, and education.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
-              <span className="px-3 py-1 rounded-full bg-white text-primary font-bold border border-primary/20 shadow-xs">
+              <span className="px-3 py-1 rounded-full bg-white/10 text-[#F5A524] font-bold border border-[#F5A524]/30 shadow-xs">
                 FCRA Registered
               </span>
-              <span className="px-3 py-1 rounded-full bg-white text-[#1E2A3A] font-bold border border-border shadow-xs">
+              <span className="px-3 py-1 rounded-full bg-white/10 text-white font-bold border border-white/20 shadow-xs">
                 80G Tax Exempt
               </span>
-              <span className="px-3 py-1 rounded-full bg-white text-[#1E2A3A] font-bold border border-border shadow-xs">
+              <span className="px-3 py-1 rounded-full bg-white/10 text-white font-bold border border-white/20 shadow-xs">
                 National Trust
               </span>
             </div>
@@ -62,38 +62,32 @@ export function Footer() {
 
           {/* Column 2: Key Programmes */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold text-primary uppercase tracking-widest">
+            <h4 className="text-xs font-bold text-[#F5A524] uppercase tracking-widest">
               Core Programmes
             </h4>
-            <ul className="space-y-2 text-sm text-muted-text">
+            <ul className="space-y-2 text-sm text-[#C8D1CE]">
               <li>
-                <Link href="/our-work#deva-center" className="hover:text-primary transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-primary/70" />
-                  Deva Center (Kamachha)
+                <Link href="/programs/gangotri-centre" className="hover:text-[#F5A524] transition-colors flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#F5A524]/70" />
+                  Gangotri Centre
                 </Link>
               </li>
               <li>
-                <Link href="/our-work#deva-gram" className="hover:text-primary transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-primary/70" />
-                  Deva Gram Campus (Bachhaon)
+                <Link href="/programs/ambedkar-school" className="hover:text-[#F5A524] transition-colors flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#F5A524]/70" />
+                  Ambedkar School
                 </Link>
               </li>
               <li>
-                <Link href="/our-work#annapurna-center" className="hover:text-primary transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-primary/70" />
-                  Annapurna Center for Girls
+                <Link href="/programs/nakuti-raghunath-school" className="hover:text-[#F5A524] transition-colors flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#F5A524]/70" />
+                  Nakuti Raghunath School
                 </Link>
               </li>
               <li>
-                <Link href="/our-work#child-education-program" className="hover:text-primary transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-primary/70" />
-                  Child Education Sponsorship
-                </Link>
-              </li>
-              <li>
-                <Link href="/our-work#helpline" className="hover:text-primary transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-primary/70" />
-                  24/7 Crisis Help Line
+                <Link href="/programs/navjeevan-clinic" className="hover:text-[#F5A524] transition-colors flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-[#F5A524]/70" />
+                  Navjeevan Clinic
                 </Link>
               </li>
             </ul>
@@ -101,37 +95,37 @@ export function Footer() {
 
           {/* Column 3: Quick Links */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-bold text-primary uppercase tracking-widest">
+            <h4 className="text-xs font-bold text-[#F5A524] uppercase tracking-widest">
               Explore
             </h4>
-            <ul className="space-y-2 text-sm text-muted-text">
+            <ul className="space-y-2 text-sm text-[#C8D1CE]">
               <li>
-                <Link href="/about" className="hover:text-primary transition-colors">
+                <Link href="/about" className="hover:text-[#F5A524] transition-colors">
                   About Dr. Tulsi
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="hover:text-primary transition-colors">
+                <Link href="/events" className="hover:text-[#F5A524] transition-colors">
                   Gallery & Events
                 </Link>
               </li>
               <li>
-                <Link href="/stories" className="hover:text-primary transition-colors">
+                <Link href="/stories" className="hover:text-[#F5A524] transition-colors">
                   Impact Stories
                 </Link>
               </li>
               <li>
-                <Link href="/fcra" className="hover:text-primary transition-colors">
+                <Link href="/fcra" className="hover:text-[#F5A524] transition-colors">
                   FCRA Declarations
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-primary transition-colors">
+                <Link href="/contact" className="hover:text-[#F5A524] transition-colors">
                   Contact & Location
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-primary transition-colors">
+                <Link href="/privacy" className="hover:text-[#F5A524] transition-colors">
                   Privacy Policy
                 </Link>
               </li>
@@ -140,31 +134,31 @@ export function Footer() {
 
           {/* Column 4: Contact & Immediate Action */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold text-primary uppercase tracking-widest">
+            <h4 className="text-xs font-bold text-[#F5A524] uppercase tracking-widest">
               Contact & Helpline
             </h4>
-            <div className="space-y-2.5 text-xs sm:text-sm text-muted-text">
+            <div className="space-y-2.5 text-xs sm:text-sm text-[#C8D1CE]">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#F5A524] shrink-0 mt-0.5" />
                 <span>B.21/100, Bind Bhavan, Kamachha Chungi, Varanasi, UP 221010</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-primary shrink-0" />
+                <Phone className="w-4 h-4 text-[#F5A524] shrink-0" />
                 <span>7007453168 / 9415303557 / 9129853531</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-primary shrink-0" />
+                <Mail className="w-4 h-4 text-[#F5A524] shrink-0" />
                 <span>disccindia@gmail.com</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-primary shrink-0" />
+                <Clock className="w-4 h-4 text-[#F5A524] shrink-0" />
                 <span>Mon to Sat: 8:00 AM - 5:00 PM</span>
               </div>
             </div>
 
             <div className="pt-2">
               <Link href="/donate">
-                <Button variant="donate" size="sm" className="w-full gap-2 shadow-glow-marigold">
+                <Button variant="donate" size="sm" className="w-full gap-2 bg-[#F5A524] hover:bg-[#E09418] text-[#182321] font-bold shadow-md">
                   <Heart className="w-4 h-4 fill-current" />
                   Support Our Mission
                 </Button>
@@ -174,20 +168,20 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-text">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8E9F9B]">
           <p>
             &copy; {new Date().getFullYear()} DEVA International Society for Child Care (DISCC). All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-primary transition-colors">
+            <Link href="/privacy" className="hover:text-[#F5A524] transition-colors">
               Privacy Policy
             </Link>
             <span>&bull;</span>
-            <Link href="/terms" className="hover:text-primary transition-colors">
+            <Link href="/terms" className="hover:text-[#F5A524] transition-colors">
               Terms of Use
             </Link>
             <span>&bull;</span>
-            <Link href="/admin" className="hover:text-primary transition-colors">
+            <Link href="/admin" className="hover:text-[#F5A524] transition-colors">
               Admin Portal
             </Link>
           </div>

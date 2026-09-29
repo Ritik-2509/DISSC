@@ -36,16 +36,16 @@ const CLINICAL_OUTCOMES = [
 
 export default function ImpactPage() {
   return (
-    <div className="w-full flex flex-col items-center bg-[#FAF7F0] text-[#1A2530]">
+    <div className="w-full flex flex-col items-center bg-[#F6F4EE] text-[#182321]">
       
       {/* 1. Header */}
-      <section className="w-full pt-28 pb-14 md:pt-36 md:pb-20 border-b border-[#E8DFD3] bg-[#FAF7F0]">
+      <section className="w-full pt-28 pb-14 md:pt-36 md:pb-20 border-b border-[#E5E0D4] bg-[#F6F4EE]">
         <div className="container-custom">
           <div className="max-w-3xl">
             <span className="text-xs font-bold text-[#0F8B8D] uppercase tracking-widest block mb-2">
               Verified Longitudinal Impact · 1991 to Present
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#1A2530] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#182321] leading-tight">
               Transforming Special Lives Across Generations.
             </h1>
             <div className="mt-2 mb-4">
@@ -81,7 +81,7 @@ export default function ImpactPage() {
       </section>
 
       {/* 3. Clinical Outcomes Breakdown */}
-      <section className="w-full py-20 md:py-28 bg-[#FFFDF9] border-b border-[#E8DFD3]">
+      <section className="w-full py-20 md:py-28 bg-white border-b border-[#E8DFD3]">
         <div className="container-custom">
           
           <div className="max-w-2xl mb-14 text-left">
@@ -118,19 +118,19 @@ export default function ImpactPage() {
       </section>
 
       {/* 4. Action Banner */}
-      <section className="w-full py-16 bg-[#FAF7F0]">
-        <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6 p-8 rounded-3xl bg-[#FFF3E0] border border-[#F5A524]/40">
+      <section className="w-full py-16 bg-[#F6F4EE]">
+        <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6 p-8 rounded-3xl bg-[#182321] text-[#F6F4EE] border border-[#2A3835]">
           <div>
-            <h3 className="text-2xl font-heading font-bold text-[#1A2530]">
+            <h3 className="text-2xl font-heading font-bold text-white">
               Help Us Expand Clinical Capacity for Another 10,000 Children.
             </h3>
-            <p className="text-sm text-[#5B6B7C] mt-1">
+            <p className="text-sm text-[#C8D1CE] mt-1">
               Your gift enables daily sensory therapy, speech diagnostics, and assistive mobility equipment.
             </p>
           </div>
           <div className="shrink-0">
             <Link href="/donate">
-              <Button size="lg" className="bg-[#1A2530] hover:bg-[#0F8B8D] text-white font-bold rounded-full px-7 cursor-pointer">
+              <Button size="lg" className="bg-[#F5A524] hover:bg-[#E09418] text-[#182321] font-bold rounded-full px-7 cursor-pointer">
                 Support a Child Today
               </Button>
             </Link>

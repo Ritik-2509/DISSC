@@ -82,16 +82,16 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center bg-[#FAF7F0] text-[#1A2530]">
+    <div className="w-full flex flex-col items-center bg-[#F6F4EE] text-[#182321]">
       
       {/* 1. Header */}
-      <section className="w-full pt-28 pb-14 md:pt-36 md:pb-20 border-b border-[#E8DFD3] bg-[#FAF7F0]">
+      <section className="w-full pt-28 pb-14 md:pt-36 md:pb-20 border-b border-[#E5E0D4] bg-[#F6F4EE]">
         <div className="container-custom">
           <div className="max-w-3xl">
             <span className="text-xs font-bold text-[#0F8B8D] uppercase tracking-widest block mb-2">
               Direct Clinical Inquiries · Varanasi
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#1A2530] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#182321] leading-tight">
               Consult Our Specialists or Schedule a Visit.
             </h1>
             <div className="mt-2 mb-4">
@@ -105,15 +105,21 @@ export default function ContactPage() {
       </section>
 
       {/* 2. Calm Two-Column Contact Section (Unboxed Layout) */}
-      <section className="w-full py-16 md:py-24 bg-[#FFFDF9] border-b border-[#E8DFD3]">
+      <section className="w-full py-16 md:py-24 bg-white border-b border-[#E5E0D4]">
         <div className="container-custom">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
             {/* Left: Clean Form */}
-            <div className="lg:col-span-6">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-6"
+            >
               <div className="max-w-xl">
-                <h2 className="text-2xl font-heading font-bold text-[#1A2530] mb-2">
+                <h2 className="text-2xl font-heading font-bold text-[#182321] mb-2">
                   Send an Inquiry or Book Assessment
                 </h2>
                 <p className="text-sm text-[#5B6B7C] mb-8">
@@ -121,9 +127,9 @@ export default function ContactPage() {
                 </p>
 
                 {submitted ? (
-                  <div className="p-8 rounded-3xl bg-[#E6F6EE] border border-[#0F8B8D]/30 text-center">
+                  <div className="p-8 rounded-[25px] bg-[#E6F6EE] border border-[#0F8B8D]/30 text-center shadow-xs">
                     <CheckCircle2 className="w-12 h-12 text-[#0F8B8D] mx-auto mb-3" />
-                    <h3 className="text-xl font-heading font-bold text-[#1A2530]">
+                    <h3 className="text-xl font-heading font-bold text-[#182321]">
                       Inquiry Successfully Received
                     </h3>
                     <p className="text-sm text-[#5B6B7C] mt-2">
@@ -133,7 +139,7 @@ export default function ContactPage() {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
-                      <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-bold text-[#182321] uppercase tracking-wider mb-2">
                         Full Name *
                       </label>
                       <input
@@ -142,13 +148,13 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Ramesh Chandra"
-                        className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
+                        className="w-full px-4 py-3 rounded-[14px] border border-[#E5E0D4] text-sm focus:outline-none focus:ring-2 focus:ring-[#0F8B8D]/20 focus:border-[#0F8B8D] bg-[#FAF7F0] text-[#182321] transition-all"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                        <label className="block text-xs font-bold text-[#182321] uppercase tracking-wider mb-2">
                           Phone Number *
                         </label>
                         <input
@@ -157,11 +163,11 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="10-digit mobile"
-                          className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
+                          className="w-full px-4 py-3 rounded-[14px] border border-[#E5E0D4] text-sm focus:outline-none focus:ring-2 focus:ring-[#0F8B8D]/20 focus:border-[#0F8B8D] bg-[#FAF7F0] text-[#182321] transition-all"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                        <label className="block text-xs font-bold text-[#182321] uppercase tracking-wider mb-2">
                           Email Address
                         </label>
                         <input
@@ -169,19 +175,19 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="name@domain.com"
-                          className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
+                          className="w-full px-4 py-3 rounded-[14px] border border-[#E5E0D4] text-sm focus:outline-none focus:ring-2 focus:ring-[#0F8B8D]/20 focus:border-[#0F8B8D] bg-[#FAF7F0] text-[#182321] transition-all"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-bold text-[#182321] uppercase tracking-wider mb-2">
                         Inquiry Topic
                       </label>
                       <select
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
+                        className="w-full px-4 py-3 rounded-[14px] border border-[#E5E0D4] text-sm focus:outline-none focus:ring-2 focus:ring-[#0F8B8D]/20 focus:border-[#0F8B8D] bg-[#FAF7F0] text-[#182321] transition-all"
                       >
                         <option value="child-assessment">Child Developmental & Psychological Assessment</option>
                         <option value="speech-therapy">Speech & Sensory Therapy Consultation</option>
@@ -192,7 +198,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-[#1A2530] uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-bold text-[#182321] uppercase tracking-wider mb-2">
                         Additional Context or Questions
                       </label>
                       <textarea
@@ -200,7 +206,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Tell us about the child's age, condition, or your specific requirements..."
-                        className="w-full px-4 py-3 rounded-xl border border-[#E8DFD3] text-sm focus:outline-none focus:border-[#0F8B8D] bg-[#FAF7F0]"
+                        className="w-full px-4 py-3 rounded-[14px] border border-[#E5E0D4] text-sm focus:outline-none focus:ring-2 focus:ring-[#0F8B8D]/20 focus:border-[#0F8B8D] bg-[#FAF7F0] text-[#182321] transition-all"
                       />
                     </div>
 
@@ -208,23 +214,29 @@ export default function ContactPage() {
                       type="submit"
                       disabled={loading}
                       size="lg"
-                      className="w-full bg-[#1A2530] hover:bg-[#0F8B8D] text-white font-bold rounded-xl h-12 text-sm shadow-xs cursor-pointer"
+                      className="w-full bg-[#182321] hover:bg-[#0F8B8D] text-white font-bold rounded-full h-12 text-sm shadow-xs hover:scale-101 transition-all cursor-pointer"
                     >
                       {loading ? "Sending Message..." : "Submit Consultation Request"}
                     </Button>
                   </form>
                 )}
               </div>
-            </div>
+            </motion.div>
 
-            {/* Right: Center Details & Location Photograph */}
-            <div className="lg:col-span-6 space-y-8">
+            {/* Right: Center Details & Location Photograph - Distinct Building Photo */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+              className="lg:col-span-6 space-y-8"
+            >
               
-              <div className="relative bg-white p-3 rounded-2xl border border-[#E8DFD3] shadow-xs">
-                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-[#F2ECE1]">
+              <div className="relative bg-[#FAF7F0] p-3.5 sm:p-4 rounded-[25px] border border-[#E5E0D4] shadow-xs hover:shadow-md transition-all duration-300">
+                <div className="relative w-full aspect-[16/10] rounded-[20px] overflow-hidden bg-[#EAE5D9]">
                   <Image
-                    src="/images/discc/dr-tulsi-clinic.png"
-                    alt="Deva Center Kamachha Clinic"
+                    src="https://res.cloudinary.com/djbiwbdo/image/upload/v1790591921/discc/events/clinic-rehab/clinic-rehab_deva-building.jpg"
+                    alt="Deva Center Kamachha Headquarters Building Exterior"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -234,44 +246,44 @@ export default function ContactPage() {
                   <span className="text-xs font-bold text-[#0F8B8D]">
                     Flagship Institute
                   </span>
-                  <h3 className="text-base font-bold text-[#1A2530]">
+                  <h3 className="text-base font-bold text-[#182321] mt-0.5">
                     Deva Center Clinical Headquarters
                   </h3>
-                  <p className="text-xs text-[#5B6B7C]">
+                  <p className="text-xs text-[#5B6B7C] mt-0.5">
                     B.21/100, Bind Bhavan, Kamachha Chungi, Varanasi, UP 221010
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-4 pt-2">
-                <div className="p-4 rounded-xl bg-white border border-[#E8DFD3] flex items-start gap-3">
+              <div className="space-y-4 pt-1">
+                <div className="p-4 rounded-[18px] bg-[#FAF7F0] border border-[#E5E0D4] hover:border-[#0F8B8D]/40 hover:translate-x-0.5 transition-all duration-300 flex items-start gap-3.5">
                   <Phone className="w-4 h-4 text-[#0F8B8D] shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-xs font-bold text-[#1A2530] uppercase tracking-wider">
+                    <h4 className="text-xs font-bold text-[#182321] uppercase tracking-wider">
                       Helpline & Clinical Appointments
                     </h4>
-                    <p className="text-sm font-semibold text-[#1A2530] mt-0.5">
+                    <p className="text-sm font-semibold text-[#182321] mt-0.5">
                       7007453168 / 9415303557 / 9129853531
                     </p>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white border border-[#E8DFD3] flex items-start gap-3">
+                <div className="p-4 rounded-[18px] bg-[#FAF7F0] border border-[#E5E0D4] hover:border-[#0F8B8D]/40 hover:translate-x-0.5 transition-all duration-300 flex items-start gap-3.5">
                   <Mail className="w-4 h-4 text-[#0F8B8D] shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-xs font-bold text-[#1A2530] uppercase tracking-wider">
+                    <h4 className="text-xs font-bold text-[#182321] uppercase tracking-wider">
                       Official Inquiries
                     </h4>
-                    <p className="text-sm font-semibold text-[#1A2530] mt-0.5">
+                    <p className="text-sm font-semibold text-[#182321] mt-0.5">
                       disccindia@gmail.com
                     </p>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white border border-[#E8DFD3] flex items-start gap-3">
+                <div className="p-4 rounded-[18px] bg-[#FAF7F0] border border-[#E5E0D4] hover:border-[#0F8B8D]/40 hover:translate-x-0.5 transition-all duration-300 flex items-start gap-3.5">
                   <Clock className="w-4 h-4 text-[#0F8B8D] shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-xs font-bold text-[#1A2530] uppercase tracking-wider">
+                    <h4 className="text-xs font-bold text-[#182321] uppercase tracking-wider">
                       Center Operating Hours
                     </h4>
                     <p className="text-sm text-[#5B6B7C] mt-0.5">
@@ -281,7 +293,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-            </div>
+            </motion.div>
 
           </div>
 
@@ -289,19 +301,19 @@ export default function ContactPage() {
       </section>
 
       {/* 3. FAQ Section (Generous Whitespace Editorial List - No Cards) */}
-      <section className="w-full py-20 bg-[#FAF7F0]">
+      <section className="w-full py-20 bg-[#F6F4EE]">
         <div className="container-custom max-w-3xl">
           
           <div className="mb-12 text-left">
             <span className="text-xs font-bold text-[#D97706] uppercase tracking-widest block mb-1">
               Common Questions
             </span>
-            <h2 className="text-3xl font-heading font-bold text-[#1A2530]">
+            <h2 className="text-3xl font-heading font-bold text-[#182321]">
               Frequently Asked Questions.
             </h2>
           </div>
 
-          <div className="divide-y divide-[#E8DFD3]">
+          <div className="divide-y divide-[#E5E0D4]">
             {FAQS.map((faq, idx) => {
               const isOpen = openFaq === idx;
 
@@ -309,10 +321,10 @@ export default function ContactPage() {
                 <div key={idx} className="py-5">
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between text-left gap-4 font-bold text-base sm:text-lg text-[#1A2530] hover:text-[#0F8B8D] transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-between text-left gap-4 font-bold text-base sm:text-lg text-[#182321] hover:text-[#0F8B8D] transition-colors cursor-pointer"
                   >
                     <span>{faq.q}</span>
-                    <span className="p-1 rounded-full bg-white border border-[#E8DFD3] text-[#5B6B7C] shrink-0">
+                    <span className="p-1 rounded-full bg-white border border-[#E5E0D4] text-[#5B6B7C] shrink-0">
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </span>
                   </button>
