@@ -38,12 +38,21 @@ function getCollectionFilePath(collectionName: string) {
   return possiblePaths[0];
 }
 
+const memoryCache = new Map<string, { data: any[]; mtime: number }>();
+
 function readCollection(collectionName: string): any[] {
   const filePath = getCollectionFilePath(collectionName);
   try {
     if (fs.existsSync(filePath)) {
+      const stats = fs.statSync(filePath);
+      const cached = memoryCache.get(collectionName);
+      if (cached && cached.mtime === stats.mtimeMs) {
+        return cached.data;
+      }
       const content = fs.readFileSync(filePath, "utf-8");
-      return JSON.parse(content);
+      const parsed = JSON.parse(content);
+      memoryCache.set(collectionName, { data: parsed, mtime: stats.mtimeMs });
+      return parsed;
     }
   } catch (err) {
     console.error(`Error reading collection ${collectionName}:`, err);
@@ -71,6 +80,9 @@ function writeCollection(collectionName: string, data: any[]) {
   } catch (e) {
     console.warn("Could not write backup collection file:", e);
   }
+
+  // Invalidate memory cache on writes
+  memoryCache.delete(collectionName);
 
   // Non-blocking firestore sync
   syncToFirestoreRest(collectionName, data).catch(() => {});
@@ -109,7 +121,12 @@ export async function GET(
   try {
     const { collection } = await params;
     const data = readCollection(collection);
-    return NextResponse.json(data);
+    return NextResponse.json(data, {
+      headers: {
+        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+        "X-Response-Engine": "in-memory-cached",
+      },
+    });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

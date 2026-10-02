@@ -35,12 +35,21 @@ function getCollectionFilePath(collectionName: string) {
   return possiblePaths[0];
 }
 
+const memoryCache = new Map<string, { data: any[]; mtime: number }>();
+
 function readCollection(collectionName: string): any[] {
   const filePath = getCollectionFilePath(collectionName);
   try {
     if (fs.existsSync(filePath)) {
+      const stats = fs.statSync(filePath);
+      const cached = memoryCache.get(collectionName);
+      if (cached && cached.mtime === stats.mtimeMs) {
+        return cached.data;
+      }
       const content = fs.readFileSync(filePath, "utf-8");
-      return JSON.parse(content);
+      const parsed = JSON.parse(content);
+      memoryCache.set(collectionName, { data: parsed, mtime: stats.mtimeMs });
+      return parsed;
     }
   } catch (err) {
     console.error(`Error reading collection ${collectionName}:`, err);
@@ -66,6 +75,7 @@ function writeCollection(collectionName: string, data: any[]) {
   } catch (e) {
     console.warn("Could not write backup collection file:", e);
   }
+  memoryCache.delete(collectionName);
 }
 
 export async function GET(
@@ -78,7 +88,12 @@ export async function GET(
     const found = items.find((item) => String(item.id) === String(id));
 
     if (found) {
-      return NextResponse.json(found);
+      return NextResponse.json(found, {
+        headers: {
+          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+          "X-Response-Engine": "in-memory-cached",
+        },
+      });
     }
 
     // Fallback: Check Firestore if environment allows, with a short 2s timeout

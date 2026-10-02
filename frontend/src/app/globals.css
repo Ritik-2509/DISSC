@@ -93,6 +93,10 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
   body {
     background-color: var(--background);
     color: var(--foreground);

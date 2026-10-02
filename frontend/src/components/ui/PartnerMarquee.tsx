@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Handshake, ArrowRight, ShieldCheck, ExternalLink, Sparkles } from "lucide-react";
 
 export const PARTNERS_DATA = [
@@ -68,105 +69,59 @@ export function PartnerMarquee() {
   const marqueeItems = [...PARTNERS_DATA, ...PARTNERS_DATA];
 
   return (
-    <section className="w-full py-20 md:py-28 bg-[#FFFFFF] border-b border-stone-200 relative overflow-hidden">
-      {/* Background Soft Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-amber-400/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="w-full py-20 md:py-28 bg-[#F6F4EE] border-b border-[#E5E0D4] relative overflow-hidden select-none">
       <div className="container-custom relative z-10">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-14 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300/80 text-xs font-bold uppercase tracking-wider mb-4">
-            <Handshake className="w-3.5 h-3.5 text-amber-700" />
-            <span>Institutional Collaborations</span>
+        {/* Section Header (Centered, Anti-Slop, Refined Transition) */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-3xl mb-14 mx-auto text-center"
+        >
+          <div className="inline-flex items-center justify-center gap-3 mb-3.5">
+            <span className="w-8 h-[1.5px] bg-[#9A5B32]/40" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#9A5B32]">
+              Institutional Collaborations
+            </span>
+            <span className="w-8 h-[1.5px] bg-[#9A5B32]/40" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 tracking-tight leading-tight">
-            Trusted by National Ministries, Global Foundations & CSR Leaders.
+            Trusted by National Ministries & Global Foundations.
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 mt-3 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 mt-2.5 leading-relaxed max-w-2xl mx-auto">
             Collaborating with renowned government bodies, European medical societies, corporate CSR pioneers, and international universities since 1991.
           </p>
-        </div>
+        </motion.div>
       </div>
 
-      {/* 1. First Motion Row - Moving Left */}
-      <div className="relative w-full overflow-hidden py-3">
-        {/* Left & Right Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      {/* Single Continuous Motion Row - Pure Logos & Company Name Niche (Zero Cards/Blocks) */}
+      <div className="relative w-full overflow-hidden py-6 sm:py-8">
+        {/* Left & Right Smooth Fade Masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 bg-gradient-to-r from-[#F6F4EE] via-[#F6F4EE]/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 bg-gradient-to-l from-[#F6F4EE] via-[#F6F4EE]/80 to-transparent z-10 pointer-events-none" />
 
-        <div className="animate-marquee-left flex items-center gap-6">
+        <div className="animate-marquee-left flex items-center">
           {marqueeItems.map((item, idx) => (
             <div
-              key={`row1-${idx}`}
-              className="w-[320px] sm:w-[360px] p-5 rounded-2xl bg-[#FAFAFA] border border-stone-200/90 shadow-xs hover:shadow-lg hover:border-amber-400 hover:bg-white transition-all duration-300 flex items-center gap-4 shrink-0 group cursor-default"
+              key={`partner-${idx}`}
+              className="flex flex-col items-center justify-center shrink-0 mx-8 sm:mx-12 md:mx-14 group cursor-default select-none text-center"
             >
-              {/* Partner Logo */}
-              <div className="relative w-16 h-16 rounded-xl bg-white p-2 border border-stone-200 shrink-0 overflow-hidden shadow-2xs group-hover:scale-105 transition-transform">
+              {/* Dominant Big Partner Logo (Transparent background via blend mode) */}
+              <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 flex items-center justify-center p-2 group-hover:scale-108 transition-transform duration-300">
                 <Image
                   src={item.logo}
                   alt={item.name}
                   fill
-                  sizes="64px"
-                  className="object-contain"
+                  sizes="(max-width: 640px) 120px, 160px"
+                  className="object-contain mix-blend-multiply contrast-[1.08] brightness-[1.02] transition-all duration-300"
                 />
               </div>
 
-              {/* Partner Info */}
-              <div className="flex-1 min-w-0 text-left">
-                <span
-                  className={`inline-block px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider border mb-1.5 ${item.badgeColor}`}
-                >
-                  {item.category}
-                </span>
-                <h4 className="text-sm sm:text-base font-heading font-bold text-slate-900 leading-snug truncate group-hover:text-amber-600 transition-colors">
-                  {item.name}
-                </h4>
-                <p className="text-xs text-slate-500 leading-relaxed line-clamp-2 mt-1">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 2. Second Motion Row - Moving Right */}
-      <div className="relative w-full overflow-hidden py-3 mt-3">
-        {/* Left & Right Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-        <div className="animate-marquee-right flex items-center gap-6">
-          {marqueeItems.reverse().map((item, idx) => (
-            <div
-              key={`row2-${idx}`}
-              className="w-[320px] sm:w-[360px] p-5 rounded-2xl bg-[#FAFAFA] border border-stone-200/90 shadow-xs hover:shadow-lg hover:border-amber-400 hover:bg-white transition-all duration-300 flex items-center gap-4 shrink-0 group cursor-default"
-            >
-              {/* Partner Logo */}
-              <div className="relative w-16 h-16 rounded-xl bg-white p-2 border border-stone-200 shrink-0 overflow-hidden shadow-2xs group-hover:scale-105 transition-transform">
-                <Image
-                  src={item.logo}
-                  alt={item.name}
-                  fill
-                  sizes="64px"
-                  className="object-contain"
-                />
-              </div>
-
-              {/* Partner Info */}
-              <div className="flex-1 min-w-0 text-left">
-                <span
-                  className={`inline-block px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider border mb-1.5 ${item.badgeColor}`}
-                >
-                  {item.category}
-                </span>
-                <h4 className="text-sm sm:text-base font-heading font-bold text-slate-900 leading-snug truncate group-hover:text-amber-600 transition-colors">
-                  {item.name}
-                </h4>
-                <p className="text-xs text-slate-500 leading-relaxed line-clamp-2 mt-1">
-                  {item.desc}
-                </p>
-              </div>
+              {/* Partner Name Niche */}
+              <p className="mt-3 text-xs sm:text-sm md:text-[15px] font-heading font-extrabold text-slate-800 tracking-tight leading-snug max-w-[180px] sm:max-w-[220px] group-hover:text-amber-800 transition-colors">
+                {item.name}
+              </p>
             </div>
           ))}
         </div>
@@ -174,7 +129,7 @@ export function PartnerMarquee() {
 
       {/* Corporate Collaboration Callout Bar */}
       <div className="container-custom mt-14">
-        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#F5EFE6] via-white to-[#F5EFE6] border border-stone-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E5E0D4] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 text-left">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center shrink-0 shadow-sm font-black">
               <Sparkles className="w-6 h-6" />

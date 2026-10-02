@@ -3,36 +3,143 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles, CheckCircle2, ChevronDown } from "lucide-react";
-import { ALL_PROGRAMS_DATA } from "@/lib/programsData";
+import { ArrowUpRight, CheckCircle2, ChevronDown } from "lucide-react";
+
+export interface CurrentEventShowcaseItem {
+  slug: string;
+  categoryEyebrow: string;
+  title: string;
+  shortDescription: string;
+  statMetric: string;
+  coverImage: string;
+  tags: string[];
+  ctaLink: string;
+  ctaText: string;
+  statsSummary: { label: string; val: string }[];
+  highlights: string[];
+}
+
+export const CURRENT_EVENTS_DATA: CurrentEventShowcaseItem[] = [
+  {
+    slug: "cep-inclusive-schooling",
+    categoryEyebrow: "ACTIVE INITIATIVE · SPECIAL SCHOOLING",
+    title: "Child Education Program (CEP)",
+    shortDescription:
+      "Active inclusive schooling, adaptive IEP learning boards, and assistive devices empowering neurodivergent children in Varanasi.",
+    statMetric: "3,200+ STUDENTS EMPOWERED",
+    coverImage: "/images/discc/children-activity.png",
+    tags: ["Adaptive IEP Learning", "Assistive Tools", "Inclusive Classrooms"],
+    ctaLink: "/programs/ambedkar-school",
+    ctaText: "Explore CEP Schooling",
+    statsSummary: [
+      { label: "Active Learners", val: "3,200+" },
+      { label: "Adaptive Boards", val: "100% IEP" },
+      { label: "Pass Rate", val: "94%" }
+    ],
+    highlights: [
+      "Custom Individualized Education Plans (IEPs) for each neurodivergent child",
+      "Adaptive tactile equipment, speech synthesis software & motor toolkits",
+      "Daily hot nutritious balanced meals and sensory physical therapy"
+    ]
+  },
+  {
+    slug: "emergency-clinical-helpline",
+    categoryEyebrow: "ACTIVE 24/7 · CLINICAL ASSISTANCE",
+    title: "Emergency Clinical Helpline",
+    shortDescription:
+      "Round-the-clock direct tele-guidance with licensed clinical psychologists for autism diagnosis, cerebral palsy therapy & crisis parent counseling.",
+    statMetric: "7007453168 ACTIVE 24/7",
+    coverImage: "/images/discc/dr-tulsi-clinic.png",
+    tags: ["24/7 Tele-Psychology", "Emergency Guidance", "Autism Diagnosis"],
+    ctaLink: "tel:7007453168",
+    ctaText: "Connect to Helpline",
+    statsSummary: [
+      { label: "Response Time", val: "< 2 Mins" },
+      { label: "Clinical Staff", val: "Certified" },
+      { label: "Helpline", val: "24/7 Toll-Free" }
+    ],
+    highlights: [
+      "Direct tele-triage by licensed clinical psychologists & therapists",
+      "Immediate guidance on emotional distress & behavioral crisis intervention",
+      "Confidential parent counseling, referral to in-person clinics & therapy plans"
+    ]
+  },
+  {
+    slug: "annapurna-centre-girls",
+    categoryEyebrow: "RESIDENTIAL HAVEN · VOCATIONAL CRAFTS",
+    title: "Annapurna Centre for Girls",
+    shortDescription:
+      "Dedicated residential sanctuary providing adolescent girls and young women hot balanced nutrition, safe shelter, and vocational handicraft self-reliance.",
+    statMetric: "4,500+ BENEFICIARIES SERVED",
+    coverImage: "https://res.cloudinary.com/djbiwbdo/image/upload/v1790591723/discc/events/gangotri-annapurna/gangotri-annapurna_annapurna-cover.jpg",
+    tags: ["Shelter & Nutrition", "Vocational Tailoring", "Dignity & Protection"],
+    ctaLink: "/programs/nakuti-raghunath-school",
+    ctaText: "Support Annapurna Sanctuary",
+    statsSummary: [
+      { label: "Safe Shelter", val: "Residential" },
+      { label: "Hot Meals", val: "3x Daily" },
+      { label: "Self-Reliance", val: "Vocational" }
+    ],
+    highlights: [
+      "Safe residential cottages with 24/7 caring trained female matrons",
+      "Daily wholesome freshly prepared nutrition ensuring medical wellness",
+      "Stitching, embroidery, and handicraft training for lifelong dignity"
+    ]
+  },
+  {
+    slug: "divyangjan-purple-fair",
+    categoryEyebrow: "ANNUAL FESTIVAL · CELEBRATION",
+    title: "Divyangjan Annual Purple Fair",
+    shortDescription:
+      "Varanasi's premier annual inclusive carnival bringing over 500 children together for theatrical drama, adaptive sports, and assistive kit distributions.",
+    statMetric: "500+ ANNUAL PARTICIPANTS",
+    coverImage: "https://res.cloudinary.com/djbiwbdo/image/upload/v1790591935/discc/events/cultural-festivals/cultural-festivals_purple-fair-2026.jpg",
+    tags: ["Adaptive Sports Meet", "Theatrical Arts", "Assistive Distribution"],
+    ctaLink: "/events/cultural-festivals",
+    ctaText: "View Purple Fair Gallery",
+    statsSummary: [
+      { label: "Fest Gatherings", val: "500+ Kids" },
+      { label: "Kits Distributed", val: "Tri-Cycles/Aids" },
+      { label: "State Reach", val: "Eastern UP" }
+    ],
+    highlights: [
+      "Inclusive music, dance & theatrical stage performances by students",
+      "Wheelchair races, sensory games & community carnival stalls",
+      "Free custom wheelchair, hearing-aid & corrective caliper distributions"
+    ]
+  }
+];
 
 export function InteractiveProgramShowcase() {
   return (
     <section id="programs" className="w-full py-20 md:py-28 bg-[#FAFAFA] border-b border-stone-200 scroll-mt-20 overflow-hidden">
       <div className="container-custom">
-        {/* Section Header */}
+        {/* Section Header (Centered, Anti-Slop, Refined Transition) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mb-12 md:mb-16 text-left"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-3xl mx-auto mb-12 md:mb-16 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300/80 text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-            <span>Our Core Programs</span>
+          <div className="inline-flex items-center justify-center gap-3 mb-3.5">
+            <span className="w-8 h-[1.5px] bg-[#9A5B32]/40" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#9A5B32]">
+              Current Field Initiatives
+            </span>
+            <span className="w-8 h-[1.5px] bg-[#9A5B32]/40" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 tracking-tight leading-tight">
-            Targeted Programs For Every Stage of Need.
+            Active Care Programs & Current Events.
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 mt-3 leading-relaxed">
-            Hover over any program card to reveal in-depth clinical blueprints, field records, and community impact. Click to open the dedicated program page.
+          <p className="text-base sm:text-lg text-slate-600 mt-2.5 leading-relaxed max-w-2xl mx-auto">
+            Hover over any active program card to reveal clinical blueprints, field records, and community impact. Click to open details.
           </p>
         </motion.div>
 
         {/* Programs Grid - Standard Sized Full Image Cards with Fluid Slide-Down Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-8">
-          {ALL_PROGRAMS_DATA.map((prog, index) => {
+          {CURRENT_EVENTS_DATA.map((prog, index) => {
             // Checkerboard zig-zag for the sliding detail overlay:
             // Row 0: Cream, Dark
             // Row 1: Dark,  Cream
@@ -54,20 +161,34 @@ export function InteractiveProgramShowcase() {
                 }}
                 className="w-full"
               >
-                <Link
-                  href={`/programs/${prog.slug}`}
-                  className="group relative w-full h-[470px] sm:h-[490px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer border border-stone-200/90 block bg-slate-900"
+                {/* Continuous Floating Bounce Micro-Motion */}
+                <motion.div
+                  animate={{
+                    y: [0, -8, 0],
+                  }}
+                  transition={{
+                    duration: 3.5 + (index * 0.6),
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="w-full h-full"
                 >
-                {/* 1. Full-Bleed Background Image (Preserved HD Quality) */}
-                <Image
-                  src={prog.coverImage}
-                  alt={prog.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={95}
-                  priority={index < 2}
-                  className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-108"
-                />
+                  <Link
+                    href={prog.ctaLink}
+                    className="group relative w-full h-[470px] sm:h-[490px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl cursor-pointer border border-stone-200/90 block bg-slate-900"
+                  >
+                  {/* 1. Full-Bleed Background Image (Slides from left/right on hover according to position) */}
+                  <Image
+                    src={prog.coverImage}
+                    alt={prog.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={95}
+                    priority={index < 2}
+                    className={`object-cover object-center transition-all duration-700 ease-out group-hover:scale-108 ${
+                      isLeft ? "group-hover:translate-x-3" : "group-hover:-translate-x-3"
+                    }`}
+                  />
 
                 {/* 2. Resting State Vignette & Bottom Info (Visible before hover) */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-end p-6 sm:p-8 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none z-10">
@@ -162,7 +283,7 @@ export function InteractiveProgramShowcase() {
 
                     {/* Key Highlights / Pillars */}
                     <div className="space-y-1.5 pt-1">
-                      {prog.pillars.slice(0, 3).map((pillar, pIdx) => (
+                      {prog.highlights && prog.highlights.slice(0, 3).map((item, pIdx) => (
                         <div key={pIdx} className="flex items-start gap-2 text-xs">
                           <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
                           <span
@@ -170,7 +291,7 @@ export function InteractiveProgramShowcase() {
                               isCream ? "text-slate-800" : "text-stone-200"
                             }`}
                           >
-                            {pillar.title}
+                            {item}
                           </span>
                         </div>
                       ))}
@@ -230,15 +351,16 @@ export function InteractiveProgramShowcase() {
                           : "bg-amber-400 text-slate-950 group-hover:bg-white group-hover:text-slate-950"
                       }`}
                     >
-                      <span>Explore Dedicated Page</span>
+                      <span>{prog.ctaText}</span>
                       <ArrowUpRight className="w-4 h-4 shrink-0" />
                     </div>
                   </div>
                 </div>
               </Link>
+              </motion.div>
             </motion.div>
-          );
-        })}
+            );
+          })}
         </div>
       </div>
     </section>

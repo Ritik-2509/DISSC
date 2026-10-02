@@ -230,13 +230,13 @@ export default function EventsPage() {
         </section>
       )}
 
-      {/* 4. Main Content: Event Carousels or Masonry Wall */}
-      <section className="w-full py-12 md:py-20 bg-[#F6F4EE] border-b border-[#E5E0D4]">
+      {/* 4. Main Content: Event Chapters or Masonry Wall */}
+      <section className="w-full py-6 md:py-10 bg-[#F6F4EE] border-b border-[#E5E0D4]">
         <div className="container-custom">
 
-          {/* VIEW MODE 1: Interactive Event Carousels (Default) */}
+          {/* VIEW MODE 1: Interactive Event Chapters (Default) */}
           {viewMode === "carousels" && (
-            <div className="flex flex-col gap-12 md:gap-16">
+            <div className="flex flex-col divide-y divide-[#E5E0D4]">
               {filteredEvents.map((event, idx) => (
                 <div key={event.id} id={`event-${event.id}`} className="scroll-mt-32">
                   <EventCarouselCard

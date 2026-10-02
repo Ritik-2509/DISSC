@@ -31,6 +31,8 @@ import { GovernmentRecognitionTicker } from "@/components/ui/GovernmentRecogniti
 import { InteractiveProgramShowcase } from "@/components/ui/InteractiveProgramShowcase";
 import { StoryShowcase } from "@/components/ui/StoryShowcase";
 import { PartnerMarquee } from "@/components/ui/PartnerMarquee";
+import { MissionCapsuleStrip } from "@/components/ui/MissionCapsuleStrip";
+import { LandingAnnouncementModal } from "@/components/ui/LandingAnnouncementModal";
 
 export default function HomePage() {
   // Quick callback form state
@@ -68,6 +70,9 @@ export default function HomePage() {
   return (
     <div className="w-full flex flex-col items-center bg-[#F6F4EE] text-slate-900">
       
+      {/* Active Programs & Emergency Helpline Floating Attention Modal (Image 3 Style) */}
+      <LandingAnnouncementModal />
+
       {/* 1. Grand Animated Vibrant Hero (Features UP CM Yogi Adityanath Award & Dr. Tulsi) */}
       <VibrantHero />
 
@@ -100,8 +105,18 @@ export default function HomePage() {
                   />
                 </div>
 
-                {/* Overlapping Forest Green Quote Badge (Bottom-Right) */}
-                <div className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-6 bg-[#184639] text-white p-5 sm:p-6 rounded-[22px] max-w-[260px] sm:max-w-[285px] shadow-2xl z-10 border border-emerald-900/40">
+                {/* Overlapping Forest Green Quote Badge (Bottom-Right) with Floating Bounce & Interactive Hover */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  whileHover={{
+                    scale: 1.05,
+                    y: -14,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.4)",
+                    transition: { duration: 0.25, ease: "easeOut" }
+                  }}
+                  className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-6 bg-[#184639] text-white p-5 sm:p-6 rounded-[22px] max-w-[260px] sm:max-w-[285px] shadow-2xl z-10 border border-emerald-900/40 cursor-pointer select-none transition-shadow"
+                >
                   <span className="block text-[11px] font-bold tracking-[0.18em] text-emerald-200/90 uppercase">
                     DR. C. TULSI DAS, PH.D.
                   </span>
@@ -111,7 +126,7 @@ export default function HomePage() {
                   <p className="mt-3 font-serif italic text-white text-sm sm:text-[14px] leading-snug">
                     &ldquo;Disability is not a lack of capability. It is a societal lack of appropriate, compassionate scientific support.&rdquo;
                   </p>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -200,13 +215,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Interactive Campus Showcase (Jai Vakeel / IAC Style) */}
+      {/* 4. Comprehensive Care Spectrum (Editorial Photo Capsules - theNGO Pattern) */}
+      <MissionCapsuleStrip />
+
+      {/* 5. Interactive Campus Showcase (Jai Vakeel / IAC Style) */}
       <InteractiveProgramShowcase />
 
       {/* 5. Emotional Stories of Breakthroughs (Rubaroo Style) */}
       <StoryShowcase />
 
-      {/* 6. Institutional & Corporate Partner Companies (Motion Marquee) */}
+      {/* 6. Institutional & Corporate Partner Logos (Unboxed Continuous Marquee) */}
       <PartnerMarquee />
 
       {/* 7. Consultation & Immediate Help Booking */}
@@ -223,9 +241,11 @@ export default function HomePage() {
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-6 flex flex-col text-left"
             >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold uppercase tracking-wider mb-3 w-fit">
-                <Phone className="w-3.5 h-3.5" />
-                <span>Parent Consultation Helpline</span>
+              <div className="inline-flex items-center gap-3 mb-4">
+                <span className="w-8 h-[2px] bg-[#9A5B32] shrink-0 inline-block" />
+                <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#8C5E3C]">
+                  PARENT CONSULTATION HELPLINE
+                </span>
               </div>
               
               <h2 className="text-3xl sm:text-4xl font-heading font-black text-slate-900 mb-4 leading-tight">

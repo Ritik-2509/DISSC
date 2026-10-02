@@ -142,9 +142,15 @@ export function Footer() {
                 <MapPin className="w-4 h-4 text-[#F5A524] shrink-0 mt-0.5" />
                 <span>B.21/100, Bind Bhavan, Kamachha Chungi, Varanasi, UP 221010</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#F5A524] shrink-0" />
-                <span>7007453168 / 9415303557 / 9129853531</span>
+              <div className="flex items-start gap-2.5">
+                <Phone className="w-4 h-4 text-[#F5A524] shrink-0 mt-0.5" />
+                <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs sm:text-sm">
+                  <a href="tel:7007453168" className="hover:text-[#F5A524] transition-colors">7007453168</a>
+                  <span className="text-[#8E9F9B]">/</span>
+                  <a href="tel:9415303557" className="hover:text-[#F5A524] transition-colors">9415303557</a>
+                  <span className="text-[#8E9F9B]">/</span>
+                  <a href="tel:9129853531" className="hover:text-[#F5A524] transition-colors">9129853531</a>
+                </div>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#F5A524] shrink-0" />
