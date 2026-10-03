@@ -22,9 +22,13 @@ import {
   EVENT_CATEGORIES,
   EventCollection,
   EventPhoto
-} from "@/lib/eventsData";
+import dynamic from "next/dynamic";
 import { EventCarouselCard } from "@/components/events/EventCarouselCard";
-import { LightboxModal } from "@/components/events/LightboxModal";
+
+const LightboxModal = dynamic(
+  () => import("@/components/events/LightboxModal").then((mod) => mod.LightboxModal),
+  { ssr: false }
+);
 
 const COMMUNITY_CALENDAR = [
   {

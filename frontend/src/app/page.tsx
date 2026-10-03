@@ -25,6 +25,7 @@ import {
   Lock,
   ChevronRight
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { VibrantHero } from "@/components/ui/VibrantHero";
 import { GovernmentRecognitionTicker } from "@/components/ui/GovernmentRecognitionTicker";
@@ -32,7 +33,11 @@ import { InteractiveProgramShowcase } from "@/components/ui/InteractiveProgramSh
 import { StoryShowcase } from "@/components/ui/StoryShowcase";
 import { PartnerMarquee } from "@/components/ui/PartnerMarquee";
 import { MissionCapsuleStrip } from "@/components/ui/MissionCapsuleStrip";
-import { LandingAnnouncementModal } from "@/components/ui/LandingAnnouncementModal";
+
+const LandingAnnouncementModal = dynamic(
+  () => import("@/components/ui/LandingAnnouncementModal").then((mod) => mod.LandingAnnouncementModal),
+  { ssr: false }
+);
 
 export default function HomePage() {
   // Quick callback form state

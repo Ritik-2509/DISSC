@@ -71,8 +71,8 @@ export function VibrantHero() {
               src={slide.image}
               alt={slide.alt}
               fill
-              priority
-              quality={100}
+              priority={slide.id === HERO_SLIDES[0].id}
+              quality={85}
               className="object-cover object-center"
               sizes="100vw"
             />

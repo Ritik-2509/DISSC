@@ -30,6 +30,7 @@ export function Footer() {
                   src="/images/discc/logo.png"
                   alt="DISCC Logo"
                   fill
+                  sizes="48px"
                   className="object-contain p-0.5"
                 />
               </div>

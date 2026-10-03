@@ -1,10 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AccessibilityProvider } from "@/components/accessibility/AccessibilityContext";
-import { AccessibilityToolbox } from "@/components/accessibility/AccessibilityToolbox";
+
+const AccessibilityToolbox = dynamic(
+  () => import("@/components/accessibility/AccessibilityToolbox").then((mod) => mod.AccessibilityToolbox),
+  { ssr: false }
+);
 
 export const viewport: Viewport = {
   width: "device-width",
