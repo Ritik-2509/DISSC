@@ -252,7 +252,7 @@ export function GovernmentRecognitionTicker() {
         </div>
 
         {/* 2. MOBILE & TABLET: Vertical Flowing Journey Timeline */}
-        <div className="block lg:hidden relative pl-6 border-l-2 border-amber-400 space-y-6 my-6 ml-3">
+        <div className="block lg:hidden relative pl-6 sm:pl-8 border-l-2 border-amber-400 space-y-6 my-6 ml-4 sm:ml-6">
           {stats.map((item, idx) => {
             const Icon = item.icon;
             const isFromTop = item.fromDirection === "top";
@@ -264,10 +264,10 @@ export function GovernmentRecognitionTicker() {
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.15 }}
-                className="relative p-5 rounded-2xl bg-white border border-stone-200 shadow-sm"
+                className="relative p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-sm"
               >
                 {/* Node on Line */}
-                <div className="absolute -left-[31px] top-6 w-5 h-5 rounded-full bg-white border-3 border-amber-600 shadow-xs" />
+                <div className="absolute -left-[35px] sm:-left-[43px] top-6 w-5 h-5 rounded-full bg-white border-[3px] border-amber-600 shadow-xs" />
 
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-black uppercase tracking-wider text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md">

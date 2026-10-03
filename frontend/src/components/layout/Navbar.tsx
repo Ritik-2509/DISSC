@@ -75,10 +75,10 @@ export function Navbar() {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
-              className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer text-center"
+              className="flex items-center gap-1.5 xs:gap-2.5 sm:gap-3 group cursor-pointer text-center"
               aria-label="DISCC India Home"
             >
-              <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-white/15 border border-white/30 shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+              <div className="relative w-8 h-8 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-white/15 border border-white/30 shrink-0 shadow-xs group-hover:scale-105 transition-transform">
                 <Image
                   src="/images/discc/logo.png"
                   alt="DISCC Logo"
@@ -90,7 +90,7 @@ export function Navbar() {
               </div>
               <div className="flex flex-col text-left">
                 <span
-                  className={`font-heading font-black text-base sm:text-xl md:text-2xl tracking-tight leading-none transition-colors ${
+                  className={`font-heading font-black text-sm xs:text-base sm:text-xl md:text-2xl tracking-tight leading-none transition-colors ${
                     isOverDarkHero ? "text-white" : "text-slate-900"
                   }`}
                 >
@@ -108,7 +108,7 @@ export function Navbar() {
           </div>
 
           {/* 3. RIGHT CORNER: Phone Helpline & Floating DONATE NOW Button */}
-          <div className="flex items-center gap-2 sm:gap-3 z-10 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 z-10 shrink-0">
             <a
               href="tel:7007453168"
               className={`hidden md:flex items-center gap-2 text-xs font-bold px-3.5 py-2 rounded-full border transition-all ${
@@ -134,10 +134,10 @@ export function Navbar() {
             >
               <Link
                 href="/donate"
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full font-black text-xs sm:text-sm text-slate-950 bg-amber-400 hover:bg-amber-300 border border-amber-400 shadow-md shadow-amber-400/20 hover:scale-105 transition-all cursor-pointer group"
+                className="inline-flex items-center gap-1 sm:gap-2 px-2.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full font-black text-[11px] sm:text-sm text-slate-950 bg-amber-400 hover:bg-amber-300 border border-amber-400 shadow-md shadow-amber-400/20 hover:scale-105 transition-all cursor-pointer group"
               >
-                <Heart className="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-slate-950 group-hover:scale-115 transition-transform" />
-                <span className="tracking-wide">DONATE NOW</span>
+                <Heart className="w-3 sm:w-4 h-3 sm:h-4 fill-slate-950 group-hover:scale-115 transition-transform" />
+                <span className="tracking-wide">DONATE<span className="hidden xs:inline"> NOW</span></span>
               </Link>
             </motion.div>
           </div>

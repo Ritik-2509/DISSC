@@ -83,7 +83,7 @@ export function MissionCapsuleStrip() {
         {/* Spread-out Section Filling Layout: Row 1 (4 Circles) & Row 2 (3 Circles) */}
         <div className="w-full max-w-7xl mx-auto">
           {/* Top Row: 4 Full-Image Circles spread out across full container width */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 justify-items-center mb-8 sm:mb-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 xs:gap-6 sm:gap-8 lg:gap-12 justify-items-center mb-8 sm:mb-14">
             {PILLARS.slice(0, 4).map((pillar) => (
               <motion.div
                 key={pillar.label}
@@ -98,7 +98,7 @@ export function MissionCapsuleStrip() {
                 className="flex flex-col items-center justify-start text-center cursor-pointer select-none group"
               >
                 {/* Full-Bleed Large Circular Image (100% of Circle) */}
-                <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-2xl group-hover:border-amber-400 ring-1 ring-stone-200/90 transition-all duration-300 shrink-0 bg-stone-100">
+                <div className="relative w-28 h-28 xs:w-36 xs:h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 rounded-full overflow-hidden border-[3px] xs:border-4 border-white shadow-lg group-hover:shadow-2xl group-hover:border-amber-400 ring-1 ring-stone-200/90 transition-all duration-300 shrink-0 bg-stone-100">
                   <Image
                     src={pillar.image}
                     alt={pillar.label}
@@ -109,9 +109,9 @@ export function MissionCapsuleStrip() {
                 </div>
 
                 {/* Text Out of the Circle (Cleanly Below) */}
-                <div className="mt-3 sm:mt-4 flex flex-col items-center text-center">
+                <div className="mt-2.5 sm:mt-4 flex flex-col items-center text-center">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mb-1.5 group-hover:scale-150 transition-transform" />
-                  <h3 className="font-heading font-extrabold text-slate-900 text-xs sm:text-sm md:text-[15px] leading-snug text-center max-w-[170px] sm:max-w-[200px] group-hover:text-amber-700 transition-colors">
+                  <h3 className="font-heading font-extrabold text-slate-900 text-xs sm:text-sm md:text-[15px] leading-snug text-center max-w-[140px] xs:max-w-[170px] sm:max-w-[200px] group-hover:text-amber-700 transition-colors">
                     {pillar.label}
                   </h3>
                 </div>
@@ -120,7 +120,7 @@ export function MissionCapsuleStrip() {
           </div>
 
           {/* Bottom Row: 3 Full-Image Circles spread out in alternating spaces */}
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-12 md:gap-16 lg:gap-24 justify-items-center">
+          <div className="flex flex-wrap justify-center gap-4 xs:gap-6 sm:gap-12 md:gap-16 lg:gap-24 justify-items-center">
             {PILLARS.slice(4, 7).map((pillar) => (
               <motion.div
                 key={pillar.label}
@@ -135,7 +135,7 @@ export function MissionCapsuleStrip() {
                 className="flex flex-col items-center justify-start text-center cursor-pointer select-none group"
               >
                 {/* Full-Bleed Large Circular Image (100% of Circle) */}
-                <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-2xl group-hover:border-amber-400 ring-1 ring-stone-200/90 transition-all duration-300 shrink-0 bg-stone-100">
+                <div className="relative w-28 h-28 xs:w-36 xs:h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 rounded-full overflow-hidden border-[3px] xs:border-4 border-white shadow-lg group-hover:shadow-2xl group-hover:border-amber-400 ring-1 ring-stone-200/90 transition-all duration-300 shrink-0 bg-stone-100">
                   <Image
                     src={pillar.image}
                     alt={pillar.label}

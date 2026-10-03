@@ -168,60 +168,64 @@ export default function DonatePage() {
 
                 <div className="space-y-3 text-xs sm:text-sm">
                   
-                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
-                    <div>
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between gap-2 overflow-hidden">
+                    <div className="min-w-0 flex-1">
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">Account Name</span>
-                      <span className="font-bold text-[#182321]">DEVA International Society for Child Care</span>
+                      <span className="font-bold text-[#182321] text-xs sm:text-sm block break-words">DEVA International Society for Child Care</span>
                     </div>
                     <button
                       onClick={() => handleCopy("DEVA International Society for Child Care", "name")}
-                      className="p-1.5 rounded-lg hover:bg-white text-[#5B6B7C] cursor-pointer"
+                      className="p-1.5 rounded-lg hover:bg-white text-[#5B6B7C] cursor-pointer shrink-0"
+                      aria-label="Copy Account Name"
                     >
                       {copiedField === "name" ? <Check className="w-4 h-4 text-[#0F8B8D]" /> : <Copy className="w-4 h-4" />}
                     </button>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
-                    <div>
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between gap-2 overflow-hidden">
+                    <div className="min-w-0 flex-1">
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">Account Number</span>
-                      <span className="font-bold text-[#182321] font-mono text-base">30584729105</span>
+                      <span className="font-bold text-[#182321] font-mono text-sm sm:text-base block truncate">30584729105</span>
                     </div>
                     <button
                       onClick={() => handleCopy("30584729105", "acc")}
-                      className="p-1.5 rounded-lg hover:bg-white text-[#5B6B7C] cursor-pointer"
+                      className="p-1.5 rounded-lg hover:bg-white text-[#5B6B7C] cursor-pointer shrink-0"
+                      aria-label="Copy Account Number"
                     >
                       {copiedField === "acc" ? <Check className="w-4 h-4 text-[#0F8B8D]" /> : <Copy className="w-4 h-4" />}
                     </button>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
-                    <div>
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between gap-2 overflow-hidden">
+                    <div className="min-w-0 flex-1">
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">IFSC Code</span>
-                      <span className="font-bold text-[#182321] font-mono text-base">SBIN0001618</span>
+                      <span className="font-bold text-[#182321] font-mono text-sm sm:text-base block truncate">SBIN0001618</span>
                     </div>
                     <button
                       onClick={() => handleCopy("SBIN0001618", "ifsc")}
-                      className="p-1.5 rounded-lg hover:bg-white text-[#5B6B7C] cursor-pointer"
+                      className="p-1.5 rounded-lg hover:bg-white text-[#5B6B7C] cursor-pointer shrink-0"
+                      aria-label="Copy IFSC Code"
                     >
                       {copiedField === "ifsc" ? <Check className="w-4 h-4 text-[#0F8B8D]" /> : <Copy className="w-4 h-4" />}
                     </button>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
-                    <div>
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between gap-2 overflow-hidden">
+                    <div className="min-w-0 flex-1">
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">Bank & Branch</span>
-                      <span className="font-bold text-[#182321]">State Bank of India (Kamachha, Varanasi)</span>
+                      <span className="font-bold text-[#182321] text-xs sm:text-sm block break-words">State Bank of India (Kamachha, Varanasi)</span>
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between">
-                    <div>
+                  <div className="p-3.5 rounded-xl bg-[#F6F4EE] border border-[#E5E0D4] flex items-center justify-between gap-2 overflow-hidden">
+                    <div className="min-w-0 flex-1">
                       <span className="text-[11px] text-[#7A8B9E] font-medium block">Direct UPI ID</span>
-                      <span className="font-bold text-[#0F8B8D] font-mono">disccindia@sbi</span>
+                      <span className="font-bold text-[#0F8B8D] font-mono text-xs sm:text-sm block truncate">disccindia@sbi</span>
                     </div>
                     <button
                       onClick={() => handleCopy("disccindia@sbi", "upi")}
-                      className="p-1.5 rounded-lg hover:bg-white text-[#5B6B7C] cursor-pointer"
+                      className="p-1.5 rounded-lg hover:bg-white text-[#5B6B7C] cursor-pointer shrink-0"
+                      aria-label="Copy UPI ID"
                     >
                       {copiedField === "upi" ? <Check className="w-4 h-4 text-[#0F8B8D]" /> : <Copy className="w-4 h-4" />}
                     </button>

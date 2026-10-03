@@ -44,12 +44,12 @@ export function AccessibilityToolbox() {
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(true)}
         aria-label="Open Accessibility Toolbox"
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0F172A] text-white shadow-2xl hover:bg-[#1E293B] border-2 border-white/30 transition-all cursor-pointer group"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center justify-center gap-2 p-2.5 sm:px-4 sm:py-3 rounded-full bg-[#0F172A] text-white shadow-2xl hover:bg-[#1E293B] border-2 border-white/30 transition-all cursor-pointer group"
       >
         <div className="w-6 h-6 rounded-full bg-emerald-500/25 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
           <AccessibilityIcon className="w-4 h-4 text-emerald-400" />
         </div>
-        <span className="text-xs font-bold font-sans tracking-wide text-white pr-1">
+        <span className="hidden sm:inline text-xs font-bold font-sans tracking-wide text-white pr-1">
           Accessibility
         </span>
       </motion.button>

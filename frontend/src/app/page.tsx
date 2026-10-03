@@ -115,7 +115,7 @@ export default function HomePage() {
                     boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.4)",
                     transition: { duration: 0.25, ease: "easeOut" }
                   }}
-                  className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-6 bg-[#184639] text-white p-5 sm:p-6 rounded-[22px] max-w-[260px] sm:max-w-[285px] shadow-2xl z-10 border border-emerald-900/40 cursor-pointer select-none transition-shadow"
+                  className="absolute -bottom-6 right-0 xs:-right-2 sm:-bottom-8 sm:-right-6 bg-[#184639] text-white p-4 sm:p-6 rounded-[20px] sm:rounded-[22px] max-w-[240px] xs:max-w-[260px] sm:max-w-[285px] shadow-2xl z-10 border border-emerald-900/40 cursor-pointer select-none transition-shadow"
                 >
                   <span className="block text-[11px] font-bold tracking-[0.18em] text-emerald-200/90 uppercase">
                     DR. C. TULSI DAS, PH.D.

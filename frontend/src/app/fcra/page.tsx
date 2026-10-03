@@ -202,7 +202,7 @@ export default function FcraPage() {
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.75, delay: idx * 0.12 }}
                   whileHover={{ y: -6, scale: 1.01 }}
-                  className={`relative p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-[#FFFDF9] via-white to-[#FDF8F0] border-2 border-stone-200/90 ${cred.borderAccent} shadow-md hover:shadow-2xl transition-all duration-400 group overflow-hidden flex flex-col justify-between`}
+                  className={`relative p-5 sm:p-9 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#FFFDF9] via-white to-[#FDF8F0] border-2 border-stone-200/90 ${cred.borderAccent} shadow-md hover:shadow-2xl transition-all duration-400 group overflow-hidden flex flex-col justify-between`}
                 >
                   {/* Background Holographic Seal Watermark */}
                   <div className="absolute -right-8 -bottom-8 w-44 h-44 rounded-full border border-stone-200/60 pointer-events-none opacity-40 group-hover:opacity-75 group-hover:scale-110 transition-all duration-700 flex items-center justify-center">
@@ -301,7 +301,7 @@ export default function FcraPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.8 }}
-            className="p-8 sm:p-12 rounded-3xl bg-white border-2 border-stone-200 shadow-xl space-y-8 relative overflow-hidden"
+            className="p-5 sm:p-12 rounded-2xl sm:rounded-3xl bg-white border-2 border-stone-200 shadow-xl space-y-6 sm:space-y-8 relative overflow-hidden"
           >
             {/* Top Vault Indicator */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-stone-200">
@@ -353,7 +353,7 @@ export default function FcraPage() {
                 <span className="text-xs text-stone-500 font-semibold uppercase tracking-wider">
                   Designated Central Branch:
                 </span>
-                <span className="font-medium text-slate-800 text-right sm:max-w-md">
+                <span className="font-medium text-slate-800 text-left sm:text-right sm:max-w-md">
                   New Delhi Main Branch, 11 Sansad Marg, New Delhi - 110001
                 </span>
               </div>

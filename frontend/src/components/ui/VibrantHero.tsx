@@ -54,7 +54,7 @@ export function VibrantHero() {
   const slide = HERO_SLIDES[activeSlide];
 
   return (
-    <section className="relative w-full h-screen min-h-[720px] flex flex-col justify-end overflow-hidden bg-slate-950 text-white pb-12 sm:pb-16 md:pb-20">
+    <section className="relative w-full min-h-[100dvh] sm:min-h-[720px] flex flex-col justify-end overflow-hidden bg-slate-950 text-white pb-8 sm:pb-16 md:pb-20 pt-20">
       
       {/* 1. Full-Screen Edge-to-Edge HD Background Carousel */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
@@ -92,7 +92,7 @@ export function VibrantHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-heading font-black text-white leading-[1.12] tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] mb-6 md:mb-8 max-w-3xl"
+          className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-heading font-black text-white leading-[1.14] tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] mb-5 md:mb-8 max-w-3xl"
         >
           Pioneering Care for Every{" "}
           <span className="relative inline-block text-amber-400 drop-shadow-[0_4px_20px_rgba(0,0,0,1)]">
@@ -118,23 +118,23 @@ export function VibrantHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-5 md:mb-6"
+          className="flex flex-col xs:flex-row items-stretch xs:items-center justify-center gap-3 sm:gap-4 mb-4 md:mb-6 w-full xs:w-auto"
         >
-          <Link href="/donate">
+          <Link href="/donate" className="w-full xs:w-auto">
             <Button
               size="lg"
-              className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-full px-8 h-12 md:h-13 text-sm md:text-base shadow-2xl shadow-black/70 hover:scale-105 transition-all flex items-center gap-2.5 cursor-pointer"
+              className="w-full xs:w-auto bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-full px-7 sm:px-8 h-12 md:h-13 text-sm md:text-base shadow-2xl shadow-black/70 hover:scale-105 transition-all flex items-center justify-center gap-2.5 cursor-pointer"
             >
-              <Heart className="w-5 h-5 fill-slate-950" />
+              <Heart className="w-4 h-4 sm:w-5 sm:h-5 fill-slate-950" />
               <span>Sponsor a Child</span>
             </Button>
           </Link>
 
-          <Link href="/our-work">
+          <Link href="/our-work" className="w-full xs:w-auto">
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full px-7 h-12 md:h-13 text-sm md:text-base font-bold bg-black/50 hover:bg-black/70 border-white/50 text-white backdrop-blur-md shadow-2xl transition-all flex items-center gap-2 cursor-pointer"
+              className="w-full xs:w-auto rounded-full px-6 sm:px-7 h-12 md:h-13 text-sm md:text-base font-bold bg-black/50 hover:bg-black/70 border-white/50 text-white backdrop-blur-md shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Explore Programs</span>
               <ArrowRight className="w-4 h-4" />
@@ -142,15 +142,15 @@ export function VibrantHero() {
           </Link>
         </motion.div>
 
-        {/* Trust Badge (Below Buttons, Without Dot) */}
+        {/* Trust Badge (Wrapped and centered on mobile) */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
         >
-          <div className="inline-flex items-center px-5 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/30 shadow-2xl">
-            <span className="text-xs sm:text-sm font-bold text-amber-300 tracking-wide drop-shadow-md">
-              Est. 1991 in Varanasi · UP Chief Minister Awarded NGO
+          <div className="inline-flex items-center text-center px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/30 shadow-2xl max-w-full">
+            <span className="text-[11px] sm:text-sm font-bold text-amber-300 tracking-wide drop-shadow-md leading-snug">
+              Est. 1991 in Varanasi <span className="text-amber-400/60 hidden xs:inline">·</span><br className="xs:hidden" /> UP Chief Minister Awarded NGO
             </span>
           </div>
         </motion.div>

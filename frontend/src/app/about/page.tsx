@@ -478,12 +478,12 @@ export default function AboutPage() {
                   <Plane className="w-5 h-5 sm:w-6 sm:h-6 text-[#0F8B8D] rotate-45" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#0F8B8D]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-[#0F8B8D]">
                       DISCC AVIATION · CENTRAL RADAR 1991
                     </span>
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" title="Airspace Clear" />
-                    <span className="text-[10px] font-bold text-emerald-700 uppercase">Transponder Active</span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" title="Airspace Clear" />
+                    <span className="text-[9px] sm:text-[10px] font-bold text-emerald-700 uppercase">Transponder Active</span>
                   </div>
                   <h4 className="text-sm sm:text-base font-heading font-extrabold text-[#182321]">
                     Varanasi Hub / Genesis Takeoff (Runway 1991)
@@ -493,7 +493,7 @@ export default function AboutPage() {
 
               {/* Active Flight Telemetry */}
               <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-[#182321] w-full lg:w-auto">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-950 font-mono text-[11px] max-w-full">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-950 font-mono text-[10.5px] sm:text-[11px] max-w-full">
                   <Radio className="w-3 h-3 text-[#0F8B8D] shrink-0 animate-pulse" />
                   <span className="truncate">
                     FLIGHT DISCC-35: {isScrolling ? "CRUISING EN ROUTE" : "LEVEL AT"} WAYPOINT {FLIGHT_WAYPOINTS[activeWaypoint].waypointNum} ({FLIGHT_WAYPOINTS[activeWaypoint].flightCode})
@@ -645,17 +645,17 @@ export default function AboutPage() {
                         </div>
 
                         <div>
-                          <div className="flex items-center gap-2">
-                            <span className="text-[10px] font-black uppercase tracking-widest text-[#0F8B8D]">
+                          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                            <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-[#0F8B8D]">
                               WAYPOINT {evt.waypointNum} · {evt.flightCode}
                             </span>
                             <span
-                              className={`w-2 h-2 rounded-full ${
+                              className={`w-2 h-2 rounded-full shrink-0 ${
                                 isActive ? "bg-emerald-500 animate-ping" : "bg-cyan-500"
                               }`}
                             />
                             <span
-                              className={`text-[10px] font-bold uppercase ${
+                              className={`text-[9px] sm:text-[10px] font-bold uppercase ${
                                 isActive ? "text-emerald-700 font-black" : "text-[#78716C]"
                               }`}
                             >
