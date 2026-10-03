@@ -154,7 +154,7 @@ export default function EventsPage() {
         <div className="container-custom flex flex-col md:flex-row md:items-center justify-between gap-4">
           
           {/* Category Filter Pills */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none touch-pan-x w-full md:w-auto">
             {EVENT_CATEGORIES.map((cat) => {
               const count = cat === "All"
                 ? totalPhotosCount

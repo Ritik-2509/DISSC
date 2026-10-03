@@ -149,7 +149,9 @@ export function StoryShowcase() {
             setIsPaused(false);
             setActiveId(null);
           }}
-          className="flex gap-5 sm:gap-6 overflow-x-auto pb-4 pt-2 scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+          className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 pt-2 scrollbar-none touch-pan-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {displayStories.map((story, idx) => {
             const cardKey = `${story.id}-${idx}`;
@@ -166,7 +168,7 @@ export function StoryShowcase() {
                   setActiveId(null);
                 }}
                 onClick={() => setActiveId(isActive ? null : cardKey)}
-                className={`relative w-[300px] sm:w-[330px] md:w-[350px] h-[490px] sm:h-[520px] shrink-0 rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-out border ${
+                className={`relative w-[270px] xs:w-[300px] sm:w-[330px] md:w-[350px] h-[460px] xs:h-[490px] sm:h-[520px] shrink-0 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-out border ${
                   isActive
                     ? "border-amber-400 shadow-2xl scale-[1.02] -translate-y-1"
                     : "border-[#EADCCB] shadow-sm hover:border-amber-300 bg-[#F7EFE4]"

@@ -68,29 +68,29 @@ export default async function ProgramDetailPage({ params }: ProgramPageProps) {
         </div>
 
         {/* Hero Bottom Content Bar */}
-        <div className="container-custom relative z-10 pb-12 sm:pb-16 pt-32">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+        <div className="container-custom relative z-10 pb-10 sm:pb-16 pt-28 sm:pt-32">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8">
             {/* Left: Program Title & Short Summary */}
             <div className="max-w-2xl text-left">
-              <span className="inline-block text-xs font-black tracking-widest text-amber-400 uppercase mb-3">
+              <span className="inline-block text-[11px] sm:text-xs font-black tracking-widest text-amber-400 uppercase mb-2 sm:mb-3">
                 {program.categoryEyebrow}
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white tracking-tight leading-tight mb-4 drop-shadow-sm">
+              <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-white tracking-tight leading-tight mb-3 sm:mb-4 drop-shadow-sm">
                 {program.title}
               </h1>
-              <p className="text-base sm:text-lg text-stone-200 leading-relaxed font-normal">
+              <p className="text-sm sm:text-lg text-stone-200 leading-relaxed font-normal">
                 {program.shortDescription}
               </p>
             </div>
 
             {/* Right: Stat Metric & Donate Now Button */}
-            <div className="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-4 shrink-0">
+            <div className="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-3 sm:gap-4 shrink-0 w-full sm:w-auto">
               <div className="flex items-center gap-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-stone-300">
                 <ArrowUpRight className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>{program.statMetric}</span>
               </div>
-              <Link href="/donate">
-                <button className="bg-[#8A482A] hover:bg-[#A05330] text-white px-8 py-3.5 rounded-lg text-sm sm:text-base font-bold shadow-xl transition-all hover:scale-102 cursor-pointer flex items-center gap-2">
+              <Link href="/donate" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto bg-[#8A482A] hover:bg-[#A05330] text-white px-7 sm:px-8 py-3 sm:py-3.5 rounded-lg text-sm sm:text-base font-bold shadow-xl transition-all hover:scale-102 cursor-pointer flex items-center justify-center gap-2">
                   <Heart className="w-4 h-4 text-amber-300 fill-amber-300" />
                   <span>Donate Now</span>
                 </button>
@@ -273,15 +273,15 @@ export default async function ProgramDetailPage({ params }: ProgramPageProps) {
           <p className="text-base sm:text-lg text-[#C8D1CE] leading-relaxed mb-8">
             Your recurring or one-time contribution funds specialized clinical therapies, assistive learning kits, and hot meals for children in Varanasi.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link href="/donate">
-              <button className="bg-[#F5A524] hover:bg-[#E09418] text-[#182321] font-bold px-8 py-3.5 rounded-full shadow-lg transition-transform hover:scale-102 cursor-pointer flex items-center gap-2 text-sm sm:text-base">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <Link href="/donate" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto bg-[#F5A524] hover:bg-[#E09418] text-[#182321] font-bold px-7 sm:px-8 py-3.5 rounded-full shadow-lg transition-transform hover:scale-102 cursor-pointer flex items-center justify-center gap-2 text-sm sm:text-base">
                 <Heart className="w-4 h-4 text-[#182321] fill-current" />
                 <span>Make a Donation</span>
               </button>
             </Link>
-            <Link href="/#programs">
-              <button className="bg-white/10 hover:bg-white/20 text-white font-bold px-7 py-3.5 rounded-full border border-white/20 shadow-xs transition-colors cursor-pointer text-sm sm:text-base">
+            <Link href="/#programs" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-bold px-6 sm:px-7 py-3.5 rounded-full border border-white/20 shadow-xs transition-colors cursor-pointer text-sm sm:text-base flex items-center justify-center">
                 <span>View Other Programs</span>
               </button>
             </Link>
